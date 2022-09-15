@@ -21,3 +21,4 @@ php artisan make:seeder UsersTableSeeder / DishesTableSeeder / CategoriesTableSe
 php artisan db:seed --class UsersTableSeeder
 
 NomeModel::truncate();
+
