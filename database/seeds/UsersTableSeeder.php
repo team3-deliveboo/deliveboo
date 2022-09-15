@@ -71,8 +71,6 @@ class UsersTableSeeder extends Seeder
 
         //     $data->save();
 
-        // $tags = ['carne', 'pesce', 'senza lattosio', 'senza glutine'];
-
         foreach ($restaurants as $restaurant) {
             User::create([
                 'name' => $restaurant['name'],
