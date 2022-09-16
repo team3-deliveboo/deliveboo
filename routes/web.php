@@ -28,6 +28,7 @@ Route::middleware('auth')
     ->prefix('admin')
     ->group(function () {
         // Route::get('/', 'HomeController@index')->name('index');
+        // Route::get('/{user}/edit', 'UserController@edit')->name('users.edit');
         Route::resource('/', 'UserController');
     });
 

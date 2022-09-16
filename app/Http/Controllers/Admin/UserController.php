@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -14,7 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+
+        $users = User::all();
+        return view('admin.index', compact('users'));
     }
 
     /**
@@ -46,7 +50,6 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -57,7 +60,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
