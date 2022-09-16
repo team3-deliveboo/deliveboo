@@ -71,7 +71,7 @@
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
-                    <a href="{{ route('admin.index') }}">Home</a>
+                    <a href="{{ route('admin.index') }}">Admin</a>
                 @else
                     <a href="{{ route('login') }}">Login</a>
 
@@ -84,7 +84,7 @@
 
         <div class="content">
             <div class="title m-b-md">
-                Laravel
+                Deliveboo
             </div>
 
             <div class="links">
