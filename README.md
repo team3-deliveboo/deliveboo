@@ -20,3 +20,4 @@ php artisan db:seed --class UsersTableSeeder
 
 php artisan make:controller --resource UserController //CRUD
 
+composer dump-autoload
