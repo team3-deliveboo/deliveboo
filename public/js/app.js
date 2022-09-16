@@ -49681,13 +49681,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-__webpack_require__(/*! D:\RepositoryBoolean\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\RepositoryBoolean\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! /Users/silviawolves/Documents/Boolean/deliveboo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/silviawolves/Documents/Boolean/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
->>>>>>> 6f558703622acffd33be57dff831cf45d324fce5
+__webpack_require__(/*! D:\Documents\Boolean\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Documents\Boolean\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

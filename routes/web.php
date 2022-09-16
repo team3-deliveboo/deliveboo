@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,47 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::middleware('auth')
+    ->namespace('Admin')
+    ->name('admin.')
+    ->prefix('admin')
+    ->group(function () {
+        // Route::get('/', 'HomeController@index')->name('index');
+        Route::resource('/', 'UserController');
+    });
+
+
+// Route::middleware('auth')
+// 			->namespace('Admin')
+// 			->name('admin.')
+// 			->prefix('admin')
+// 			->group(function () {
+// 					Route::get('/', 'HomeController@index')->name('index');
+// 					Route::resource("posts", "PostController");
+// 			});
+
+// Auth::routes();
+
+
+// Route::middleware("auth")
+// ->name("admin.")
+// ->namespace("Admin")
+// ->prefix("admin")
+// ->group(function () {
+
+//     Route::get('/', 'HomeController@index')->name('home');
+
+//     Route::resource("posts", "PostController");
+// });
+
+// Route::get('{any?}', function () {
+// return view('frontend');
+// })->where("any", ".*");
