@@ -14,7 +14,7 @@
                             <!-- nome ristorante -->
                             <div class="form-group row">
                                 <label for="name"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Il tuo Ristorante') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Il tuo Ristorante *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text"
@@ -32,7 +32,7 @@
                             <!-- numero di telefono -->
                             <div class="form-group row">
                                 <label for="phone"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Numero di Telefono') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Numero di Telefono *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="phone" type="text"
@@ -50,7 +50,7 @@
                             <!-- indirizzo -->
                             <div class="form-group row">
                                 <label for="address"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="address" type="text"
@@ -68,7 +68,7 @@
                             <!-- partita iva -->
                             <div class="form-group row">
                                 <label for="vat"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Partita Iva') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Partita Iva *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="vat" type="text"
@@ -87,7 +87,7 @@
                             <!-- indirizzo mail -->
                             <div class="form-group row">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-mail') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('E-mail *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -106,7 +106,7 @@
                             <!-- password -->
                             <div class="form-group row">
                                 <label for="password"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Password *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
@@ -121,9 +121,10 @@
                                 </div>
                             </div>
 
+                            <!-- conferma password -->
                             <div class="form-group row">
                                 <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
@@ -131,7 +132,11 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-0">
+                            <div class="mt-3">
+                                <b>I campi contrassegnati da * sono obbligatori.</b>
+                            </div>
+
+                            <div class="form-group row mb-0 mt-3">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Registra') }}
