@@ -32,30 +32,6 @@ Route::middleware('auth')
         Route::resource('users', 'UserController');
     });
 
-
-// Route::middleware('auth')
-// 			->namespace('Admin')
-// 			->name('admin.')
-// 			->prefix('admin')
-// 			->group(function () {
-// 					Route::get('/', 'HomeController@index')->name('index');
-// 					Route::resource("posts", "PostController");
-// 			});
-
-// Auth::routes();
-
-
-// Route::middleware("auth")
-// ->name("admin.")
-// ->namespace("Admin")
-// ->prefix("admin")
-// ->group(function () {
-
-//     Route::get('/', 'HomeController@index')->name('home');
-
-//     Route::resource("posts", "PostController");
-// });
-
 // Route::get('{any?}', function () {
 // return view('frontend');
 // })->where("any", ".*");

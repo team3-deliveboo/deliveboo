@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Category;
 use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -15,11 +16,8 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      * 
      */
-
-
     public function index()
     {
-
         $users = User::all();
         return view('admin.users.index', compact('users'));
     }
@@ -31,7 +29,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        
     }
 
     /**
@@ -42,7 +41,30 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $validatedData = $request->validate([
+        //     "title" => "required|min:10",
+        //     "content" => "required|min:10",
+        //     "category_id" => "nullable|exists:categories,id",
+        //     "tags" => "nullable|exists:tags,id",
+        //     "cover_img" => "required|image",
+        // ]);
+
+        // // Salvare a db i dati
+        // $post = new Post();
+        // $post->fill($validatedData);
+        // $post->user_id = Auth::user()->id;
+
+        // $post->save();
+
+        // // Nel caso dello store, PRIMA di associare i tag, devo salvare il post creato
+        // // in modo da permettere al DB di generare un ID per il post.
+        // // Questo id è essenziale per fare l'associazione nella tabella ponte
+        // if (key_exists("tags", $validatedData)) {
+        //     $post->tags()->attach($validatedData["tags"]);
+        // }
+
+        // // redirect su una pagina desiderata - di solito show
+        // return redirect()->route("admin.posts.show", $post->slug);
     }
 
     /**
@@ -54,7 +76,6 @@ class UserController extends Controller
     public function show($id)
     {  
         $user = User::findOrFail($id);
-
         return view('admin.users.show', compact('user'));
     }
 
@@ -67,7 +88,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('admin.users.edit', compact('user'));
+        $categories = Category::all();
+        return view('admin.users.edit', compact('user', 'categories'));
     }
 
     /**
@@ -79,16 +101,35 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $user = User::findOrFail($id);
         $validatedData = $request->validate([
             'name' => 'required|min:5',
             'phone' => 'required|min:10',
             'vat' => 'required|min:11',
             'address' => 'required',
+            'categories' => 'nullable|exists:categories,id',
         ]);
 
+        if (key_exists('categories', $validatedData)) {
+            $user->categories()->detach();
+            $user->categories()->attach($validatedData['categories']);
+        } else {
+            $user->categories()->detach();
+        }
+        
+        // if (key_exists('categories', $validatedData)) {
+        //     $user->categories()->sync($validatedData['categories']);
+        // } else {
+        //     $user->categories()->sync([]);
+        // }
+        
+        // if (key_exists('categories', $validatedData)) {
+        //     $user->categories()->attach($validatedData['categories']);
+        // }
+        // $user->save();
         $user->update($validatedData);
-        return redirect()->route('admin.users.show' , compact('user'));
+        return redirect()->route('admin.users.show', compact('user'));
     }
 
     /**

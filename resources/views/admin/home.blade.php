@@ -74,8 +74,8 @@
                 Deliveboo
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -130,7 +130,12 @@
                 <h2>Sezione Admin</h2>
                 <ul class="list-unstyled">
                     <li><i class="bi bi-house-fill"></i><a class="text-decoration-none" href="/">Home</a></li>
-                    <li><i class="bi bi-people"></i><a class="" href="{{ route('admin.users.index') }}">il tuo ristorante</a></li>
+                    @if (Auth::check())
+                        <li><i class="bi bi-people"></i><a
+                                href="{{ route('admin.users.show', Auth::user()->id) }}">show</a></li>
+                        <li><i class="bi bi-people"></i><a
+                                href="{{ route('admin.users.edit', Auth::user()->id) }}">edit</a></li>
+                    @endif
                 </ul>
 
 

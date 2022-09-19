@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'img', 'phone', 'email', 'vat', 'password', 'address', 'slug'
+        'name', 'img', 'phone', 'email', 'vat', 'password', 'address', 'slug', 'category_id'
     ];
 
     /**
@@ -36,4 +36,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function categories() {
+        return $this->belongsToMany('App\Category', 'user_category', 'user_id', 'category_id');
+    }
+
+    
 }
+
+// public function categories()
+
+    // return $this->belongsToMany('App\Category','category_post','post_id','category_id');                 
+//    }

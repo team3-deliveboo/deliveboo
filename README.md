@@ -21,3 +21,26 @@ php artisan db:seed --class UsersTableSeeder
 php artisan make:controller --resource UserController //CRUD
 
 composer dump-autoload
+
+php artisan make:migration create_user_category_table
+
+
+
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Category;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class CategoryController extends Controller
+{
+    public function posts($id)
+    {
+        $category = Category::findOrFail($id);
+
+        return $category->posts;
+    }
+}
+
