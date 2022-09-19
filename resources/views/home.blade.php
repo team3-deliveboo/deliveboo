@@ -9,6 +9,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
     <!-- Styles -->
     <style>
@@ -71,12 +72,12 @@
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
-                    <a href="{{ route('admin.index') }}">Admin</a>
+                    <a href="{{ route('admin.home') }}">Admin</a>
                 @else
                     <a href="{{ route('login') }}">Login</a>
 
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('register') }}">Registra la tua attivita</a>
                     @endif
                 @endauth
             </div>

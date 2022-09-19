@@ -13,12 +13,15 @@ class UserController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
+
+
     public function index()
     {
 
         $users = User::all();
-        return view('admin.index', compact('users'));
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -49,7 +52,10 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
+    {  
+        $user = User::findOrFail($id);
+
+        return view('admin.users.show', compact('user'));
     }
 
     /**
@@ -73,7 +79,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $validatedData = $request->validate([
+            'name' => 'required|min:5',
+            'phone' => 'required|min:10',
+            'vat' => 'required|min:11',
+            'address' => 'required',
+        ]);
+
+        $user->update($validatedData);
+        return redirect()->route('admin.users.show' , compact('user'));
     }
 
     /**
