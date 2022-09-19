@@ -111,18 +111,18 @@ class UserController extends Controller
             'categories' => 'nullable|exists:categories,id',
         ]);
 
-        if (key_exists('categories', $validatedData)) {
-            $user->categories()->detach();
-            $user->categories()->attach($validatedData['categories']);
-        } else {
-            $user->categories()->detach();
-        }
-        
         // if (key_exists('categories', $validatedData)) {
-        //     $user->categories()->sync($validatedData['categories']);
+        //     $user->categories()->detach();
+        //     $user->categories()->attach($validatedData['categories']);
         // } else {
-        //     $user->categories()->sync([]);
+        //     $user->categories()->detach();
         // }
+        
+        if (key_exists('categories', $validatedData)) {
+            $user->categories()->sync($validatedData['categories']);
+        } else {
+            $user->categories()->sync([]);
+        }
         
         // if (key_exists('categories', $validatedData)) {
         //     $user->categories()->attach($validatedData['categories']);

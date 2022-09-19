@@ -78,16 +78,28 @@
 
                     {{-- categorie --}}
                     <div class="form-group">
-                        <label>Categorie</label>
+                    <label>Categorie</label>
+
+                    @foreach ($categories as $category)
+                        <div>
+                            <input type="checkbox" value="{{ $category['id'] }}" name="categories[]">{{ $category['name'] }}</input>
+                        </div>
+                    @endforeach
+
+                    @error('categories')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                    
+                        {{-- <!-- <label>Categorie</label>
                         <select name="categories[]" class="form-control">
                             <option value=""></option>
                             @foreach ($categories as $category)
-                                <option value="{{ $category['id'] }}">{{ $category['name']. $category['id']  }}</option>
+                                <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
                             @endforeach
                         </select>
                         @error('categories')
                             <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
+                        @enderror --> --}}
                     </div>
 
                     <div class="form-group">
