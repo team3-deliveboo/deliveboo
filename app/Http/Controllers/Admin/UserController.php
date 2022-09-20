@@ -29,8 +29,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        
+        //$categories = Category::all();
     }
 
     /**
@@ -129,7 +128,7 @@ class UserController extends Controller
         // }
         // $user->save();
         $user->update($validatedData);
-        return redirect()->route('admin.users.show', compact('user'));
+        return redirect()->route('admin.users.index', compact('user'));
     }
 
     /**

@@ -16,10 +16,9 @@
                             <polyline points="10 18 4 12 10 6"></polyline>
                         </svg> Tutti i ristoranti
                     </a> -->
-
                 </div>
-                <div>
 
+                <div>
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -29,8 +28,8 @@
                             </ul>
                         </div>
                     @endif
-
                 </div>
+                
                 <form action="{{ route('admin.users.update', ['user' => $user->id]) }}" method="post">
 
                     @csrf
@@ -79,13 +78,11 @@
                     {{-- categorie --}}
                     <div class="form-group">
                     <label>Categorie</label>
-
                     @foreach ($categories as $category)
                         <div>
                             <input type="checkbox" value="{{ $category['id'] }}" name="categories[]">{{ $category['name'] }}</input>
                         </div>
                     @endforeach
-
                     @error('categories')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror

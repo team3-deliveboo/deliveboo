@@ -6,32 +6,61 @@ use App\Dish;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
+class Slug
+{ 
+    public function createSlug($name, $id = 0)
+    {
+        $slug = Str::slug($name);
+        $allSlugs = $this->getRelatedSlugs($slug, $id);
+
+        if (!$allSlugs->contains('slug', $slug)) {
+            return $slug;
+        }
+
+        for ($i = 0; $i <= 20; $i++) {
+            $newSlug = $slug . '-' . $i;
+            if (!$allSlugs->contains('slug', $newSlug)) {
+                return $newSlug;
+            }
+        }
+        throw new \Exception('Non posso creare questo slug, scegli un altro nome.');
+    }
+
+    protected function getRelatedSlugs($slug, $id = 0)
+    {
+        return Dish::select('slug')->where('slug', 'like', $slug . '%')
+            ->where('id', '<>', $id)
+            ->get();
+    }
+
+}
 class DishController extends Controller
 {
+
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function findBySlug($slug){
+        $dish = Dish::where('slug' , $slug)->first();
+        if(!$dish){
+            abort(404);
+
+        }
+        return $dish;
+    }
+
     public function index()
     {
-        
-        $user = Auth::user(); 
-        $dishes = Dish::where("user_id", $user->id)->orderBy('created_at' , 'desc')->get();
-        return view('admin.dishes.index' , compact('dishes'));
-    } 
-
-    // $user = Auth::user();
-
-    //     if ($user->role === "admin") {
-    //         $posts = Post::orderBy("created_at", "desc")->paginate(5);
-    //     } else {
-    //         // $posts = Post::where("user_id", $user->id)->orderBy("created_at", "desc")->get();
-    //         $posts = $user->posts;
-    //     }
-
-    //     return view("admin.posts.index", compact("posts"));
+        $user = Auth::user();
+        $dishes = Dish::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+        return view('admin.dishes.index', compact('dishes'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -40,7 +69,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.dishes.create');
     }
 
     /**
@@ -51,7 +80,26 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|min:2',
+            'course' => 'nullable',
+            'description' => 'required|min:10',
+            'img' => 'nullable|image',
+            'price' => 'required|numeric|min:0.01|max:999',
+            'visibility' => 'nullable|boolean',
+            'slug' => ' nullable'
+        ]);
+
+        // Salvare a db i dati
+        $dish = new Dish();
+        $slug = new Slug();
+        $dish->slug = $slug->createSlug($request->name);
+        $dish->fill($validatedData);
+        $dish->user_id = Auth::user()->id;
+
+        $dish->save();
+
+        return redirect()->route('admin.dishes.show', $dish->id);
     }
 
     /**
@@ -60,9 +108,10 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $dishes = $this->findBySlug($slug);
+        return view('admin.dishes.show', compact('dishes'));
     }
 
     /**
@@ -71,9 +120,10 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $dishes = $this->findBySlug($slug);
+        return view('admin.dishes.edit', compact('dishes'));
     }
 
     /**
@@ -83,9 +133,61 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|min:2',
+            'course' => 'nullable',
+            'description' => 'required|min:10',
+            'img' => 'nullable|image',
+            'price' => 'required|numeric|min:0.01|max:999',
+            'visibility' => 'nullable|boolean',
+            'slug' => ' nullable'
+        ]);
+
+        $dish = $this->findBySlug($slug);
+
+        // // cover_img non è obbligatorio, di conseguenza dobbiamo controllare 
+        // // se ci è stato inviato dall'utente
+        // if (key_exists("cover_img", $validatedData)) {
+        //     // se il post ha già un immagine,
+        //     // PRIMA di caricare quella nuova, cancello quella vecchia
+        //     if ($post->cover_img) {
+        //         Storage::delete($post->cover_img);
+        //     }
+
+        //     // Salvo il file sul mio server
+        //     // ritorna il link interno a dove si trova il file
+        //     $coverImg = Storage::put("/post_covers", $validatedData["cover_img"]);
+        //     // $coverImg = $validatedData["cover_img"]->store("/post_covers");
+
+        //     // salvo dentro i dati di questo post il link al file appena caricato
+        //     $post->cover_img = $coverImg;
+        // }
+
+        if ($validatedData['name'] !== $dish->name) {
+            // genero un nuovo slug
+            $slug = new Slug;
+            $dish->slug = $slug->createSlug($validatedData['name']);
+        }
+
+        // // toglie dalla tabella ponte TUTTE le relazione del $post
+        // // $post->tags()->detach();
+
+        // /*
+        //     - se l'utente mi invia dei tag, devo associarli al post corrente
+        //     - se non mi invia i tag, devo rimuovere tutte le associazioni esistenti per il post corrente
+        // */
+        // if (key_exists("tags", $validatedData)) {
+        //     // Aggiunge nella tabella ponte una riga per ogni tag da associare
+        //     // $post->tags()->attach($validatedData["tags"]);
+        //     $post->tags()->sync($validatedData["tags"]);
+        // } else {
+        //     $post->tags()->sync([]);
+        // }
+
+        $dish->update($validatedData);
+        return redirect()->route('admin.dishes.show', $dish->slug);
     }
 
     /**

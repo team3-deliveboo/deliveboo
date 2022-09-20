@@ -112,3 +112,8 @@ class Dish extends Model
     }
 }
 
+*********************************
+VALIDAZIONE FILE DIMENSIONI KILOBYTES:
+*********************************
+
+https://laravel.com/docs/7.x/validation#rule-size
