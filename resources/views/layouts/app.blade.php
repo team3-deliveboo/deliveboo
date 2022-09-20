@@ -87,13 +87,12 @@
                                     <h2>Sezione Admin</h2>
                                     <ul class="list-unstyled">
                                         @if (Auth::check())
-                                            <li><i class="bi bi-people"></i><a
-                                                    href="{{ route('admin.users.show', Auth::user()->id) }}">Show</a>
-                                            </li>
-                                            <li><i class="bi bi-people"></i><a
-                                                    href="{{ route('admin.users.edit', Auth::user()->id) }}">Edit</a>
-                                            </li>
-                                            <li><i class="bi bi-people"></i><a href="">Lista Piatti</a></li>
+
+                                            <li><i class="bi bi-people"></i><a href="{{ route('admin.users.index') }}">Home</a></li>
+                                            <li><i class="bi bi-people"></i><a href="{{ route('admin.dishes.index')}}">Lista Piatti</a></li>
+                                            <li><i class="bi bi-people"></i><a href="">Ordini</a></li>
+                                            <li><i class="bi bi-people"></i><a href="">Statistiche</a></li>
+
                                         @endif
                                     </ul>
                                 </div>

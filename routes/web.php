@@ -30,6 +30,7 @@ Route::middleware('auth')
         Route::get('/', 'HomeController@index')->name('home');
         // Route::get('/{user}/edit', 'UserController@edit')->name('users.edit');
         Route::resource('users', 'UserController');
+        Route::resource('dishes', 'DishController');
     });
 
 // Route::get('{any?}', function () {

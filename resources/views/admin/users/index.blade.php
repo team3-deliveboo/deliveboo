@@ -16,7 +16,7 @@
                             <div>{{ Auth::user()->address }}</div>
                             <div>{{ Auth::user()->vat }}</div>
                             <div>{{ Auth::user()->email }}</div>
-                            <a href="{{route('admin.users.show', Auth::user()->id)}}">show</a>
+                            {{-- <a href="{{route('admin.users.show', Auth::user()->id)}}">show</a> --}}
                             <a href="{{route('admin.users.edit', Auth::user()->id)}}">edit</a>
                         @endif
 
