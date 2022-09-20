@@ -70,7 +70,7 @@
                     <label>Prezzo</label>
                     <input type="text" name="price"
                         class="form-control @error('price') is-invalid @enderror"
-                        placeholder="Inserisci una descrizione del piatto" value="{{ old('price') }}" required>
+                        placeholder="Inserisci il prezzo" value="{{ old('price', $dishes->price) }}" required>
                     @error('price')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -78,13 +78,13 @@
                 
 
                 {{-- Vibility--}}
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Visibilità</label>
-                {{-- <input type="radio" name="visibility" class="form-control @error('visibility') is-invalid @enderror" value="{{ old('visibility') }}" required> --}}
+                {{-- <input type="radio" name="visibility" class="form-control @error('visibility') is-invalid @enderror" value="{{ old('visibility') }}" required> --}} -->
 
                 <div class="form-check">
-                    <input class="form-check-input @error('visibility') is-invalid @enderror" type="checkbox" value="{{ old('visibility')}}" id="flexCheckIndeterminate">
-                    <label class="form-check-label" for="flexCheckIndeterminate">
+                    <input name="visibility" class="form-check-input @error('visibility') is-invalid @enderror" type="checkbox" value="{{ old('visibility', $dishes->visibility) }}" id="visibility">
+                    <label class="form-check-label" for="visibility">
                         Disponibilità
                     </label>
                 </div>

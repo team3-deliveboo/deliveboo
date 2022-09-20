@@ -99,7 +99,7 @@ class DishController extends Controller
 
         $dish->save();
 
-        return redirect()->route('admin.dishes.show', $dish->id);
+        return redirect()->route('admin.dishes.show', $dish->slug);
     }
 
     /**
@@ -196,8 +196,10 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        $dish = $this->findBySlug($slug);
+        $dish->delete();
+        return redirect()->route('admin.dishes.index')->with('status', "Hai eliminato il piatto '$dish->name'");
     }
 }
