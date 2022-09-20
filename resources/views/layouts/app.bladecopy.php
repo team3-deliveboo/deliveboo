@@ -78,35 +78,9 @@
         </nav>
 
         <main class="py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-2">
-                        <div class="container h-100">
-                            <div class="row h-100 ">
-                                <div class="col-2">
-                                    <h2>Sezione Admin</h2>
-                                    <ul class="list-unstyled">
-                                        @if (Auth::check())
-                                            <li><i class="bi bi-people"></i><a
-                                                    href="{{ route('admin.users.show', Auth::user()->id) }}">Show</a>
-                                            </li>
-                                            <li><i class="bi bi-people"></i><a
-                                                    href="{{ route('admin.users.edit', Auth::user()->id) }}">Edit</a>
-                                            </li>
-                                            <li><i class="bi bi-people"></i><a href="">Lista Piatti</a></li>
-                                        @endif
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-10">
-                        @yield('content')
-                    </div>
-                </div>
-
-            </div>
-
+            .row
+            
+            @yield('content')
         </main>
     </div>
 </body>
