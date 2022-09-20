@@ -5,8 +5,8 @@
         <h1>{{ $dishes->name }}</h1>
         <h2>{{ $dishes->description }}</h2>
         <h2>{{ $dishes->course }}</h2>
-        <h3>{{$dishes->price}} €</h3>
-        <h3>{{$dishes->visibility == 1 ? $dishes->visibility : "non disponibile" }}</h3>
+        <h3>{{ $dishes->price }} €</h3>
+        <h3>{{ $dishes->visibility == 1 ? 'Disponibile' : 'Non disponibile' }}</h3>
 
     </div>
 @endsection
