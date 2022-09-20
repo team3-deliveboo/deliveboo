@@ -25,3 +25,36 @@ composer dump-autoload
 php artisan make:migration create_dish_order_table
 
 php artisan make:migration add_foreign_keys_to_orders_table
+
+*********************************
+DALLA REPO SCARICATA, il Model di Order:
+*********************************
+
+class Order extends Model
+{
+    protected $fillable = [
+        'name',
+        'lastname',
+        'email',
+        'address',
+        'date',
+        'time',
+        'price_total',
+        'created_at',
+        'updated_at',
+    ];
+
+    public function dishes()
+    {
+        return $this->belongsToMany('App\Model\Dish')
+            ->withPivot('quantity')
+            ->withTrashed()
+            ->withTimestamps();
+    }
+
+    public function payment()
+    {
+        return $this->belongsTo('App\Model\Payment');
+    }
+}
+
