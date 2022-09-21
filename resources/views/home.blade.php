@@ -104,7 +104,6 @@
                 </div>
             </div>
 
-<<<<<<< HEAD
             <div class="links">
                 <a href="https://laravel.com/docs">Docs</a>
                 <a href="https://laracasts.com">Laracasts</a>
@@ -123,8 +122,6 @@
         </div>
     </div>
 </body>
-=======
->>>>>>> 09e05bb70f9fbdcee692057a8ff86bdcc1378cf0
 
         {{-- <script src="{{ asset('js/frontend.js') }}" defer></script> --}}
 
