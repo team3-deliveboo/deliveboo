@@ -9,6 +9,7 @@ use App\Category;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 
@@ -22,11 +23,11 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      * 
      */
-    public function findBySlugUser($slug){
-        $user = User::where('slug' , $slug)->first();
-        if(!$user){
+    public function findBySlugUser($slug)
+    {
+        $user = User::where('slug', $slug)->first();
+        if (!$user) {
             abort(404);
-
         }
         return $user;
     }
@@ -89,7 +90,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($slug)
-    {  
+    {
         $user = $this->findBySlugUser($slug);
         // $user = User::findOrFail($id);
         return view('admin.users.show', compact('user'));
@@ -125,8 +126,30 @@ class UserController extends Controller
             'vat' => 'required|min:11',
             'address' => 'required',
             'categories' => 'nullable|exists:categories,id',
+            'img' => 'nullable|image'
 
         ]);
+        // $user = $this->findOrFail($id);
+        /* img non è obbligatorio, di conseguenza dobbiamo controllare 
+        se ci è stato inviato dall'utente */
+        if (key_exists("img", $validatedData)) {
+            // se il post ha già un immagine,
+            // PRIMA di caricare quella nuova, cancello quella vecchia
+            if ($user->img) {
+                Storage::delete(($user->img));
+            }
+            // Salvo il file sul mio server
+            // ritorna il link interno a dove si trova il file
+            $img = Storage::put('userImg', $validatedData['img']);
+
+            // $coverImg = $validatedData["cover_img"]->store("/post_covers");
+            // salvo dentro i dati di questo post il link al file appena caricato
+            $user->img = $img;
+        }
+
+
+
+
 
         if ($validatedData['name'] !== $user->name) {
             // genero un nuovo slug
@@ -134,26 +157,14 @@ class UserController extends Controller
             $user->slug = $slug->createSlugUser($validatedData['name']);
         }
 
-
-        // if (key_exists('categories', $validatedData)) {
-        //     $user->categories()->detach();
-        //     $user->categories()->attach($validatedData['categories']);
-        // } else {
-        //     $user->categories()->detach();
-        // }
-
-        
         if (key_exists('categories', $validatedData)) {
             $user->categories()->sync($validatedData['categories']);
         } else {
             $user->categories()->sync([]);
         }
-        
-        // if (key_exists('categories', $validatedData)) {
-        //     $user->categories()->attach($validatedData['categories']);
-        // }
-        // $user->save();
+
         $user->update($validatedData);
+
         return redirect()->route('admin.users.index', compact('user'));
     }
 

@@ -8,14 +8,14 @@
 
                 <h1>Modifica Del Ristorante {{ $user->name }}</h1>
 
-                <!-- <a href="{{ route('admin.users.index') }}" class="btn btn-primary">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                                                class="feather feather-activity">
-                                                                                <line x1="20" y1="12" x2="4" y2="12"></line>
-                                                                                <polyline points="10 18 4 12 10 6"></polyline>
-                                                                            </svg> Tutti i ristoranti
-                                                                        </a> -->
+                {{-- <!-- <a href="{{ route('admin.users.index') }}" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-activity">
+                                <line x1="20" y1="12" x2="4" y2="12"></line>
+                                <polyline points="10 18 4 12 10 6"></polyline>
+                            </svg> Tutti i ristoranti
+                        </a> --> --}}
             </div>
 
             <div>
@@ -30,10 +30,25 @@
                 @endif
             </div>
 
-            <form action="{{ route('admin.users.update', ['user' => $user->id]) }}" method="post">
+            <form action="{{ route('admin.users.update', ['user' => $user->id]) }}" method="post" enctype="multipart/form-data">
 
                 @csrf
                 @method('PUT')
+                {{-- File Upload Image --}}
+                <div class="form-group">
+                    <label for="img" class="form-label">Immagine di copertina</label>
+
+                    <div class="d-flex">
+                        {{-- <img class="img-thumbnail" style="width: 150px" src="{{ asset('storage/' . $post->cover_img) }}">
+
+                        <img id="new_cover_img_container" src="" alt=""> --}}
+                        <input type="file" name="img" class="form-control-file @error('img') is-invalid @enderror"
+                            id="img" value="{{ old('img') }}">
+                    </div>
+                    @error('img')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
 
                 {{-- nome attivita --}}
                 <div class="form-group">
