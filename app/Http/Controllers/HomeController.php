@@ -24,10 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        dd($users);
-        $user = $users->orderBy('created_ad' , 'desc');
-        ;
+        $users = User::where('name' , 'prova' )->get();
+        
         return view('home' , compact('users'));
     }
 }
