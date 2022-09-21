@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Category;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+
+
+
 
 class UserController extends Controller
 {
@@ -16,6 +22,16 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      * 
      */
+    public function findBySlugUser($slug){
+        $user = User::where('slug' , $slug)->first();
+        if(!$user){
+            abort(404);
+
+        }
+        return $user;
+    }
+
+
     public function index()
     {
         $users = User::all();
@@ -69,12 +85,13 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {  
-        $user = User::findOrFail($id);
+        $user = $this->findBySlugUser($slug);
+        // $user = User::findOrFail($id);
         return view('admin.users.show', compact('user'));
     }
 
@@ -84,9 +101,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        $user = User::findOrFail($id);
+        $user = $this->findBySlugUser($slug);
         $categories = Category::all();
         return view('admin.users.edit', compact('user', 'categories'));
     }
@@ -108,7 +125,15 @@ class UserController extends Controller
             'vat' => 'required|min:11',
             'address' => 'required',
             'categories' => 'nullable|exists:categories,id',
+
         ]);
+
+        if ($validatedData['name'] !== $user->name) {
+            // genero un nuovo slug
+            $slug = new Slug;
+            $user->slug = $slug->createSlugUser($validatedData['name']);
+        }
+
 
         // if (key_exists('categories', $validatedData)) {
         //     $user->categories()->detach();
@@ -116,6 +141,7 @@ class UserController extends Controller
         // } else {
         //     $user->categories()->detach();
         // }
+
         
         if (key_exists('categories', $validatedData)) {
             $user->categories()->sync($validatedData['categories']);

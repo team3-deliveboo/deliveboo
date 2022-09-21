@@ -80,7 +80,7 @@
         <main class="py-4">
             <div class="container">
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-3">
                         <div class="container h-100">
                             <div class="row h-100 ">
                                 <div class="col-2">
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-10">
+                    <div class="col-9">
                         @yield('content')
                     </div>
                 </div>

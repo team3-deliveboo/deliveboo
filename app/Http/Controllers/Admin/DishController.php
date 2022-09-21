@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
-class Slug
+class SlugDish
 { 
     public function createSlug($name, $id = 0)
     {
@@ -92,7 +92,7 @@ class DishController extends Controller
 
         // Salvare a db i dati
         $dish = new Dish();
-        $slug = new Slug();
+        $slug = new SlugDish();
         $dish->slug = $slug->createSlug($request->name);
         $dish->fill($validatedData);
         $dish->user_id = Auth::user()->id;
@@ -167,7 +167,7 @@ class DishController extends Controller
 
         if ($validatedData['name'] !== $dish->name) {
             // genero un nuovo slug
-            $slug = new Slug;
+            $slug = new SlugDish;
             $dish->slug = $slug->createSlug($validatedData['name']);
         }
 

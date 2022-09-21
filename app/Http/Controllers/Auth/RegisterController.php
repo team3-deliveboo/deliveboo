@@ -2,13 +2,36 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Admin\Slug;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
+// class SlugUser
+// {
+//     public function createSlugUser($name, $id = 0)
+//     {
+//         $slug = Str::slug($name);
+//         $allSlugs = $this->getRelatedSlugsUser($slug, $id);
+
+//         if (!$allSlugs->contains('slug', $slug)) {
+//             return $slug;
+//         }
+//         throw new \Exception('Non posso creare questo slug, scegli un altro nome.');
+//     }
+
+//     protected function getRelatedSlugsUser($slug, $id = 0)
+//     {
+//         return User::select('slug')->where('slug', 'like', $slug . '%')
+//             ->where('id', '<>', $id)
+//             ->get();
+//     }
+
+// }
 class RegisterController extends Controller
 {
     /*
@@ -23,6 +46,7 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+
 
     /**
      * Where to redirect users after registration.
@@ -49,6 +73,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'min:6', 'max:15'],
@@ -56,6 +81,7 @@ class RegisterController extends Controller
             'vat' => ['required', 'string', 'min:11', 'max:20'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'slug' => ['nullable']
         ]);
     }
 
@@ -67,6 +93,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $slug = new Slug;
         return User::create([
             'name' => $data['name'],
             'phone' => $data['phone'],
@@ -74,6 +101,7 @@ class RegisterController extends Controller
             'vat' => $data['vat'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'slug' => $slug->createSlugUser($data['name']),
         ]);
 
         // $user->details = new UserDetail();
