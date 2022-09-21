@@ -75,7 +75,7 @@
                     @enderror
                 </div>
 
-
+                {{-- Category --}}
                 <div class="form-group">
                     <label>Categorie</label>
                     <select type="text" name="categories[]"
@@ -90,6 +90,7 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
+
                 <div class="form-group">
                     <button type="submit" class="btn btn-success">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"

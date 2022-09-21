@@ -84,9 +84,10 @@
                         {{-- <input type="radio" name="visibility" class="form-control @error('visibility') is-invalid @enderror" value="{{ old('visibility') }}" required> --}} -->
 
                     <div class="form-check">
-                        <input type="radio" value="1" name="visibility">Disponibile</input>
+                        <input type="radio" value="1" name="visibility" >Disponibile</input>
                         <input type="radio" value="0" name="visibility">Non Disponibile</input>
                     </div>
+
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">

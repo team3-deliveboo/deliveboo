@@ -31,6 +31,9 @@ Route::middleware('auth')
         // Route::get('/{user}/edit', 'UserController@edit')->name('users.edit');
         Route::resource('users', 'UserController');
         Route::resource('dishes', 'DishController');
+        Route::resource('orders', 'OrderController');
+
+
     });
 
 // Route::get('{any?}', function () {

@@ -90,7 +90,7 @@
 
                                             <li><i class="bi bi-people"></i><a href="{{ route('admin.users.index') }}">Home</a></li>
                                             <li><i class="bi bi-people"></i><a href="{{ route('admin.dishes.index')}}">Lista Piatti</a></li>
-                                            <li><i class="bi bi-people"></i><a href="">Ordini</a></li>
+                                            <li><i class="bi bi-people"></i><a href="{{ route('admin.orders.index')}}">Ordini</a></li>
                                             <li><i class="bi bi-people"></i><a href="">Statistiche</a></li>
 
                                         @endif
