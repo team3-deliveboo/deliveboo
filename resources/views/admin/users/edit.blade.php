@@ -87,7 +87,7 @@
                         @foreach ($categories as $category)
                             <option value="{{ $category['id'] }}"
                                 {{ $user->categories->contains($category) ? 'selected' : '' }}>
-                                {{ $category->name }}</option>
+                                {{ ucwords($category->name) }}</option>
                         @endforeach
                     </select>
                     @error('categories')

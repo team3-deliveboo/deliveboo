@@ -6,7 +6,7 @@
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center">
 
-                    <h1>Modifica Del Piatto {{ $dishes->name }}</h1>
+                    <h1>Modifica Del Piatto "{{ $dishes->name }}"</h1>
 
                     {{-- <!-- <a href="{{ route('admin.users.index') }}" class="btn btn-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -99,8 +99,8 @@
 
                     {{-- Vibility --}}
                     <!-- <div class="form-group">
-                                                <label>Visibilità</label>
-                                            {{-- <input type="radio" name="visibility" class="form-control @error('visibility') is-invalid @enderror" value="{{ old('visibility') }}" required> --}} -->
+                                                    <label>Visibilità</label>
+                                                {{-- <input type="radio" name="visibility" class="form-control @error('visibility') is-invalid @enderror" value="{{ old('visibility') }}" required> --}} -->
                     {{-- <div class="form-check">
                         <input class="form-check-input" type="radio" value="1" name="visibility" id='visibility1'></input>
                         <label class="form-check-label" for="visibility1">Disponibile</label>
@@ -111,23 +111,20 @@
 
 
                     <div class="form-check">
-                        <input class="form-check-input" value='1' type="radio" name="visibility" id="flexRadioDefault1 " {{($dishes->visibility == 1) ? 'checked' : ''}}>
+                        <input class="form-check-input" value='1' type="radio" name="visibility"
+                            id="flexRadioDefault1 " {{ $dishes->visibility == 1 ? 'checked' : '' }}>
                         <label class="form-check-label" for="flexRadioDefault1">
                             Disponibile
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" value='0' type="radio" name="visibility" id="flexRadioDefault2" {{ ($dishes->visibility == 0) ? 'checked': ''}}>
+                        <input class="form-check-input" value='0' type="radio" name="visibility"
+                            id="flexRadioDefault2" {{ $dishes->visibility == 0 ? 'checked' : '' }}>
                         <label class="form-check-label" for="flexRadioDefault2">
                             Non Disponibile
                         </label>
                     </div>
-
-
             </div>
-
-
-
             <div class="form-group">
                 <button type="submit" class="btn btn-success">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"

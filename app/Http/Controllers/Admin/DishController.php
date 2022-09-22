@@ -93,12 +93,13 @@ class DishController extends Controller
 
 
         // Salvare a db i dati
+        
         $dish = new Dish();
         $slug = new SlugDish();
         $dish->slug = $slug->createSlug($request->name);
+        $validatedData['course'] = ucwords($request->course);
         $dish->fill($validatedData);
         $dish->user_id = Auth::user()->id;
-
         if (key_exists("img", $validatedData)) {
             // Salvo il file sul mio server
             // ritorna il link interno a dove si trova il file
@@ -107,7 +108,6 @@ class DishController extends Controller
             // salvo dentro i dati di questo post il link al file appena caricato
             $dish->img = $img;
         }
-
         $dish->save();
         return redirect()->route('admin.dishes.show', $dish->slug);
     }
@@ -153,8 +153,6 @@ class DishController extends Controller
             'price' => 'required|numeric|min:0.01|max:999',
             'visibility' => 'nullable|boolean',
             'slug' => ' nullable',
-            'img' => 'nullable|image'
-
         ]);
 
         $dish = $this->findBySlug($slug);
@@ -211,6 +209,8 @@ class DishController extends Controller
         //     $post->tags()->sync($validatedData["tags"]);
         // } else {
         //     $post->tags()->sync([]);
+        $validatedData['course'] = ucwords($request->course);
+
         // }
 
         $dish->update($validatedData);
@@ -227,6 +227,6 @@ class DishController extends Controller
     {
         $dish = $this->findBySlug($slug);
         $dish->delete();
-        return redirect()->route('admin.dishes.index')->with('status', "Hai eliminato il piatto '$dish->name'");
+        return redirect()->route('admin.dishes.index')->with('status' , 'Il tuo piatto è stato eliminato con successo.');
     }
 }

@@ -16,7 +16,7 @@
                             <div>{{ Auth::user()->address }}</div>
                             <div>{{ Auth::user()->vat }}</div>
                             <div>{{ Auth::user()->email }}</div>
-                            <div>{{ Auth::user()->categories->implode('name', ' - ')}}</div>
+                            <div>{{ ucwords(Auth::user()->categories->implode('name', ' - '))}}</div>
                             <!-- <a href="route('admin.users.show',Auth::user()->id) ">show</a> -->
                             <a class="btn btn-warning btn-sm" href="{{ route('admin.users.edit', Auth::user()->slug) }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
