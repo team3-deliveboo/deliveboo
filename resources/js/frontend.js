@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Frontend from './components/Navbar.vue';
+import Frontend from './Frontend.vue';
 
 new Vue({
     el: "#app",

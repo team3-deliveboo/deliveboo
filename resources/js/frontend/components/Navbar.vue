@@ -1,5 +1,6 @@
 <template>
-    <div class="container">
+    <div class="nav">
+        
 
     </div>
 </template>
@@ -11,9 +12,9 @@
 </script>
 
 <style lang="scss" scoped>
-@import './resources/sass/_variables.scss';
+    @import '~/resources/sass/backend/_variables.scss';
 
-.container {
+.nav {
     background-color: $deliveroo-blue;
     height: 60px;
 }
