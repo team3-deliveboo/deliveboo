@@ -66,7 +66,7 @@
                         <label>Descrizione</label>
                         <input type="text" name="description"
                             class="form-control @error('description') is-invalid @enderror"
-                            placeholder="Inserisci una descrizione del piatto" value="{{ old('description') }}" required>
+                            placeholder="Inserisci una descrizione del piatto" value="{{ old('description') }}" required minlength="5">
                         @error('description')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -75,7 +75,7 @@
                     {{-- Prezzo --}}
                     <div class="form-group">
                         <label>Prezzo</label>
-                        <input type="" name="price" class="form-control @error('price') is-invalid @enderror"
+                        <input type="" name="price" class="form-control @error('price') is-invalid @enderror "
                             placeholder="Inserisci il prezzo del tuo piatto" value="{{ old('price') }}" required>
                         @error('price')
                             <div class="invalid-feedback">{{ $message }}</div>
