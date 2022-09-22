@@ -45,7 +45,7 @@
                     <div class="form-group">
                         <label>Nome Piatto</label>
                         <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                            placeholder="Inserisci il nome del piatto" value="{{ old('name') }}" required>
+                            placeholder="Inserisci il nome del piatto" value="{{ old('name') }}" required minlength="5">
                         @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -55,7 +55,7 @@
                     <div class="form-group">
                         <label>Portata</label>
                         <input type="text" name="course" class="form-control @error('course') is-invalid @enderror"
-                            placeholder="Inserisci la portata" value="{{ old('course') }}" required>
+                            placeholder="Inserisci la portata" value="{{ old('course') }}" required minlength="5">
                         @error('course')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -66,7 +66,8 @@
                         <label>Descrizione</label>
                         <input type="text" name="description"
                             class="form-control @error('description') is-invalid @enderror"
-                            placeholder="Inserisci una descrizione del piatto" value="{{ old('description') }}" required minlength="5">
+                            placeholder="Inserisci una descrizione del piatto" value="{{ old('description') }}" required
+                            minlength="5">
                         @error('description')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -75,8 +76,9 @@
                     {{-- Prezzo --}}
                     <div class="form-group">
                         <label>Prezzo</label>
-                        <input type="" name="price" class="form-control @error('price') is-invalid @enderror "
-                            placeholder="Inserisci il prezzo del tuo piatto" value="{{ old('price') }}" required>
+                        <input type="text" name="price" class="form-control @error('price') is-invalid @enderror "
+                            placeholder="Inserisci il prezzo del tuo piatto" value="{{ old('price') }}" required
+                            min="0.1">
                         @error('price')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -87,13 +89,15 @@
                         <label>Visibilità</label>
 
                         <div class="form-check">
-                            <input class="form-check-input" value='1' type="radio" name="visibility" id="flexRadioDefault1 " >
+                            <input class="form-check-input" value='1' type="radio" name="visibility"
+                                id="flexRadioDefault1 ">
                             <label class="form-check-label" for="flexRadioDefault1">
                                 Disponibile
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" value='0' type="radio" name="visibility" id="flexRadioDefault2" >
+                            <input class="form-check-input" value='0' type="radio" name="visibility"
+                                id="flexRadioDefault2">
                             <label class="form-check-label" for="flexRadioDefault2">
                                 Non Disponibile
                             </label>

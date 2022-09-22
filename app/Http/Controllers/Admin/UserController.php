@@ -108,7 +108,6 @@ class UserController extends Controller
         $user = Auth::user();
         $categories = Category::all();
         return view('admin.users.edit', compact('user', 'categories'));
-
     }
 
     /**
@@ -124,7 +123,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $validatedData = $request->validate([
             'name' => 'required|min:5',
-            'phone' => 'required|min:10',
+            'phone' => 'required|min:6',
             'vat' => 'required|min:11',
             'address' => 'required',
             'categories' => 'nullable|exists:categories,id',
