@@ -6,6 +6,7 @@ use App\Dish;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class SlugDish
@@ -87,8 +88,9 @@ class DishController extends Controller
             'img' => 'nullable|image',
             'price' => 'required|numeric|min:0.01|max:999',
             'visibility' => 'nullable|boolean',
-            'slug' => ' nullable'
+            'slug' => ' nullable',
         ]);
+
 
         // Salvare a db i dati
         $dish = new Dish();
@@ -97,8 +99,16 @@ class DishController extends Controller
         $dish->fill($validatedData);
         $dish->user_id = Auth::user()->id;
 
-        $dish->save();
+        if (key_exists("img", $validatedData)) {
+            // Salvo il file sul mio server
+            // ritorna il link interno a dove si trova il file
+            $img = Storage::put('dishImg', $validatedData['img']);
+            // $coverImg = $validatedData["cover_img"]->store("/post_covers");
+            // salvo dentro i dati di questo post il link al file appena caricato
+            $dish->img = $img;
+        }
 
+        $dish->save();
         return redirect()->route('admin.dishes.show', $dish->slug);
     }
 
@@ -110,8 +120,8 @@ class DishController extends Controller
      */
     public function show($slug)
     {
-        $dishes = $this->findBySlug($slug);
-        return view('admin.dishes.show', compact('dishes'));
+        $dish = $this->findBySlug($slug);
+        return view('admin.dishes.show', compact('dish'));
     }
 
     /**
@@ -142,10 +152,27 @@ class DishController extends Controller
             'img' => 'nullable|image',
             'price' => 'required|numeric|min:0.01|max:999',
             'visibility' => 'nullable|boolean',
-            'slug' => ' nullable'
+            'slug' => ' nullable',
+            'img' => 'nullable|image'
+
         ]);
 
         $dish = $this->findBySlug($slug);
+
+        if (key_exists("img", $validatedData)) {
+            // se il post ha già un immagine,
+            // PRIMA di caricare quella nuova, cancello quella vecchia
+            if ($dish->img) {
+                Storage::delete(($dish->img));
+            }
+            // Salvo il file sul mio server
+            // ritorna il link interno a dove si trova il file
+            $img = Storage::put('userImg', $validatedData['img']);
+
+            // $coverImg = $validatedData["cover_img"]->store("/post_covers");
+            // salvo dentro i dati di questo post il link al file appena caricato
+            $dish->img = $img;
+        }
 
         // // cover_img non è obbligatorio, di conseguenza dobbiamo controllare 
         // // se ci è stato inviato dall'utente

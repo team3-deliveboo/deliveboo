@@ -90,13 +90,13 @@
             <div class="title m-b-md">
                 Deliveboo
             </div>
-            </div>
+            {{-- </div>
             @foreach ($users as $user)
                 <div>
                     <img src="{{ asset('storage/' . $user->img) }}" alt="">
                 </div>
             @endforeach
-        </div>
+        </div> --}}
 
     <div class="links">
         <a href="https://laravel.com/docs">Docs</a>

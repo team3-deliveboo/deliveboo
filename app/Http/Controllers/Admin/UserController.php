@@ -102,9 +102,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug)
+    public function edit($id)
     {
-        $user = $this->findBySlugUser($slug);
+        $user  = User::findOrFail($id);
         $categories = Category::all();
         return view('admin.users.edit', compact('user', 'categories'));
     }
