@@ -37,7 +37,7 @@
 
                     {{-- File Upload Image --}}
                     <div class="form-group">
-                        <label for="img" class="form-label">Immagine di copertina</label>
+                        <label for="img" class="form-label"><b>Immagine di copertina</b></label>
 
                         <div class="d-flex">
                             {{-- <img class="img-thumbnail" style="width: 150px" src="{{ asset('storage/' . $post->cover_img) }}">
@@ -56,7 +56,7 @@
 
                     {{-- nome Piatto --}}
                     <div class="form-group">
-                        <label>Nome Piatto</label>
+                        <label><b>Nome Piatto</b></label>
                         <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
                             placeholder="Inserisci il titolo" value="{{ old('name', $dishes->name) }}" required>
                         @error('name')
@@ -66,7 +66,7 @@
 
                     {{-- Portata --}}
                     <div class="form-group">
-                        <label>Portata</label>
+                        <label><b>Portata</b></label>
                         <input type="text" name="course" class="form-control @error('course') is-invalid @enderror"
                             placeholder="Inserisci il titolo" value="{{ old('course', $dishes->course) }}" required>
                         @error('course')
@@ -76,7 +76,7 @@
 
                     {{-- Descrizione --}}
                     <div class="form-group">
-                        <label>Descrizione</label>
+                        <label><b>Descrizione</b></label>
                         <input type="text" name="description"
                             class="form-control @error('description') is-invalid @enderror"
                             placeholder="Inserisci il titolo" value="{{ old('description', $dishes->description) }}"
@@ -88,7 +88,7 @@
 
                     {{-- Prezzo --}}
                     <div class="form-group">
-                        <label>Prezzo</label>
+                        <label><b>Prezzo</b></label>
                         <input type="text" name="price" class="form-control @error('price') is-invalid @enderror"
                             placeholder="Inserisci il prezzo" value="{{ old('price', $dishes->price) }}" required>
                         @error('price')
@@ -133,7 +133,7 @@
                         <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
                         <polyline points="17 21 17 13 7 13 7 21"></polyline>
                         <polyline points="7 3 7 8 15 8"></polyline>
-                    </svg> <b>Salva piatto</b>
+                    </svg><span class="ml-2"><b>Salva piatto</b></span>
                 </button>
             </div>
 

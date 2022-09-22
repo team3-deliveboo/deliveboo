@@ -96,32 +96,36 @@
                 </div>
 
                 <div>{{-- File Upload Image --}}
-                    <div class="form-group mt-3">
-                        <label for="img" class="form-label"><b>Immagine di copertina</b></label>
-                        <div class="d-flex">
+                    <div class="row form-group mt-3 ">
+                        <div class="col">
+                            <label for="img" class="form-label"><b>Immagine di copertina: </b></label>
                             {{-- <img class="img-thumbnail" style="width: 150px" src="{{ asset('storage/' . $post->cover_img) }}">
                     <img id="new_cover_img_container" src="" alt=""> --}}
                             <input type="file" name="img"
                                 class="form-control-file @error('img') is-invalid @enderror" id="img"
-                                value="{{ old('img') }}">
+                                value="{{ old('img', $user->img) }}">
                         </div>
                         @error('img')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
-                    </div>
 
+
+                        <div class="col">
+                            <img class="img-thumbnail" style="width: 150px" src="{{ asset('storage/' . $user->img) }}">
+                        </div>
+                    </div>
                 </div>
 
                 {{-- -- SALVA -- --}}
                 <div class="form-group mt-4">
                     <button type="submit" class="btn btn-success">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            fill="none" stroke="grey" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" class="feather feather-activity">
                             <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
                             <polyline points="17 21 17 13 7 13 7 21"></polyline>
                             <polyline points="7 3 7 8 15 8"></polyline>
-                        </svg> <b>Salva ristorante</b>
+                        </svg> <b class="text-dark">Salva ristorante</b>
                     </button>
                 </div>
             </form>

@@ -28,7 +28,7 @@
                     <td class="text-center">
                         <a class="btn btn-warning btn-sm" href="{{ route('admin.dishes.edit', $dish->slug) }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                fill="none" stroke="black" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="feather feather-activity">
                                 <polygon points="14 2 18 6 7 17 3 17 3 13 14 2"></polygon>
                                 <line x1="3" y1="22" x2="21" y2="22">
@@ -40,7 +40,7 @@
                     
                         <a class="btn btn-primary btn-sm" href="{{ route('admin.dishes.show', $dish->slug) }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                fill="none" stroke="black" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="feather feather-activity">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
@@ -56,7 +56,7 @@
 
                             <button type="submit" class="btn btn-danger"
                                 onclick="return confirm('Sei sicuro di voler cancellare questo piatto?')">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
                                     class="bi bi-trash" viewBox="0 0 16 16">
                                     <path
                                         d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
@@ -82,11 +82,3 @@
     </table>
 @endsection
 
-{{-- <form action="{{ route('dishes.destroy', $dish->id) }}" method="POST">
-    @csrf
-    @method('DELETE')
-    <button type="submit" class="btn btn-danger btn-sm"
-        onclick="return confirm('are you sure you want to delete this post')">
-        Delete
-    </button>
-</form> --}}
