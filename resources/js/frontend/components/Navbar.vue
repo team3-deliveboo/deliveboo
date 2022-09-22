@@ -1,7 +1,8 @@
 <template>
-    <div class="nav">
-        
+    <div>
+        <nav>
 
+        </nav>
     </div>
 </template>
 
@@ -14,7 +15,7 @@
 <style lang="scss" scoped>
     @import '~/resources/sass/backend/_variables.scss';
 
-.nav {
+nav {
     background-color: $deliveroo-blue;
     height: 60px;
 }

@@ -159,12 +159,15 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", {
-    staticClass: "nav"
-  });
+  return _vm._m(0);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", [_c("nav")]);
+}];
 render._withStripped = true;
 
 
@@ -201,7 +204,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".nav[data-v-6db60cec] {\n  background-color: #00CCBC;\n  height: 60px;\n}", ""]);
+exports.push([module.i, "nav[data-v-6db60cec] {\n  background-color: #00CCBC;\n  height: 60px;\n}", ""]);
 
 // exports
 

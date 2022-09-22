@@ -5,10 +5,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Deliveboo</title>
+        <title>Deliveboo - consegna a domicilio</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" />
         <link rel="stylesheet" href="{{ asset('css/frontend.css') }}">
 
         <!-- Styles -->
