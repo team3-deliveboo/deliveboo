@@ -14,5 +14,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../sass/backend/variables";
+    @import '~/resources/sass/backend/_variables.scss';
+    @import '~/resources/sass/frontend/frontend.scss';
 </style>

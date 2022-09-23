@@ -1,0 +1,11 @@
+@import '../backend/variables';
+@import './frontend.scss';
+
+.white-btn {
+    background-color: white;
+    font-size: 1.05rem;
+    color: $deliveroo-dark;
+    border: 1px solid $deliveroo-light;
+    border-radius: 4px;
+    padding: 6px 16px;
+}
