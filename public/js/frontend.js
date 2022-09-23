@@ -2098,7 +2098,11 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fa-solid fa-house"
-  }), _vm._v(" "), _c("span", [_vm._v("Registrati o accedi")])]), _vm._v(" "), _c("button", {
+  }), _vm._v(" "), _c("a", {
+    attrs: {
+      href: ""
+    }
+  }, [_c("span", [_vm._v("Registrati o accedi")])])]), _vm._v(" "), _c("button", {
     staticClass: "white-btn",
     attrs: {
       type: "button"
