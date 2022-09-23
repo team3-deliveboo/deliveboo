@@ -1,7 +1,8 @@
 <template>
     <div>
         <nav>
-            <router-link class="nav-link" to="/">Home</router-link>
+            <router-link to="/">Home</router-link>
+            <router-link to="/restaurant">Ristorante</router-link>
 
             <div id="app" class="flex-center position-ref full-height">
                 <div class="content">
