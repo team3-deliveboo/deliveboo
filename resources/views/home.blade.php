@@ -4,15 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Deliveboo - consegna a domicilio</title>
+    <title>Deliveboo - Consegna a domicilio</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" />
-        <link rel="stylesheet" href="{{ asset('css/frontend.css') }}">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" />
+    <link rel="stylesheet" href="{{ asset('css/frontend.css') }}">
 
-        <!-- Styles -->
-        {{-- <style>
+    <!-- Styles -->
+    {{-- <style>
             html,
             body {
                 background-color: #fff;
@@ -63,36 +63,34 @@
                 margin-bottom: 30px;
             }
         </style> --}}
-    </head>
+</head>
 
-    <body>
-        <div id="" class="flex-center position-ref full-height">
-                
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ route('admin.users.index') }}">Admin</a>                        
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+<body>
+    <div id="app" class="flex-center position-ref full-height">
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Registra la tua attivita</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+        @if (Route::has('login'))
+            <div class="top-right links">
+                @auth
+                    <a href="{{ route('admin.users.index') }}">Admin</a>
+                @else
+                    <a href="{{ route('login') }}">Login</a>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Deliveboo
-                </div>
-
-                <div class="links"></div>
-                </div>
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}">Registra la tua attivita</a>
+                    @endif
+                @endauth
             </div>
-        </div>
+        @endif
 
-        <script src="{{ asset('js/frontend.js') }}" defer></script>
+        <div class="content">
+            <div class="title m-b-md">
+                Deliveboo
+            </div>
+            <div class="links"></div>
+        </div>
+    </div>
+    </div>
+
+    <script src="{{ asset('js/frontend.js') }}" defer></script>
 
 </body>
-</html>
