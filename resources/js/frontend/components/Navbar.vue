@@ -3,7 +3,7 @@
         <nav>
             <router-link to="/">Home</router-link>
             <router-link to="/restaurant">Ristorante</router-link>
-
+            <a href="admin/users">Admin</a>
             <div id="app" class="flex-center position-ref full-height">
                 <div class="content">
                     <div class="title m-b-md">

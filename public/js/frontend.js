@@ -2072,7 +2072,11 @@ var render = function render() {
     attrs: {
       to: "/restaurant"
     }
-  }, [_vm._v("Ristorante")]), _vm._v(" "), _vm._m(0)], 1)]);
+  }, [_vm._v("Ristorante")]), _vm._v(" "), _c("a", {
+    attrs: {
+      href: "admin/users"
+    }
+  }, [_vm._v("Admin")]), _vm._v(" "), _vm._m(0)], 1)]);
 };
 
 var staticRenderFns = [function () {

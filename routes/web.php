@@ -32,6 +32,8 @@ Route::middleware('auth')
         Route::resource('users', 'UserController');
         Route::resource('dishes', 'DishController');
         Route::resource('orders', 'OrderController');
+        Route::resource('charts', 'ChartController');
+
 
 
     });
