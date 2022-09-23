@@ -17,9 +17,9 @@ const routes = [
     //     name: 'menu'
     // },
     {
-        path: '/restaurant/:slug',
+        path: '/users/:slug',
         component: RestaurantShow,
-        name: 'restaurant.show',
+        name: 'users.show',
     }
 ];
 
@@ -31,5 +31,4 @@ const routes = [
 
 export default new VueRouter({
     routes,
-    mode: "history",
 });

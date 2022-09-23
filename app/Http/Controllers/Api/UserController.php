@@ -18,8 +18,10 @@ class UserController extends Controller
     public function show($slug)
     {
 
-        $restaurants = User::where('slug', $slug);
+        $restaurants = User::where('slug', $slug)->first();
 
+        $restaurants->load('dishes');
+        
         return response()->json($restaurants);
     }
 }

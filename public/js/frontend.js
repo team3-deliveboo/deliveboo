@@ -2002,7 +2002,26 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      restaurant: {}
+    };
+  },
+  methods: {},
+  mounted: function mounted() {
+    var _this = this;
+
+    // console.log(this.$route);
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('api/users/' + this.$route.params.slug).then(function (resp) {
+      var data = resp.data;
+      _this.restaurant = data;
+    });
+  }
+});
 
 /***/ }),
 
@@ -2100,15 +2119,16 @@ var render = function render() {
       key: restaurant.id,
       staticClass: "col"
     }, [_c("router-link", {
+      staticClass: "text-dark text-decoration-none",
       attrs: {
         to: {
-          name: "restaurant.show",
+          name: "users.show",
           params: {
             slug: restaurant.slug
           }
         }
       }
-    }, [_vm._v("Show")]), _vm._v(" "), _c("div", {
+    }, [_c("div", {
       staticClass: "card"
     }, [_c("img", {
       staticClass: "card-img-top",
@@ -2123,7 +2143,7 @@ var render = function render() {
       }
     }), _vm._v(" "), _c("h2", {
       staticClass: "post-title"
-    }, [_vm._v(_vm._s(restaurant.name))])])], 1);
+    }, [_vm._v(_vm._s(restaurant.name))])])])], 1);
   })], 2);
 };
 
@@ -2172,15 +2192,14 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
+  return _c("div", [_c("h1", [_vm._v(_vm._s(_vm.restaurant.name))]), _vm._v(" "), _c("div", [_c("ul", _vm._l(_vm.restaurant.dishes, function (dish) {
+    return _c("li", {
+      key: dish.id
+    }, [_c("span", [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(dish.price + "€"))]), _vm._v(" "), _c("button", [_vm._v("add")])]);
+  }), 0)])]);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", [_c("h1", [_vm._v("show ")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -18957,9 +18976,9 @@ var routes = [{
 //     name: 'menu'
 // },
 {
-  path: '/restaurant/:slug',
+  path: '/users/:slug',
   component: _pages_restaurant_show_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-  name: 'restaurant.show'
+  name: 'users.show'
 }]; // const router = new VueRouter({
 //     // deve contenere un array di rotte
 //     routes,
@@ -18967,8 +18986,7 @@ var routes = [{
 // });
 
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
-  routes: routes,
-  mode: "history"
+  routes: routes
 }));
 
 /***/ }),

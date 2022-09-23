@@ -133,3 +133,27 @@ use Illuminate\Support\Facades\Storage;
     meta: { requiresAuth: true }
 }
 *********************************
+
+
+***********************************
+            CARRELLO              *
+***********************************
+1)
+https://www.vuescript.com/shopping-cart-vue-2-vuex/----
+                                                        |
+NON ADATTO, MODIFICA LAYOUT PAGINA                      |
+                                                        |
+https://github.com/connor11528/vuex-shopping-cart  <----|
+
+2)
+https://madewithvuejs.com/vue-cart
+https://crisgon.github.io/vue-cart/dist/?ref=madewithvuejs.com#/
+
+            GITHUB E GUIDA:
+https://github.com/crisgon/vue-cart
+http://vuejs-templates.github.io/webpack/ |
+                                          |
+            TROPPO COMPLICATO E LUNGO<----|
+
+
+https://codepen.io/xristian/pen/awpVVW
