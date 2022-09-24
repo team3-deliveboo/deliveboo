@@ -161,3 +161,9 @@ https://codepen.io/xristian/pen/awpVVW
 <!--
         TENIAMO TUTTO PER SICUREZZA, FINCHÉ NON AVREMO RISOLTO DEFINITIVAMENTE
 -->
+
+
+***************************************
+    FINESTRE POPUP PERSONALIZZABILI CON TASTI
+***************************************
+https://sweetalert2.github.io/
