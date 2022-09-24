@@ -19036,10 +19036,14 @@ var routes = [{
 /***/ (function(module, exports, __webpack_require__) {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\Sax\Desktop\FINALE_BOOL\REPO PROGETTO\deliveboo\resources\js\frontend.js */"./resources/js/frontend.js");
 =======
 module.exports = __webpack_require__(/*! D:\Documents\Boolean\deliveboo\resources\js\frontend.js */"./resources/js/frontend.js");
 >>>>>>> ee083baad855cd8b0100882cacaa09660da8256f
+=======
+module.exports = __webpack_require__(/*! D:\RepositoryBoolean\deliveboo\resources\js\frontend.js */"./resources/js/frontend.js");
+>>>>>>> edb8d43236a43c4455844e2c52ae86c945be51d6
 
 
 /***/ })
