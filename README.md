@@ -149,11 +149,13 @@ https://github.com/connor11528/vuex-shopping-cart  <----|
 https://madewithvuejs.com/vue-cart
 https://crisgon.github.io/vue-cart/dist/?ref=madewithvuejs.com#/
 
-            GITHUB E GUIDA:
+        GITHUB E GUIDA:
 https://github.com/crisgon/vue-cart
 http://vuejs-templates.github.io/webpack/ |
                                           |
             TROPPO COMPLICATO E LUNGO<----|
 
-
+        CODEPEN
 https://codepen.io/xristian/pen/awpVVW
+
+<!-- TENIAMO TUTTO PER SICUREZZA, FINCHÉ -->
