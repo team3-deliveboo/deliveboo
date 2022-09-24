@@ -40019,9 +40019,15 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\Sax\Desktop\FINALE_BOOL\REPO PROGETTO\deliveboo\resources\js\backend.js */"./resources/js/backend.js");
 __webpack_require__(/*! C:\Users\Sax\Desktop\FINALE_BOOL\REPO PROGETTO\deliveboo\resources\sass\backend\backend.scss */"./resources/sass/backend/backend.scss");
 module.exports = __webpack_require__(/*! C:\Users\Sax\Desktop\FINALE_BOOL\REPO PROGETTO\deliveboo\resources\sass\frontend\frontend.scss */"./resources/sass/frontend/frontend.scss");
+=======
+__webpack_require__(/*! D:\Documents\Boolean\deliveboo\resources\js\backend.js */"./resources/js/backend.js");
+__webpack_require__(/*! D:\Documents\Boolean\deliveboo\resources\sass\backend\backend.scss */"./resources/sass/backend/backend.scss");
+module.exports = __webpack_require__(/*! D:\Documents\Boolean\deliveboo\resources\sass\frontend\frontend.scss */"./resources/sass/frontend/frontend.scss");
+>>>>>>> ee083baad855cd8b0100882cacaa09660da8256f
 
 
 /***/ })
