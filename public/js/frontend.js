@@ -19035,7 +19035,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/silviawolves/Documents/Boolean/deliveboo/resources/js/frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! C:\Users\Sax\Desktop\FINALE_BOOL\REPO PROGETTO\deliveboo\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
