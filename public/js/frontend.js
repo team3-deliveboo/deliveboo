@@ -2006,8 +2006,35 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'FirstSection'
+  name: 'FirstSection',
+  data: function data() {
+    return {
+      restaurants: []
+    };
+  },
+  methods: {
+    fetchUsers: function fetchUsers() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/users').then(function (resp) {
+        _this.restaurants = resp.data;
+      });
+    },
+    getImg: function getImg(restaurant) {
+      if (!restaurant.img) {
+        return '/storage/placeholder.webp';
+      }
+
+      return '/storage/' + restaurant.img;
+    }
+  },
+  mounted: function mounted() {
+    this.fetchUsers();
+  }
 });
 
 /***/ }),
@@ -2430,37 +2457,42 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
+  return _c("div", {
+    staticClass: "restaurant-section"
+  }, [_c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "row gy-3"
+  }, _vm._l(_vm.restaurants, function (restaurant) {
+    return _c("div", {
+      key: restaurant.id,
+      staticClass: "col-4"
+    }, [_c("router-link", {
+      staticClass: "text-dark text-decoration-none",
+      attrs: {
+        to: {
+          name: "users.show",
+          params: {
+            slug: restaurant.slug
+          }
+        }
+      }
+    }, [_c("div", {
+      staticClass: "card-restaurant"
+    }, [_c("div", {
+      staticClass: "restaurant-img"
+    }, [_c("img", {
+      attrs: {
+        src: _vm.getImg(restaurant),
+        alt: "/"
+      }
+    })]), _vm._v(" "), _c("div", {
+      staticClass: "restaurant-name"
+    }, [_vm._v(_vm._s(restaurant.name))])])])], 1);
+  }), 0)])]);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "container py-5"
-  }, [_c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "col-12"
-  }, [_c("div", {
-    staticClass: "card-restaurant"
-  }, [_c("div", {
-    staticClass: "restaurant-img"
-  }), _vm._v(" "), _c("div", {
-    staticClass: "restaurant-label"
-  }, [_c("h6", [_vm._v("Nome Ristorante")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-12"
-  }), _vm._v(" "), _c("div", {
-    staticClass: "col-12"
-  }), _vm._v(" "), _c("div", {
-    staticClass: "col-12"
-  }), _vm._v(" "), _c("div", {
-    staticClass: "col-12"
-  }), _vm._v(" "), _c("div", {
-    staticClass: "col-12"
-  })])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -2664,7 +2696,7 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "container py-5"
+    staticClass: "container"
   }, [_c("div", {
     staticClass: "wrapper"
   }, [_c("div", {
@@ -2970,7 +3002,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("main", [_c("router-view"), _vm._v(" "), _c("SecondSection"), _vm._v(" "), _c("ThirdSection"), _vm._v(" "), _c("FourthSection")], 1)]);
+  return _c("div", [_c("main", [_c("FirstSection"), _vm._v(" "), _c("SecondSection"), _vm._v(" "), _c("ThirdSection"), _vm._v(" "), _c("FourthSection")], 1)]);
 };
 
 var staticRenderFns = [];
@@ -3183,7 +3215,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-17e1ff8f] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-17e1ff8f] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-17e1ff8f]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-17e1ff8f]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.card-restaurant[data-v-17e1ff8f] {\n  height: 150px;\n  width: 150px;\n  border-radius: 10px;\n  text-align: center;\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n}\n.card-restaurant .restaurant-img[data-v-17e1ff8f] {\n  background-image: url(\"/img/logo_35.png\");\n  background-size: cover;\n  background-position: center;\n  height: 100%;\n  border-radius: 139px 187px 160px 195px;\n}\n.card-restaurant .restaurant-label[data-v-17e1ff8f] {\n  color: #2E3333;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-17e1ff8f] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-17e1ff8f] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-17e1ff8f]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-17e1ff8f]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.restaurant-section[data-v-17e1ff8f] {\n  background: rgb(0, 126, 137);\n  background: linear-gradient(125deg, rgb(0, 126, 137) 0%, rgb(34, 194, 183) 100%);\n  padding: 4rem 0;\n}\n.restaurant-section .card-restaurant[data-v-17e1ff8f] {\n  height: 100%;\n  width: 100%;\n  text-align: center;\n  background-color: white;\n  display: flex;\n  align-items: center;\n  box-shadow: 0 0 20px 0px gray;\n  border-radius: 5px;\n}\n.restaurant-section .card-restaurant .restaurant-img[data-v-17e1ff8f] {\n  padding: 1rem;\n}\n.restaurant-section .card-restaurant .restaurant-img img[data-v-17e1ff8f] {\n  height: 130px;\n  width: 130px;\n  border: 1px solid #00CCBC;\n  border-radius: 5px;\n  aspect-ratio: 1/1;\n}\n.restaurant-section .card-restaurant .restaurant-name[data-v-17e1ff8f] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  font-size: 1rem;\n  text-transform: uppercase;\n  color: #2E3333;\n  font-weight: bold;\n}", ""]);
 
 // exports
 
@@ -3259,7 +3291,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-6d72b4c7] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-6d72b4c7] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-6d72b4c7]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-6d72b4c7]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.wrapper[data-v-6d72b4c7] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  background-color: white;\n  border-radius: 10px;\n  box-shadow: 0 0 20px 0px lightgray;\n  position: relative;\n}\n.wrapper .text[data-v-6d72b4c7] {\n  width: 90%;\n  padding: 2rem;\n}\n.wrapper .text .title[data-v-6d72b4c7] {\n  font-size: 2.5rem;\n  font-weight: bold;\n  line-height: 50px;\n  padding-bottom: 1rem;\n}\n.wrapper .text .subtitle[data-v-6d72b4c7] {\n  font-size: 1.2rem;\n}\n.wrapper .text .badges[data-v-6d72b4c7] {\n  display: flex;\n  gap: 5px;\n  padding-top: 3rem;\n  padding-bottom: 2rem;\n}\n.wrapper .text .badges .badge-store[data-v-6d72b4c7] {\n  height: 40px;\n  width: 130px;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  border: 1px solid grey;\n  border-radius: 5px;\n}\n.wrapper .text .badges .badge-store.apple[data-v-6d72b4c7] {\n  background-image: url(\"/img/apple_store.png\");\n}\n.wrapper .text .badges .badge-store.google[data-v-6d72b4c7] {\n  background-image: url(\"/img/google_play.png\");\n}\n.wrapper .map-img[data-v-6d72b4c7] {\n  background-image: url(\"/img/map.png\");\n  background-size: cover;\n  background-position: left;\n  background-repeat: no-repeat;\n  height: 100%;\n  border-radius: 0px 10px 10px 0px;\n}\n.wrapper .over-img img[data-v-6d72b4c7] {\n  position: absolute;\n  top: 10px;\n  right: 0;\n  width: 30%;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-6d72b4c7] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-6d72b4c7] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-6d72b4c7]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-6d72b4c7]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.container[data-v-6d72b4c7] {\n  padding: 4rem 0;\n}\n.container .wrapper[data-v-6d72b4c7] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  background-color: white;\n  border-radius: 10px;\n  box-shadow: 0 0 20px 0px lightgray;\n  position: relative;\n}\n.container .wrapper .text[data-v-6d72b4c7] {\n  width: 90%;\n  padding: 2rem;\n}\n.container .wrapper .text .title[data-v-6d72b4c7] {\n  font-size: 2.5rem;\n  font-weight: bold;\n  line-height: 50px;\n  padding-bottom: 1rem;\n}\n.container .wrapper .text .subtitle[data-v-6d72b4c7] {\n  font-size: 1.2rem;\n}\n.container .wrapper .text .badges[data-v-6d72b4c7] {\n  display: flex;\n  gap: 5px;\n  padding-top: 3rem;\n  padding-bottom: 2rem;\n}\n.container .wrapper .text .badges .badge-store[data-v-6d72b4c7] {\n  height: 40px;\n  width: 130px;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  border: 1px solid grey;\n  border-radius: 6px;\n}\n.container .wrapper .text .badges .badge-store.apple[data-v-6d72b4c7] {\n  background-image: url(\"/img/apple_store.png\");\n}\n.container .wrapper .text .badges .badge-store.google[data-v-6d72b4c7] {\n  background-image: url(\"/img/google_play.png\");\n}\n.container .wrapper .map-img[data-v-6d72b4c7] {\n  background-image: url(\"/img/map.png\");\n  background-size: cover;\n  background-position: left;\n  background-repeat: no-repeat;\n  height: 100%;\n  border-radius: 0px 10px 10px 0px;\n}\n.container .wrapper .over-img img[data-v-6d72b4c7] {\n  position: absolute;\n  top: 10px;\n  right: 0;\n  width: 30%;\n}", ""]);
 
 // exports
 

@@ -40019,9 +40019,9 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\RepositoryBoolean\deliveboo\resources\js\backend.js */"./resources/js/backend.js");
-__webpack_require__(/*! D:\RepositoryBoolean\deliveboo\resources\sass\backend\backend.scss */"./resources/sass/backend/backend.scss");
-module.exports = __webpack_require__(/*! D:\RepositoryBoolean\deliveboo\resources\sass\frontend\frontend.scss */"./resources/sass/frontend/frontend.scss");
+__webpack_require__(/*! /Users/silviawolves/Documents/Boolean/deliveboo/resources/js/backend.js */"./resources/js/backend.js");
+__webpack_require__(/*! /Users/silviawolves/Documents/Boolean/deliveboo/resources/sass/backend/backend.scss */"./resources/sass/backend/backend.scss");
+module.exports = __webpack_require__(/*! /Users/silviawolves/Documents/Boolean/deliveboo/resources/sass/frontend/frontend.scss */"./resources/sass/frontend/frontend.scss");
 
 
 /***/ })

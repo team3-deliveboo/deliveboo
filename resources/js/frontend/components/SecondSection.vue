@@ -1,5 +1,5 @@
 <template>
-    <div class="container py-5">
+    <div class="container">
 
         <div class="wrapper">
                 <div class="row">
@@ -38,69 +38,73 @@ export default {
 @import '~/resources/sass/backend/_variables.scss';
 @import 'resources/sass/frontend/buttons.scss';
 
-.wrapper {
-    font-family: 'IBM Plex Sans Arabic', sans-serif;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 20px 0px lightgray;
-    position: relative;
+.container {
+    padding: 4rem 0;
 
-    .text {
-        width: 90%;
-        padding: 2rem;
+    .wrapper {
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 0px lightgray;
+        position: relative;
 
-        .title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            line-height: 50px;
-            padding-bottom: 1rem;
-        }
+        .text {
+            width: 90%;
+            padding: 2rem;
 
-        .subtitle {
-            font-size: 1.2rem;
-        }
+            .title {
+                font-size: 2.5rem;
+                font-weight: bold;
+                line-height: 50px;
+                padding-bottom: 1rem;
+            }
 
-        .badges {
-            display: flex;
-            gap: 5px;
-            padding-top: 3rem;
-            padding-bottom: 2rem;
+            .subtitle {
+                font-size: 1.2rem;
+            }
 
-            .badge-store {
-                height: 40px;
-                width: 130px;
-                margin-bottom: 1rem;
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                border: 1px solid grey;
-                border-radius: 5px;
-                    
-                &.apple {
-                    background-image: url('/img/apple_store.png');
-                }
+            .badges {
+                display: flex;
+                gap: 5px;
+                padding-top: 3rem;
+                padding-bottom: 2rem;
 
-                &.google {
-                    background-image: url('/img/google_play.png');
+                .badge-store {
+                    height: 40px;
+                    width: 130px;
+                    margin-bottom: 1rem;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    border: 1px solid grey;
+                    border-radius: 6px;
+                        
+                    &.apple {
+                        background-image: url('/img/apple_store.png');
+                    }
+
+                    &.google {
+                        background-image: url('/img/google_play.png');
+                    }
                 }
             }
         }
-    }
 
-    .map-img {
-        background-image: url('/img/map.png');
-        background-size: cover;
-        background-position: left;
-        background-repeat: no-repeat;
-        height: 100%;
-        border-radius: 0px 10px 10px 0px;
-    }
+        .map-img {
+            background-image: url('/img/map.png');
+            background-size: cover;
+            background-position: left;
+            background-repeat: no-repeat;
+            height: 100%;
+            border-radius: 0px 10px 10px 0px;
+        }
 
-    .over-img img {
-        position: absolute;
-        top: 10px;
-        right: 0;
-        width: 30%;
+        .over-img img {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            width: 30%;
+        }
     }
 }
 </style>
