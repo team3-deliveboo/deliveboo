@@ -1,5 +1,4 @@
 <template>
-
     <div class="header">
 
         <!-- TEXT AND CATEGORIES FILTER INPUT -->
@@ -26,19 +25,15 @@
         </div>
         
     </div>
-
 </template>
 
 <script>
-
 export default {
     name: 'TheHeader'
 }
-
 </script>
 
 <style lang="scss" scoped>
-
 @import '~/resources/sass/backend/_variables.scss';
 @import 'resources/sass/frontend/buttons.scss';
 
@@ -118,6 +113,6 @@ export default {
                 }
             }
         }
-}
+    }
 
 </style>

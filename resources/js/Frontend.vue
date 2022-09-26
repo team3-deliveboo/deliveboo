@@ -2,25 +2,25 @@
     <div>
 
         <TheJumbotron></TheJumbotron>
-        <router-view></router-view>
+        <TheMain></TheMain>
+        <TheFooter></TheFooter>
 
     </div>
 </template>
 
 <script>
-    
 import TheJumbotron from './frontend/components/TheJumbotron.vue';
+import TheMain from './frontend/components/TheMain.vue';
+import TheFooter from './frontend/components/TheFooter.vue'
 
 export default {
-    components: { TheJumbotron },
+    components: { TheJumbotron, TheMain, TheFooter },
 };
 
 </script>
 
 <style lang="scss" scoped>
-
 @import '~/resources/sass/backend/_variables.scss';
 @import '~/resources/sass/frontend/frontend.scss';
-
 
 </style>

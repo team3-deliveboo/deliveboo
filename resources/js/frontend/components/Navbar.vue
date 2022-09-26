@@ -1,20 +1,15 @@
 <template>
     <div>
         <nav>
-
             <div class="container">
+
+                <!-- LOGO -->
                 <router-link to="/">
                     <img src="img/deliveboo.png" alt="Deliveboo Logo">
                 </router-link>
         
-
+                <!-- PULSANTI NAVIGAZIONE -->
                 <div class="nav-btn">
-
-                    <button class="white-btn" type="button">
-                        <i class="fa-solid fa-chevron-down"></i>
-                        <span>Collabora con noi</span>
-                    </button>
-
                     <button class="white-btn" type="button">
                         <i class="fa-solid fa-house"></i>
                         <a href="/login"><span>Registrati o accedi</span></a>
@@ -27,22 +22,19 @@
 
                     <!-- <router-link to="/restaurant">Ristorante</router-link> -->
                 </div>
+                
             </div>
-
         </nav>
     </div>
 </template>
 
 <script>
-
 export default {
     name: 'Navbar'
 }
-
 </script>
 
 <style lang="scss" scoped>
-
 @import '~/resources/sass/backend/_variables.scss';
 @import 'resources/sass/frontend/buttons.scss';
 
