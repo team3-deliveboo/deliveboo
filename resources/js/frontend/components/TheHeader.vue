@@ -9,14 +9,15 @@
             </div>
             <div class="subtitle">Inserisci quello che vorresti mangiare per visualizzare i ristoranti</div>
 
-                <div class="input-group mb-3">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">
-                        <i class="fa-solid fa-utensils"></i>
-                    </button>
-
-                    <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                </div>
+            <div class="search-bar">
+                <button class="fork">
+                    <i class="fa-solid fa-utensils"></i>
+                </button>
+                <input type="text" class="form-control" placeholder="Italiano? Francese? Stellato?">
+                <button class="search-btn" type="button" id="button-addon1">Cerca</button>
             </div>
+            
+        </div>
 
         <!-- BACKGROUND IMG -->
         <div class="img-wrapper">
@@ -71,7 +72,6 @@ export default {
                     right: 0;
                 }
             }
-
         }
     
         .text-wrapper {
@@ -83,8 +83,39 @@ export default {
                 padding: 2rem 0 1rem 0;
             }
 
-            button .fa-solid {
-                color: $deliveroo-blue;
+            .search-bar {
+                display: flex;
+                position: relative;
+
+                input {
+                    padding: 1.2rem;
+                    border-radius: 50px;
+                    width: 100%;
+
+                    &::placeholder {
+                        color: lighten($color: gray, $amount: 20);
+                        padding-left: 25px
+                    }
+                }
+
+                button.fork {
+                    color: $deliveroo-blue;
+                    position: absolute;
+                    border: none;
+                    border-radius: 100%;
+                    background-color: transparent;
+                    width: 20px;
+                    left: 15px;
+                    top: 0;
+                    bottom: 0;
+                }
+
+                .search-btn {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                }
             }
         }
 }

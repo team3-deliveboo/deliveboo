@@ -2438,24 +2438,24 @@ var staticRenderFns = [function () {
   }, [_c("h1", [_vm._v("I piatti dei ristoranti che ami e la spesa, a domicilio")])]), _vm._v(" "), _c("div", {
     staticClass: "subtitle"
   }, [_vm._v("Inserisci quello che vorresti mangiare per visualizzare i ristoranti")]), _vm._v(" "), _c("div", {
-    staticClass: "input-group mb-3"
+    staticClass: "search-bar"
   }, [_c("button", {
-    staticClass: "btn btn-outline-secondary",
-    attrs: {
-      type: "button",
-      id: "button-addon1"
-    }
+    staticClass: "fork"
   }, [_c("i", {
     staticClass: "fa-solid fa-utensils"
   })]), _vm._v(" "), _c("input", {
     staticClass: "form-control",
     attrs: {
       type: "text",
-      placeholder: "",
-      "aria-label": "Example text with button addon",
-      "aria-describedby": "button-addon1"
+      placeholder: "Italiano? Francese? Stellato?"
     }
-  })])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("button", {
+    staticClass: "search-btn",
+    attrs: {
+      type: "button",
+      id: "button-addon1"
+    }
+  }, [_vm._v("Cerca")])])]), _vm._v(" "), _c("div", {
     staticClass: "img-wrapper"
   }, [_c("img", {
     staticClass: "left-img",
@@ -2634,7 +2634,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-6db60cec] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\nnav[data-v-6db60cec] {\n  height: 70px;\n  font-family: \"Source Sans Pro\", sans-serif;\n  color: #2E3333;\n  position: relative;\n  z-index: 2;\n}\nnav .container[data-v-6db60cec] {\n  height: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nnav .container img[data-v-6db60cec] {\n  width: 130px;\n}\nnav .container .nav-btn[data-v-6db60cec] {\n  display: flex;\n  align-items: center;\n  gap: 13px;\n}\nnav .container .nav-btn i[data-v-6db60cec] {\n  font-size: 0.9rem;\n  padding: 0 6px 0 4px;\n}\nnav .container .nav-btn i.fa-solid[data-v-6db60cec] {\n  color: #00CCBC;\n  vertical-align: middle;\n}\nnav .container .nav-btn a[data-v-6db60cec] {\n  text-decoration: none;\n  color: #2E3333;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-6db60cec] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-6db60cec] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: 4px solid white;\n  padding: 0.8rem 2.3rem;\n  font-weight: bold;\n}\nnav[data-v-6db60cec] {\n  height: 70px;\n  font-family: \"Source Sans Pro\", sans-serif;\n  color: #2E3333;\n  position: relative;\n  z-index: 2;\n}\nnav .container[data-v-6db60cec] {\n  height: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nnav .container img[data-v-6db60cec] {\n  width: 130px;\n}\nnav .container .nav-btn[data-v-6db60cec] {\n  display: flex;\n  align-items: center;\n  gap: 13px;\n}\nnav .container .nav-btn i[data-v-6db60cec] {\n  font-size: 0.9rem;\n  padding: 0 6px 0 4px;\n}\nnav .container .nav-btn i.fa-solid[data-v-6db60cec] {\n  color: #00CCBC;\n  vertical-align: middle;\n}\nnav .container .nav-btn a[data-v-6db60cec] {\n  text-decoration: none;\n  color: #2E3333;\n}", ""]);
 
 // exports
 
@@ -2672,7 +2672,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-13045858] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.header[data-v-13045858] {\n  background-color: black;\n  width: 100%;\n  height: calc(100% - 70px);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n  text-align: center;\n  position: relative;\n}\n.header .img-wrapper[data-v-13045858] {\n  height: 100%;\n  width: 100%;\n  position: absolute;\n  display: flex;\n  justify-content: space-between;\n}\n.header .img-wrapper img[data-v-13045858] {\n  height: 100%;\n}\n.header .img-wrapper img.left-img[data-v-13045858] {\n  left: 0;\n}\n.header .img-wrapper img.right-img[data-v-13045858] {\n  right: 0;\n}\n.header .text-wrapper[data-v-13045858] {\n  width: 40%;\n  z-index: 2;\n  color: white;\n}\n.header .text-wrapper .subtitle[data-v-13045858] {\n  padding: 2rem 0 1rem 0;\n}\n.header .text-wrapper button .fa-solid[data-v-13045858] {\n  color: #00CCBC;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-13045858] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-13045858] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: 4px solid white;\n  padding: 0.8rem 2.3rem;\n  font-weight: bold;\n}\n.header[data-v-13045858] {\n  background-color: black;\n  width: 100%;\n  height: calc(100% - 70px);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n  text-align: center;\n  position: relative;\n}\n.header .img-wrapper[data-v-13045858] {\n  height: 100%;\n  width: 100%;\n  position: absolute;\n  display: flex;\n  justify-content: space-between;\n}\n.header .img-wrapper img[data-v-13045858] {\n  height: 100%;\n}\n.header .img-wrapper img.left-img[data-v-13045858] {\n  left: 0;\n}\n.header .img-wrapper img.right-img[data-v-13045858] {\n  right: 0;\n}\n.header .text-wrapper[data-v-13045858] {\n  width: 40%;\n  z-index: 2;\n  color: white;\n}\n.header .text-wrapper .subtitle[data-v-13045858] {\n  padding: 2rem 0 1rem 0;\n}\n.header .text-wrapper .search-bar[data-v-13045858] {\n  display: flex;\n  position: relative;\n}\n.header .text-wrapper .search-bar input[data-v-13045858] {\n  padding: 1.2rem;\n  border-radius: 50px;\n  width: 100%;\n}\n.header .text-wrapper .search-bar input[data-v-13045858]::-moz-placeholder {\n  color: #b3b3b3;\n  padding-left: 25px;\n}\n.header .text-wrapper .search-bar input[data-v-13045858]::placeholder {\n  color: #b3b3b3;\n  padding-left: 25px;\n}\n.header .text-wrapper .search-bar button.fork[data-v-13045858] {\n  color: #00CCBC;\n  position: absolute;\n  border: none;\n  border-radius: 100%;\n  background-color: transparent;\n  width: 20px;\n  left: 15px;\n  top: 0;\n  bottom: 0;\n}\n.header .text-wrapper .search-bar .search-btn[data-v-13045858] {\n  position: absolute;\n  right: 0;\n  top: 0;\n  bottom: 0;\n}", ""]);
 
 // exports
 
