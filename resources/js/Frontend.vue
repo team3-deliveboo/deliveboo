@@ -1,22 +1,28 @@
 <template>
-    <div>
-        <Navbar></Navbar>
-        <TheHeader></TheHeader>
-        <router-view></router-view>
+    <div class="all-body">
+
+        <TheJumbotron></TheJumbotron>
+        <TheMain></TheMain>
+        <TheFooter></TheFooter>
+
     </div>
 </template>
 
 <script>
-import Navbar from './frontend/components/Navbar.vue';
-import TheHeader from './frontend/components/TheHeader.vue';
+import TheJumbotron from './frontend/components/TheJumbotron.vue';
+import TheMain from './frontend/components/TheMain.vue';
+import TheFooter from './frontend/components/TheFooter.vue'
 
 export default {
-    components: { Navbar, TheHeader},
+    components: { TheJumbotron, TheMain, TheFooter },
 };
-
 </script>
 
 <style lang="scss" scoped>
-    @import '~/resources/sass/backend/_variables.scss';
-    @import '~/resources/sass/frontend/frontend.scss';
+@import '~/resources/sass/backend/_variables.scss';
+@import '~/resources/sass/frontend/frontend.scss';
+
+.all-body {
+    background-color: $deliveroo-grey;
+}
 </style>

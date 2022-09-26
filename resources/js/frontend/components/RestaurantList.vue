@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <div class="row row-cols-2">
             <div class="col" v-for="restaurant in restaurants" :key="restaurant.id">
                 <router-link class="text-dark text-decoration-none"
@@ -13,6 +14,7 @@
             </div>
             
         </div>
+        
     </div>
 </template>
 
@@ -22,6 +24,7 @@
 import axios from "axios";
 
 export default {
+    name: 'RestaurantList',
     data() {
         return {
             restaurants: [],
@@ -49,6 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/resources/sass/backend/_variables.scss';
+@import 'resources/sass/frontend/buttons.scss';
 
 nav {
     background-color: $deliveroo-blue;

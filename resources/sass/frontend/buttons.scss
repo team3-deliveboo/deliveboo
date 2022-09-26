@@ -9,3 +9,20 @@
     border-radius: 4px;
     padding: 6px 16px;
 }
+
+.search-btn {
+    background-color: $deliveroo-blue;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    padding: .9rem 2.2rem;
+    font-weight: bold;
+
+    &:hover {
+        background-color: $deliveroo-blue-hover;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 3px rgba(0, 194, 179, .5);
+    }
+}

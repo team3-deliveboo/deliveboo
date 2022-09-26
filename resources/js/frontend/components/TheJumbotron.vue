@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="jumbotron">
 
         <Navbar></Navbar>
         <TheHeader></TheHeader>
@@ -8,16 +8,21 @@
 </template>
 
 <script>
-import NavBar from './Navbar.vue'
+import Navbar from './Navbar.vue'
 import TheHeader from './TheHeader.vue';
 
 export default {
     name: 'TheJumbotron',
-    components: { NavBar, TheHeader }
+    components: { Navbar, TheHeader }
 }
-
 </script>
 
 <style lang="scss" scoped>
+.jumbotron {
+    background-color: black;
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+}
 
 </style>
