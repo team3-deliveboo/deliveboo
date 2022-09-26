@@ -12,7 +12,7 @@
                 <button class="fork">
                     <i class="fa-solid fa-utensils"></i>
                 </button>
-                <input type="text" class="form-control" placeholder="Italiano? Francese? Stellato?">
+                <input type="text" class="form-control" placeholder="Italiano? Vegano? Stellato?">
                 <button class="search-btn" type="button" id="button-addon1">Cerca</button>
             </div>
             
@@ -84,7 +84,7 @@ export default {
 
                 .form-control {
                     border: none;
-                    padding-left: 40px;
+                    padding-left: 45px;
                 }
 
                 input {
