@@ -56,7 +56,6 @@ export default {
             justify-content: space-between;
 
             img {
-                //width: 40%;
                 height: 100%;
 
                 &.left-img {
@@ -81,9 +80,11 @@ export default {
             .search-bar {
                 display: flex;
                 position: relative;
+                align-items: center;
 
                 .form-control {
                     border: none;
+                    padding-left: 40px;
                 }
 
                 input {
@@ -93,27 +94,23 @@ export default {
 
                     &::placeholder {
                         color: lighten($color: gray, $amount: 20);
-                        padding-left: 25px
                     }
                 }
 
                 button.fork {
                     color: $deliveroo-blue;
-                    position: absolute;
+                    padding: 1.2rem;
                     border: none;
-                    border-radius: 100%;
-                    background-color: transparent;
+                    border-radius: 50px 0px 0px 50px;
+                    background-color: white;
                     width: 20px;
-                    left: 15px;
-                    top: 0;
-                    bottom: 0;
+                    height: 100%;
+                    position: absolute;
                 }
 
                 .search-btn {
                     position: absolute;
-                    right: 0;
-                    top: 0;
-                    bottom: 0;
+                    right: 2.5px;
                 }
 
                 .form-control:focus {
