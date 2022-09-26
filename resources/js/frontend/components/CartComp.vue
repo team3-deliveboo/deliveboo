@@ -9,7 +9,7 @@
                 </h4>
             </div>
             <div class="mid-bar">
-                <go-back-btn />
+                <!-- <go-back-btn /> -->
             </div>
             <div v-if="total > 0" class="cart-container-content row">
                 <ul class="products-container col-sm-7 col-12">
@@ -49,9 +49,9 @@
 </template>
 
 <script>
-import GoBackBtn from '../partials/GoBackBtn.vue';
+// import GoBackBtn from '../partials/GoBackBtn.vue';
 export default {
-    components: { GoBackBtn },
+    // components: { GoBackBtn },
     name: 'CartComp',
     data() {
         return {

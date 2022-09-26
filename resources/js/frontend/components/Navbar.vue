@@ -52,6 +52,8 @@ nav {
     height: 70px;
     font-family: 'Source Sans Pro', sans-serif;
     color: $deliveroo-dark;
+    // position: relative;
+    // z-index: 2;
     
     .container {
         height: 100%;
