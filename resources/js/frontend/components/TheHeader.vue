@@ -82,6 +82,10 @@ export default {
                 display: flex;
                 position: relative;
 
+                .form-control {
+                    border: none;
+                }
+
                 input {
                     padding: 1.2rem;
                     border-radius: 50px;
@@ -110,6 +114,14 @@ export default {
                     right: 0;
                     top: 0;
                     bottom: 0;
+                }
+
+                .form-control:focus {
+                    color: #212529;
+                    background-color: #fff;
+                    border-color: transparent;
+                    outline: 0;
+                    box-shadow: 0 0 0 2px black, 0 0 0 4px white;
                 }
             }
         }
