@@ -50,6 +50,7 @@ nav {
     background-color: black;
     height: 70px;
     font-family: 'Source Sans Pro', sans-serif;
+    color: $deliveroo-dark;
     
     .container {
         height: 100%;
@@ -72,7 +73,13 @@ nav {
 
                     &.fa-solid {
                         color: $deliveroo-blue;
+                        vertical-align: middle;
                     }
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $deliveroo-dark;
                 }
             }
         }
