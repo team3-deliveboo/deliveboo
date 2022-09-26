@@ -2133,7 +2133,7 @@ var render = function render() {
 
   return _c("div", [_c("div", {
     staticClass: "row row-cols-2"
-  }), _vm._v(" "), _vm._l(_vm.restaurants, function (restaurant) {
+  }, _vm._l(_vm.restaurants, function (restaurant) {
     return _c("div", {
       key: restaurant.id,
       staticClass: "col"
@@ -2163,7 +2163,7 @@ var render = function render() {
     }), _vm._v(" "), _c("h2", {
       staticClass: "post-title"
     }, [_vm._v(_vm._s(restaurant.name))])])])], 1);
-  })], 2);
+  }), 0)]);
 };
 
 var staticRenderFns = [];
