@@ -2461,7 +2461,7 @@ var staticRenderFns = [function () {
   return _c("div", [_c("footer", [_c("div", {
     staticClass: "container"
   }, [_c("div", {
-    staticClass: "row"
+    staticClass: "row g-3"
   }, [_c("div", {
     staticClass: "col"
   }, [_c("div", {
@@ -2526,7 +2526,7 @@ var staticRenderFns = [function () {
     attrs: {
       href: "javascript:void(0)"
     }
-  }, [_vm._v("Cookier")])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Cookie")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "col"
   }, [_c("div", {
     staticClass: "footer-col"
@@ -2566,7 +2566,19 @@ var staticRenderFns = [function () {
     }
   }, [_c("div", {
     staticClass: "badge-store google"
-  })])])])])])])])])]);
+  })])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "lower-footer"
+  }, [_c("div", {
+    staticClass: "social"
+  }, [_c("a", [_c("i", {
+    staticClass: "fa-brands fa-facebook"
+  })]), _vm._v(" "), _c("a", [_c("i", {
+    staticClass: "fa-brands fa-twitter"
+  })]), _vm._v(" "), _c("a", [_c("i", {
+    staticClass: "fa-brands fa-instagram"
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "copyright"
+  }, [_vm._v("\n                    © 2022 Deliveboo\n                ")])])])])]);
 }];
 render._withStripped = true;
 
@@ -2862,7 +2874,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-5569203c] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-5569203c] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: 4px solid white;\n  padding: 0.8rem 2.3rem;\n  font-weight: bold;\n}\nfooter[data-v-5569203c] {\n  background-color: #2E3333;\n  padding: 2rem 0;\n}\nfooter .footer-col[data-v-5569203c] {\n  height: 100%;\n  background-color: #434848;\n  border-radius: 5px;\n  padding: 1.5rem 1.2rem;\n}\nfooter .footer-col ul li[data-v-5569203c], footer .footer-col ul li a[data-v-5569203c] {\n  color: white;\n  text-decoration: none;\n}\nfooter .footer-col ul li a[data-v-5569203c] {\n  font-size: 0.8rem;\n}\nfooter .footer-col ul li a[data-v-5569203c]:hover {\n  color: #00CCBC;\n}\nfooter .footer-col ul li a .badge-store[data-v-5569203c] {\n  height: 40px;\n  width: 130px;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  border: 1px solid grey;\n  border-radius: 5px;\n}\nfooter .footer-col ul li a .badge-store.apple[data-v-5569203c] {\n  background-image: url(\"/img/apple_store.png\");\n}\nfooter .footer-col ul li a .badge-store.google[data-v-5569203c] {\n  background-image: url(\"/img/google_play.png\");\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-5569203c] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-5569203c] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: 4px solid white;\n  padding: 0.8rem 2.3rem;\n  font-weight: bold;\n}\nfooter[data-v-5569203c] {\n  background-color: #2E3333;\n  padding: 1.5rem 0;\n}\nfooter .footer-col[data-v-5569203c] {\n  height: 100%;\n  background-color: #434848;\n  border-radius: 5px;\n  padding: 1.5rem 1.2rem;\n}\nfooter .footer-col ul li[data-v-5569203c], footer .footer-col ul li a[data-v-5569203c] {\n  color: white;\n  text-decoration: none;\n}\nfooter .footer-col ul li a[data-v-5569203c] {\n  font-size: 0.8rem;\n}\nfooter .footer-col ul li a[data-v-5569203c]:hover {\n  color: #00CCBC;\n}\nfooter .footer-col ul li a .badge-store[data-v-5569203c] {\n  height: 40px;\n  width: 130px;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  border: 1px solid grey;\n  border-radius: 5px;\n}\nfooter .footer-col ul li a .badge-store.apple[data-v-5569203c] {\n  background-image: url(\"/img/apple_store.png\");\n}\nfooter .footer-col ul li a .badge-store.google[data-v-5569203c] {\n  background-image: url(\"/img/google_play.png\");\n}\nfooter .lower-footer[data-v-5569203c] {\n  padding-top: 1.2rem;\n  color: white;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nfooter .lower-footer .social[data-v-5569203c] {\n  font-size: 1.4rem;\n  cursor: pointer;\n}\nfooter .lower-footer .social i[data-v-5569203c] {\n  padding-right: 1rem;\n}\nfooter .lower-footer .social .fa-facebook[data-v-5569203c]:hover {\n  color: #1877f2;\n}\nfooter .lower-footer .social .fa-twitter[data-v-5569203c]:hover {\n  color: #55acee;\n}\nfooter .lower-footer .social .fa-instagram[data-v-5569203c]:hover {\n  color: #f00075;\n}\nfooter .lower-footer .copyright[data-v-5569203c] {\n  color: #585c5c;\n  font-size: 0.85rem;\n}", ""]);
 
 // exports
 

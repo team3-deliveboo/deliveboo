@@ -3,7 +3,8 @@
         <footer>
             <div class="container">
             
-                <div class="row">
+                <!-- FOOTER COL WITH NAV LINKS -->
+                <div class="row g-3">
                     <div class="col">
                         <div class="footer-col">
                             <ul class="list-unstyled mb-0">
@@ -27,7 +28,7 @@
                                 <li class="fw-bold pb-1">Note Legali</li>
                                 <li><a href="javascript:void(0)">Termini & Condizioni</a></li>
                                 <li><a href="javascript:void(0)">Informativa sulla privacy</a></li>
-                                <li><a href="javascript:void(0)">Cookier</a></li>
+                                <li><a href="javascript:void(0)">Cookie</a></li>
                             </ul>
                         </div>
                     </div>
@@ -57,6 +58,20 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- FOOTER SOCIAL LINKS + COPYRIGHT -->
+                <div class="lower-footer">
+                    <div class="social">
+                        <a><i class="fa-brands fa-facebook"></i></a>
+                        <a><i class="fa-brands fa-twitter"></i></a>
+                        <a><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+
+                    <div class="copyright">
+                        © 2022 Deliveboo
+                    </div>
+                </div>
+
             </div>
 
         </footer>
@@ -75,7 +90,7 @@ export default {
 
 footer {
     background-color: $deliveroo-dark;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
 
     .footer-col {
         height: 100%;
@@ -113,6 +128,40 @@ footer {
                     background-image: url('/img/google_play.png');
                 }
             }
+        }
+    }
+
+    .lower-footer {
+        padding-top: 1.2rem;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .social {
+            font-size: 1.4rem;
+            cursor: pointer;
+
+            i {
+                padding-right: 1rem;
+            }
+
+            .fa-facebook:hover {
+                color: $facebook;
+            }
+
+            .fa-twitter:hover {
+                color: $twitter;
+            }
+
+            .fa-instagram:hover {
+                color: $instagram;
+            }
+        }
+
+        .copyright {
+            color: $deliveroo-copyright;
+            font-size: .85rem;
         }
     }
 }

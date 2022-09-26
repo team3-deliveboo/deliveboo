@@ -8,7 +8,7 @@
                     <img src="img/deliveboo.png" alt="Deliveboo Logo">
                 </router-link>
         
-                <!-- PULSANTI NAVIGAZIONE -->
+                <!-- NAV BUTTONS -->
                 <div class="nav-btn">
                     <button class="white-btn" type="button">
                         <i class="fa-solid fa-house"></i>
