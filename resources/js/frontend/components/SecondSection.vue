@@ -14,6 +14,7 @@
                         </div>
                     </div>
 
+                    <!-- ORDER TRACKING IMAGE -->
                     <div class="col-7">
                         <div class="map-img"></div>
                         <div class="over-img">
@@ -45,7 +46,7 @@ export default {
     position: relative;
 
     .text {
-        width: 80%;
+        width: 90%;
         padding: 2rem;
 
         .title {
@@ -89,6 +90,8 @@ export default {
     .map-img {
         background-image: url('/img/map.png');
         background-size: cover;
+        background-position: left;
+        background-repeat: no-repeat;
         height: 100%;
         border-radius: 0px 10px 10px 0px;
     }
@@ -100,5 +103,4 @@ export default {
         width: 30%;
     }
 }
-
 </style>

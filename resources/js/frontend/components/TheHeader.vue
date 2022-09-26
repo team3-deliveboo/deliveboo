@@ -4,7 +4,7 @@
         <!-- TEXT AND CATEGORIES FILTER INPUT -->
         <div class="text-wrapper">
             <div class="title">
-                <h1>I piatti dei ristoranti che ami e la spesa, a domicilio</h1>
+                <h1 class="fw-bold">I piatti dei ristoranti che ami e la spesa, a domicilio</h1>
             </div>
             <div class="subtitle">Inserisci quello che vorresti mangiare per visualizzare i ristoranti</div>
 
@@ -20,7 +20,7 @@
 
         <!-- BACKGROUND IMG -->
         <div class="img-wrapper">
-            <img class="left-img" src="img/grocery_bag.webp" alt="Immagine Spesa">
+            <img class="left-img" src="img/deliveboo_grocery.png" alt="Immagine Spesa">
             <img class="right-img" src="img/burger.webp" alt="Immagine Burger">
         </div>
         
@@ -110,7 +110,7 @@ export default {
 
                 .search-btn {
                     position: absolute;
-                    right: 2.5px;
+                    right: 3.5px;
                 }
 
                 .form-control:focus {
@@ -123,5 +123,4 @@ export default {
             }
         }
     }
-
 </style>
