@@ -8,7 +8,7 @@
                     <div class="left-col">
                         <div class="content-card">
                             <h2 class="fw-bold">Diventa nostro partner</h2>
-                            <h5>Raggiungi più clienti con Deliveroo. Gestiamo noi la consegna, così tu puoi dedicarti a offrire i migliori piatti e prodotti.</h5>
+                            <h5>Raggiungi più clienti con Deliveboo. Gestiamo noi la consegna, così tu puoi dedicarti a offrire i migliori piatti e prodotti.</h5>
                             <button class="white-btn">Inizia ora <i class="fa-solid fa-arrow-right-long"></i></button>
                         </div>
                     </div>
