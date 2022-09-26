@@ -3,7 +3,7 @@
         <main>
             <router-view></router-view>
 
-            <FirstSection></FirstSection>
+            <!-- <FirstSection></FirstSection> -->
             <SecondSection></SecondSection>
             <ThirdSection></ThirdSection>
             <FourthSection></FourthSection>

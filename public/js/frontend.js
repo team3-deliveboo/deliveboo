@@ -2429,7 +2429,9 @@ var staticRenderFns = [function () {
     staticClass: "card-restaurant"
   }, [_c("div", {
     staticClass: "restaurant-img"
-  })])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "restaurant-label"
+  }, [_c("h6", [_vm._v("Nome Ristorante")])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-12"
   }), _vm._v(" "), _c("div", {
     staticClass: "col-12"
@@ -2950,7 +2952,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("main", [_c("router-view"), _vm._v(" "), _c("FirstSection"), _vm._v(" "), _c("SecondSection"), _vm._v(" "), _c("ThirdSection"), _vm._v(" "), _c("FourthSection")], 1)]);
+  return _c("div", [_c("main", [_c("router-view"), _vm._v(" "), _c("SecondSection"), _vm._v(" "), _c("ThirdSection"), _vm._v(" "), _c("FourthSection")], 1)]);
 };
 
 var staticRenderFns = [];
@@ -3153,7 +3155,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-17e1ff8f] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-17e1ff8f] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-17e1ff8f]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-17e1ff8f]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.card-restaurant[data-v-17e1ff8f] {\n  height: 100%;\n  width: 100%;\n}\n.card-restaurant .restaurant-img[data-v-17e1ff8f] {\n  background-image: url(\"\");\n  background-size: cover;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-17e1ff8f] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-17e1ff8f] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-17e1ff8f]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-17e1ff8f]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.card-restaurant[data-v-17e1ff8f] {\n  height: 150px;\n  width: 150px;\n  border-radius: 10px;\n  text-align: center;\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n}\n.card-restaurant .restaurant-img[data-v-17e1ff8f] {\n  background-image: url(\"/img/logo_35.png\");\n  background-size: cover;\n  background-position: center;\n  height: 100%;\n  border-radius: 139px 187px 160px 195px;\n}\n.card-restaurant .restaurant-label[data-v-17e1ff8f] {\n  color: #2E3333;\n}", ""]);
 
 // exports
 
