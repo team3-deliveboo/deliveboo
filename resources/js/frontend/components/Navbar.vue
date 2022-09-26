@@ -17,7 +17,7 @@
 
                     <button class="white-btn" type="button">
                         <i class="fa-solid fa-house"></i>
-                        <a href=""><span>Registrati o accedi</span></a>
+                        <a href="/login"><span>Registrati o accedi</span></a>
                     </button>
 
                     <button class="white-btn" type="button">

@@ -2100,7 +2100,7 @@ var staticRenderFns = [function () {
     staticClass: "fa-solid fa-house"
   }), _vm._v(" "), _c("a", {
     attrs: {
-      href: ""
+      href: "/login"
     }
   }, [_c("span", [_vm._v("Registrati o accedi")])])]), _vm._v(" "), _c("button", {
     staticClass: "white-btn",
@@ -19035,15 +19035,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Users\Sax\Desktop\FINALE_BOOL\REPO PROGETTO\deliveboo\resources\js\frontend.js */"./resources/js/frontend.js");
-=======
-module.exports = __webpack_require__(/*! D:\Documents\Boolean\deliveboo\resources\js\frontend.js */"./resources/js/frontend.js");
->>>>>>> ee083baad855cd8b0100882cacaa09660da8256f
-=======
-module.exports = __webpack_require__(/*! D:\RepositoryBoolean\deliveboo\resources\js\frontend.js */"./resources/js/frontend.js");
->>>>>>> edb8d43236a43c4455844e2c52ae86c945be51d6
+module.exports = __webpack_require__(/*! /Users/silviawolves/Documents/Boolean/deliveboo/resources/js/frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
