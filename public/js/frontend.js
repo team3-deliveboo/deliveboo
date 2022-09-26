@@ -2055,6 +2055,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'RestaurantList',
   data: function data() {
     return {
       restaurants: []
@@ -2411,10 +2412,35 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div");
+  return _vm._m(0);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "container py-5"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-12"
+  }, [_c("div", {
+    staticClass: "card-restaurant"
+  }, [_c("div", {
+    staticClass: "restaurant-img"
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "col-12"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "col-12"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "col-12"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "col-12"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "col-12"
+  })])]);
+}];
 render._withStripped = true;
 
 
@@ -3127,7 +3153,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-17e1ff8f] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-17e1ff8f] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-17e1ff8f]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-17e1ff8f]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-17e1ff8f] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-17e1ff8f] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-17e1ff8f]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-17e1ff8f]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.card-restaurant[data-v-17e1ff8f] {\n  height: 100%;\n  width: 100%;\n}\n.card-restaurant .restaurant-img[data-v-17e1ff8f] {\n  background-image: url(\"\");\n  background-size: cover;\n}", ""]);
 
 // exports
 
@@ -3181,10 +3207,10 @@ exports.push([module.i, ".white-btn[data-v-6db60cec] {\n  background-color: whit
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-
+exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, "nav[data-v-4cc89116] {\n  background-color: #00CCBC;\n  height: 60px;\n}\n.card-img-top[data-v-4cc89116] {\n  max-width: 200px;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-4cc89116] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-4cc89116] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-4cc89116]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-4cc89116]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\nnav[data-v-4cc89116] {\n  background-color: #00CCBC;\n  height: 60px;\n}\n.card-img-top[data-v-4cc89116] {\n  max-width: 200px;\n}", ""]);
 
 // exports
 
