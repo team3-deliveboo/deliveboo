@@ -21,7 +21,6 @@
 
     {{-- Styles --}}
     <link rel="stylesheet" href="{{ asset('css/frontend.css') }}">
-
 </head>
 
 <body>
@@ -50,5 +49,4 @@
     </div>
 
     <script src="{{ asset('js/frontend.js') }}" defer></script>
-
 </body>

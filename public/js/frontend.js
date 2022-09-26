@@ -2266,7 +2266,9 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("TheJumbotron"), _vm._v(" "), _c("TheMain"), _vm._v(" "), _c("TheFooter")], 1);
+  return _c("div", {
+    staticClass: "all-body"
+  }, [_c("TheJumbotron"), _vm._v(" "), _c("TheMain"), _vm._v(" "), _c("TheFooter")], 1);
 };
 
 var staticRenderFns = [];
@@ -2608,10 +2610,54 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div");
+  return _vm._m(0);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "container py-5"
+  }, [_c("div", {
+    staticClass: "wrapper"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-5"
+  }, [_c("div", {
+    staticClass: "text"
+  }, [_c("div", {
+    staticClass: "title"
+  }, [_vm._v("Segui gli ordini passo passo")]), _vm._v(" "), _c("div", {
+    staticClass: "subtitle"
+  }, [_vm._v("I piatti e i prodotti che ami, consegnati in pochissimo tempo. Vedrai quando il rider ha ritirato l'ordine, che potrai seguire passo passo, e riceverai una notifica quando sarà quasi da te.")]), _vm._v(" "), _c("div", {
+    staticClass: "badges"
+  }, [_c("a", {
+    attrs: {
+      href: "javascript:void(0)"
+    }
+  }, [_c("div", {
+    staticClass: "badge-store apple"
+  })]), _vm._v(" "), _c("a", {
+    attrs: {
+      href: "javascript:void(0)"
+    }
+  }, [_c("div", {
+    staticClass: "badge-store google"
+  })])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-7"
+  }, [_c("div", {
+    staticClass: "map-img"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "over-img"
+  }, [_c("img", {
+    attrs: {
+      src: "img/notification.webp",
+      alt: "Immagine Aggiornamento Consegna"
+    }
+  })])])])])]);
+}];
 render._withStripped = true;
 
 
@@ -2929,7 +2975,11 @@ var staticRenderFns = [function () {
     staticClass: "subtitle"
   }, [_vm._v("Prova Deliveboo e fatti consegnare dove vuoi la spesa e i piatti che ami dai ristoranti stellati della tua zona!")]), _vm._v(" "), _c("div", {
     staticClass: "sub-subtitle"
-  }, [_vm._v("Offerta valida solo per nuovi clienti. Escluse spese di servizio. "), _c("a", [_vm._v("Termini e condizioni qui.")])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Offerta valida solo per nuovi clienti. Escluse spese di servizio. "), _c("a", {
+    attrs: {
+      href: "javascript:void(0)"
+    }
+  }, [_vm._v("Termini e condizioni qui.")])])]), _vm._v(" "), _c("div", {
     staticClass: "banner"
   }, [_c("img", {
     attrs: {
@@ -3037,7 +3087,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 exports.i(__webpack_require__(/*! -!../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".all-body[data-v-1a5643b0] {\n  background-color: #F9FAFA;\n}", ""]);
 
 // exports
 
@@ -3151,7 +3201,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-6d72b4c7] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-6d72b4c7] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 1rem 2.4rem;\n  font-weight: bold;\n}\n.search-btn[data-v-6d72b4c7]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-6d72b4c7]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-6d72b4c7] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-6d72b4c7] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 1rem 2.4rem;\n  font-weight: bold;\n}\n.search-btn[data-v-6d72b4c7]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-6d72b4c7]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.wrapper[data-v-6d72b4c7] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  background-color: white;\n  border-radius: 10px;\n  box-shadow: 0 0 20px 0px lightgray;\n  position: relative;\n}\n.wrapper .text[data-v-6d72b4c7] {\n  width: 80%;\n  padding: 2rem;\n}\n.wrapper .text .title[data-v-6d72b4c7] {\n  font-size: 2.5rem;\n  font-weight: bold;\n  line-height: 50px;\n  padding-bottom: 1rem;\n}\n.wrapper .text .subtitle[data-v-6d72b4c7] {\n  font-size: 1.2rem;\n}\n.wrapper .text .badges[data-v-6d72b4c7] {\n  display: flex;\n  gap: 5px;\n  padding-top: 3rem;\n  padding-bottom: 2rem;\n}\n.wrapper .text .badges .badge-store[data-v-6d72b4c7] {\n  height: 40px;\n  width: 130px;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  border: 1px solid grey;\n  border-radius: 5px;\n}\n.wrapper .text .badges .badge-store.apple[data-v-6d72b4c7] {\n  background-image: url(\"/img/apple_store.png\");\n}\n.wrapper .text .badges .badge-store.google[data-v-6d72b4c7] {\n  background-image: url(\"/img/google_play.png\");\n}\n.wrapper .map-img[data-v-6d72b4c7] {\n  background-image: url(\"/img/map.png\");\n  background-size: cover;\n  height: 100%;\n  border-radius: 0px 10px 10px 0px;\n}\n.wrapper .over-img img[data-v-6d72b4c7] {\n  position: absolute;\n  top: 10px;\n  right: 0;\n  width: 30%;\n}", ""]);
 
 // exports
 

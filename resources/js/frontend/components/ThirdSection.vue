@@ -9,7 +9,7 @@
         <div class="text">
             <div class="title">14 giorni di consegne gratis per nuovi clienti</div>
             <div class="subtitle">Prova Deliveboo e fatti consegnare dove vuoi la spesa e i piatti che ami dai ristoranti stellati della tua zona!</div>
-            <div class="sub-subtitle">Offerta valida solo per nuovi clienti. Escluse spese di servizio. <a>Termini e condizioni qui.</a></div>
+            <div class="sub-subtitle">Offerta valida solo per nuovi clienti. Escluse spese di servizio. <a href="javascript:void(0)">Termini e condizioni qui.</a></div>
         </div>
 
         <div class="banner">

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="all-body">
 
         <TheJumbotron></TheJumbotron>
         <TheMain></TheMain>
@@ -16,11 +16,13 @@ import TheFooter from './frontend/components/TheFooter.vue'
 export default {
     components: { TheJumbotron, TheMain, TheFooter },
 };
-
 </script>
 
 <style lang="scss" scoped>
 @import '~/resources/sass/backend/_variables.scss';
 @import '~/resources/sass/frontend/frontend.scss';
 
+.all-body {
+    background-color: $deliveroo-grey;
+}
 </style>

@@ -1,5 +1,28 @@
 <template>
-    <div>
+    <div class="container py-5">
+
+        <div class="wrapper">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="text">
+                            <div class="title">Segui gli ordini passo passo</div>
+                            <div class="subtitle">I piatti e i prodotti che ami, consegnati in pochissimo tempo. Vedrai quando il rider ha ritirato l'ordine, che potrai seguire passo passo, e riceverai una notifica quando sarà quasi da te.</div>
+                            <div class="badges">
+                                <a href="javascript:void(0)"><div class="badge-store apple"></div></a>
+                                <a href="javascript:void(0)"><div class="badge-store google"></div></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-7">
+                        <div class="map-img"></div>
+                        <div class="over-img">
+                            <img src="img/notification.webp" alt="Immagine Aggiornamento Consegna">
+                        </div>
+                    </div>
+
+                </div>
+        </div>
 
     </div>
 </template>
@@ -13,5 +36,69 @@ export default {
 <style lang="scss" scoped>
 @import '~/resources/sass/backend/_variables.scss';
 @import 'resources/sass/frontend/buttons.scss';
+
+.wrapper {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0px lightgray;
+    position: relative;
+
+    .text {
+        width: 80%;
+        padding: 2rem;
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 50px;
+            padding-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+        }
+
+        .badges {
+            display: flex;
+            gap: 5px;
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+
+            .badge-store {
+                height: 40px;
+                width: 130px;
+                margin-bottom: 1rem;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                border: 1px solid grey;
+                border-radius: 5px;
+                    
+                &.apple {
+                    background-image: url('/img/apple_store.png');
+                }
+
+                &.google {
+                    background-image: url('/img/google_play.png');
+                }
+            }
+        }
+    }
+
+    .map-img {
+        background-image: url('/img/map.png');
+        background-size: cover;
+        height: 100%;
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .over-img img {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        width: 30%;
+    }
+}
 
 </style>
