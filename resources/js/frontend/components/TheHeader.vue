@@ -2,15 +2,34 @@
 
     <div class="header">
 
-            <div class="left"></div>
+        <!-- TEXT AND CATEGORIES FILTER INPUT -->
+        <div class="text-wrapper">
+            <div class="title">
+                <h1>I piatti dei ristoranti che ami e la spesa, a domicilio</h1>
+            </div>
+            <div class="subtitle">Inserisci quello che vorresti mangiare per visualizzare i ristoranti</div>
 
-            <div class="right"></div>
+                <div class="input-group mb-3">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">
+                        <i class="fa-solid fa-utensils"></i>
+                    </button>
 
+                    <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                </div>
+            </div>
+
+        <!-- BACKGROUND IMG -->
+        <div class="img-wrapper">
+            <img class="left-img" src="img/grocery_bag.webp" alt="Immagine Spesa">
+            <img class="right-img" src="img/burger.webp" alt="Immagine Burger">
+        </div>
+        
     </div>
 
 </template>
 
 <script>
+
 export default {
     name: 'TheHeader'
 }
@@ -18,39 +37,56 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 @import '~/resources/sass/backend/_variables.scss';
 @import 'resources/sass/frontend/buttons.scss';
 
 .header {
     background-color: black;
     width: 100%;
-    height: 400px;
+    height: calc(100% - 70px);
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
-    position: relative;
     text-align: center;
-    
-    .left {
-        background-image: url('/img/grocery_bag.webp');
-        background-size: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 40%;
-    }
+    position: relative;
 
-    .right {
-        background-image: url('/img/burger.webp');
-        background-size: cover;
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 40%;
-        aspect-ratio: 1/1;
-    }
+        .img-wrapper {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+
+            img {
+                //width: 40%;
+                height: 100%;
+
+                &.left-img {
+                    left: 0;
+                }
+
+                &.right-img {
+                    right: 0;
+                }
+            }
+
+        }
+    
+        .text-wrapper {
+            width: 40%;
+            z-index: 2;
+            color: white;
+
+            .subtitle {
+                padding: 2rem 0 1rem 0;
+            }
+
+            button .fa-solid {
+                color: $deliveroo-blue;
+            }
+        }
 }
 
 </style>

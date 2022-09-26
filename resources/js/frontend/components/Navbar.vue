@@ -1,5 +1,4 @@
 <template>
-
     <div>
         <nav>
 
@@ -32,7 +31,6 @@
 
         </nav>
     </div>
-
 </template>
 
 <script>
@@ -44,16 +42,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 @import '~/resources/sass/backend/_variables.scss';
 @import 'resources/sass/frontend/buttons.scss';
 
 nav {
-    background-color: black;
     height: 70px;
     font-family: 'Source Sans Pro', sans-serif;
     color: $deliveroo-dark;
-    // position: relative;
-    // z-index: 2;
+    position: relative;
+    z-index: 2;
     
     .container {
         height: 100%;
@@ -87,5 +85,5 @@ nav {
             }
         }
     }
-
+    
 </style>
