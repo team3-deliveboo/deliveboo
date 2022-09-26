@@ -2232,21 +2232,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      cart: [],
+      itemsOnLocal: [],
       restaurant: {}
     };
   },
   components: {
     CartComp: _frontend_components_CartComp_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  methods: {},
+  methods: {
+    addItemToCart: function addItemToCart(item) {
+      this.cart.push(item);
+      localStorage.setItem('cart', JSON.stringify(this.cart)); // this.itemsInLocal = localStorage.getItem(this.cart);
+    }
+  },
+  // watch:{
+  //     cart:{
+  //         handler(){
+  //             console.log('cart array change');
+  //             this.itemsOnLocal = localStorage.getItem('cart')
+  //         },
+  //         deep:true,
+  // }
+  // },
   mounted: function mounted() {
     var _this = this;
 
-    // console.log(this.$route);
+    this.itemsOnLocal = localStorage.getItem('cart'); // console.log(this.$route);
+
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("api/users/" + this.$route.params.slug).then(function (resp) {
       var data = resp.data;
       _this.restaurant = data;
     });
+    localStorage.removeItem('cart');
   }
 });
 
@@ -3076,8 +3094,18 @@ var render = function render() {
         src: "/storage/" + dish.img,
         alt: ""
       }
-    }), _vm._v(" "), _c("span", [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(dish.price + "€"))]), _vm._v(" "), _c("button", [_vm._v("add")])]);
-  }), 0), _vm._v(" "), _c("CartComp")], 1)]);
+    }), _vm._v(" "), _c("span", [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(dish.price + "€"))]), _vm._v(" "), _c("button", {
+      on: {
+        click: function click($event) {
+          return _vm.addItemToCart(dish);
+        }
+      }
+    }, [_vm._v("add")])]);
+  }), 0), _vm._v(" "), _c("CartComp")], 1), _vm._v(" "), _vm._l(_vm.itemsOnLocal, function (item) {
+    return _c("div", {
+      key: item.name
+    }, [_c("span", [_vm._v(_vm._s(item.name))])]);
+  }), _vm._v("\n    " + _vm._s(_vm.itemsOnLocal) + "\n")], 2);
 };
 
 var staticRenderFns = [];
@@ -19965,6 +19993,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]);
+var store = vue__WEBPACK_IMPORTED_MODULE_0___default.a.observable({
+  cart: {
+    dishes: [{
+      name: "Pasta al pesto"
+    }],
+    add: function add(dish) {
+      store.cart.dishes.push(dish);
+    }
+  }
+});
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.prototype.$store = store;
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: "#app",
   render: function render(h) {
@@ -21121,7 +21160,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/silviawolves/Documents/Boolean/deliveboo/resources/js/frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! D:\RepositoryBoolean\deliveboo\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
