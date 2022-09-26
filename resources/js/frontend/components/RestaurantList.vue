@@ -1,14 +1,17 @@
 <template>
     <div>
-        <div class="row row-cols-2"></div>
-        <div class="col" v-for="restaurant in restaurants" :key="restaurant.id">
-            <router-link class="text-dark text-decoration-none" :to="{name:'users.show', params: { slug:restaurant.slug}} ">
-                <div class="card">
-                    <img class='card-img-top' :src="getImg(restaurant)" alt="">
-                    <img src="userImg/xG4ZQxZoUGB5uYre5zaYSoP6C9Od7eeQ6gtYrrYy.png" alt="">
-                    <h2 class="post-title">{{ restaurant.name }}</h2>
-                </div>
-            </router-link>
+        <div class="row row-cols-2">
+            <div class="col" v-for="restaurant in restaurants" :key="restaurant.id">
+                <router-link class="text-dark text-decoration-none"
+                    :to="{name:'users.show', params: { slug:restaurant.slug}} ">
+                    <div class="card">
+                        <img class='card-img-top' :src="getImg(restaurant)" alt="">
+                        <img src="userImg/xG4ZQxZoUGB5uYre5zaYSoP6C9Od7eeQ6gtYrrYy.png" alt="">
+                        <h2 class="post-title">{{ restaurant.name }}</h2>
+                    </div>
+                </router-link>
+            </div>
+            
         </div>
     </div>
 </template>
