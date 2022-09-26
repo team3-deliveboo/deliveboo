@@ -7,6 +7,7 @@
                 <router-link to="/">
                     <img src="img/deliveboo.png" alt="Deliveboo Logo">
                 </router-link>
+        
 
                 <div class="nav-btn">
 
