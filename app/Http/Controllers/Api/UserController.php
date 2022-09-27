@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Dish;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
@@ -20,7 +21,8 @@ class UserController extends Controller
 
         $restaurants = User::where('slug', $slug)->first();
 
-        $restaurants->load('dishes');
+        // $restaurants->load('dishes');
+        $restaurants->dishes = Dish::where('user_id', $restaurants->id)->get();
         
         return response()->json($restaurants);
     }
