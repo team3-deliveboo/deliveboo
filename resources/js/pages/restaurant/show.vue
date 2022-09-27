@@ -8,44 +8,48 @@
                     <span>{{ dish.name }}</span>
                     <span>{{ dish.price + "€" }}</span>
                     <button @click="addItemToCart(dish)">add</button>
+                    <!-- <button @click="convertJson()" ></button> -->
                 </li>
             </ul>
-            <CartComp></CartComp>
+            <!-- <CartComp></CartComp> -->
         </div>
-        <div v-for="item in itemsOnLocal" :key="item.name">
+        <div v-for="item in cart" :key="item.id">
             <span>{{item.name}}</span>
+            <span>{{item.price + "€" }}</span>
+
         </div>
-        {{itemsOnLocal}}
+        <!-- {{convertJson}} -->
     </div>
 
 </template>
 
 <script>
-import CartComp from "../../frontend/components/CartComp.vue";
+// import CartComp from "../../frontend/components/CartComp.vue";
 import axios from "axios";
 export default {
     data() {
 
         return {
             cart: [],
-            itemsOnLocal: [],
+            // cartClean: JSON.parse(localStorage.getItem('cart')),
+            // itemsOnLocal: [],
             restaurant: {},
         };
     },
-    components: { CartComp },
+    components: {},
     methods: {
         addItemToCart(item) {
             this.cart.push(item);
             localStorage.setItem('cart', JSON.stringify(this.cart));
-            
-            // this.itemsInLocal = localStorage.getItem(this.cart);
-            
-            
-            
-            
+            console.log('aggiunto al cart');
+
+            // this.itemsOnLocal = this.localStorage.getItem('cart');
         },
-        
-        
+
+        // convertJson() {
+        //     return JSON.parse(localStorage.getItem('cart'));
+        //     console.log("conversione fatta");
+        // },
     },
     // watch:{
     //     cart:{
@@ -57,8 +61,15 @@ export default {
 
     // }
     // },
+
+    // computed: {
+    //     convertJson() {
+    //         return JSON.parse(localStorage.getItem('cart'))
+
+    //     }
+    // },
     mounted() {
-        this.itemsOnLocal = JSON.parse(localStorage.getItem('cart'));
+        // return JSON.parse(localStorage.getItem('cart'))
         // console.log(this.$route);
         axios.get("api/users/" + this.$route.params.slug).then((resp) => {
             const data = resp.data;
@@ -66,8 +77,9 @@ export default {
         });
         localStorage.removeItem('cart');
 
-    },
-};
+},
+}
+
 </script>
 <style  lang="scss" scoped>
 .dish-img {
