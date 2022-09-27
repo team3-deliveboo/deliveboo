@@ -43,7 +43,7 @@
 
                 {{-- LOGO --}}
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="img/deliveboo.png" alt="Deliveboo Logo">
+                    <img src="/img/deliveboo.png" alt="Deliveboo Logo">
                 </a>
 
                 <ul class="navbar-nav ml-auto">

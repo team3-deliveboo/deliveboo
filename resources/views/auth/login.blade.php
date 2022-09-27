@@ -6,11 +6,12 @@
     <div class="row justify-content-center">
         <div class="col-md-4">
 
-            <h4><b>{{ __('Accedi') }}</b></h4>
+            <h4 class="admin-form"><b>{{ __('Accedi') }}</b></h4>
 
             <form method="POST" action="{{ route('login') }}">
             @csrf
 
+                {{-- EMAIL --}}
                 <div class="form-group row">
                 <label for="email">{{ __('Indirizzo email') }}</label>
 
@@ -25,6 +26,7 @@
                     </div>
                 </div>
 
+                {{-- PASSWORD --}}
                 <div class="form-group row">
                 <label for="password">{{ __('Password') }}</label>
 
@@ -39,6 +41,7 @@
                     </div>
                 </div>
 
+                {{-- REMEMBER PW --}}
                 <div class="form-group row">
                     <div class="col">
                         <div class="form-check justify-content-start d-flex align-items-center gap-3">
@@ -51,15 +54,18 @@
                     </div>
                 </div>
 
+
+                {{-- LOGIN --}}
                 <div class="form-group row mb-0">
                     <div class="col">
                         <button type="submit" class="btn login-btn">
                             {{ __('Log In') }}
                         </button>
 
+                        {{-- PW RESET --}}
                         @if (Route::has('password.request'))
                             <div>
-                                <a class="btn btn-link forgotten-pw" href="{{ route('password.request') }}">
+                                <a class="forgotten-pw" href="{{ route('password.request') }}">
                                 {{ __('Password dimenticata?') }}
                                 </a>
                             </div>
