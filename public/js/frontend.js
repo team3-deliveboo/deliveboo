@@ -2252,7 +2252,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    this.itemsOnLocal = localStorage.getItem('cart'); // console.log(this.$route);
+    this.itemsOnLocal = JSON.parse(localStorage.getItem('cart')); // console.log(this.$route);
 
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("api/users/" + this.$route.params.slug).then(function (resp) {
       var data = resp.data;
@@ -19937,19 +19937,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ // Vue.use(VueRouter);
+// const store = Vue.observable({
+//     cart: {
+//         dishes: [{name: "Pasta al pesto"}],
+//         add(dish) {
+//             store.cart.dishes.push(dish)
+//         }
+//     }
+// })
+// Vue.prototype.$store = store
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]);
-var store = vue__WEBPACK_IMPORTED_MODULE_0___default.a.observable({
-  cart: {
-    dishes: [{
-      name: "Pasta al pesto"
-    }],
-    add: function add(dish) {
-      store.cart.dishes.push(dish);
-    }
-  }
-});
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.prototype.$store = store;
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: "#app",
   render: function render(h) {
@@ -21038,7 +21036,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\RepositoryBoolean\deliveboo\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! /Users/silviawolves/Documents/Boolean/deliveboo/resources/js/frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
