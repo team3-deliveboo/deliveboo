@@ -8,50 +8,77 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Deliveboo</title>
+    <title>Deliveboo - Area Admin</title>
+
+    {{-- CDN fontawesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <!-- Scripts -->
     <script src="{{ asset('js/backend.js') }}" defer></script>
 
-    <!-- Fonts -->
+    {{-- Fonts --}}
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+    {{-- Favicon --}}
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" />
+
+    {{-- <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
 
     <!-- Styles -->
     <link href="{{ asset('css/backend.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
             <div class="container">
+
+                {{-- LOGO --}}
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <b>Deliveboo</b>
+                    <img src="img/deliveboo.png" alt="Deliveboo Logo">
                 </a>
+
+                {{-- DROPDOWN WITH SMALLER SCREENS --}}
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+
+                            {{-- LOGIN BUTTON --}}
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}"><b>{{ __('Login') }}</b></a>
+                                <a class="white-btn" href="{{ route('login') }}">
+                                    <i class="fa-solid fa-house"></i>
+                                    {{ __('Log In') }}
+                                </a>
                             </li>
+
+                            {{-- REGISTER BUTTON --}}
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}"><b>{{ __('Register') }}</b></a>
+                                    <a class="white-btn" href="{{ route('register') }}">
+                                        <i class="fa-solid fa-right-to-bracket"></i>
+                                        {{ __('Iscriviti') }}
+                                    </a>
                                 </li>
                             @endif
+
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -77,7 +104,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-5">
             <div class="container">
                 <div class="row">
                     <div class="col-3">
@@ -140,6 +167,10 @@
             </div>
 
         </main>
+
+        {{-- VUE COMPONENT FOR FOOTER --}}
+        <the-footer></the-footer>
+
     </div>
 </body>
 

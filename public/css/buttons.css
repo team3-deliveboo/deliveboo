@@ -1,0 +1,28 @@
+/* $deliveroo-blue: #00CCBC;
+$deliveroo-blue-hover: #00c2b3;
+$deliveroo-grey: #F9FAFA;
+$deliveroo-dark: #2E3333;
+$deliveroo-light: #e8ebeb;
+$deliveroo-footer-col: #434848;
+$deliveroo-copyright: #585c5c;
+$facebook: #1877f2;
+$twitter: #55acee;
+$instagram: #f00075; */
+
+.white-btn {
+    background-color: white;
+    font-size: 1rem;
+    color: #2E3333;
+    border: 1px solid #e8ebeb;
+    border-radius: 4px;
+    padding: 6px 16px;
+    margin-left: 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.white-btn:hover {
+    border: 1px solid #d1d4d4;
+    color: #2E3333;
+}

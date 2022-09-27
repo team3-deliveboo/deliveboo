@@ -133,16 +133,16 @@ footer {
 
     .lower-footer {
         padding-top: 1.2rem;
-        color: white;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         .social {
-            font-size: 1.4rem;
             cursor: pointer;
 
-            i {
+            .fa-brands {
+                color: white;
+                font-size: 1.4rem;
                 padding-right: 1rem;
             }
 
@@ -165,5 +165,4 @@ footer {
         }
     }
 }
-
 </style>
