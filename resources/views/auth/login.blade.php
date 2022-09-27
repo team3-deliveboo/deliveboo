@@ -26,6 +26,7 @@
                     </div>
                 </div>
 
+
                 {{-- PASSWORD --}}
                 <div class="form-group row">
                 <label for="password">{{ __('Password') }}</label>
@@ -40,6 +41,7 @@
                         @enderror
                     </div>
                 </div>
+
 
                 {{-- REMEMBER PW --}}
                 <div class="form-group row">
@@ -74,7 +76,7 @@
                 </div>
 
             </form>
-
+            
         </div>
     </div>
 
