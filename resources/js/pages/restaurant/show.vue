@@ -58,7 +58,7 @@ export default {
     // }
     // },
     mounted() {
-        this.itemsOnLocal = localStorage.getItem('cart');
+        this.itemsOnLocal = JSON.parse(localStorage.getItem('cart'));
         // console.log(this.$route);
         axios.get("api/users/" + this.$route.params.slug).then((resp) => {
             const data = resp.data;

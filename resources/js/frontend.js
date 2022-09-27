@@ -4,18 +4,18 @@ import Frontend from "./Frontend.vue";
 import VueRouter from 'vue-router';
 import routes from './router';
 
-Vue.use(VueRouter);
+// Vue.use(VueRouter);
 
-const store = Vue.observable({
-    cart: {
-        dishes: [{name: "Pasta al pesto"}],
-        add(dish) {
-            store.cart.dishes.push(dish)
-        }
-    }
-})
+// const store = Vue.observable({
+//     cart: {
+//         dishes: [{name: "Pasta al pesto"}],
+//         add(dish) {
+//             store.cart.dishes.push(dish)
+//         }
+//     }
+// })
 
-Vue.prototype.$store = store
+// Vue.prototype.$store = store
 
 new Vue({
     el: "#app",

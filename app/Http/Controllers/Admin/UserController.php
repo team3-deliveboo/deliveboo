@@ -146,6 +146,7 @@ class UserController extends Controller
             // $coverImg = $validatedData["cover_img"]->store("/post_covers");
             // salvo dentro i dati di questo post il link al file appena caricato
             $user->img = $img;
+            
         }
 
 
