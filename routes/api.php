@@ -20,5 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get("/users", "Api\UserController@index");
 Route::get('/users/{slug}', "Api\UserController@show");
-Route::get('/dishes' , 'Api\DishController@index');
+Route::get('/dishes', 'Api\DishController@index');
 // Route::get("/dishes/{dish}", "Api\DishController@show");

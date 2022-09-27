@@ -6,7 +6,7 @@
             <div class="row gy-3">
 
                 <div class="col-4" v-for="restaurant in restaurants" :key="restaurant.id">
-                    <router-link class="text-dark text-decoration-none" :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
+                    <router-link class="text-dark text-decoration-none" :to="{ name: 'users.show', params: {slug:restaurant.slug }}">
                         
                         <div class="card-restaurant">
                             <div class="restaurant-img">

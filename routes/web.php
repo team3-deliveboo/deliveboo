@@ -33,9 +33,6 @@ Route::middleware('auth')
         Route::resource('dishes', 'DishController');
         Route::resource('orders', 'OrderController');
         Route::resource('charts', 'ChartController');
-
-
-
     });
 
 // Route::get('{any?}', function () {

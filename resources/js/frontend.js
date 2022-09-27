@@ -1,7 +1,8 @@
-import Vue from "vue";
+import Vue from 'vue';
+// import Home from './pages/Home.vue';
 import Frontend from "./Frontend.vue";
-import VueRouter from "vue-router";
-import routes from "./router";
+import VueRouter from 'vue-router';
+import routes from './router';
 
 Vue.use(VueRouter);
 

@@ -1,10 +1,6 @@
 <template>
     <div class="all-body">
-
-        <TheJumbotron></TheJumbotron>
-        <TheMain></TheMain>
-        <TheFooter></TheFooter>
-
+        <router-view></router-view>
     </div>
 </template>
 
@@ -12,9 +8,10 @@
 import TheJumbotron from './frontend/components/TheJumbotron.vue';
 import TheMain from './frontend/components/TheMain.vue';
 import TheFooter from './frontend/components/TheFooter.vue'
+import Home from './pages/Home.vue';
 
 export default {
-    components: { TheJumbotron, TheMain, TheFooter },
+    components: { TheJumbotron, TheMain, TheFooter, Home },
 };
 </script>
 
