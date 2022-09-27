@@ -104,7 +104,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-5">
             <div class="container">
                 <div class="row">
                     <div class="col-3">
@@ -167,6 +167,10 @@
             </div>
 
         </main>
+
+        {{-- VUE COMPONENT FOR FOOTER --}}
+        <the-footer></the-footer>
+
     </div>
 </body>
 
