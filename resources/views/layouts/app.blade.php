@@ -36,6 +36,8 @@
 
 <body>
     <div id="app">
+
+        {{-- NAVBAR --}}
         <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
             <div class="container">
 
@@ -44,72 +46,62 @@
                     <img src="img/deliveboo.png" alt="Deliveboo Logo">
                 </a>
 
-                {{-- DROPDOWN WITH SMALLER SCREENS --}}
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <ul class="navbar-nav ml-auto">
 
-                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                    </ul>
+                    {{-- LOGIN BUTTON --}}
+                    @guest
+                        <li class="nav-item">
+                            <a class="white-btn" href="{{ route('login') }}">
+                                <i class="fa-solid fa-house"></i>
+                                {{ __('Log In') }}
+                            </a>
+                        </li>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                    {{-- REGISTER BUTTON --}}
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="white-btn" href="{{ route('register') }}">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                {{ __('Iscriviti') }}
+                            </a>
+                        </li>
+                    @endif
 
-                            {{-- LOGIN BUTTON --}}
-                        @guest
-                            <li class="nav-item">
-                                <a class="white-btn" href="{{ route('login') }}">
-                                    <i class="fa-solid fa-house"></i>
-                                    {{ __('Log In') }}
-                                </a>
-                            </li>
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <b>{{ Auth::user()->name }}</b>
+                            </a>
 
-                            {{-- REGISTER BUTTON --}}
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="white-btn" href="{{ route('register') }}">
-                                        <i class="fa-solid fa-right-to-bracket"></i>
-                                        {{ __('Iscriviti') }}
-                                    </a>
-                                </li>
-                            @endif
-
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <b>{{ Auth::user()->name }}</b>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                    <b>{{ __('Logout') }}</b>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                        <b>{{ __('Logout') }}</b>
-                                    </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
+                </ul>
             </div>
         </nav>
 
-        <main class="py-5">
+        {{-- MAIN SECTION --}}
+        <main>
             <div class="container">
                 <div class="row">
                     <div class="col-3">
                         <div>
-                            <h2><b>Sezione Admin</b></h2>
+                            @if (Auth::check())
+                                <h2><b>Sezione Admin</b></h2>
+                            @endif
+
                             <ul class="list-unstyled">
                                 @if (Auth::check())
                                     {{-- home --}}
@@ -168,7 +160,7 @@
 
         </main>
 
-        {{-- VUE COMPONENT FOR FOOTER --}}
+        {{-- VUE COMPONENT - FOOTER --}}
         <the-footer></the-footer>
 
     </div>

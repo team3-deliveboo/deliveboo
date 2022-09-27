@@ -1,6 +1,11 @@
 @import './buttons.css';
 
-body {
+main, nav {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+main {
+    padding: 4rem 0;
     font-family: 'IBM Plex Sans Arabic', sans-serif;
 }
 
