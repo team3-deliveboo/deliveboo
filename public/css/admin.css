@@ -35,19 +35,6 @@ label {
     height: 50px;
 }
 
-.btn.login-btn {
-    width: 100%;
-    height: 50px;
-    background-color: lightgray;
-    border: 1px solid lightgray;
-    color: gray;
-}
-
-.btn.login-btn:hover {
-    border: 1px solid lightgray !important;
-    color: gray !important;
-}
-
 .forgotten-pw {
     color: #00CCBC;
     font-size: .8rem;
@@ -60,20 +47,24 @@ label {
     color: #00c2b3;
 }
 
-/* REGISTER */
-.btn.register-btn {
+.btn.register-btn, .btn.login-btn {
     width: 100%;
     height: 50px;
     background-color: #00CCBC;
     color: white;
 }
 
-.btn.register-btn:hover {
+.btn.register-btn:hover, .btn.login-btn:hover {
     background-color: #00c2b3 !important;
     color: white !important;
 }
 
+/* REGISTER */
 small>a {
     text-decoration: none;
     color: #00CCBC;
+}
+
+small>a:hover {
+    color: #00c2b3;
 }

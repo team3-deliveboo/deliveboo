@@ -61,7 +61,7 @@
                 <div class="form-group row mb-0">
                     <div class="col">
                         <button type="submit" class="btn login-btn">
-                            {{ __('Log In') }}
+                            <b>{{ __('Log In') }}</b>
                         </button>
 
                         {{-- PW RESET --}}
@@ -76,7 +76,7 @@
                 </div>
 
             </form>
-            
+
         </div>
     </div>
 
