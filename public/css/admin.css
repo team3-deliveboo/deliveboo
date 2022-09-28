@@ -108,7 +108,7 @@ small>a:hover {
     height: 100%;
     aspect-ratio: 1/1;
     margin-right: 2rem;
-    clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
+    clip-path: polygon(0 0, 85% 0%, 100% 100%, 0% 100%);
 }
 
 .right-side h2 {
@@ -116,8 +116,10 @@ small>a:hover {
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     padding-bottom: 0;
     margin-bottom: 0;
+    vertical-align: middle;
 }
 
-.right-side small {
+.right-side .categories {
     color: #00c2b3;
+    font-size: .9rem;
 }

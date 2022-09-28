@@ -11,37 +11,44 @@
 
 
         <div class="right-side">
-            <h2>{{ Auth::user()->name }}</h2>
-            <small>
+
+            <div class="d-flex align-items-center gap-5">
+                <h2>{{ Auth::user()->name }}</h2>
+
+                {{-- EDIT RESTAURANT INFO --}}
+                <a href="{{ route('admin.users.edit', Auth::user()->id) }}">
+                    <i class="fa-solid fa-gear align-middle"></i>
+                </a>
+            </div>
+            
+            <div class="categories">
                 {{ ucwords(Auth::user()->categories->implode('name', ' - ')) }}
-            </small>
-                    
-            <div><b>Telefono:</b> {{ Auth::user()->phone }}</div>
-            <div><b>Indirizzo:</b> {{ Auth::user()->address }}</div>
-            <div><b>P. Iva:</b> {{ Auth::user()->vat }}</div>
-            <div><b>Email:</b> {{ Auth::user()->email }}</div>
-                <!-- <a href="route('admin.users.show',Auth::user()->id) ">show</a> -->
+            </div>
+
+            <div class="pt-4">
+                <b>Numero di telefono:</b> {{ Auth::user()->phone }}
+            </div>
+
+            <div>
+                <b>Indirizzo:</b> {{ Auth::user()->address }}
+            </div>
+
+            <div>
+                <b>Partita Iva:</b> {{ Auth::user()->vat }}
+            </div>
+
+            <div>
+                <b>Indirizzo email:</b> {{ Auth::user()->email }}
+            </div>
         </div>
 
+    @endif
 
-        {{-- EDIT RESTAURANT INFO --}}
-        <div>
-            <a href="{{ route('admin.users.edit', Auth::user()->id) }}">
-                <i class="fa-solid fa-gear"></i>
-            </a>
-
-            {{-- RESTAURANT SHOW PAGE --}}
-            {{-- <a class="btn btn-primary btn-sm" href="{{ route('admin.users.show', Auth::user()->slug) }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                </a> --}}
-            @endif
-
-            @if (session('status'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('status') }}
-                </div>
-            @endif
+    @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
         </div>
+    @endif
 
     </div>
 @endsection
