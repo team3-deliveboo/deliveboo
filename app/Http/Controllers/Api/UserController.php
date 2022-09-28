@@ -12,6 +12,8 @@ class UserController extends Controller
     public function index()
     {
         $restaurants = User::all();
+        $restaurants->load('dishes');
+        $restaurants->load('categories');
 
         return response()->json($restaurants);
     }
@@ -21,9 +23,10 @@ class UserController extends Controller
 
         $restaurants = User::where('slug', $slug)->first();
 
-        // $restaurants->load('dishes');
+
         $restaurants->dishes = Dish::where('user_id', $restaurants->id)->get();
-        
+
+
         return response()->json($restaurants);
     }
 }

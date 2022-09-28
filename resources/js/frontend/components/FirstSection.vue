@@ -1,66 +1,80 @@
 <template>
-
     <div class="restaurant-section">
         <div class="container">
-
             <div class="row gy-3">
-
                 <div class="col-4" v-for="restaurant in restaurants" :key="restaurant.id">
-                    <router-link class="text-dark text-decoration-none" :to="{ name: 'users.show', params: {slug:restaurant.slug }}">
-                        
+                    <router-link class="text-dark text-decoration-none" :to="{
+                        name: 'users.show',
+                        params: { slug: restaurant.slug },
+                    }">
                         <div class="card-restaurant">
                             <div class="restaurant-img">
-                                <img :src="getImg(restaurant)" alt="/">
+                                <img :src="getImg(restaurant)" alt="/" />
                             </div>
-                            <div class="restaurant-name">{{ restaurant.name }}</div>
+                            <div class="restaurant-name"></div>
+                            {{ restaurant.name }}
                         </div>
 
+                        <div>
+                            {{ restaurant.categories }}
+                        </div>
+                        <div v-if='restaurant.categories'>
+                            <div v-for="category in restaurant.categories" :key="category.id">
+                                {{ category.name }}
+                            </div>
+                        </div>
                     </router-link>
                 </div>
 
             </div>
-
+            <div v-for="category in restaurants.categories" :key="category.id">
+                {{ category.name }}
+            </div>
         </div>
+    </div>
     </div>
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
-    name: 'FirstSection',
+    name: "FirstSection",
     data() {
         return {
             restaurants: [],
-        }
+        };
     },
     methods: {
         fetchUsers() {
-            axios.get('/api/users')
-                .then((resp) => {
-                    this.restaurants = resp.data;
-                })
+            axios.get("/api/users").then((resp) => {
+                console.log(resp);
+                this.restaurants = resp.data;
+            });
         },
         getImg(restaurant) {
             if (!restaurant.img) {
-                return '/storage/placeholder.webp'
+                return "/storage/placeholder.webp";
             }
-            return '/storage/' + restaurant.img
-        }
+            return "/storage/" + restaurant.img;
+        },
     },
     mounted() {
         this.fetchUsers();
-    }
-}
+        console.log(this.categories);
+    },
+};
 </script>
 
 <style lang="scss" scoped>
-@import '~/resources/sass/backend/_variables.scss';
-@import 'resources/sass/frontend/buttons.scss';
+@import "~/resources/sass/backend/_variables.scss";
+@import "resources/sass/frontend/buttons.scss";
 
 .restaurant-section {
-    background: rgb(0,126,137);
-    background: linear-gradient(125deg, rgba(0,126,137,1) 0%, rgba(34,194,183,1) 100%);
+    background: rgb(0, 126, 137);
+    background: linear-gradient(125deg,
+            rgba(0, 126, 137, 1) 0%,
+            rgba(34, 194, 183, 1) 100%);
     padding: 4rem 0;
 
     .card-restaurant {
@@ -72,7 +86,7 @@ export default {
         align-items: center;
         box-shadow: 0 0 20px 0px gray;
         border-radius: 5px;
-        
+
         .restaurant-img {
             padding: 1rem;
 
@@ -86,7 +100,7 @@ export default {
         }
 
         .restaurant-name {
-            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            font-family: "IBM Plex Sans Arabic", sans-serif;
             font-size: 1rem;
             text-transform: uppercase;
             color: $deliveroo-dark;
