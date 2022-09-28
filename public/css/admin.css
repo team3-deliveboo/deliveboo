@@ -60,12 +60,12 @@ label {
 }
 
 /* REGISTER */
-.form-control.register {
+.form-control.register, .form-control.edit {
     box-shadow: 0 0 4px lightgrey inset;
     border-color: lightgray;
 }
 
-.form-control.register:focus {
+.form-control.register:focus, .form-control.edit:focus {
     border-color: lightgray;
     box-shadow: 0 0 0 0.25rem rgb(0 204 188 / 25%);
 }
@@ -128,4 +128,20 @@ small>a:hover {
 
 .right-side a i:hover {
     color: #00c2b3;
+}
+
+/* EDIT */
+h3 b {
+    color: #00CCBC;
+}
+
+button i {
+    color: #00CCBC;
+    margin-right: 10px;
+}
+
+.edit-btn {
+    height: 50px;
+    width: 100%;
+    margin: 0;
 }
