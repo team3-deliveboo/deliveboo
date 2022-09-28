@@ -3,7 +3,7 @@
 @section('content')
 
     @if (Auth::check())
-    <div class="d-flex align-items-center border-start h-100 bg-white ms-4">
+    <div class="d-flex align-items-center h-100 bg-white">
 
         {{-- IMG --}}
         <div class="left-side">
