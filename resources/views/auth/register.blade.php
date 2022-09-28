@@ -19,7 +19,7 @@
 
                 {{-- RESTAURANT NAME --}}
                 <div class="form-group row">
-                    <label for="name"><b>{{ __('Nome del ristorante') }}<span style="color: red"> *</span></b></label>
+                    <label for="name"><b>{{ __('Nome del ristorante *') }}</b></label>
 
                     <div class="col">
                         <input id="name" type="text"
@@ -37,7 +37,7 @@
 
                 {{-- PHONE NUMBER --}}
                 <div class="form-group row">
-                    <label for="phone"><b>{{ __('Numero di telefono') }}<span style="color: red"> *</span></b></label>
+                    <label for="phone"><b>{{ __('Numero di telefono *') }}</b></label>
 
                     <div class="col">
                         <input id="phone" type="text"
@@ -55,7 +55,7 @@
 
                 {{-- ADDRESS --}}
                 <div class="form-group row">
-                    <label for="address"><b>{{ __('Indirizzo del ristorante') }}<span style="color: red"> *</span></b></label>
+                    <label for="address"><b>{{ __('Indirizzo del ristorante *') }}</b></label>
 
                     <div class="col">
                         <input id="address" type="text"
@@ -73,7 +73,7 @@
 
                 {{-- VAT --}}
                 <div class="form-group row">
-                    <label for="vat"><b>{{ __('Partita Iva') }}<span style="color: red"> *</span></b></label>
+                    <label for="vat"><b>{{ __('Partita Iva *') }}</b></label>
 
                     <div class="col">
                         <input id="vat" type="text"
@@ -91,7 +91,7 @@
 
                 {{-- MAIL --}}
                 <div class="form-group row">
-                    <label for="email"><b>{{ __('E-mail') }}<span style="color: red"> *</span></b></label>
+                    <label for="email"><b>{{ __('E-mail *') }}</b></label>
 
                     <div class="col">
                         <input id="email" type="email"
@@ -109,7 +109,7 @@
 
                 {{-- PASSWORD --}}
                 <div class="form-group row">
-                    <label for="password"><b>{{ __('Password') }}<span style="color: red"> *</span></b></label>
+                    <label for="password"><b>{{ __('Password *') }}</b></label>
 
                     <div class="col">
                         <input id="password" type="password"
@@ -127,7 +127,7 @@
 
                 {{-- CONFIRM PASSWORD --}}
                 <div class="form-group row">
-                    <label for="password-confirm"><b>{{ __('Conferma Password') }}<span style="color: red"> *</span></b></label>
+                    <label for="password-confirm"><b>{{ __('Conferma Password *') }}</b></label>
 
                     <div class="col">
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -135,7 +135,7 @@
                 </div>
 
                 <div class="mt-3">
-                    <small class="text-muted"><b>I campi contrassegnati da<span style="color: red"> *</span> sono obbligatori.</b></small>
+                    <small class="text-muted">I campi contrassegnati da * sono obbligatori.</small>
                 </div>
 
 
