@@ -61,12 +61,12 @@ label {
 }
 
 /* REGISTER */
-.form-control.register, .form-control.edit, .form-control.dish {
+.form-control.register, .form-control.edit, .form-control.dish, .form-control.create-dish {
     box-shadow: 0 0 4px lightgrey inset;
     border-color: lightgray;
 }
 
-.form-control.register:focus, .form-control.edit:focus, .form-control.dish:focus {
+.form-control.register:focus, .form-control.edit:focus, .form-control.dish:focus, .form-control.create-dish:focus {
     border-color: lightgray;
     box-shadow: 0 0 0 0.25rem rgb(0 204 188 / 25%);
 }

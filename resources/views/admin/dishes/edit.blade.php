@@ -9,15 +9,15 @@
             <h3 class="pb-4">Modifica il piatto: <b>{{ $dishes->name }}</b></h3>
 
             <div>
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                        </ul>
-                    </div>
-                @endif
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                    </ul>
+                </div>
+            @endif
             </div>
 
             <form action="{{ route('admin.dishes.update', $dishes->slug) }}" method="post" enctype="multipart/form-data">
