@@ -104,7 +104,7 @@
         @else
             <div class="container">
         @endif
-                <div class="row">
+                <div class="row w-100">
 
                     @if (Auth::check())
                     <div class="col-3">
@@ -154,7 +154,7 @@
                     @endif
 
                     {{-- CONTENT LEFT ONCE LOGGED IN --}}
-                    <div class="col">
+                    <div class="col-9">
                         @yield('content')
                     </div>
 
@@ -166,6 +166,5 @@
         <the-footer></the-footer>
 
     </div>
-
 </body>
 </html>

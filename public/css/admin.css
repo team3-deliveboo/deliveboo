@@ -94,3 +94,15 @@ small>a:hover {
 .side-link li a {
     color: #2E3333;
 }
+
+.side-link li a:hover {
+    color: #00c2b3;
+}
+
+/* RESTAURANT INDEX */
+.left-side img {
+    height: 200px;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    margin-right: 2rem;
+}
