@@ -2,97 +2,48 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
+            {{-- <div class="col-md-8"> --}}
 
-                    <div class="card-body">
+                @if (Auth::check())
+                    <div class="d-flex py-5">
 
-                        @if (Auth::check())
-                            <h1>{{ Auth::user()->name }}</h1>
-                            <div class="d-flex">
-                                <div>
-                                    {{-- <div>{{ Auth::user()->id }}</div> --}}
-                                    <div><b>Telefono:</b> {{ Auth::user()->phone }}</div>
-                                    <div><b>Indirizzo:</b> {{ Auth::user()->address }}</div>
-                                    <div><b>P. Iva:</b> {{ Auth::user()->vat }}</div>
-                                    <div><b>Email:</b> {{ Auth::user()->email }}</div>
-                                    <div><b>Categorie del tuo ristorante:</b>
-                                        {{ ucwords(Auth::user()->categories->implode('name', ' - ')) }}</div>
-                                    <!-- <a href="route('admin.users.show',Auth::user()->id) ">show</a> -->
-                                </div>
-                                <div>
-                                    <a class="btn btn-warning btn-sm"
-                                        href="{{ route('admin.users.edit', Auth::user()->id) }}">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                            <polygon points="14 2 18 6 7 17 3 17 3 13 14 2"></polygon>
-                                            <line x1="3" y1="22" x2="21" y2="22">
-                                            </line>
-                                        </svg>
-                                    </a>
-                                    <a class="btn btn-primary btn-sm"
-                                        href="{{ route('admin.users.show', Auth::user()->slug) }}">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
-                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                            <circle cx="12" cy="12" r="3"></circle>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        @endif
+                        <div class="left-side">
+                            <img src="{{ Auth::user()->img ? asset('storage/' . Auth::user()->img) : asset('storage/' . 'placeholder.webp') }}">
+                        </div>
+                        
+                        <div class="right-side">
+                            <h3 class="pt-3">{{ Auth::user()->name }}</h3>
+                            <div><b>Telefono:</b> {{ Auth::user()->phone }}</div>
+                            <div><b>Indirizzo:</b> {{ Auth::user()->address }}</div>
+                            <div><b>P. Iva:</b> {{ Auth::user()->vat }}</div>
+                            <div><b>Email:</b> {{ Auth::user()->email }}</div>
+                            <div><b>Categorie del tuo ristorante:</b>
+                            {{ ucwords(Auth::user()->categories->implode('name', ' - ')) }}</div>
+                            <!-- <a href="route('admin.users.show',Auth::user()->id) ">show</a> -->
+                        </div>
 
-                        {{-- <table>
-                            <thead>
-                                <th>ID</th>
-                                <th>Nome Attivita</th>
-                                <th>Slug</th>
-                                <th>Telefono</th>
-                                <th>P.Iva</th>
-                                <th class="text-center">Azioni</th>
-                            </thead>
-                            <tbody>
-                                @foreach ($users as $user)
-                                    <tr>
-                                        <td>{{ $user->id }}</td>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->slug }}</td>
-                                        <td>{{ $user->phone }}</td>
-                                        <td>{{ $user->vat }}</td>
-                                        
+                    <div>
 
 
-                                        <td><a class="btn btn-warning btn-sm"
-                                                href="{{ route('admin.users.edit', $user->id) }}">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-activity">
-                                                    <polygon points="14 2 18 6 7 17 3 17 3 13 14 2"></polygon>
-                                                    <line x1="3" y1="22" x2="21" y2="22">
-                                                    </line>
-                                                </svg>
-                                            </a></td>
+                    {{-- EDIT RESTAURANT INFO --}}
+                    <a href="{{ route('admin.users.edit', Auth::user()->id) }}">
+                        <i class="fa-solid fa-gear"></i>
+                    </a>
 
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table> --}}
 
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
+                    {{-- RESTAURANT SHOW PAGE --}}
+                    {{-- <a class="btn btn-primary btn-sm" href="{{ route('admin.users.show', Auth::user()->slug) }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </a> --}}
+                @endif
 
-                        {{-- <h6>{{ __('You are logged in!') }}</h6> --}}
-
+                @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
                     </div>
-                </div>
+                @endif
+
             </div>
-        </div>
+        {{-- </div> --}}
     </div>
 @endsection

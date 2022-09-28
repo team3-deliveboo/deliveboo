@@ -19,11 +19,11 @@
 
                 {{-- RESTAURANT NAME --}}
                 <div class="form-group row">
-                    <label for="name"><b>{{ __('Nome del ristorante') }}<small class="text-danger">*</small></b></label>
+                    <label for="name"><b>{{ __('Nome del ristorante') }}</b> <small class="text-danger">*</small></label>
 
                     <div class="col">
                         <input id="name" type="text"
-                            class="form-control @error('name') is-invalid @enderror" name="name"
+                            class="form-control register @error('name') is-invalid @enderror" name="name"
                             value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                         @error('name')
@@ -37,11 +37,11 @@
 
                 {{-- PHONE NUMBER --}}
                 <div class="form-group row">
-                    <label for="phone"><b>{{ __('Numero di telefono') }}<small class="text-danger">*</small></b></label>
+                    <label for="phone"><b>{{ __('Numero di telefono') }}</b> <small class="text-danger">*</small></label>
 
                     <div class="col">
                         <input id="phone" type="text"
-                            class="form-control @error('phone') is-invalid @enderror" name="phone"
+                            class="form-control register @error('phone') is-invalid @enderror" name="phone"
                             value="{{ old('phone') }}" required autocomplete="phone" autofocus>
 
                         @error('phone')
@@ -55,11 +55,11 @@
 
                 {{-- ADDRESS --}}
                 <div class="form-group row">
-                    <label for="address"><b>{{ __('Indirizzo del ristorante') }}<small class="text-danger">*</small></b></label>
+                    <label for="address"><b>{{ __('Indirizzo del ristorante') }}</b> <small class="text-danger">*</small></label>
 
                     <div class="col">
                         <input id="address" type="text"
-                            class="form-control @error('address') is-invalid @enderror" name="address"
+                            class="form-control register @error('address') is-invalid @enderror" name="address"
                             value="{{ old('address') }}" required autocomplete="address" autofocus>
 
                         @error('address')
@@ -73,11 +73,11 @@
 
                 {{-- VAT --}}
                 <div class="form-group row">
-                    <label for="vat"><b>{{ __('Partita Iva') }}<small class="text-danger">*</small></b></label>
+                    <label for="vat"><b>{{ __('Partita Iva') }}</b> <small class="text-danger">*</small></label>
 
                     <div class="col">
                         <input id="vat" type="text"
-                            class="form-control @error('vat') is-invalid @enderror" name="vat"
+                            class="form-control register @error('vat') is-invalid @enderror" name="vat"
                             value="{{ old('vat') }}" required autocomplete="vat" autofocus>
 
                         @error('vat')
@@ -91,11 +91,11 @@
 
                 {{-- MAIL --}}
                 <div class="form-group row">
-                    <label for="email"><b>{{ __('E-mail') }}<small class="text-danger">*</small></b></label>
+                    <label for="email"><b>{{ __('Il tuo indirizzo email') }}</b> <small class="text-danger">*</small></label>
 
                     <div class="col">
                         <input id="email" type="email"
-                            class="form-control @error('email') is-invalid @enderror" name="email"
+                            class="form-control register @error('email') is-invalid @enderror" name="email"
                             alue="{{ old('email') }}" required autocomplete="email">
 
                         @error('email')
@@ -109,11 +109,11 @@
 
                 {{-- PASSWORD --}}
                 <div class="form-group row">
-                    <label for="password"><b>{{ __('Password') }}<small class="text-danger">*</small></b></label>
+                    <label for="password"><b>{{ __('Password') }}</b> <small class="text-danger">*</small></label>
 
                     <div class="col">
                         <input id="password" type="password"
-                            class="form-control @error('password') is-invalid @enderror" name="password"
+                            class="form-control register @error('password') is-invalid @enderror" name="password"
                             required autocomplete="new-password">
 
                         @error('password')
@@ -127,15 +127,15 @@
 
                 {{-- CONFIRM PASSWORD --}}
                 <div class="form-group row">
-                    <label for="password-confirm"><b>{{ __('Conferma Password') }}<small class="text-danger">*</small></b></label>
+                    <label for="password-confirm"><b>{{ __('Conferma Password') }}</b> <small class="text-danger">*</small></label>
 
                     <div class="col">
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        <input id="password-confirm" type="password" class="form-control register" name="password_confirmation" required autocomplete="new-password">
                     </div>
                 </div>
 
                 <div class="mt-3">
-                    <small class="text-muted">I campi contrassegnati da * sono obbligatori.</small>
+                    <small class="text-muted">I campi contrassegnati da <small class="text-danger">*</small> sono obbligatori.</small>
                 </div>
 
 

@@ -68,7 +68,6 @@ label {
 .form-control.register:focus {
     border-color: lightgray;
     box-shadow: 0 0 0 0.25rem rgb(0 204 188 / 25%);
-
 }
 
 small>a {
@@ -78,4 +77,32 @@ small>a {
 
 small>a:hover {
     color: #00c2b3;
+}
+
+/* CONTROL PANEL */
+.side-bar {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    padding: 3rem 2rem;
+}
+
+.side-link li {
+    padding-bottom: 1rem;
+}
+
+.side-link li a {
+    color: #2E3333;
+}
+
+.side-link li a:hover {
+    color: #00c2b3;
+}
+
+/* RESTAURANT INDEX */
+.left-side img {
+    height: 200px;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    margin-right: 2rem;
 }
