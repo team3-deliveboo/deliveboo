@@ -1,30 +1,23 @@
 <template>
     <div class="restaurant-section">
         <div class="container">
-            <div class="search-bar">
-                <button class="fork">
-                    <i class="fa-solid fa-utensils"></i>
-                </button>
-                <input type="text" class="form-control" placeholder="Italiano? Vegano? Stellato?" v-model="filterInput">
-                <button class="search-btn" type="button" id="button-addon1" @click="filteredList()">Cerca</button>
-                <!-- <router-link class="btn btn-default" v-bind:to="'/customer/'+customer.id">View</router-link> -->
-            </div>
             <div class="row gy-3">
-                <!-- <div class="form-check">
-                    <div class="col-4" v-for="restaurant in filteredList" :key="restaurant.id">
-                        <input class="form-check-input" type="checkbox" v-model="selected" :value="restaurant.name"
-                            :id="restaurant.id">
-                        <label class="form-check-label" for="flexCheckIndeterminateDisabled">{{ restaurant.name
-                        }}</label>
+                <div class="form-check">
+                    <div class="col-4" v-for="category in categories" :key="category.id">
+                        <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name"
+                            :id="category.id">
+                        <label class="form-check-label" for="flexCheckIndeterminateDisabled">{{ category.name }}</label>
                     </div>
                     <div>
-                        <router-link class="btn btn-default" v-bind:to="'/customer/'+customer.id">View</router-link>
                         <button type="button" class="btn btn-primary">
                             Apply filter
                         </button>
                     </div>
+                </div>
+                <!-- <div class="col-4" v-for="category in categories" :key="category.id"></div>
+                    {{ category.name }}
                 </div> -->
-                <div class="col-4" v-for="restaurant in filteredList" :key="restaurant.id">
+                <div class="col-4" v-for="restaurant in restaurants" :key="restaurant.id">
                     <router-link class="text-dark text-decoration-none" :to="{
                         name: 'users.show',
                         params: { slug: restaurant.slug },
@@ -36,6 +29,22 @@
                             <div class="restaurant-name">
                                 {{ restaurant.name }}
                             </div>
+
+
+                            <!-- <div class="col-4" v-for="restaurant in filterData" :key="restaurant.id">
+                    <router-link class="text-dark text-decoration-none" :to="{
+                      name: 'users.show',
+                      params: { slug: restaurant.slug },
+                    }">
+                        <div class="card-restaurant d-flex flex-column">
+                            <div class="restaurant-img">
+                                <img :src="getImg(restaurant)" alt="/" />
+                            </div>
+                            <div class="restaurant-name">
+                                {{ restaurant.name }}
+                            </div> -->
+
+                            <!-- category -->
                             <div v-if="restaurant.categories">
                                 <span v-for="category in restaurant.categories" :key="category.id">
                                     <span>{{ category.name }}</span>
@@ -48,37 +57,70 @@
         </div>
     </div>
 </template>
-
+<!-- 
+<h4>Filtra per categorie</h4>
+<div class="row">
+        <div
+            class="col-12 d-flex justify-content-start"
+            style="flex-wrap: wrap"
+        >
+            <div
+                v-for="(category, index) in categories"
+                :key="`category-${index}`"
+                class="shadow p-3 mb-2 rounded d-flex align-items-center justify-content-center mx-2 my-1 checkbox-category"
+            >
+                <input
+                    type="checkbox"
+                    name="categories[]"
+                    :value="category.name"
+                    v-model="form.categories"
+                    @change.prevent="
+                        getRestaurants(
+                            `${url}restaurants/searchCheck`,
+                            form
+                        )
+                    "
+                />
+                <label
+                    class="category-name"
+                    :for="category.name"
+                    >{{ category.name }}</label
+                >
+            </div>
+        </div>
+    </div> -->
 
 <script>
 import axios from "axios";
 
 export default {
     name: "FirstSection",
-
     data() {
         return {
             selected: [],
             restaurants: [],
             categories: [],
-            filterInput: '',
             nuovoArrayRistoranti: [],
         };
     },
     methods: {
-
-        // selectCat() {
-        //     for (let i = 0; i < this.restaurants.length; i++) {
-        //         for (let i = 0; i < categories.length; i++) {
-        //             restaurant.categories.includes(category);
-        //         }
-        //     }
+        // result(str) {
+        //     str.match('\w\s\w').join(separator)
         // },
+
+        selectCat() {
+            for (let i = 0; i < this.restaurants.length; i++) {
+                for (let i = 0; i < categories.length; i++) {
+                    restaurant.categories.includes(category);
+
+                }
+            }
+        },
 
         result(str) {
             str.match(/[a-z]+|[^a-z]+/gi).join(this.separator);
+            // str.replace(/\s/g, " ");
         },
-
         fetchCategories() {
             axios.get("/api/categories").then((resp) => {
                 this.categories = resp.data;
@@ -91,92 +133,30 @@ export default {
                 this.restaurants = resp.data;
             });
         },
-
-        // filterBy(list, value) {
-        //     value = value.charAt(0).toUpperCase() + value.slice(1);
-        //     return list.filter(function (restaurant) {
-        //         return restaurant.name.indexOf(value) > -1;
-        //     });
-        // },
-
         getImg(restaurant) {
             if (!restaurant.img) {
                 return "/storage/placeholder.webp";
             }
             return "/storage/" + restaurant.img;
         },
-
+        // funzioni cecklist
         selectCategories() {
             this.nuovoArrayRistoranti = map(this.restaurants);
             console.log(selectCatecories);
-        },
-
-    },
-
-    computed: {
-        filteredList() {
-            const value = this.filterInput.charAt(0).toUpperCase() + this.filterInput.slice(1);
-            return this.restaurants.filter(function (restaurant) {
-                return restaurant.name.indexOf(value) ||
-                    restaurant.category.indexOf(value) ||
-                    restaurant.adress.indexOf(value)
-            })
         }
-    },
 
+
+    },
     mounted() {
         this.fetchCategories();
         this.fetchUsers();
     },
-
-
-
 };
 </script>
-
-
 
 <style lang="scss" scoped>
 @import "~/resources/sass/backend/_variables.scss";
 @import "resources/sass/frontend/buttons.scss";
-
-.search-bar {
-    display: flex;
-    position: relative;
-    align-items: center;
-
-    .form-control {
-        border: none;
-        padding-left: 45px;
-    }
-
-    input {
-        padding: 1.2rem;
-        border-radius: 50px;
-        width: 100%;
-
-        &::placeholder {
-            color: lighten($color: gray, $amount: 20);
-        }
-    }
-
-    button.fork {
-        color: $deliveroo-blue;
-        padding: 1.2rem;
-        border: none;
-        border-radius: 50px 0px 0px 50px;
-        background-color: white;
-        width: 20px;
-        height: 100%;
-        position: absolute;
-    }
-
-    .search-btn {
-        position: absolute;
-        right: 3.5px;
-    }
-}
-
 
 .restaurant-section {
     background: rgb(0, 126, 137);
