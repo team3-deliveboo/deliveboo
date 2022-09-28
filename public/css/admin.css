@@ -100,9 +100,24 @@ small>a:hover {
 }
 
 /* RESTAURANT INDEX */
+.left-side {
+    height: 350px;
+}
+
 .left-side img {
-    height: 200px;
+    height: 100%;
     aspect-ratio: 1/1;
-    border-radius: 10px;
     margin-right: 2rem;
+    clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
+}
+
+.right-side h2 {
+    font-weight: bold;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.right-side small {
+    color: #00c2b3;
 }
