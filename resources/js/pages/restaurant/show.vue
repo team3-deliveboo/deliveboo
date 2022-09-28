@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Navbar></Navbar>
         <h1 class="mt-3">{{ restaurant.name }}</h1>
         <div>
             <ul class="list-group">
@@ -49,7 +50,7 @@
                 </div>
             </div>
         </div>
-
+        <TheFooter></TheFooter>
     </div>
     <!-- {{convertJson}} -->
 
@@ -59,6 +60,10 @@
 <script>
 // import CartComp from "../../frontend/components/CartComp.vue";
 import axios from "axios";
+
+import TheFooter from "../../frontend/components/TheFooter.vue";
+import Navbar from "../../frontend/components/Navbar.vue";
+
 // import map from "bluebird/js/release/map";
 // import { find } from "laravel-mix/src/File";
 // import { contains } from "micromatch";
@@ -84,7 +89,10 @@ export default {
             }
         };
     },
-    components: {},
+    components: {
+        TheFooter,
+        Navbar
+    },
     methods: {
         addItemToCart(dish) {
             if (
@@ -199,7 +207,7 @@ export default {
 
 
     },
-mounted() {
+    mounted() {
         // return JSON.parse(localStorage.getItem('cart'))
         // console.log(this.$route);
         axios.get("api/users/" + this.$route.params.slug).then((resp) => {
