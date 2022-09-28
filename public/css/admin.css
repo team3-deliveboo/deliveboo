@@ -60,9 +60,20 @@ label {
 }
 
 /* REGISTER */
+.form-control.register {
+    box-shadow: 0 0 4px lightgrey inset;
+    border-color: lightgray;
+}
+
+.form-control.register:focus {
+    border-color: lightgray;
+    box-shadow: 0 0 0 0.25rem rgb(0 204 188 / 25%);
+
+}
+
 small>a {
     text-decoration: none;
-    color: #00CCBC;
+    color: #00ccbc;
 }
 
 small>a:hover {
