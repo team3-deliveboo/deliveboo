@@ -13,7 +13,7 @@
         <div class="right-side">
 
             <div class="d-flex align-items-center gap-5">
-                <h2>{{ Auth::user()->name }}</h2>
+                <h2>{{ Auth::user()->name }}</></h2>
 
                 {{-- EDIT RESTAURANT INFO --}}
                 <a href="{{ route('admin.users.edit', Auth::user()->id) }}">
@@ -26,18 +26,22 @@
             </div>
 
             <div class="pt-4">
+                <i class="fa-solid fa-phone me-2 opacity-25"></i>
                 <b>Numero di telefono:</b> {{ Auth::user()->phone }}
             </div>
 
             <div>
+                <i class="fa-solid fa-location-dot me-2 opacity-25"></i>
                 <b>Indirizzo:</b> {{ Auth::user()->address }}
             </div>
 
             <div>
+                <i class="fa-solid fa-file-contract me-2 opacity-25"></i>
                 <b>Partita Iva:</b> {{ Auth::user()->vat }}
             </div>
 
             <div>
+                <i class="fa-solid fa-at me-2 opacity-25"></i>
                 <b>Indirizzo email:</b> {{ Auth::user()->email }}
             </div>
         </div>
