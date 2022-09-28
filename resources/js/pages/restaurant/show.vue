@@ -36,7 +36,7 @@
 
                 <div class="d-flex align-items-center cart-quantity-button">
                     <!-- bin icon -->
-                    <a class="no-decoration" @click="removeAllFromCart(dish)"><i class="fa-solid fa-trash"></i></i></a>
+                    <a class="no-decoration" @click="removeAllFromCart(dish)"><i class="fa-solid fa-trash"></i></a>
                     <!-- add and remove item from cart  -->
                     <div class="pill-button">
                         <a @click="removeOneFromCart(dish)" class="no-decoration">-
@@ -291,3 +291,4 @@ export default {
     aspect-ratio: 1/1;
     width: 100px;
 }
+</style>

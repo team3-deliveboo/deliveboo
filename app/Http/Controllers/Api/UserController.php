@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function filterUser(Request  $request)
+    {
+        dd($request);
+    }
     public function index()
     {
         $restaurants = User::all();
