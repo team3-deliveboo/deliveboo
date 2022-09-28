@@ -1,4 +1,5 @@
 @import './buttons.css';
+@import './dishes.css';
 
 /* MAIN STYLE */
 main, nav, .form-control, input::placeholder {
@@ -60,12 +61,12 @@ label {
 }
 
 /* REGISTER */
-.form-control.register, .form-control.edit {
+.form-control.register, .form-control.edit, .form-control.dish {
     box-shadow: 0 0 4px lightgrey inset;
     border-color: lightgray;
 }
 
-.form-control.register:focus, .form-control.edit:focus {
+.form-control.register:focus, .form-control.edit:focus, .form-control.dish:focus {
     border-color: lightgray;
     box-shadow: 0 0 0 0.25rem rgb(0 204 188 / 25%);
 }
@@ -143,5 +144,5 @@ button i {
 .edit-btn {
     height: 50px;
     width: 100%;
-    margin: 0;
+    margin: 1rem 0 2rem 0;
 }

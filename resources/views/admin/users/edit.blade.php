@@ -6,7 +6,7 @@
         <div class="px-3">
             <div class="row justify-content-center">
                 {{-- HEADER --}}
-                <h3 class="pb-3">Modifica i dati di <b>{{ $user->name }}</b></h3>
+                <h3 class="pb-4">Modifica i dati di <b>{{ $user->name }}</b></h3>
 
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -28,8 +28,8 @@
                 <div>
                     <div class="form-group row">
                         <div class="col-md-6 offset-md-3">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <img class="img-thumbnail mb-3" style="width: 100px;" src="{{ asset('storage/' . $user->img) }}">
+                            <div class="d-flex justify-content-between align-items-center mb-5">
+                                <img class="img-thumbnail" style="width: 100px;" src="{{ asset('storage/' . $user->img) }}">
                                 
                                 <input type="file" name="img" class="form-control-file @error('img') is-invalid @enderror" id="img" value="{{ old('img', $user->img) }}">
 
