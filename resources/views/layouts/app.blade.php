@@ -99,15 +99,16 @@
             <main style="background-color: white;">
         @endif
 
-        @if (Auth::check())
-            <div>
-        @else
-            <div class="container">
-        @endif
-                <div class="row w-100">
+            @if (Auth::check())
+                <div>
+            @else
+                <div class="container">
+            @endif
+            
+                    <div class="d-flex">
 
                     @if (Auth::check())
-                    <div class="col-3">
+                    <div class="flex-shrink-0">
                         <div class="side-bar border-end">
                             <h3 class="fw-bold pt-2 pb-4">Il tuo ristorante</h3>
 
@@ -154,7 +155,7 @@
                     @endif
 
                     {{-- CONTENT LEFT ONCE LOGGED IN --}}
-                    <div class="col-9">
+                    <div class="flex-grow-1">
                         @yield('content')
                     </div>
 
