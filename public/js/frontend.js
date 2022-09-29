@@ -3282,130 +3282,9 @@ render._withStripped = true;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function render() {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "cart"
-  }, [_c("Navbar"), _vm._v(" "), _c("div", {
-    staticClass: "border-bottom"
-  }), _vm._v(" "), _c("div", {
-    staticClass: "lower-section"
-  }, [_c("div", {
-    staticClass: "restaurant-section"
-  }, [_c("div", {
-    staticClass: "container d-flex align-items-center gap-4"
-  }, [_c("div", {
-    staticClass: "image"
-  }, [_c("img", {
-    attrs: {
-      src: "/storage/" + _vm.restaurant.img,
-      alt: "Immagine di" + " " + _vm.restaurant.name
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "text-section"
-  }, [_c("h1", [_vm._v(_vm._s(_vm.restaurant.name))]), _vm._v(" "), _c("div", {
-    staticClass: "pt-3 text-muted"
-  }, [_vm._v(_vm._s(_vm.restaurant.address) + " · " + _vm._s(_vm.restaurant.phone))])])])]), _vm._v(" "), _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "row w-100"
-  }, [_c("div", {
-    staticClass: "col-8"
-  }, [_c("div", {
-    staticClass: "dishes-section"
-  }, [_c("h4", {
-    staticClass: "fw-bold pb-0 mb-0"
-  }, [_vm._v("Menù")]), _vm._v(" "), _c("div", {
-    staticClass: "pb-3 text-muted"
-  }, [_vm._v("Scegli il tuo piatto, ed aggiungilo al carrello.")]), _vm._v(" "), _c("div", {
-    staticClass: "row row-cols-2 g-3"
-  }, _vm._l(_vm.restaurant.dishes, function (dish) {
-    return _c("div", {
-      key: dish.id,
-      staticClass: "col"
-    }, [_c("button", {
-      on: {
-        click: function click($event) {
-          return _vm.addItemToCart(dish);
-        }
-      }
-    }, [_c("div", {
-      staticClass: "dish-card"
-    }, [_c("div", {
-      staticClass: "text-start pe-1"
-    }, [_c("div", [_c("b", [_vm._v(_vm._s(dish.name))])]), _vm._v(" "), _c("div", {
-      staticClass: "description"
-    }, [_vm._v(_vm._s(dish.description))]), _vm._v(" "), _c("div", [_vm._v(_vm._s(dish.price + "€"))])]), _vm._v(" "), _c("div", {
-      staticClass: "dish-img"
-    }, [_c("img", {
-      attrs: {
-        src: "/storage/" + dish.img,
-        alt: "Immagine del piatto" + " " + dish.name
-      }
-    })])])])]);
-  }), 0)])]), _vm._v(" "), _c("div", {
-    staticClass: "col-4"
-  }, [_c("div", {
-    staticClass: "py-4 h-100"
-  }, [_c("div", {
-    staticClass: "cart-section"
-  }, [_c("h5", {
-    staticClass: "pb-3 fw-bold"
-  }, [_vm._v("Il tuo ordine")]), _vm._v(" "), _vm._l(_vm.cart, function (dish) {
-    return _c("div", {
-      key: dish.id,
-      staticClass: "row dish-container"
-    }, [_c("div", {
-      staticClass: "col"
-    }, [_c("div", {
-      staticClass: "dish-desc"
-    }, [_vm._v(_vm._s(dish.description))])]), _vm._v(" "), _c("div", {
-      staticClass: "col dish-information d-flex"
-    }, [_c("div", {
-      staticClass: "dish-and-price d-flex"
-    }, [_c("p", {
-      staticClass: "text-orange"
-    }, [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("p", {
-      staticClass: "ps-1 price text-nowrap"
-    }, [_vm._v("\n                                            € " + _vm._s((dish.price * dish.quantity).toFixed(2)))])])]), _vm._v(" "), _c("div", {
-      staticClass: "col"
-    }, [_c("div", {
-      staticClass: "d-flex align-items-center cart-quantity-button ps-4"
-    }, [_c("div", [_c("a", {
-      staticClass: "no-decoration",
-      on: {
-        click: function click($event) {
-          return _vm.removeAllFromCart(dish);
-        }
-      }
-    }, [_c("i", {
-      staticClass: "fa-solid fa-trash"
-    })])]), _vm._v(" "), _c("div", {
-      staticClass: "pill-button"
-    }, [_c("a", {
-      staticClass: "no-decoration",
-      on: {
-        click: function click($event) {
-          return _vm.removeOneFromCart(dish);
-        }
-      }
-    }, [_vm._v("-")])]), _vm._v(" "), _c("div", {
-      staticClass: "display-num-pill-button"
-    }, [_vm._v("\n                                            " + _vm._s(dish.quantity) + "\n                                        ")]), _vm._v(" "), _c("div", [_c("a", {
-      staticClass: "no-decoration",
-      on: {
-        click: function click($event) {
-          return _vm.addItemToCart(dish);
-        }
-      }
-    }, [_vm._v("+")])])])])]);
-  })], 2)])]), _vm._v(" "), _c("Checkout")], 1)])]), _vm._v(" "), _c("TheFooter")], 1);
-};
+var render = function render() {};
 
 var staticRenderFns = [];
-render._withStripped = true;
 
 
 /***/ }),
@@ -3460,7 +3339,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-17e1ff8f] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-17e1ff8f] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-17e1ff8f]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-17e1ff8f]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.search-bar[data-v-17e1ff8f] {\n  display: flex;\n  position: relative;\n  bottom: 8rem;\n  align-items: center;\n  width: 40%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.search-bar .form-control[data-v-17e1ff8f] {\n  border: none;\n  padding-left: 45px;\n}\n.search-bar input[data-v-17e1ff8f] {\n  padding: 1.2rem;\n  border-radius: 50px;\n  width: 100%;\n}\n.search-bar input[data-v-17e1ff8f]::-moz-placeholder {\n  color: #b3b3b3;\n}\n.search-bar input[data-v-17e1ff8f]::placeholder {\n  color: #b3b3b3;\n}\n.search-bar button.fork[data-v-17e1ff8f] {\n  color: #00CCBC;\n  padding: 1.2rem;\n  border: none;\n  border-radius: 50px 0px 0px 50px;\n  background-color: white;\n  width: 20px;\n  height: 100%;\n  position: absolute;\n}\n.search-bar .search-btn[data-v-17e1ff8f] {\n  position: absolute;\n  right: 3.5px;\n}\n.restaurant-section[data-v-17e1ff8f] {\n  background: rgb(0, 126, 137);\n  background: linear-gradient(125deg, rgb(0, 126, 137) 0%, rgb(34, 194, 183) 100%);\n  padding: 0;\n}\n.restaurant-section .card-restaurant[data-v-17e1ff8f] {\n  height: 100%;\n  width: 100%;\n  text-align: center;\n  background-color: white;\n  display: flex;\n  align-items: center;\n  box-shadow: 0 0 20px 0px gray;\n  border-radius: 5px;\n}\n.restaurant-section .card-restaurant .restaurant-img[data-v-17e1ff8f] {\n  padding: 1rem;\n}\n.restaurant-section .card-restaurant .restaurant-img img[data-v-17e1ff8f] {\n  height: 130px;\n  width: 130px;\n  border: 1px solid #00CCBC;\n  border-radius: 5px;\n  aspect-ratio: 1/1;\n}\n.restaurant-section .card-restaurant .restaurant-name[data-v-17e1ff8f] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  font-size: 1rem;\n  text-transform: uppercase;\n  color: #2E3333;\n  font-weight: bold;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-17e1ff8f] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-17e1ff8f] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-17e1ff8f] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-17e1ff8f] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-17e1ff8f]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-17e1ff8f]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.search-bar[data-v-17e1ff8f] {\n  display: flex;\n  position: relative;\n  bottom: 8rem;\n  align-items: center;\n  width: 40%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.search-bar .form-control[data-v-17e1ff8f] {\n  border: none;\n  padding-left: 45px;\n}\n.search-bar input[data-v-17e1ff8f] {\n  padding: 1.2rem;\n  border-radius: 50px;\n  width: 100%;\n}\n.search-bar input[data-v-17e1ff8f]::-moz-placeholder {\n  color: #b3b3b3;\n}\n.search-bar input[data-v-17e1ff8f]::placeholder {\n  color: #b3b3b3;\n}\n.search-bar button.fork[data-v-17e1ff8f] {\n  color: #00CCBC;\n  padding: 1.2rem;\n  border: none;\n  border-radius: 50px 0px 0px 50px;\n  background-color: white;\n  width: 20px;\n  height: 100%;\n  position: absolute;\n}\n.search-bar .search-btn[data-v-17e1ff8f] {\n  position: absolute;\n  right: 3.5px;\n}\n.restaurant-section[data-v-17e1ff8f] {\n  background: rgb(0, 126, 137);\n  background: linear-gradient(125deg, rgb(0, 126, 137) 0%, rgb(34, 194, 183) 100%);\n  padding: 0;\n}\n.restaurant-section .card-restaurant[data-v-17e1ff8f] {\n  height: 100%;\n  width: 100%;\n  text-align: center;\n  background-color: white;\n  display: flex;\n  align-items: center;\n  box-shadow: 0 0 20px 0px gray;\n  border-radius: 5px;\n}\n.restaurant-section .card-restaurant .restaurant-img[data-v-17e1ff8f] {\n  padding: 1rem;\n}\n.restaurant-section .card-restaurant .restaurant-img img[data-v-17e1ff8f] {\n  height: 130px;\n  width: 130px;\n  border: 1px solid #00CCBC;\n  border-radius: 5px;\n  aspect-ratio: 1/1;\n}\n.restaurant-section .card-restaurant .restaurant-name[data-v-17e1ff8f] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  font-size: 1rem;\n  text-transform: uppercase;\n  color: #2E3333;\n  font-weight: bold;\n}", ""]);
 
 // exports
 
@@ -3479,7 +3358,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-5d36a93e] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-5d36a93e] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-5d36a93e]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-5d36a93e]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.fourth-section[data-v-5d36a93e] {\n  padding: 4rem 0;\n}\n.fourth-section .left-col[data-v-5d36a93e] {\n  background-image: url(\"/img/restaurant.png\");\n}\n.fourth-section .right-col[data-v-5d36a93e] {\n  background-image: url(\"/img/rider.png\");\n}\n.fourth-section .left-col[data-v-5d36a93e], .fourth-section .right-col[data-v-5d36a93e] {\n  background-size: cover;\n  height: 500px;\n  border-radius: 10px;\n  box-shadow: 0 0 20px 0px lightgray;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  opacity: 0.9;\n}\n.fourth-section .left-col .content-card[data-v-5d36a93e], .fourth-section .right-col .content-card[data-v-5d36a93e] {\n  color: white;\n  width: 80%;\n  padding: 1.5rem;\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n}\n.fourth-section .left-col .white-btn[data-v-5d36a93e], .fourth-section .right-col .white-btn[data-v-5d36a93e] {\n  padding: 10px 21px;\n  margin-top: 1rem;\n  font-size: 1rem;\n}\n.fourth-section .left-col .white-btn i[data-v-5d36a93e], .fourth-section .right-col .white-btn i[data-v-5d36a93e] {\n  color: #00CCBC;\n  vertical-align: middle;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-5d36a93e] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-5d36a93e] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-5d36a93e] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-5d36a93e] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-5d36a93e]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-5d36a93e]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.fourth-section[data-v-5d36a93e] {\n  padding: 4rem 0;\n}\n.fourth-section .left-col[data-v-5d36a93e] {\n  background-image: url(\"/img/restaurant.png\");\n}\n.fourth-section .right-col[data-v-5d36a93e] {\n  background-image: url(\"/img/rider.png\");\n}\n.fourth-section .left-col[data-v-5d36a93e], .fourth-section .right-col[data-v-5d36a93e] {\n  background-size: cover;\n  height: 500px;\n  border-radius: 10px;\n  box-shadow: 0 0 20px 0px lightgray;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  opacity: 0.9;\n}\n.fourth-section .left-col .content-card[data-v-5d36a93e], .fourth-section .right-col .content-card[data-v-5d36a93e] {\n  color: white;\n  width: 80%;\n  padding: 1.5rem;\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n}\n.fourth-section .left-col .white-btn[data-v-5d36a93e], .fourth-section .right-col .white-btn[data-v-5d36a93e] {\n  padding: 10px 21px;\n  margin-top: 1rem;\n  font-size: 1rem;\n}\n.fourth-section .left-col .white-btn i[data-v-5d36a93e], .fourth-section .right-col .white-btn i[data-v-5d36a93e] {\n  color: #00CCBC;\n  vertical-align: middle;\n}", ""]);
 
 // exports
 
@@ -3498,7 +3377,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-6db60cec] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-6db60cec] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-6db60cec]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-6db60cec]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\nnav[data-v-6db60cec] {\n  height: 70px;\n  font-family: \"Source Sans Pro\", sans-serif;\n  color: #2E3333;\n  position: relative;\n  z-index: 2;\n}\nnav .container[data-v-6db60cec] {\n  height: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nnav .container img[data-v-6db60cec] {\n  width: 130px;\n}\nnav .container .nav-btn[data-v-6db60cec] {\n  display: flex;\n  align-items: center;\n  gap: 13px;\n}\nnav .container .nav-btn i[data-v-6db60cec] {\n  font-size: 0.9rem;\n  padding: 0 6px 0 4px;\n}\nnav .container .nav-btn i.fa-solid[data-v-6db60cec] {\n  color: #00CCBC;\n  vertical-align: middle;\n}\nnav .container .nav-btn a[data-v-6db60cec] {\n  text-decoration: none;\n  color: #2E3333;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-6db60cec] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-6db60cec] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-6db60cec] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-6db60cec] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-6db60cec]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-6db60cec]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\nnav[data-v-6db60cec] {\n  height: 70px;\n  font-family: \"Source Sans Pro\", sans-serif;\n  color: #2E3333;\n  position: relative;\n  z-index: 2;\n}\nnav .container[data-v-6db60cec] {\n  height: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nnav .container img[data-v-6db60cec] {\n  width: 130px;\n}\nnav .container .nav-btn[data-v-6db60cec] {\n  display: flex;\n  align-items: center;\n  gap: 13px;\n}\nnav .container .nav-btn i[data-v-6db60cec] {\n  font-size: 0.9rem;\n  padding: 0 6px 0 4px;\n}\nnav .container .nav-btn i.fa-solid[data-v-6db60cec] {\n  color: #00CCBC;\n  vertical-align: middle;\n}\nnav .container .nav-btn a[data-v-6db60cec] {\n  text-decoration: none;\n  color: #2E3333;\n}", ""]);
 
 // exports
 
@@ -3517,7 +3396,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-6d72b4c7] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-6d72b4c7] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-6d72b4c7]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-6d72b4c7]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.container[data-v-6d72b4c7] {\n  padding: 4rem 0;\n}\n.container .wrapper[data-v-6d72b4c7] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  background-color: white;\n  border-radius: 10px;\n  box-shadow: 0 0 20px 0px lightgray;\n  position: relative;\n}\n.container .wrapper .text[data-v-6d72b4c7] {\n  width: 90%;\n  padding: 2rem;\n}\n.container .wrapper .text .title[data-v-6d72b4c7] {\n  font-size: 2.5rem;\n  font-weight: bold;\n  line-height: 50px;\n  padding-bottom: 1rem;\n}\n.container .wrapper .text .subtitle[data-v-6d72b4c7] {\n  font-size: 1.2rem;\n}\n.container .wrapper .text .badges[data-v-6d72b4c7] {\n  display: flex;\n  gap: 5px;\n  padding-top: 3rem;\n  padding-bottom: 2rem;\n}\n.container .wrapper .text .badges .badge-store[data-v-6d72b4c7] {\n  height: 40px;\n  width: 130px;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  border: 1px solid grey;\n  border-radius: 6px;\n}\n.container .wrapper .text .badges .badge-store.apple[data-v-6d72b4c7] {\n  background-image: url(\"/img/apple_store.png\");\n}\n.container .wrapper .text .badges .badge-store.google[data-v-6d72b4c7] {\n  background-image: url(\"/img/google_play.png\");\n}\n.container .wrapper .map-img[data-v-6d72b4c7] {\n  background-image: url(\"/img/map.png\");\n  background-size: cover;\n  background-position: left;\n  background-repeat: no-repeat;\n  height: 100%;\n  border-radius: 0px 10px 10px 0px;\n}\n.container .wrapper .over-img img[data-v-6d72b4c7] {\n  position: absolute;\n  top: 10px;\n  right: 0;\n  width: 30%;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-6d72b4c7] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-6d72b4c7] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-6d72b4c7] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-6d72b4c7] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-6d72b4c7]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-6d72b4c7]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.container[data-v-6d72b4c7] {\n  padding: 4rem 0;\n}\n.container .wrapper[data-v-6d72b4c7] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  background-color: white;\n  border-radius: 10px;\n  box-shadow: 0 0 20px 0px lightgray;\n  position: relative;\n}\n.container .wrapper .text[data-v-6d72b4c7] {\n  width: 90%;\n  padding: 2rem;\n}\n.container .wrapper .text .title[data-v-6d72b4c7] {\n  font-size: 2.5rem;\n  font-weight: bold;\n  line-height: 50px;\n  padding-bottom: 1rem;\n}\n.container .wrapper .text .subtitle[data-v-6d72b4c7] {\n  font-size: 1.2rem;\n}\n.container .wrapper .text .badges[data-v-6d72b4c7] {\n  display: flex;\n  gap: 5px;\n  padding-top: 3rem;\n  padding-bottom: 2rem;\n}\n.container .wrapper .text .badges .badge-store[data-v-6d72b4c7] {\n  height: 40px;\n  width: 130px;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  border: 1px solid grey;\n  border-radius: 6px;\n}\n.container .wrapper .text .badges .badge-store.apple[data-v-6d72b4c7] {\n  background-image: url(\"/img/apple_store.png\");\n}\n.container .wrapper .text .badges .badge-store.google[data-v-6d72b4c7] {\n  background-image: url(\"/img/google_play.png\");\n}\n.container .wrapper .map-img[data-v-6d72b4c7] {\n  background-image: url(\"/img/map.png\");\n  background-size: cover;\n  background-position: left;\n  background-repeat: no-repeat;\n  height: 100%;\n  border-radius: 0px 10px 10px 0px;\n}\n.container .wrapper .over-img img[data-v-6d72b4c7] {\n  position: absolute;\n  top: 10px;\n  right: 0;\n  width: 30%;\n}", ""]);
 
 // exports
 
@@ -3536,7 +3415,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-5569203c] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-5569203c] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-5569203c]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-5569203c]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\nfooter[data-v-5569203c] {\n  background-color: #2E3333;\n  padding: 1.5rem 0;\n}\nfooter .footer-col[data-v-5569203c] {\n  height: 100%;\n  background-color: #434848;\n  border-radius: 5px;\n  padding: 1.5rem 1.2rem;\n}\nfooter .footer-col ul li[data-v-5569203c], footer .footer-col ul li a[data-v-5569203c] {\n  color: white;\n  text-decoration: none;\n}\nfooter .footer-col ul li a[data-v-5569203c] {\n  font-size: 0.8rem;\n}\nfooter .footer-col ul li a[data-v-5569203c]:hover {\n  color: #00CCBC;\n}\nfooter .footer-col ul li a .badge-store[data-v-5569203c] {\n  height: 40px;\n  width: 130px;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  border: 1px solid grey;\n  border-radius: 5px;\n}\nfooter .footer-col ul li a .badge-store.apple[data-v-5569203c] {\n  background-image: url(\"/img/apple_store.png\");\n}\nfooter .footer-col ul li a .badge-store.google[data-v-5569203c] {\n  background-image: url(\"/img/google_play.png\");\n}\nfooter .lower-footer[data-v-5569203c] {\n  padding-top: 1.2rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nfooter .lower-footer .social[data-v-5569203c] {\n  cursor: pointer;\n}\nfooter .lower-footer .social .fa-brands[data-v-5569203c] {\n  color: white;\n  font-size: 1.4rem;\n  padding-right: 1rem;\n}\nfooter .lower-footer .social .fa-facebook[data-v-5569203c]:hover {\n  color: #1877f2;\n}\nfooter .lower-footer .social .fa-twitter[data-v-5569203c]:hover {\n  color: #55acee;\n}\nfooter .lower-footer .social .fa-instagram[data-v-5569203c]:hover {\n  color: #f00075;\n}\nfooter .lower-footer .copyright[data-v-5569203c] {\n  color: #585c5c;\n  font-size: 0.85rem;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-5569203c] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-5569203c] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-5569203c] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-5569203c] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-5569203c]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-5569203c]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\nfooter[data-v-5569203c] {\n  background-color: #2E3333;\n  padding: 1.5rem 0;\n}\nfooter .footer-col[data-v-5569203c] {\n  height: 100%;\n  background-color: #434848;\n  border-radius: 5px;\n  padding: 1.5rem 1.2rem;\n}\nfooter .footer-col ul li[data-v-5569203c], footer .footer-col ul li a[data-v-5569203c] {\n  color: white;\n  text-decoration: none;\n}\nfooter .footer-col ul li a[data-v-5569203c] {\n  font-size: 0.8rem;\n}\nfooter .footer-col ul li a[data-v-5569203c]:hover {\n  color: #00CCBC;\n}\nfooter .footer-col ul li a .badge-store[data-v-5569203c] {\n  height: 40px;\n  width: 130px;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  border: 1px solid grey;\n  border-radius: 5px;\n}\nfooter .footer-col ul li a .badge-store.apple[data-v-5569203c] {\n  background-image: url(\"/img/apple_store.png\");\n}\nfooter .footer-col ul li a .badge-store.google[data-v-5569203c] {\n  background-image: url(\"/img/google_play.png\");\n}\nfooter .lower-footer[data-v-5569203c] {\n  padding-top: 1.2rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nfooter .lower-footer .social[data-v-5569203c] {\n  cursor: pointer;\n}\nfooter .lower-footer .social .fa-brands[data-v-5569203c] {\n  color: white;\n  font-size: 1.4rem;\n  padding-right: 1rem;\n}\nfooter .lower-footer .social .fa-facebook[data-v-5569203c]:hover {\n  color: #1877f2;\n}\nfooter .lower-footer .social .fa-twitter[data-v-5569203c]:hover {\n  color: #55acee;\n}\nfooter .lower-footer .social .fa-instagram[data-v-5569203c]:hover {\n  color: #f00075;\n}\nfooter .lower-footer .copyright[data-v-5569203c] {\n  color: #585c5c;\n  font-size: 0.85rem;\n}", ""]);
 
 // exports
 
@@ -3555,7 +3434,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-13045858] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-13045858] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-13045858]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-13045858]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.header[data-v-13045858] {\n  background-color: black;\n  width: 100%;\n  height: calc(100% - 70px);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n  text-align: center;\n  position: relative;\n}\n.header .img-wrapper[data-v-13045858] {\n  height: 100%;\n  width: 100%;\n  position: absolute;\n  display: flex;\n  justify-content: space-between;\n}\n.header .img-wrapper img[data-v-13045858] {\n  height: 100%;\n}\n.header .img-wrapper img.left-img[data-v-13045858] {\n  left: 0;\n}\n.header .img-wrapper img.right-img[data-v-13045858] {\n  right: 0;\n}\n.header .text-wrapper[data-v-13045858] {\n  width: 40%;\n  z-index: 2;\n  color: white;\n}\n.header .text-wrapper .subtitle[data-v-13045858] {\n  padding: 2rem 0 1rem 0;\n}\n.header .text-wrapper .search-bar[data-v-13045858] {\n  display: flex;\n  position: relative;\n  align-items: center;\n}\n.header .text-wrapper .search-bar .form-control[data-v-13045858] {\n  border: none;\n  padding-left: 45px;\n}\n.header .text-wrapper .search-bar input[data-v-13045858] {\n  padding: 1.2rem;\n  border-radius: 50px;\n  width: 100%;\n}\n.header .text-wrapper .search-bar input[data-v-13045858]::-moz-placeholder {\n  color: #b3b3b3;\n}\n.header .text-wrapper .search-bar input[data-v-13045858]::placeholder {\n  color: #b3b3b3;\n}\n.header .text-wrapper .search-bar button.fork[data-v-13045858] {\n  color: #00CCBC;\n  padding: 1.2rem;\n  border: none;\n  border-radius: 50px 0px 0px 50px;\n  background-color: white;\n  width: 20px;\n  height: 100%;\n  position: absolute;\n}\n.header .text-wrapper .search-bar .search-btn[data-v-13045858] {\n  position: absolute;\n  right: 3.5px;\n}\n.header .text-wrapper .search-bar .form-control[data-v-13045858]:focus {\n  color: #212529;\n  background-color: #fff;\n  border-color: transparent;\n  outline: 0;\n  box-shadow: 0 0 0 2px black, 0 0 0 4px white;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-13045858] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-13045858] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-13045858] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-13045858] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-13045858]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-13045858]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.header[data-v-13045858] {\n  background-color: black;\n  width: 100%;\n  height: calc(100% - 70px);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n  text-align: center;\n  position: relative;\n}\n.header .img-wrapper[data-v-13045858] {\n  height: 100%;\n  width: 100%;\n  position: absolute;\n  display: flex;\n  justify-content: space-between;\n}\n.header .img-wrapper img[data-v-13045858] {\n  height: 100%;\n}\n.header .img-wrapper img.left-img[data-v-13045858] {\n  left: 0;\n}\n.header .img-wrapper img.right-img[data-v-13045858] {\n  right: 0;\n}\n.header .text-wrapper[data-v-13045858] {\n  width: 40%;\n  z-index: 2;\n  color: white;\n}\n.header .text-wrapper .subtitle[data-v-13045858] {\n  padding: 2rem 0 1rem 0;\n}\n.header .text-wrapper .search-bar[data-v-13045858] {\n  display: flex;\n  position: relative;\n  align-items: center;\n}\n.header .text-wrapper .search-bar .form-control[data-v-13045858] {\n  border: none;\n  padding-left: 45px;\n}\n.header .text-wrapper .search-bar input[data-v-13045858] {\n  padding: 1.2rem;\n  border-radius: 50px;\n  width: 100%;\n}\n.header .text-wrapper .search-bar input[data-v-13045858]::-moz-placeholder {\n  color: #b3b3b3;\n}\n.header .text-wrapper .search-bar input[data-v-13045858]::placeholder {\n  color: #b3b3b3;\n}\n.header .text-wrapper .search-bar button.fork[data-v-13045858] {\n  color: #00CCBC;\n  padding: 1.2rem;\n  border: none;\n  border-radius: 50px 0px 0px 50px;\n  background-color: white;\n  width: 20px;\n  height: 100%;\n  position: absolute;\n}\n.header .text-wrapper .search-bar .search-btn[data-v-13045858] {\n  position: absolute;\n  right: 3.5px;\n}\n.header .text-wrapper .search-bar .form-control[data-v-13045858]:focus {\n  color: #212529;\n  background-color: #fff;\n  border-color: transparent;\n  outline: 0;\n  box-shadow: 0 0 0 2px black, 0 0 0 4px white;\n}", ""]);
 
 // exports
 
@@ -3593,7 +3472,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-8cd17710] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-8cd17710] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-8cd17710]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-8cd17710]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.third-section[data-v-8cd17710] {\n  padding: 3rem 0 9rem 0;\n  background: rgb(0, 126, 137);\n  background: linear-gradient(125deg, rgb(0, 126, 137) 0%, rgb(34, 194, 183) 100%);\n  display: flex;\n  justify-content: center;\n  text-align: center;\n  position: relative;\n}\n.third-section .stars[data-v-8cd17710] {\n  width: 60%;\n  display: flex;\n  justify-content: space-between;\n  position: absolute;\n}\n.third-section .text[data-v-8cd17710] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  width: 50%;\n  color: white;\n}\n.third-section .text .title[data-v-8cd17710] {\n  font-size: 3.7rem;\n  line-height: 80px;\n  font-weight: bold;\n}\n.third-section .text .subtitle[data-v-8cd17710] {\n  font-size: 1.4rem;\n  padding-top: 2rem;\n}\n.third-section .text .sub-subtitle[data-v-8cd17710] {\n  font-size: 0.85rem;\n  padding-top: 1rem;\n}\n.third-section .text .sub-subtitle a[data-v-8cd17710] {\n  color: white;\n  text-decoration: underline;\n}\n.third-section .banner[data-v-8cd17710] {\n  position: absolute;\n  bottom: 0;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-8cd17710] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-8cd17710] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-8cd17710] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-8cd17710] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-8cd17710]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-8cd17710]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.third-section[data-v-8cd17710] {\n  padding: 3rem 0 9rem 0;\n  background: rgb(0, 126, 137);\n  background: linear-gradient(125deg, rgb(0, 126, 137) 0%, rgb(34, 194, 183) 100%);\n  display: flex;\n  justify-content: center;\n  text-align: center;\n  position: relative;\n}\n.third-section .stars[data-v-8cd17710] {\n  width: 60%;\n  display: flex;\n  justify-content: space-between;\n  position: absolute;\n}\n.third-section .text[data-v-8cd17710] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  width: 50%;\n  color: white;\n}\n.third-section .text .title[data-v-8cd17710] {\n  font-size: 3.7rem;\n  line-height: 80px;\n  font-weight: bold;\n}\n.third-section .text .subtitle[data-v-8cd17710] {\n  font-size: 1.4rem;\n  padding-top: 2rem;\n}\n.third-section .text .sub-subtitle[data-v-8cd17710] {\n  font-size: 0.85rem;\n  padding-top: 1rem;\n}\n.third-section .text .sub-subtitle a[data-v-8cd17710] {\n  color: white;\n  text-decoration: underline;\n}\n.third-section .banner[data-v-8cd17710] {\n  position: absolute;\n  bottom: 0;\n}", ""]);
 
 // exports
 
@@ -3624,17 +3503,9 @@ exports.push([module.i, ".all-body[data-v-b3c5cf30] {\n  background-color: #F9FA
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/restaurant/show.vue?vue&type=style&index=0&id=339970b6&lang=scss&scoped=true& ***!
   \********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
-
-// module
-exports.push([module.i, ".white-btn[data-v-339970b6] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-339970b6] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-339970b6]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-339970b6]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.cart[data-v-339970b6] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  background-color: white;\n}\n.cart .lower-section[data-v-339970b6] {\n  background-color: #F9FAFA;\n}\n.cart .lower-section .restaurant-section[data-v-339970b6] {\n  background-color: white;\n  width: 100%;\n  padding: 2rem 0;\n  border-bottom: 1px solid lightgray;\n  box-shadow: 0 4px 5px -2px rgb(224, 224, 224);\n}\n.cart .lower-section .restaurant-section img[data-v-339970b6] {\n  height: 250px;\n  border-radius: 5px;\n  border: 1px solid lightgray;\n  aspect-ratio: 1/1;\n}\n.cart .lower-section .restaurant-section h1[data-v-339970b6] {\n  text-transform: uppercase;\n  font-weight: bold;\n  background-color: #00CCBC;\n  height: 20px;\n}\n.cart .lower-section .dishes-section[data-v-339970b6] {\n  padding: 2rem 0;\n}\n.cart .lower-section .dishes-section button[data-v-339970b6] {\n  width: 100%;\n  border: none;\n  border-radius: 5px;\n  background-color: transparent;\n}\n.cart .lower-section .dishes-section button .dish-card[data-v-339970b6] {\n  width: 100%;\n  background-color: white;\n  border: 1px solid white;\n  border-radius: 5px;\n  padding: 1rem;\n  display: flex;\n  justify-content: space-between;\n  box-shadow: 0 0 4px rgb(224, 224, 224);\n}\n.cart .lower-section .dishes-section button .dish-card .dish-img img[data-v-339970b6] {\n  width: 100px;\n  aspect-ratio: 1/1;\n  border-radius: 5px;\n  border: 1px solid #F9FAFA;\n}\n.cart .lower-section .dishes-section button .dish-card .description[data-v-339970b6] {\n  font-size: 0.85rem;\n  line-height: 130%;\n  opacity: 75%;\n  padding: 0.5rem 0 0.7rem 0;\n  text-overflow: ellipsis;\n}\n.cart .lower-section .cart-section[data-v-339970b6] {\n  height: 500px;\n  width: 100%;\n  background-color: white;\n  border: 1px solid white;\n  padding: 2rem 0 4rem 2rem;\n  overflow: auto;\n  box-shadow: 0 0 4px rgb(224, 224, 224);\n}", ""]);
-
-// exports
-
+throw new Error("Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected selector.\n   ╷\n44 │ <<<<<<< HEAD\r\n   │ ^\n   ╵\n  D:\\Documents\\Boolean\\deliveboo\\resources\\js\\pages\\restaurant\\show.vue 44:1  root stylesheet");
 
 /***/ }),
 

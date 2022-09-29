@@ -10,6 +10,24 @@
     padding: 6px 16px;
 }
 
+.blue-btn {
+    background-color: $deliveroo-blue;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    height: 50px;
+}
+
+.grey-btn {
+    background-color: lightgray;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    height: 50px;
+}
+
 .search-btn {
     background-color: $deliveroo-blue;
     color: white;
