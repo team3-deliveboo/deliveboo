@@ -4,117 +4,136 @@
         <!-- VUE NAVBAR -->
         <Navbar></Navbar>
         <div class="border-bottom"></div>
+        <div class="lower-section">
 
-        
-        <!-- HEADER WITH RESTAURANT NAME -->
-        <div class="restaurant-section">
-            <img :src="'/storage/' + restaurant.img" :lt="'Image of' + ' ' + restaurant.name">
-            <h1 class="mt-3">{{ restaurant.name }}</h1>
-        </div>
 
-        <div class="row w-100">
+            <!-- HEADER WITH RESTAURANT NAME -->
+            <div class="restaurant-section">
+                <div class="container d-flex align-items-center gap-4">
+                    <div class="image">
+                        <img :src="'/storage/' + restaurant.img" :alt="'Immagine di' + ' ' + restaurant.name">
+                    </div>
 
-            <!-- DISHES LIST -->
-            <div class="col-8">
-                <div class="dishes-section">
+                    <div class="text-section">
+                        <h1>{{ restaurant.name }}</h1>
+                        <!-- <small>{{ restaurant.categories }}</small> -->
+                        <div class="pt-3 text-muted">{{ restaurant.address }} · {{ restaurant.phone }}</div>
+                    </div>
+                </div>
+            </div>
 
-                    <h3>Menu</h3>
 
-                    <div class="row row-cols-2">
-                        <ul class="list-group">
+            <!-- DISH + CART -->
+            <div class="container">
+            <div class="row w-100">
+
+                <!-- DISHES LIST -->
+                <div class="col-8">
+                    <div class="dishes-section">
+
+                        <h4 class="fw-bold pb-0 mb-0">Menù</h4>
+                        <div class="pb-3 text-muted">Scegli il tuo piatto, ed aggiungilo al carrello.</div>
+
+                        <!-- SINGLE DISH CARD -->
+                        <div class="row row-cols-2 g-3">
+
+                            <div class="col" v-for="dish in restaurant.dishes" :key="dish.id">
+                                    <button @click="addItemToCart(dish)">
+                                        <div class="dish-card">
+                                            <div class="text-start pe-1">
+                                                <div><b>{{ dish.name }}</b></div>
+                                                <div class="description">{{ dish.description }}</div>
+                                                <div>{{ dish.price + "€" }}</div>
+                                            </div>
+                                            <div class="dish-img">
+                                                <img :src="'/storage/' + dish.img" :alt="'Immagine del piatto' + ' ' + dish.name" />
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <!-- <button @click="addItemToCart(dish)">add</button> -->
+                                
+                                <!-- <button @click="convertJson()" ></button> -->
+                            </div>
+
+                        </div>
+
+                        <!-- <CartComp></CartComp> -->
+                    </div>
+                </div>
+
+            <!-- <div v-for="item in cart" :key="item.id">
+                <span>{{item.name}}</span>
+                <span>{{item.price + "€" }}</span> -->
+
+
+                <!-- CART SECTION -->
+                <div class="col-4">
+                    <div class="py-4 h-100">
+                    <div class="cart-section">
+
+                        <h5 class="pb-3 fw-bold">Il tuo ordine</h5>
+                    
+                        <div v-for="dish in cart" :key="dish.id" class="row dish-container">
 
                             <div class="col">
-                                <li class="list-group-item" v-for="dish in restaurant.dishes" :key="dish.id">
-
-                                    <img class="dish-img rounded" :src="'/storage/' + dish.img" alt="" />
-                                    <span>{{ dish.name }}</span>
-                                    <span>{{ dish.price + "€" }}</span>
-
-                                    <button @click="addItemToCart(dish)">add</button>
-                                    <!-- <button @click="convertJson()" ></button> -->
-                                </li>
+                                <div class="dish-desc">{{ dish.description }}</div>
                             </div>
 
-                        </ul>
-                    </div>
-                    <!-- <CartComp></CartComp> -->
-                </div>
-            </div>
+                            <div class="col dish-information d-flex">
 
-        <!-- <div v-for="item in cart" :key="item.id">
-            <span>{{item.name}}</span>
-            <span>{{item.price + "€" }}</span> -->
-
-
-            <!-- CART SECTION -->
-            <div class="col-4">
-                <div class="py-4 pe-4 h-100">
-                <div class="cart-section">
-
-                    <h5 class="pb-3">Il tuo ordine</h5>
-                
-                    <div v-for="dish in cart" :key="dish.id" class="row dish-container">
-
-                        <div class="col">
-                            <div class="dish-desc">{{ dish.description }}</div>
-                        </div>
-
-                        <div class="col dish-information d-flex">
-
-                            <div class="dish-and-price d-flex">
-                                <p class="text-orange">{{ dish.name }}</p>
-                                <p class="ps-1 price text-nowrap">
-                                    € {{ (dish.price * dish.quantity).toFixed(2) }}</p>
+                                <div class="dish-and-price d-flex">
+                                    <p class="text-orange">{{ dish.name }}</p>
+                                    <p class="ps-1 price text-nowrap">
+                                        € {{ (dish.price * dish.quantity).toFixed(2) }}</p>
+                                </div>
+                                
                             </div>
-                            
-                        </div>
 
-                        <div class="col">
-                            <div class="d-flex align-items-center cart-quantity-button ps-4">
-
-                                <div>
-                                    <!-- bin icon -->
-                                    <a class="no-decoration" @click="removeAllFromCart(dish)"><i class="fa-solid fa-trash"></i></a>
-                                </div>
-
-                                <!-- add and remove item from cart  -->
-                                <div class="pill-button">
-                                    <a @click="removeOneFromCart(dish)" class="no-decoration">-</a>
-                                </div>
-
-                                    <div class="display-num-pill-button">
-                                        {{ dish.quantity }}
-                                    </div>
+                            <div class="col">
+                                <div class="d-flex align-items-center cart-quantity-button ps-4">
 
                                     <div>
-                                    <a @click="addItemToCart(dish)" class="no-decoration">+</a>
+                                        <!-- bin icon -->
+                                        <a class="no-decoration" @click="removeAllFromCart(dish)"><i class="fa-solid fa-trash"></i></a>
+                                    </div>
+
+                                    <!-- add and remove item from cart  -->
+                                    <div class="pill-button">
+                                        <a @click="removeOneFromCart(dish)" class="no-decoration">-</a>
+                                    </div>
+
+                                        <div class="display-num-pill-button">
+                                            {{ dish.quantity }}
+                                        </div>
+
+                                        <div>
+                                        <a @click="addItemToCart(dish)" class="no-decoration">+</a>
+                                    </div>
+
                                 </div>
-
                             </div>
+
+                            
+
                         </div>
-
-                        
-
                     </div>
-                </div>
-                </div>
+                    </div>
 
             </div>
-
+        </div>
+    </div>
     </div>
 
 
+        <!-- VUE COMPONENT: FOOTER -->
         <TheFooter></TheFooter>
     </div>
-    <!-- {{convertJson}} -->
-
 
 </template>
 
 <script>
 // import CartComp from "../../frontend/components/CartComp.vue";
 import axios from "axios";
-
 import TheFooter from "../../frontend/components/TheFooter.vue";
 import Navbar from "../../frontend/components/Navbar.vue";
 
@@ -123,14 +142,11 @@ import Navbar from "../../frontend/components/Navbar.vue";
 // import { contains } from "micromatch";
 export default {
     data() {
-
         return {
             cart: [],
             // cartClean: JSON.parse(localStorage.getItem('cart')),
             // itemsOnLocal: [],
             restaurant: {},
-
-
             client: {
                 name: "",
                 surname: "",
@@ -143,10 +159,7 @@ export default {
             }
         };
     },
-    components: {
-        TheFooter,
-        Navbar
-    },
+    components: { TheFooter, Navbar },
     methods: {
         addItemToCart(dish) {
             if (
@@ -258,8 +271,6 @@ export default {
 
             }
         }
-
-
     },
     mounted() {
         // return JSON.parse(localStorage.getItem('cart'))
@@ -270,13 +281,7 @@ export default {
         });
         localStorage.removeItem('cart');
     }
-
-
-
-
 }
-
-
     //         localStorage.setItem("cart", JSON.stringify(cart));
     //         this.cart = JSON.parse(localStorage.getItem("cart"));
     //         this.partialTotal = round(
@@ -338,7 +343,6 @@ export default {
     //     }
     //     this.CartSectionShow();
     // },
-
 </script>
 
 <style lang="scss" scoped>
@@ -346,45 +350,79 @@ export default {
 @import 'resources/sass/frontend/buttons.scss';
 .cart {
     font-family: 'IBM Plex Sans Arabic', sans-serif;
+    background-color: white;
 
-    .restaurant-section {
-        width: 100%;
-        display: flex;
-        padding: 2rem 4rem;
-        border-bottom: 1px solid lightgray;
+    .lower-section {
+        background-color: $deliveroo-grey;
 
-        img {
-            height: 200px;
-            border-radius: 5px;
-            border: 1px solid lightgray;
-            aspect-ratio: 1/1;
-            box-shadow: 3px 3px 5px lightgray;
+        .restaurant-section {
+            background-color: white;
+            width: 100%;
+            padding: 2rem 0;
+            border-bottom: 1px solid lightgray;
+            box-shadow: 0 4px 5px -2px rgb(224, 224, 224);
+
+            img {
+                height: 250px;
+                border-radius: 5px;
+                border: 1px solid lightgray;
+                aspect-ratio: 1/1;
+            }
+
+            h1 {
+                text-transform: uppercase;
+                font-weight: bold;
+                background-color: $deliveroo-blue;
+                height: 20px;
+            }
         }
 
-        h1 {
-            text-transform: uppercase;
-            padding: 0 2rem;
+        .dishes-section {
+            padding: 2rem 0;
+
+            button {
+                    width: 100%;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: transparent;
+
+                .dish-card {
+                    width: 100%;
+                    background-color: white;
+                    border: 1px solid white;
+                    border-radius: 5px;
+                    padding: 1rem;
+                    display: flex;
+                    justify-content: space-between;
+                    box-shadow: 0 0 4px rgb(224, 224, 224);
+
+                    .dish-img img {
+                        width: 100px;
+                        aspect-ratio: 1/1;
+                        border-radius: 5px;
+                        border: 1px solid $deliveroo-grey;
+                    }
+
+                    .description {
+                        font-size: .85rem;
+                        line-height: 130%;
+                        opacity: 75%;
+                        padding: .5rem 0 .7rem 0;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+
+        .cart-section {
+            height: 500px;
+            width: 100%;
+            background-color: white;
+            border: 1px solid white;
+            padding: 2rem 0 4rem 2rem;
+            overflow: auto;
+            box-shadow: 0 0 4px rgb(224, 224, 224);
         }
     }
-
-    .dishes-section {
-        padding: 2rem 4rem;
-
-        .dish-img {
-            aspect-ratio: 1/1;
-            width: 100px;
-        }
-    }
-
-    .cart-section {
-        height: 500px;
-        width: 100%;
-        background-color: white;
-        border: 1px solid lightgray;
-        padding: 2rem 0 4rem 2rem;
-        overflow: auto;
-    }
-
 }
-
 </style>
