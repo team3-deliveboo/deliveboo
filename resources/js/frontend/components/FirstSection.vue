@@ -5,8 +5,11 @@
                 <button class="fork">
                     <i class="fa-solid fa-utensils"></i>
                 </button>
-                <input type="text" class="form-control" placeholder="Italiano? Vegano? Stellato?" v-model="filterInput">
-                <button class="search-btn" type="button" id="button-addon1" @click="filteredList()">Cerca</button>
+                <input type="text" class="form-control" placeholder="Italiano? Vegano? Stellato?"
+                    v-model="filterInput" />
+                <button class="search-btn" type="button" id="button-addon1">
+                    Cerca
+                </button>
                 <!-- <router-link class="btn btn-default" v-bind:to="'/customer/'+customer.id">View</router-link> -->
             </div>
             <div class="row gy-3">
@@ -24,6 +27,7 @@
                         </button>
                     </div>
                 </div> -->
+
                 <div class="col-4" v-for="restaurant in filteredList" :key="restaurant.id">
                     <router-link class="text-dark text-decoration-none" :to="{
                         name: 'users.show',
@@ -49,7 +53,6 @@
     </div>
 </template>
 
-
 <script>
 import axios from "axios";
 
@@ -61,12 +64,11 @@ export default {
             selected: [],
             restaurants: [],
             categories: [],
-            filterInput: '',
+            filterInput: "",
             nuovoArrayRistoranti: [],
         };
     },
     methods: {
-
         // selectCat() {
         //     for (let i = 0; i < this.restaurants.length; i++) {
         //         for (let i = 0; i < categories.length; i++) {
@@ -81,13 +83,15 @@ export default {
 
         fetchCategories() {
             axios.get("/api/categories").then((resp) => {
+                // console.log(resp);
+
                 this.categories = resp.data;
+                console.log(this.categories);
             });
         },
 
         fetchUsers() {
             axios.get("/api/users").then((resp) => {
-                console.log(resp);
                 this.restaurants = resp.data;
             });
         },
@@ -110,31 +114,33 @@ export default {
             this.nuovoArrayRistoranti = map(this.restaurants);
             console.log(selectCatecories);
         },
+    },
 
+    test() {
+        console.log();
     },
 
     computed: {
         filteredList() {
-            const value = this.filterInput.charAt(0).toUpperCase() + this.filterInput.slice(1);
+            const value = this.filterInput;
+
+
+
             return this.restaurants.filter(function (restaurant) {
-                return restaurant.name.indexOf(value) ||
-                    restaurant.category.indexOf(value) ||
-                    restaurant.adress.indexOf(value)
-            })
-        }
+                return restaurant.name.indexOf(value) > -1;
+
+                // restaurant.category.indexOf(value) > -1 ||
+                // restaurant.address.indexOf(value) > -1
+            });
+        },
     },
 
     mounted() {
         this.fetchCategories();
         this.fetchUsers();
     },
-
-
-
 };
 </script>
-
-
 
 <style lang="scss" scoped>
 @import "~/resources/sass/backend/_variables.scss";
@@ -143,7 +149,11 @@ export default {
 .search-bar {
     display: flex;
     position: relative;
+    bottom: 8rem;
     align-items: center;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
 
     .form-control {
         border: none;
@@ -177,13 +187,12 @@ export default {
     }
 }
 
-
 .restaurant-section {
     background: rgb(0, 126, 137);
     background: linear-gradient(125deg,
             rgba(0, 126, 137, 1) 0%,
             rgba(34, 194, 183, 1) 100%);
-    padding: 4rem 0;
+    padding: 0;
 
     .card-restaurant {
         height: 100%;
