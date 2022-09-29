@@ -35,7 +35,6 @@
                             <div class="pb-3 text-muted">Scegli il tuo piatto, ed aggiungilo al carrello.</div>
 
                             <!-- SINGLE DISH CARD -->
-<<<<<<< HEAD
                             <div class="row row-cols-2 g-3">
 
                                 <div class="col" v-for="dish in restaurant.dishes" :key="dish.id">
@@ -118,105 +117,6 @@
                         </div>
                     </div>
                     <Checkout></Checkout>
-=======
-                            <div class="row row-cols-2 g-3 w-100">
-                                <div class="col" v-for="dish in restaurant.dishes" :key="dish.id">
-                                        <button @click="addItemToCart(dish)">
-                                            <div class="dish-card">
-                                                <div class="text-start pe-1">
-                                                    <div><b>{{ dish.name }}</b></div>
-                                                    <div class="description">{{ dish.description }}</div>
-                                                    <div>{{ dish.price + "€" }}</div>
-                                                </div>
-                                                <div class="dish-img">
-                                                    <img :src="'/storage/' + dish.img" :alt="'Immagine del piatto' + ' ' + dish.name" />
-                                                </div>
-                                            </div>
-                                        </button>
-                                        <!-- <button @click="addItemToCart(dish)">add</button> -->
-                                    <!-- <button @click="convertJson()" ></button> -->
-                                </div>
-                            </div>
-                            <!-- <CartComp></CartComp> -->
-                        </div>
-                    </div>
-
-                <!-- <div v-for="item in cart" :key="item.id">
-                    <span>{{item.name}}</span>
-                    <span>{{item.price + "€" }}</span> -->
-
-                    <!-- CART SECTION -->
-                    <div class="col-4">
-                        <div class="py-4 h-100">
-                            <div class="cart-section">
-
-                                <div v-if="cart.length <= 0" class="empty-cart">
-                                    <i class="fa-solid fa-basket-shopping"></i>
-                                    <div class="empty">Il carrello è vuoto</div>
-                                </div>
-
-                                <template v-if="cart.length > 0">
-                                    <h5 class="pb-3 fw-bold">Il tuo ordine</h5>
-                                </template>
-
-                                <div v-for="dish in cart" :key="dish.id" class="row">
-
-                                    <!-- SELECTED DISH -->
-                                    <div class="col-3">
-                                        <p>{{ dish.name }}</p>
-                                    </div>
-
-                                    <!-- QUANTITY BUTTONS -->
-                                    <div class="col-3">
-                                        <div class="d-flex align-items-center cart-quantity-button">
-                                            <div class="pill-button">
-                                                <a @click="removeOneFromCart(dish)" class="no-decoration">
-                                                    <i class="fa-regular fa-square-minus"></i>
-                                                </a>
-                                            </div>
-
-                                            <div class="display-num-pill-button">
-                                                {{ dish.quantity }}
-                                            </div>
-
-                                            <div>
-                                                <a @click="addItemToCart(dish)" class="no-decoration">
-                                                    <i class="fa-regular fa-square-plus"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- PRICE-->
-                                    <div class="col-3">
-                                        <p class="ps-1 price text-nowrap">{{ (dish.price * dish.quantity).toFixed(2) }} €</p>
-                                    </div>
-
-                                    <!-- TRASHCAN -->
-                                    <div class="col-3">
-                                        <a class="no-decoration" @click="removeAllFromCart(dish)"><i class="fa-solid fa-trash"></i></a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- PAYMENT BUTTON -->
-                            <div class="payment-section d-flex justify-content-center">
-                                <button class="grey-btn position-absolute" style="bottom: 20px; width: 90%;">
-                                    <b>Vai al pagamento</b>
-                                </button>
-
-                                <template v-if="cart.length > 0">
-                                    <button class="blue-btn position-absolute" style="bottom: 20px; width: 90%;">
-                                        <b>Vai al pagamento</b>
-                                    </button>
-                                </template>
-                            </div>
-
-                        </div>
-
-                    </div>
->>>>>>> e6a6480c4271fdad5488db869718871e6049adbf
                 </div>
             </div>
         </div>
@@ -486,8 +386,7 @@ export default {
                 border: none;
                 border-radius: 5px;
                 background-color: transparent;
-<<<<<<< HEAD
-=======
+            }
 
             .dish-card {
                 width: 100%;
@@ -505,7 +404,7 @@ export default {
                     border-radius: 5px;
                     border: 1px solid $deliveroo-grey;
                 }
->>>>>>> e6a6480c4271fdad5488db869718871e6049adbf
+
 
                 .description {
                     font-size: .85rem;
@@ -518,45 +417,44 @@ export default {
         }
     }
 
-        .cart-section {
-            height: 350px;
-            width: 100%;
-            background-color: white;
-            border: 1px solid white;
-            padding: 2rem 2rem 4rem 2rem;
-            overflow-y: auto;
-            box-shadow: 0 0 4px rgb(224, 224, 224);
-            
-            .empty-cart {
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                gap: 1rem;
+    .cart-section {
+        height: 350px;
+        width: 100%;
+        background-color: white;
+        border: 1px solid white;
+        padding: 2rem 2rem 4rem 2rem;
+        overflow-y: auto;
+        box-shadow: 0 0 4px rgb(224, 224, 224);
 
-                & i {
-                    color: #abadad;
-                    font-size: 50px;
-                }
+        .empty-cart {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
 
-                .empty {
-                    color: #abadad;
-                }
+            & i {
+                color: #abadad;
+                font-size: 50px;
             }
 
-            a i {
-                color: $deliveroo-blue;
-                margin: 0 .5rem;
-                cursor: pointer;
+            .empty {
+                color: #abadad;
             }
         }
 
-        .payment-section {
-            height: 150px;
-            width: 100%;
-            background-color: white;
-            box-shadow: 0 -5px 5px -2px rgb(224, 224, 224);
-            position: relative;
+        a i {
+            color: $deliveroo-blue;
+            margin: 0 .5rem;
+            cursor: pointer;
         }
+    }
+
+    .payment-section {
+        height: 150px;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 -5px 5px -2px rgb(224, 224, 224);
+        position: relative;
     }
 }
 </style>
