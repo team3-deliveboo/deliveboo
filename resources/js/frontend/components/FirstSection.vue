@@ -1,64 +1,64 @@
 <template>
     <div class="restaurant-section">
         <div class="container">
+
+            <!-- SEARCH BAR -->
             <div class="search-bar">
                 <button class="fork">
                     <i class="fa-solid fa-utensils"></i>
                 </button>
+
                 <input type="text" class="form-control" placeholder="Italiano? Vegano? Stellato?"
                     v-model="filterInput" />
                 <button class="search-btn" type="button" id="button-addon1">
                     Cerca
                 </button>
             </div>
+
+
             <div class="row gy-3">
                 <div class="form-check d-flex flex-wrap justify-content-between">
                     <div class="col-4" v-for="category in categories" :key="category.id">
-                        <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name"
-                            :id="category.id" />
-                        <label class="form-check-label" :for="category.id">{{
-                        category.name }}</label>
+                        <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name" :id="category.id" />
+                        <label class="form-check-label" :for="category.id">{{ category.name }}</label>
                     </div>
-                    <div>
+
+                    <!-- <div>
                         <div>
                             <h2>Hai cercato {{ selected }}</h2>
                         </div>
-
                         <button @click="SelectFilter()" type="button" class="btn btn-primary mt-5">
                             Apply filter
                         </button>
+                    </div> -->
+                </div>
+
+
+                <!-- CATEGORY FILTER -->
+                <div v-if="SelectFilter.length > 0">
+                    <div class="col-4" v-for="restaurant in SelectFilter" :key="restaurant.id">
+                        <router-link class="text-dark text-decoration-none" :to="{ name: 'users.show', params: { slug: restaurant.slug } }">
+                            <div class="card-restaurant d-flex flex-column">
+                                <div class="restaurant-img">
+                                    <img :src="getImg(restaurant)" alt="/" />
+                                </div>
+                                <div class="restaurant-name">
+                                    {{ restaurant.name }}
+                                </div>
+                                <div v-if="restaurant.categories">
+                                    <span v-for="category in restaurant.categories" :key="category.id">
+                                        <span>{{ category.name + " " }}</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </router-link>
                     </div>
                 </div>
 
-                <!-- ///////////////////// -->
-                <div v-if="SelectFilter.length > 0">
-                    <div class="col-4" v-for="restaurant in SelectFilter" :key="restaurant.id">
-                        <router-link class="text-dark text-decoration-none" :to="{
-                          name: 'users.show',
-                          params: { slug: restaurant.slug },
-                        }">
-                            <div class="card-restaurant d-flex flex-column">
-                                <div class="restaurant-img">
-                                    <img :src="getImg(restaurant)" alt="/" />
-                                </div>
-                                <div class="restaurant-name">
-                                    {{ restaurant.name }}
-                                </div>
-                                <div v-if="restaurant.categories">
-                                    <span v-for="category in restaurant.categories" :key="category.id">
-                                        <span>{{ category.name + " " }}</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </router-link>
-                    </div>
-                </div>
+
                 <div v-else-if="filteredList.length > 0">
                     <div class="col-4" v-for="restaurant in filteredList" :key="restaurant.id">
-                        <router-link class="text-dark text-decoration-none" :to="{
-                          name: 'users.show',
-                          params: { slug: restaurant.slug },
-                        }">
+                        <router-link class="text-dark text-decoration-none" :to="{ name: 'users.show', params: { slug: restaurant.slug } }">
                             <div class="card-restaurant d-flex flex-column">
                                 <div class="restaurant-img">
                                     <img :src="getImg(restaurant)" alt="/" />
@@ -75,11 +75,13 @@
                         </router-link>
                     </div>
                 </div>
+
+
                 <div v-else>
                     <div class="col-4" v-for="restaurant in restaurants" :key="restaurant.id">
                         <router-link class="text-dark text-decoration-none" :to="{
-                          name: 'users.show',
-                          params: { slug: restaurant.slug },
+                            name: 'users.show',
+                            params: { slug: restaurant.slug },
                         }">
                             <div class="card-restaurant d-flex flex-column">
                                 <div class="restaurant-img">
@@ -97,7 +99,9 @@
                         </router-link>
                     </div>
                 </div>
+
             </div>
+
         </div>
     </div>
 </template>
@@ -110,7 +114,6 @@ export default {
 
     data() {
         return {
-
             // categoryName: [].join(" - "),
             selected: [],
             restaurants: [],
@@ -123,7 +126,6 @@ export default {
         result(str) {
             str.match(/[a-z]+|[^a-z]+/gi).join(this.separator);
         },
-
         fetchCategories() {
             axios.get("/api/categories").then((resp) => {
                 // console.log(resp);
@@ -132,20 +134,17 @@ export default {
                 // console.log(this.categories);
             });
         },
-
         fetchUsers() {
             axios.get("/api/users").then((resp) => {
                 this.restaurants = resp.data;
             });
         },
-
         // filterBy(list, value) {
         //     value = value.charAt(0).toUpperCase() + value.slice(1);
         //     return list.filter(function (restaurant) {
         //         return restaurant.name.indexOf(value) > -1;
         //     });
         // },
-
         getImg(restaurant) {
             if (!restaurant.img) {
                 return "/storage/placeholder.webp";
@@ -153,7 +152,6 @@ export default {
             return "/storage/" + restaurant.img;
         },
     },
-
     computed: {
         SelectFilter() {
             const value = this.selected;
@@ -170,19 +168,14 @@ export default {
                     } else {
                         return allCategory.indexOf(value) > -1;
                     }
-
                 });
                 console.log(filledCategory);
                 return filledCategory.length > 0;
-
             });
-
             console.log();
         },
-
         filteredList() {
             const value = this.filterInput;
-
             return this.restaurants.filter(function (restaurant) {
                 return restaurant.name.indexOf(value) > -1;
 
@@ -191,7 +184,6 @@ export default {
             });
         },
     },
-
     mounted() {
         this.fetchCategories();
         this.fetchUsers();
