@@ -3099,7 +3099,7 @@ var render = function render() {
   }, [_vm._v(_vm._s(_vm.restaurant.name))])]), _vm._v(" "), _c("div", {
     staticClass: "row w-100"
   }, [_c("div", {
-    staticClass: "col-7"
+    staticClass: "col-8"
   }, [_c("div", {
     staticClass: "dishes-section"
   }, [_c("h3", [_vm._v("Menu")]), _vm._v(" "), _c("div", {
@@ -3126,26 +3126,34 @@ var render = function render() {
       }
     }, [_vm._v("add")])]);
   }), 0)])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-5"
+    staticClass: "col-4"
   }, [_c("div", {
     staticClass: "py-4 pe-4 h-100"
   }, [_c("div", {
     staticClass: "cart-section"
-  }, [_c("h4", [_vm._v("Il tuo carrello")]), _vm._v(" "), _vm._l(_vm.cart, function (dish) {
+  }, [_c("h5", {
+    staticClass: "pb-3"
+  }, [_vm._v("Il tuo ordine")]), _vm._v(" "), _vm._l(_vm.cart, function (dish) {
     return _c("div", {
       key: dish.id,
       staticClass: "row dish-container"
-    }, [_vm._m(0, true), _vm._v(" "), _c("div", {
-      staticClass: "col-9 dish-information"
     }, [_c("div", {
-      staticClass: "dish-and-price"
+      staticClass: "col-3"
+    }, [_c("div", {
+      staticClass: "dish-desc"
+    }, [_vm._v(_vm._s(dish.description))])]), _vm._v(" "), _c("div", {
+      staticClass: "col-3 dish-information d-flex"
+    }, [_c("div", {
+      staticClass: "dish-and-price d-flex"
     }, [_c("p", {
       staticClass: "text-orange"
     }, [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("p", {
       staticClass: "ps-1 price text-nowrap"
-    }, [_vm._v("\n                                € " + _vm._s((dish.price * dish.quantity).toFixed(2)) + "\n                            ")])]), _vm._v(" "), _c("div", {
-      staticClass: "d-flex align-items-center cart-quantity-button"
-    }, [_c("a", {
+    }, [_vm._v("\n                                € " + _vm._s((dish.price * dish.quantity).toFixed(2)))])])]), _vm._v(" "), _c("div", {
+      staticClass: "col-3"
+    }, [_c("div", {
+      staticClass: "d-flex align-items-center cart-quantity-button ps-4"
+    }, [_c("div", [_c("a", {
       staticClass: "no-decoration",
       on: {
         click: function click($event) {
@@ -3154,7 +3162,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa-solid fa-trash"
-    })]), _vm._v(" "), _c("div", {
+    })])]), _vm._v(" "), _c("div", {
       staticClass: "pill-button"
     }, [_c("a", {
       staticClass: "no-decoration",
@@ -3163,9 +3171,9 @@ var render = function render() {
           return _vm.removeOneFromCart(dish);
         }
       }
-    }, [_vm._v("-\n                                ")]), _vm._v(" "), _c("div", {
+    }, [_vm._v("-")])]), _vm._v(" "), _c("div", {
       staticClass: "display-num-pill-button"
-    }, [_vm._v("\n                                    " + _vm._s(dish.quantity) + "\n                                ")]), _vm._v(" "), _c("a", {
+    }, [_vm._v("\n                                    " + _vm._s(dish.quantity) + "\n                                ")]), _vm._v(" "), _c("div", [_c("a", {
       staticClass: "no-decoration",
       on: {
         click: function click($event) {
@@ -3176,16 +3184,7 @@ var render = function render() {
   })], 2)])])]), _vm._v(" "), _c("TheFooter")], 1);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "col-3"
-  }, [_c("div", {
-    staticClass: "dish-image"
-  })]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -3412,7 +3411,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-339970b6] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-339970b6] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-339970b6]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-339970b6]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.cart[data-v-339970b6] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n}\n.cart .restaurant-section[data-v-339970b6] {\n  width: 100%;\n  display: flex;\n  padding: 2rem 4rem;\n  border-bottom: 1px solid lightgray;\n}\n.cart .restaurant-section img[data-v-339970b6] {\n  height: 200px;\n  border-radius: 5px;\n  border: 1px solid lightgray;\n  aspect-ratio: 1/1;\n  box-shadow: 3px 3px 5px lightgray;\n}\n.cart .restaurant-section h1[data-v-339970b6] {\n  text-transform: uppercase;\n  padding: 0 2rem;\n}\n.cart .dishes-section[data-v-339970b6] {\n  padding: 2rem 4rem;\n}\n.cart .dishes-section .dish-img[data-v-339970b6] {\n  aspect-ratio: 1/1;\n  width: 100px;\n}\n.cart .cart-section[data-v-339970b6] {\n  height: 100%;\n  width: 100%;\n  background-color: white;\n  border: 1px solid lightgray;\n  padding: 2rem 0 4rem 2rem;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-339970b6] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.search-btn[data-v-339970b6] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-339970b6]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-339970b6]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.cart[data-v-339970b6] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n}\n.cart .restaurant-section[data-v-339970b6] {\n  width: 100%;\n  display: flex;\n  padding: 2rem 4rem;\n  border-bottom: 1px solid lightgray;\n}\n.cart .restaurant-section img[data-v-339970b6] {\n  height: 200px;\n  border-radius: 5px;\n  border: 1px solid lightgray;\n  aspect-ratio: 1/1;\n  box-shadow: 3px 3px 5px lightgray;\n}\n.cart .restaurant-section h1[data-v-339970b6] {\n  text-transform: uppercase;\n  padding: 0 2rem;\n}\n.cart .dishes-section[data-v-339970b6] {\n  padding: 2rem 4rem;\n}\n.cart .dishes-section .dish-img[data-v-339970b6] {\n  aspect-ratio: 1/1;\n  width: 100px;\n}\n.cart .cart-section[data-v-339970b6] {\n  height: 500px;\n  width: 100%;\n  background-color: white;\n  border: 1px solid lightgray;\n  padding: 2rem 0 4rem 2rem;\n  overflow: auto;\n}", ""]);
 
 // exports
 

@@ -12,11 +12,10 @@
             <h1 class="mt-3">{{ restaurant.name }}</h1>
         </div>
 
-
-        <!-- DISHES LIST -->
         <div class="row w-100">
-            <div class="col-7">
 
+            <!-- DISHES LIST -->
+            <div class="col-8">
                 <div class="dishes-section">
 
                     <h3>Menu</h3>
@@ -35,11 +34,11 @@
                                     <!-- <button @click="convertJson()" ></button> -->
                                 </li>
                             </div>
+
                         </ul>
                     </div>
                     <!-- <CartComp></CartComp> -->
                 </div>
-
             </div>
 
         <!-- <div v-for="item in cart" :key="item.id">
@@ -47,42 +46,54 @@
             <span>{{item.price + "€" }}</span> -->
 
 
-            <!-- CART -->
-            <div class="col-5">
+            <!-- CART SECTION -->
+            <div class="col-4">
                 <div class="py-4 pe-4 h-100">
                 <div class="cart-section">
 
-                    <h4>Il tuo carrello</h4>
+                    <h5 class="pb-3">Il tuo ordine</h5>
                 
                     <div v-for="dish in cart" :key="dish.id" class="row dish-container">
 
                         <div class="col-3">
-                            <div class="dish-image"></div>
+                            <div class="dish-desc">{{ dish.description }}</div>
                         </div>
 
-                        <div class="col-9 dish-information">
-                            <div class="dish-and-price">
+                        <div class="col-3 dish-information d-flex">
+
+                            <div class="dish-and-price d-flex">
                                 <p class="text-orange">{{ dish.name }}</p>
                                 <p class="ps-1 price text-nowrap">
-                                    € {{ (dish.price * dish.quantity).toFixed(2) }}
-                                </p>
+                                    € {{ (dish.price * dish.quantity).toFixed(2) }}</p>
                             </div>
+                            
+                        </div>
 
-                            <div class="d-flex align-items-center cart-quantity-button">
-                                <!-- bin icon -->
-                                <a class="no-decoration" @click="removeAllFromCart(dish)"><i class="fa-solid fa-trash"></i></a>
+                        <div class="col-3">
+                            <div class="d-flex align-items-center cart-quantity-button ps-4">
+
+                                <div>
+                                    <!-- bin icon -->
+                                    <a class="no-decoration" @click="removeAllFromCart(dish)"><i class="fa-solid fa-trash"></i></a>
+                                </div>
+
                                 <!-- add and remove item from cart  -->
                                 <div class="pill-button">
-                                    <a @click="removeOneFromCart(dish)" class="no-decoration">-
-                                    </a>
+                                    <a @click="removeOneFromCart(dish)" class="no-decoration">-</a>
+                                </div>
 
                                     <div class="display-num-pill-button">
                                         {{ dish.quantity }}
                                     </div>
+
+                                    <div>
                                     <a @click="addItemToCart(dish)" class="no-decoration">+</a>
                                 </div>
+
                             </div>
                         </div>
+
+                        
 
                     </div>
                 </div>
@@ -366,11 +377,12 @@ export default {
     }
 
     .cart-section {
-        height: 100%;
+        height: 500px;
         width: 100%;
         background-color: white;
         border: 1px solid lightgray;
         padding: 2rem 0 4rem 2rem;
+        overflow: auto;
     }
 
 }
