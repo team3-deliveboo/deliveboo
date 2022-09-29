@@ -61,7 +61,6 @@
                     <span>{{item.name}}</span>
                     <span>{{item.price + "€" }}</span> -->
 
-
                     <!-- CART SECTION -->
                     <div class="col-4">
                         <div class="py-4 h-100">
@@ -115,21 +114,21 @@
                                     </div>
 
                                 </div>
+                            </div>
 
-                                <!-- PAYMENT BUTTON -->
-                                <div class="payment-section d-flex justify-content-center">
-                                    <button class="grey-btn position-absolute" style="bottom: 20px; width: 90%;">
+                            <!-- PAYMENT BUTTON -->
+                            <div class="payment-section d-flex justify-content-center">
+                                <button class="grey-btn position-absolute" style="bottom: 20px; width: 90%;">
+                                    <b>Vai al pagamento</b>
+                                </button>
+
+                                <template v-if="cart.length > 0">
+                                    <button class="blue-btn position-absolute" style="bottom: 20px; width: 90%;">
                                         <b>Vai al pagamento</b>
                                     </button>
-
-                                    <template v-if="cart.length > 0">
-                                        <button class="blue-btn position-absolute" style="bottom: 20px; width: 90%;">
-                                            <b>Vai al pagamento</b>
-                                        </button>
-                                    </template>
-                                </div>
-
+                                </template>
                             </div>
+
                         </div>
 
                     </div>
@@ -430,14 +429,13 @@ export default {
     }
 
         .cart-section {
-            height: 500px;
+            height: 350px;
             width: 100%;
             background-color: white;
             border: 1px solid white;
             padding: 2rem 2rem 4rem 2rem;
             overflow-y: auto;
             box-shadow: 0 0 4px rgb(224, 224, 224);
-            position: relative;
             
             .empty-cart {
                 display: flex;
@@ -460,16 +458,14 @@ export default {
                 margin: 0 .5rem;
                 cursor: pointer;
             }
+        }
 
-            .payment-section {
-                height: 150px;
-                width: 100%;
-                background-color: white;
-                box-shadow: 0 -5px 5px -2px rgb(224, 224, 224);
-                position: absolute;
-                bottom: 0;
-                left: 0;
-            }
+        .payment-section {
+            height: 150px;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 -5px 5px -2px rgb(224, 224, 224);
+            position: relative;
         }
     }
 }
