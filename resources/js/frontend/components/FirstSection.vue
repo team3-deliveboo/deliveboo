@@ -10,43 +10,92 @@
                 <button class="search-btn" type="button" id="button-addon1">
                     Cerca
                 </button>
-                <!-- <router-link class="btn btn-default" v-bind:to="'/customer/'+customer.id">View</router-link> -->
             </div>
             <div class="row gy-3">
-                <!-- <div class="form-check">
-                    <div class="col-4" v-for="restaurant in filteredList" :key="restaurant.id">
-                        <input class="form-check-input" type="checkbox" v-model="selected" :value="restaurant.name"
-                            :id="restaurant.id">
-                        <label class="form-check-label" for="flexCheckIndeterminateDisabled">{{ restaurant.name
-                        }}</label>
+                <div class="form-check d-flex flex-wrap justify-content-between">
+                    <div class="col-4" v-for="category in categories" :key="category.id">
+                        <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name"
+                            :id="category.id" />
+                        <label class="form-check-label" :for="category.id">{{
+                        category.name }}</label>
                     </div>
                     <div>
-                        <router-link class="btn btn-default" v-bind:to="'/customer/'+customer.id">View</router-link>
-                        <button type="button" class="btn btn-primary">
+                        <div>
+                            <h2>Hai cercato {{ selected }}</h2>
+                        </div>
+
+                        <button @click="SelectFilter()" type="button" class="btn btn-primary mt-5">
                             Apply filter
                         </button>
                     </div>
-                </div> -->
+                </div>
 
-                <div class="col-4" v-for="restaurant in filteredList" :key="restaurant.id">
-                    <router-link class="text-dark text-decoration-none" :to="{
-                        name: 'users.show',
-                        params: { slug: restaurant.slug },
-                    }">
-                        <div class="card-restaurant d-flex flex-column">
-                            <div class="restaurant-img">
-                                <img :src="getImg(restaurant)" alt="/" />
+                <!-- ///////////////////// -->
+                <div v-if="SelectFilter.length > 0">
+                    <div class="col-4" v-for="restaurant in SelectFilter" :key="restaurant.id">
+                        <router-link class="text-dark text-decoration-none" :to="{
+                          name: 'users.show',
+                          params: { slug: restaurant.slug },
+                        }">
+                            <div class="card-restaurant d-flex flex-column">
+                                <div class="restaurant-img">
+                                    <img :src="getImg(restaurant)" alt="/" />
+                                </div>
+                                <div class="restaurant-name">
+                                    {{ restaurant.name }}
+                                </div>
+                                <div v-if="restaurant.categories">
+                                    <span v-for="category in restaurant.categories" :key="category.id">
+                                        <span>{{ category.name + " " }}</span>
+                                    </span>
+                                </div>
                             </div>
-                            <div class="restaurant-name">
-                                {{ restaurant.name }}
+                        </router-link>
+                    </div>
+                </div>
+                <div v-else-if="filteredList.length > 0">
+                    <div class="col-4" v-for="restaurant in filteredList" :key="restaurant.id">
+                        <router-link class="text-dark text-decoration-none" :to="{
+                          name: 'users.show',
+                          params: { slug: restaurant.slug },
+                        }">
+                            <div class="card-restaurant d-flex flex-column">
+                                <div class="restaurant-img">
+                                    <img :src="getImg(restaurant)" alt="/" />
+                                </div>
+                                <div class="restaurant-name">
+                                    {{ restaurant.name }}
+                                </div>
+                                <div v-if="restaurant.categories">
+                                    <span v-for="category in restaurant.categories" :key="category.id">
+                                        <span>{{ category.name + " " }}</span>
+                                    </span>
+                                </div>
                             </div>
-                            <div v-if="restaurant.categories">
-                                <span v-for="category in restaurant.categories" :key="category.id">
-                                    <span>{{ category.name }}</span>
-                                </span>
+                        </router-link>
+                    </div>
+                </div>
+                <div v-else>
+                    <div class="col-4" v-for="restaurant in restaurants" :key="restaurant.id">
+                        <router-link class="text-dark text-decoration-none" :to="{
+                          name: 'users.show',
+                          params: { slug: restaurant.slug },
+                        }">
+                            <div class="card-restaurant d-flex flex-column">
+                                <div class="restaurant-img">
+                                    <img :src="getImg(restaurant)" alt="/" />
+                                </div>
+                                <div class="restaurant-name">
+                                    {{ restaurant.name }}
+                                </div>
+                                <div v-if="restaurant.categories">
+                                    <span v-for="category in restaurant.categories" :key="category.id">
+                                        <span>{{ category.name + " " }}</span>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                    </router-link>
+                        </router-link>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,22 +110,16 @@ export default {
 
     data() {
         return {
+
+            // categoryName: [].join(" - "),
             selected: [],
             restaurants: [],
             categories: [],
             filterInput: "",
-            nuovoArrayRistoranti: [],
+            // nuovoArrayRistoranti: [],
         };
     },
     methods: {
-        // selectCat() {
-        //     for (let i = 0; i < this.restaurants.length; i++) {
-        //         for (let i = 0; i < categories.length; i++) {
-        //             restaurant.categories.includes(category);
-        //         }
-        //     }
-        // },
-
         result(str) {
             str.match(/[a-z]+|[^a-z]+/gi).join(this.separator);
         },
@@ -86,7 +129,7 @@ export default {
                 // console.log(resp);
 
                 this.categories = resp.data;
-                console.log(this.categories);
+                // console.log(this.categories);
             });
         },
 
@@ -109,22 +152,36 @@ export default {
             }
             return "/storage/" + restaurant.img;
         },
-
-        selectCategories() {
-            this.nuovoArrayRistoranti = map(this.restaurants);
-            console.log(selectCatecories);
-        },
-    },
-
-    test() {
-        console.log();
     },
 
     computed: {
+        SelectFilter() {
+            const value = this.selected;
+
+            return this.restaurants.filter(function (restaurant) {
+                const categories = restaurant.categories;
+                // for (let i = 0; i < categories.length; i++) {}
+                const filledCategory = categories.filter(function (category) {
+                    const allCategory = category.name;
+
+                    // console.log(allCategory.indexOf(value) > -1);
+                    if (value.length == 0) {
+                        return
+                    } else {
+                        return allCategory.indexOf(value) > -1;
+                    }
+
+                });
+                console.log(filledCategory);
+                return filledCategory.length > 0;
+
+            });
+
+            console.log();
+        },
+
         filteredList() {
             const value = this.filterInput;
-
-
 
             return this.restaurants.filter(function (restaurant) {
                 return restaurant.name.indexOf(value) > -1;

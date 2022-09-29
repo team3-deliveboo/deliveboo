@@ -1943,21 +1943,15 @@ __webpack_require__.r(__webpack_exports__);
   name: "FirstSection",
   data: function data() {
     return {
+      // categoryName: [].join(" - "),
       selected: [],
       restaurants: [],
       categories: [],
-      filterInput: "",
-      nuovoArrayRistoranti: []
+      filterInput: "" // nuovoArrayRistoranti: [],
+
     };
   },
   methods: {
-    // selectCat() {
-    //     for (let i = 0; i < this.restaurants.length; i++) {
-    //         for (let i = 0; i < categories.length; i++) {
-    //             restaurant.categories.includes(category);
-    //         }
-    //     }
-    // },
     result: function result(str) {
       str.match(/[a-z]+|[^a-z]+/gi).join(this.separator);
     },
@@ -1966,8 +1960,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/categories").then(function (resp) {
         // console.log(resp);
-        _this.categories = resp.data;
-        console.log(_this.categories);
+        _this.categories = resp.data; // console.log(this.categories);
       });
     },
     fetchUsers: function fetchUsers() {
@@ -1989,16 +1982,28 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return "/storage/" + restaurant.img;
-    },
-    selectCategories: function selectCategories() {
-      this.nuovoArrayRistoranti = map(this.restaurants);
-      console.log(selectCatecories);
     }
   },
-  test: function test() {
-    console.log();
-  },
   computed: {
+    SelectFilter: function SelectFilter() {
+      var value = this.selected;
+      return this.restaurants.filter(function (restaurant) {
+        var categories = restaurant.categories; // for (let i = 0; i < categories.length; i++) {}
+
+        var filledCategory = categories.filter(function (category) {
+          var allCategory = category.name; // console.log(allCategory.indexOf(value) > -1);
+
+          if (value.length == 0) {
+            return;
+          } else {
+            return allCategory.indexOf(value) > -1;
+          }
+        });
+        console.log(filledCategory);
+        return filledCategory.length > 0;
+      });
+      console.log();
+    },
     filteredList: function filteredList() {
       var value = this.filterInput;
       return this.restaurants.filter(function (restaurant) {
@@ -2475,7 +2480,65 @@ var render = function render() {
     }
   }, [_vm._v("\n                Cerca\n            ")])]), _vm._v(" "), _c("div", {
     staticClass: "row gy-3"
-  }, _vm._l(_vm.filteredList, function (restaurant) {
+  }, [_c("div", {
+    staticClass: "form-check d-flex flex-wrap justify-content-between"
+  }, [_vm._l(_vm.categories, function (category) {
+    return _c("div", {
+      key: category.id,
+      staticClass: "col-4"
+    }, [_c("input", {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: _vm.selected,
+        expression: "selected"
+      }],
+      staticClass: "form-check-input",
+      attrs: {
+        type: "checkbox",
+        id: category.id
+      },
+      domProps: {
+        value: category.name,
+        checked: Array.isArray(_vm.selected) ? _vm._i(_vm.selected, category.name) > -1 : _vm.selected
+      },
+      on: {
+        change: function change($event) {
+          var $$a = _vm.selected,
+              $$el = $event.target,
+              $$c = $$el.checked ? true : false;
+
+          if (Array.isArray($$a)) {
+            var $$v = category.name,
+                $$i = _vm._i($$a, $$v);
+
+            if ($$el.checked) {
+              $$i < 0 && (_vm.selected = $$a.concat([$$v]));
+            } else {
+              $$i > -1 && (_vm.selected = $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+            }
+          } else {
+            _vm.selected = $$c;
+          }
+        }
+      }
+    }), _vm._v(" "), _c("label", {
+      staticClass: "form-check-label",
+      attrs: {
+        "for": category.id
+      }
+    }, [_vm._v(_vm._s(category.name))])]);
+  }), _vm._v(" "), _c("div", [_c("div", [_c("h2", [_vm._v("Hai cercato " + _vm._s(_vm.selected))])]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-primary mt-5",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.SelectFilter();
+      }
+    }
+  }, [_vm._v("\n                        Apply filter\n                    ")])])], 2), _vm._v(" "), _vm.SelectFilter.length > 0 ? _c("div", _vm._l(_vm.SelectFilter, function (restaurant) {
     return _c("div", {
       key: restaurant.id,
       staticClass: "col-4"
@@ -2500,12 +2563,72 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("div", {
       staticClass: "restaurant-name"
-    }, [_vm._v("\n                            " + _vm._s(restaurant.name) + "\n                        ")]), _vm._v(" "), restaurant.categories ? _c("div", _vm._l(restaurant.categories, function (category) {
+    }, [_vm._v("\n                                " + _vm._s(restaurant.name) + "\n                            ")]), _vm._v(" "), restaurant.categories ? _c("div", _vm._l(restaurant.categories, function (category) {
       return _c("span", {
         key: category.id
-      }, [_c("span", [_vm._v(_vm._s(category.name))])]);
+      }, [_c("span", [_vm._v(_vm._s(category.name + " "))])]);
     }), 0) : _vm._e()])])], 1);
-  }), 0)])]);
+  }), 0) : _vm.filteredList.length > 0 ? _c("div", _vm._l(_vm.filteredList, function (restaurant) {
+    return _c("div", {
+      key: restaurant.id,
+      staticClass: "col-4"
+    }, [_c("router-link", {
+      staticClass: "text-dark text-decoration-none",
+      attrs: {
+        to: {
+          name: "users.show",
+          params: {
+            slug: restaurant.slug
+          }
+        }
+      }
+    }, [_c("div", {
+      staticClass: "card-restaurant d-flex flex-column"
+    }, [_c("div", {
+      staticClass: "restaurant-img"
+    }, [_c("img", {
+      attrs: {
+        src: _vm.getImg(restaurant),
+        alt: "/"
+      }
+    })]), _vm._v(" "), _c("div", {
+      staticClass: "restaurant-name"
+    }, [_vm._v("\n                                " + _vm._s(restaurant.name) + "\n                            ")]), _vm._v(" "), restaurant.categories ? _c("div", _vm._l(restaurant.categories, function (category) {
+      return _c("span", {
+        key: category.id
+      }, [_c("span", [_vm._v(_vm._s(category.name + " "))])]);
+    }), 0) : _vm._e()])])], 1);
+  }), 0) : _c("div", _vm._l(_vm.restaurants, function (restaurant) {
+    return _c("div", {
+      key: restaurant.id,
+      staticClass: "col-4"
+    }, [_c("router-link", {
+      staticClass: "text-dark text-decoration-none",
+      attrs: {
+        to: {
+          name: "users.show",
+          params: {
+            slug: restaurant.slug
+          }
+        }
+      }
+    }, [_c("div", {
+      staticClass: "card-restaurant d-flex flex-column"
+    }, [_c("div", {
+      staticClass: "restaurant-img"
+    }, [_c("img", {
+      attrs: {
+        src: _vm.getImg(restaurant),
+        alt: "/"
+      }
+    })]), _vm._v(" "), _c("div", {
+      staticClass: "restaurant-name"
+    }, [_vm._v("\n                                " + _vm._s(restaurant.name) + "\n                            ")]), _vm._v(" "), restaurant.categories ? _c("div", _vm._l(restaurant.categories, function (category) {
+      return _c("span", {
+        key: category.id
+      }, [_c("span", [_vm._v(_vm._s(category.name + " "))])]);
+    }), 0) : _vm._e()])])], 1);
+  }), 0)])])]);
 };
 
 var staticRenderFns = [function () {
@@ -20026,15 +20149,14 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*!***********************************************************!*\
   !*** ./resources/js/frontend/components/FirstSection.vue ***!
   \***********************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FirstSection_vue_vue_type_template_id_17e1ff8f_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FirstSection.vue?vue&type=template&id=17e1ff8f&scoped=true& */ "./resources/js/frontend/components/FirstSection.vue?vue&type=template&id=17e1ff8f&scoped=true&");
 /* harmony import */ var _FirstSection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FirstSection.vue?vue&type=script&lang=js& */ "./resources/js/frontend/components/FirstSection.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _FirstSection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _FirstSection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _FirstSection_vue_vue_type_style_index_0_id_17e1ff8f_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FirstSection.vue?vue&type=style&index=0&id=17e1ff8f&lang=scss&scoped=true& */ "./resources/js/frontend/components/FirstSection.vue?vue&type=style&index=0&id=17e1ff8f&lang=scss&scoped=true&");
+/* empty/unused harmony star reexport *//* harmony import */ var _FirstSection_vue_vue_type_style_index_0_id_17e1ff8f_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FirstSection.vue?vue&type=style&index=0&id=17e1ff8f&lang=scss&scoped=true& */ "./resources/js/frontend/components/FirstSection.vue?vue&type=style&index=0&id=17e1ff8f&lang=scss&scoped=true&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -20066,7 +20188,7 @@ component.options.__file = "resources/js/frontend/components/FirstSection.vue"
 /*!************************************************************************************!*\
   !*** ./resources/js/frontend/components/FirstSection.vue?vue&type=script&lang=js& ***!
   \************************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
