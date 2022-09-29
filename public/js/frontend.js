@@ -3138,11 +3138,11 @@ var render = function render() {
       key: dish.id,
       staticClass: "row dish-container"
     }, [_c("div", {
-      staticClass: "col-3"
+      staticClass: "col"
     }, [_c("div", {
       staticClass: "dish-desc"
     }, [_vm._v(_vm._s(dish.description))])]), _vm._v(" "), _c("div", {
-      staticClass: "col-3 dish-information d-flex"
+      staticClass: "col dish-information d-flex"
     }, [_c("div", {
       staticClass: "dish-and-price d-flex"
     }, [_c("p", {
@@ -3150,7 +3150,7 @@ var render = function render() {
     }, [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("p", {
       staticClass: "ps-1 price text-nowrap"
     }, [_vm._v("\n                                € " + _vm._s((dish.price * dish.quantity).toFixed(2)))])])]), _vm._v(" "), _c("div", {
-      staticClass: "col-3"
+      staticClass: "col"
     }, [_c("div", {
       staticClass: "d-flex align-items-center cart-quantity-button ps-4"
     }, [_c("div", [_c("a", {

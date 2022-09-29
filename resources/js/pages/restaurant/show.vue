@@ -55,11 +55,11 @@
                 
                     <div v-for="dish in cart" :key="dish.id" class="row dish-container">
 
-                        <div class="col-3">
+                        <div class="col">
                             <div class="dish-desc">{{ dish.description }}</div>
                         </div>
 
-                        <div class="col-3 dish-information d-flex">
+                        <div class="col dish-information d-flex">
 
                             <div class="dish-and-price d-flex">
                                 <p class="text-orange">{{ dish.name }}</p>
@@ -69,7 +69,7 @@
                             
                         </div>
 
-                        <div class="col-3">
+                        <div class="col">
                             <div class="d-flex align-items-center cart-quantity-button ps-4">
 
                                 <div>
