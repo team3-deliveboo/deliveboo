@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('home');
 // });
 
+
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
@@ -35,6 +37,20 @@ Route::middleware('auth')
         Route::resource('charts', 'ChartController');
     });
 
-// Route::get('{any?}', function () {
-// return view('frontend');
-// })->where("any", ".*");
+Route::get('/checkout',  function () {
+    $gateway = new Braintree\Gateway([
+        'environment' => config('services.braintree.environment'),
+        'merchantId' => config('services.braintree.merchantId'),
+        'publicKey' => config('services.braintree.publicKey'),
+        'privateKey' => config('services.braintree.privateKey')
+    ]);
+    $token = $gateway->ClientToken()->generate();
+    return view(
+        'checkout',
+        ['token' => $token]
+    );
+});
+
+Route::get('{any?}', function () {
+    return view('frontend');
+})->where("any", ".*");

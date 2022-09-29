@@ -25,19 +25,19 @@
 
             <!-- DISH + CART -->
             <div class="container">
-            <div class="row w-100">
+                <div class="row w-100">
 
-                <!-- DISHES LIST -->
-                <div class="col-8">
-                    <div class="dishes-section">
+                    <!-- DISHES LIST -->
+                    <div class="col-8">
+                        <div class="dishes-section">
 
-                        <h4 class="fw-bold pb-0 mb-0">Menù</h4>
-                        <div class="pb-3 text-muted">Scegli il tuo piatto, ed aggiungilo al carrello.</div>
+                            <h4 class="fw-bold pb-0 mb-0">Menù</h4>
+                            <div class="pb-3 text-muted">Scegli il tuo piatto, ed aggiungilo al carrello.</div>
 
-                        <!-- SINGLE DISH CARD -->
-                        <div class="row row-cols-2 g-3">
+                            <!-- SINGLE DISH CARD -->
+                            <div class="row row-cols-2 g-3">
 
-                            <div class="col" v-for="dish in restaurant.dishes" :key="dish.id">
+                                <div class="col" v-for="dish in restaurant.dishes" :key="dish.id">
                                     <button @click="addItemToCart(dish)">
                                         <div class="dish-card">
                                             <div class="text-start pe-1">
@@ -46,83 +46,80 @@
                                                 <div>{{ dish.price + "€" }}</div>
                                             </div>
                                             <div class="dish-img">
-                                                <img :src="'/storage/' + dish.img" :alt="'Immagine del piatto' + ' ' + dish.name" />
+                                                <img :src="'/storage/' + dish.img"
+                                                    :alt="'Immagine del piatto' + ' ' + dish.name" />
                                             </div>
                                         </div>
                                     </button>
                                     <!-- <button @click="addItemToCart(dish)">add</button> -->
-                                
-                                <!-- <button @click="convertJson()" ></button> -->
+
+                                    <!-- <button @click="convertJson()" ></button> -->
+                                </div>
+
                             </div>
 
+                            <!-- <CartComp></CartComp> -->
                         </div>
-
-                        <!-- <CartComp></CartComp> -->
                     </div>
-                </div>
 
-            <!-- <div v-for="item in cart" :key="item.id">
+                    <!-- <div v-for="item in cart" :key="item.id">
                 <span>{{item.name}}</span>
                 <span>{{item.price + "€" }}</span> -->
 
 
-                <!-- CART SECTION -->
-                <div class="col-4">
-                    <div class="py-4 h-100">
-                    <div class="cart-section">
+                    <!-- CART SECTION -->
+                    <div class="col-4">
+                        <div class="py-4 h-100">
+                            <div class="cart-section">
 
-                        <h5 class="pb-3 fw-bold">Il tuo ordine</h5>
-                    
-                        <div v-for="dish in cart" :key="dish.id" class="row dish-container">
+                                <h5 class="pb-3 fw-bold">Il tuo ordine</h5>
 
-                            <div class="col">
-                                <div class="dish-desc">{{ dish.description }}</div>
-                            </div>
+                                <div v-for="dish in cart" :key="dish.id" class="row dish-container">
 
-                            <div class="col dish-information d-flex">
-
-                                <div class="dish-and-price d-flex">
-                                    <p class="text-orange">{{ dish.name }}</p>
-                                    <p class="ps-1 price text-nowrap">
-                                        € {{ (dish.price * dish.quantity).toFixed(2) }}</p>
-                                </div>
-                                
-                            </div>
-
-                            <div class="col">
-                                <div class="d-flex align-items-center cart-quantity-button ps-4">
-
-                                    <div>
-                                        <!-- bin icon -->
-                                        <a class="no-decoration" @click="removeAllFromCart(dish)"><i class="fa-solid fa-trash"></i></a>
+                                    <div class="col">
+                                        <div class="dish-desc">{{ dish.description }}</div>
                                     </div>
 
-                                    <!-- add and remove item from cart  -->
-                                    <div class="pill-button">
-                                        <a @click="removeOneFromCart(dish)" class="no-decoration">-</a>
-                                    </div>
+                                    <div class="col dish-information d-flex">
 
-                                        <div class="display-num-pill-button">
-                                            {{ dish.quantity }}
+                                        <div class="dish-and-price d-flex">
+                                            <p class="text-orange">{{ dish.name }}</p>
+                                            <p class="ps-1 price text-nowrap">
+                                                € {{ (dish.price * dish.quantity).toFixed(2) }}</p>
                                         </div>
 
-                                        <div>
-                                        <a @click="addItemToCart(dish)" class="no-decoration">+</a>
                                     </div>
 
+                                    <div class="col">
+                                        <div class="d-flex align-items-center cart-quantity-button ps-4">
+
+                                            <div>
+                                                <!-- bin icon -->
+                                                <a class="no-decoration" @click="removeAllFromCart(dish)"><i
+                                                        class="fa-solid fa-trash"></i></a>
+                                            </div>
+
+                                            <!-- add and remove item from cart  -->
+                                            <div class="pill-button">
+                                                <a @click="removeOneFromCart(dish)" class="no-decoration">-</a>
+                                            </div>
+
+                                            <div class="display-num-pill-button">
+                                                {{ dish.quantity }}
+                                            </div>
+                                            <div>
+                                                <a @click="addItemToCart(dish)" class="no-decoration">+</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
-                            
-
                         </div>
                     </div>
-                    </div>
-
+                    <Checkout></Checkout>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
 
 
         <!-- VUE COMPONENT: FOOTER -->
@@ -136,6 +133,7 @@
 import axios from "axios";
 import TheFooter from "../../frontend/components/TheFooter.vue";
 import Navbar from "../../frontend/components/Navbar.vue";
+import Checkout from "../../frontend/components/Checkout.vue";
 
 // import map from "bluebird/js/release/map";
 // import { find } from "laravel-mix/src/File";
@@ -159,7 +157,7 @@ export default {
             }
         };
     },
-    components: { TheFooter, Navbar },
+    components: { TheFooter, Navbar, Checkout },
     methods: {
         addItemToCart(dish) {
             if (
@@ -348,6 +346,7 @@ export default {
 <style lang="scss" scoped>
 @import '~/resources/sass/backend/_variables.scss';
 @import 'resources/sass/frontend/buttons.scss';
+
 .cart {
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     background-color: white;
@@ -381,10 +380,10 @@ export default {
             padding: 2rem 0;
 
             button {
-                    width: 100%;
-                    border: none;
-                    border-radius: 5px;
-                    background-color: transparent;
+                width: 100%;
+                border: none;
+                border-radius: 5px;
+                background-color: transparent;
 
                 .dish-card {
                     width: 100%;
