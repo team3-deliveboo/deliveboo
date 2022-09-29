@@ -11,7 +11,7 @@
             <div class="restaurant-section">
                 <div class="container d-flex align-items-center gap-4">
                     <div class="image">
-                        <img :src="'/storage/' + restaurant.img" :alt="'Image of' + ' ' + restaurant.name">
+                        <img :src="'/storage/' + restaurant.img" :alt="'Immagine di' + ' ' + restaurant.name">
                     </div>
 
                     <div class="text-section">
@@ -24,6 +24,7 @@
 
 
             <!-- DISH + CART -->
+            <div class="container">
             <div class="row w-100">
 
                 <!-- DISHES LIST -->
@@ -37,14 +38,19 @@
                         <div class="row row-cols-2 g-3">
 
                             <div class="col" v-for="dish in restaurant.dishes" :key="dish.id">
-                                <div class="dish-card">
                                     <button @click="addItemToCart(dish)">
-                                        <img class="dish-img" :src="'/storage/' + dish.img" alt="" />
-                                        <span>{{ dish.name }}</span>
-                                        <span>{{ dish.price + "€" }}</span>
+                                        <div class="dish-card">
+                                            <div class="text-start pe-1">
+                                                <div><b>{{ dish.name }}</b></div>
+                                                <div class="description">{{ dish.description }}</div>
+                                                <div>{{ dish.price + "€" }}</div>
+                                            </div>
+                                            <div class="dish-img">
+                                                <img :src="'/storage/' + dish.img" :alt="'Immagine del piatto' + ' ' + dish.name" />
+                                            </div>
+                                        </div>
                                     </button>
                                     <!-- <button @click="addItemToCart(dish)">add</button> -->
-                                </div>
                                 
                                 <!-- <button @click="convertJson()" ></button> -->
                             </div>
@@ -62,7 +68,7 @@
 
                 <!-- CART SECTION -->
                 <div class="col-4">
-                    <div class="py-4 pe-4 h-100">
+                    <div class="py-4 h-100">
                     <div class="cart-section">
 
                         <h5 class="pb-3 fw-bold">Il tuo ordine</h5>
@@ -115,6 +121,7 @@
 
             </div>
         </div>
+    </div>
     </div>
 
 
@@ -371,26 +378,38 @@ export default {
         }
 
         .dishes-section {
-            padding: 2rem 4rem;
+            padding: 2rem 0;
 
-            .dish-card {
-                width: 100%;
-                background-color: white;
-                border: 1px solid lightgray;
-                border-radius: 5px;
-                padding: 1rem;
-
-                button {
+            button {
                     width: 100%;
                     border: none;
                     border-radius: 5px;
-                    background-color: white
-                }
+                    background-color: transparent;
 
-                .dish-img {
-                    width: 100px;
-                    aspect-ratio: 1/1;
+                .dish-card {
+                    width: 100%;
+                    background-color: white;
+                    border: 1px solid white;
                     border-radius: 5px;
+                    padding: 1rem;
+                    display: flex;
+                    justify-content: space-between;
+                    box-shadow: 0 0 4px rgb(224, 224, 224);
+
+                    .dish-img img {
+                        width: 100px;
+                        aspect-ratio: 1/1;
+                        border-radius: 5px;
+                        border: 1px solid $deliveroo-grey;
+                    }
+
+                    .description {
+                        font-size: .85rem;
+                        line-height: 130%;
+                        opacity: 75%;
+                        padding: .5rem 0 .7rem 0;
+                        text-overflow: ellipsis;
+                    }
                 }
             }
         }
@@ -399,9 +418,10 @@ export default {
             height: 500px;
             width: 100%;
             background-color: white;
-            border: 1px solid lightgray;
+            border: 1px solid white;
             padding: 2rem 0 4rem 2rem;
             overflow: auto;
+            box-shadow: 0 0 4px rgb(224, 224, 224);
         }
     }
 }
