@@ -1,7 +1,8 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Home from './pages/Home.vue';
-import RestaurantShow from './pages/restaurant/show.vue';
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "./pages/Home.vue";
+import RestaurantShow from "./pages/restaurant/show.vue";
+import Checkout from "./frontend/components/Checkout.vue";
 // import Frontend from 'Frontend.vue';
 
 Vue.use(VueRouter);
@@ -18,10 +19,16 @@ const routes = [
     //     name: 'menu'
     // },
     {
-        path: '/users/:slug',
+        path: "/users/:slug",
         component: RestaurantShow,
-        name: 'users.show',
-    }
+        name: "users.show",
+    },
+
+    {
+        path: "/checkout",
+        component: Checkout,
+        name: "checkout",
+    },
 ];
 
 // const router = new VueRouter({

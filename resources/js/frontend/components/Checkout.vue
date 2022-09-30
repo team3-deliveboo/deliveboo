@@ -1,67 +1,78 @@
 <template>
-    <div class="container-chechkout mt-5">
-        <h1>Checkout</h1>
-        <div class="content">
-            <form method="post" id="payment-form">
+  <div class="container-chechkout mt-5">
+    <h1>Checkout</h1>
+    <!-- <div class="content">
+      <form method="post" id="payment-form">
 
-                <section>
-                    <label for="amount">
-                        <span class="input-label">Amount</span>
-                        <div class="input-wrapper amount-wrapper">
-                            <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
-                        </div>
-                    </label>
+        <section>
+          <label for="amount">
+            <span class="input-label">Amount</span>
+            <div class="input-wrapper amount-wrapper">
+              <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
+            </div>
+          </label>
 
-                    <div class="bt-drop-in-wrapper">
-                        <div id="bt-dropin"></div>
-                    </div>
-                </section>
+          <div class="bt-drop-in-wrapper">
+            <div id="bt-dropin"></div>
+          </div>
+        </section>
 
-                <input id="nonce" name="payment_method_nonce" type="hidden" />
-                <button class="button" type="submit"><span>Test Transaction</span></button>
-            </form>
-        </div>
-        <!-- <div id="dropin-wrapper">
+        <input id="nonce" name="payment_method_nonce" type="hidden" />
+        <button class="button" type="submit"><span>Test Transaction</span></button>
+      </form>
+    </div> -->
+    <!-- <div id="dropin-wrapper">
             <div id="checkout-message"></div>
             <div id="dropin-container"></div>
             <button id="submit-button">Submit payment</button>
         </div> -->
-    </div>
+  </div>
 </template>
+
 <script>
+
+
+export default {
+
+
+}
+</script>
+
+
+ <!-- <script>
 var form = document.querySelector('#payment-form');
 var client_token = "{{ $token }}";
 
 braintree.dropin.create({
-    authorization: client_token,
-    selector: '#bt-dropin',
-    paypal: {
-        flow: 'vault'
-    }
+  authorization: client_token,
+  selector: '#bt-dropin',
+  paypal: {
+    flow: 'vault'
+  }
 }, function (createErr, instance) {
-    if (createErr) {
-        console.log('Create Error', createErr);
+  if (createErr) {
+    console.log('Create Error', createErr);
+    return;
+  }
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    instance.requestPaymentMethod(function (err, payload) {
+      if (err) {
+        console.log('Request Payment Method Error', err);
         return;
-    }
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
+      }
 
-        instance.requestPaymentMethod(function (err, payload) {
-            if (err) {
-                console.log('Request Payment Method Error', err);
-                return;
-            }
-
-            // Add the nonce to the form and submit
-            document.querySelector('#nonce').value = payload.nonce;
-            form.submit();
-        });
+      // Add the nonce to the form and submit
+      document.querySelector('#nonce').value = payload.nonce;
+      form.submit();
     });
+  });
 });
-</script>
-<script src="https://js.braintreegateway.com/web/3.38.1/js/client.min.js"></script>
-    <script src="https://js.braintreegateway.com/web/3.38.1/js/hosted-fields.min.js"></script>
-<script>
+</script> -->
+<!-- <script src="https://js.braintreegateway.com/web/3.38.1/js/client.min.js"></script> -->
+<!-- <script src="https://js.braintreegateway.com/web/3.38.1/js/hosted-fields.min.js"></script> -->
+<!-- <script>
   var button = document.querySelector('#submit-button');
 
   braintree.dropin.create({
@@ -99,10 +110,10 @@ braintree.dropin.create({
       });
     });
   });
-</script>
-<script>
+</script> -->
+<!-- <script>
 
-export default {
+// export default {
     name: "Checkout",
     data() {
 
@@ -118,7 +129,7 @@ braintree.dropin.create({
     // Use `dropinInstance` here
     // Methods documented at https://braintree.github.io/braintree-web-drop-in/docs/current/Dropin.html
 });
-</script>
+</script> -->
 
 <style lang="scss">
 

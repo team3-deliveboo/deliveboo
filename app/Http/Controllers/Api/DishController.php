@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class DishController extends Controller
 {
-    public function index(){
-
+    public function index()
+    {
         $dishes = Dish::all();
-        return response()->json($dishes);
+        return response()->json($dishes, 200);
     }
 }
