@@ -37,6 +37,7 @@
             </div>
 
             <div class="container py-3">
+
                 <!-- CATEGORY FILTER -->
                 <div v-if="SelectFilter.length > 0">
                     <div class="row gy-4">
@@ -96,8 +97,8 @@
                 </div>
 
 
-                <div v-else>
-                    <div class="row gy-4">
+                <div v-else-if="filteredList.length == 0 && SelectFilter.length == 0">
+                    <!-- <div class="row gy-4">
                         <div class="col-3" v-for="restaurant in restaurants" :key="restaurant.id">
                             <router-link class="text-dark text-decoration-none"
                                 :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
@@ -121,7 +122,7 @@
 
                             </router-link>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
         </div>
@@ -190,10 +191,9 @@ export default {
                         return allCategory.indexOf(value) > -1;
                     }
                 });
-                console.log(filledCategory);
+                // console.log(filledCategory);
                 return filledCategory.length > 0;
             });
-            console.log();
         },
         filteredList() {
             const value = this.filterInput;
