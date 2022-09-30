@@ -320,7 +320,7 @@ export default {
 
     .restaurant-section {
         overflow: auto;
-        height: 200px;
+        height: 280px;
 
         .card-restaurant {
             height: 100%;
