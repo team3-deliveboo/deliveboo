@@ -2011,11 +2011,10 @@ __webpack_require__.r(__webpack_exports__);
           } else {
             return allCategory.indexOf(value) > -1;
           }
-        });
-        console.log(filledCategory);
+        }); // console.log(filledCategory);
+
         return filledCategory.length > 0;
       });
-      console.log();
     } // filteredList() {
     //     const value = this.filterInput;
     //     return this.restaurants.filter(function (restaurant) {

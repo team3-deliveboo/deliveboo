@@ -37,6 +37,7 @@
             </div>
 
             <div class="container py-3">
+
                 <!-- CATEGORY FILTER -->
                 <div v-if="SelectFilter.length > 0">
                     <div class="row gy-4">
@@ -190,10 +191,9 @@ export default {
                         return allCategory.indexOf(value) > -1;
                     }
                 });
-                console.log(filledCategory);
+                // console.log(filledCategory);
                 return filledCategory.length > 0;
             });
-            console.log();
         },
         // filteredList() {
         //     const value = this.filterInput;
