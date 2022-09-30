@@ -67,7 +67,7 @@
                 </div>
 
 
-                <div v-else-if="filteredList.length > 0">
+                <!-- <div v-else-if="filteredList.length > 0">
                     <div class="row gy-4">
                         <div class="col-3" v-for="restaurant in filteredList" :key="restaurant.id">
                             <router-link class="text-dark text-decoration-none"
@@ -93,10 +93,10 @@
                             </router-link>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
 
-                <div v-else>
+                <!-- <div v-else>
                     <div class="row gy-4">
                         <div class="col-3" v-for="restaurant in restaurants" :key="restaurant.id">
                             <router-link class="text-dark text-decoration-none"
@@ -122,7 +122,7 @@
                             </router-link>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
         </div>
     </div>
@@ -195,15 +195,15 @@ export default {
             });
             console.log();
         },
-        filteredList() {
-            const value = this.filterInput;
-            return this.restaurants.filter(function (restaurant) {
-                return restaurant.name.indexOf(value) > -1;
+        // filteredList() {
+        //     const value = this.filterInput;
+        //     return this.restaurants.filter(function (restaurant) {
+        //         return restaurant.name.indexOf(value) > -1;
 
-                // restaurant.category.indexOf(value) > -1 ||
-                // restaurant.address.indexOf(value) > -1
-            });
-        },
+        //         // restaurant.category.indexOf(value) > -1 ||
+        //         // restaurant.address.indexOf(value) > -1
+        //     });
+        // },
     },
     mounted() {
         this.fetchCategories();
