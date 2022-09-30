@@ -8,13 +8,13 @@
             </div>
             <div class="subtitle">Inserisci quello che vorresti mangiare per visualizzare i ristoranti</div>
 
-            <!-- <div class="search-bar">
+            <div class="search-bar">
                 <button class="fork">
                     <i class="fa-solid fa-utensils"></i>
                 </button>
                 <input type="text" class="form-control" placeholder="Italiano? Vegano? Stellato?">
                 <button class="search-btn" type="button" id="button-addon1">Cerca</button>
-            </div> -->
+            </div>
 
         </div>
 

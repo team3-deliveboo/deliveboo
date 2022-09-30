@@ -2,7 +2,7 @@
     <div class="restaurant-section">
         <div class="container">
 
-            <!-- SEARCH BAR -->
+            <!-- SEARCH BAR
             <div class="search-bar">
                 <button class="fork">
                     <i class="fa-solid fa-utensils"></i>
@@ -13,15 +13,17 @@
                 <button class="search-btn" type="button" id="button-addon1">
                     Cerca
                 </button>
-            </div>
+            </div> -->
 
             <div class="row gy-3">
                 <div class="form-check d-flex flex-wrap justify-content-between">
                     <div class="col-4" v-for="category in categories" :key="category.id">
-                        <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name"
-                            :id="category.id" />
-                        <label class="form-check-label" :for="category.id">{{ category.name }}</label>
-                        <img :src="'img/' + category.name + '.png'" alt="">
+                        <div class="category-section">
+                            <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name"
+                                :id="category.id" />
+                            <label class="form-check-label" :for="category.id">{{ category.name }}</label>
+                            <img :src="'img/' + category.name + '.png'" :alt="'Immagine della categoria' + ' ' + category.name" class="category-img">
+                        </div>
                     </div>
 
                     <!-- <div>
@@ -36,7 +38,7 @@
             </div>
 
 
-            <!-- CATEGORY FILTER -->
+            <!-- CATEGORY FILTER
             <div v-if="SelectFilter.length > 0">
                 <div class="row gy-4">
                     <div class="col-3" v-for="restaurant in SelectFilter" :key="restaurant.id">
@@ -121,7 +123,7 @@
                         </router-link>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
@@ -132,7 +134,6 @@ import axios from "axios";
 
 export default {
     name: "FirstSection",
-
     data() {
         return {
             // categoryName: [].join(" - "),
@@ -260,6 +261,18 @@ export default {
 .restaurant-section {
     background: rgb(0, 126, 137);
     background: linear-gradient(125deg, rgba(0, 126, 137, 1) 0%, rgba(34, 194, 183, 1) 100%);
+    height: 450px;
+    padding: 2rem 0;
+    overflow: auto;
+
+    .category-section {
+
+        .category-img {
+            height: 70px;
+            border-radius: 10px;
+            background-color: white;
+        }
+    }
 
     .card-restaurant {
         height: 100%;

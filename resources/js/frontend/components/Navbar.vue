@@ -10,10 +10,12 @@
         
                 <!-- NAV BUTTONS -->
                 <div class="nav-btn">
-                    <button class="white-btn" type="button">
-                        <i class="fa-solid fa-house"></i>
-                        <a href="/login"><span>Registrati o accedi</span></a>
-                    </button>
+                    <a href="/login">
+                        <button class="white-btn" type="button">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Registrati o accedi</span>
+                        </button>
+                    </a>
 
                     <button class="white-btn" type="button">
                         <i class="fa-solid fa-bars"></i>
