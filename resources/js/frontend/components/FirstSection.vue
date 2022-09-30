@@ -1,5 +1,5 @@
 <template>
-    <div class="restaurant-section">
+    <div class="filter-restaurant">
 
             <!-- SEARCH BAR
             <div class="search-bar">
@@ -41,29 +41,31 @@
                 <!-- CATEGORY FILTER -->
                 <div v-if="SelectFilter.length > 0">
                     <div class="container">
-                        <div class="row gy-4">
-                            <div class="col-3" v-for="restaurant in SelectFilter" :key="restaurant.id">
-                                <router-link class="text-dark text-decoration-none"
-                                    :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
+                        <div class="restaurant-section">
+                            <div class="row gy-4">
+                                <div class="col-3" v-for="restaurant in SelectFilter" :key="restaurant.id">
+                                    <router-link class="text-dark text-decoration-none"
+                                        :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
 
-                                    <div class="card-restaurant d-flex">
-                                        <div class="restaurant-img">
-                                            <img :src="getImg(restaurant)" alt="/" />
+                                        <div class="card-restaurant d-flex">
+                                            <div class="restaurant-img">
+                                                <img :src="getImg(restaurant)" alt="/" />
+                                            </div>
+
+                                            <div class="px-2 py-3">
+                                                <div class="restaurant-name">
+                                                    <span>{{ restaurant.name }} · <small class="fw-light">{{ restaurant.address }}</small></span>
+                                                </div>
+                                                <div v-if="restaurant.categories">
+                                                    <span v-for="category in restaurant.categories" :key="category.id">
+                                                        <small class="cat-card">{{ category.name + " " }}</small>
+                                                    </span>
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        <div class="px-2 py-3">
-                                            <div class="restaurant-name">
-                                                <span>{{ restaurant.name }} · <small class="fw-light">{{ restaurant.address }}</small></span>
-                                            </div>
-                                            <div v-if="restaurant.categories">
-                                                <span v-for="category in restaurant.categories" :key="category.id">
-                                                    <small class="cat-card">{{ category.name + " " }}</small>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </router-link>
+                                    </router-link>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -259,7 +261,8 @@ export default {
     }
 }
 
-.restaurant-section {
+.filter-restaurant {
+    overflow: hidden;
     // // background: rgb(0, 126, 137);
     // // background: linear-gradient(125deg, rgba(0, 126, 137, 1) 0%, rgba(34, 194, 183, 1) 100%);
     // background-color: $deliveroo-grey;
@@ -315,36 +318,41 @@ export default {
         }
     }
 
-    .card-restaurant {
-        height: 100%;
-        width: 100%;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 1px 4px rgb(0 0 0 / 8%), 0 0 0 1px rgb(0 0 0 / 4%);
-        border-radius: 3px;
+    .restaurant-section {
+        overflow: auto;
+        height: 200px;
 
-        .restaurant-img {
+        .card-restaurant {
+            height: 100%;
             width: 100%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 1px 4px rgb(0 0 0 / 8%), 0 0 0 1px rgb(0 0 0 / 4%);
+            border-radius: 3px;
 
-            img {
+            .restaurant-img {
                 width: 100%;
-                height: 150px;
-                border-radius: 3px 3px 0 0;
-                object-fit: cover;
+
+                img {
+                    width: 100%;
+                    height: 150px;
+                    border-radius: 3px 3px 0 0;
+                    object-fit: cover;
+                }
             }
-        }
 
-        .restaurant-name {
-            font-family: "IBM Plex Sans Arabic", sans-serif;
-            font-size: 1rem;
-            color: $deliveroo-dark;
-            font-weight: bold;
-        }
+            .restaurant-name {
+                font-family: "IBM Plex Sans Arabic", sans-serif;
+                font-size: 1rem;
+                color: $deliveroo-dark;
+                font-weight: bold;
+            }
 
-        .cat-card {
-            color: $deliveroo-blue;
-            text-transform: capitalize;
+            .cat-card {
+                color: $deliveroo-blue;
+                text-transform: capitalize;
+            }
         }
     }
 }
