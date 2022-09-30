@@ -49,13 +49,13 @@
                                         <img :src="getImg(restaurant)" alt="/" />
                                     </div>
 
-                                    <div class="p-2">
+                                    <div class="px-2 py-3">
                                         <div class="restaurant-name">
-                                            {{ restaurant.name }}
+                                            <span>{{ restaurant.name }} · <small class="fw-light">{{ restaurant.address }}</small></span>
                                         </div>
                                         <div v-if="restaurant.categories">
                                             <span v-for="category in restaurant.categories" :key="category.id">
-                                                <small>{{ category.name + " " }}</small>
+                                                <small class="cat-card">{{ category.name + " " }}</small>
                                             </span>
                                         </div>
                                     </div>
@@ -78,13 +78,13 @@
                                         <img :src="getImg(restaurant)" alt="/" />
                                     </div>
 
-                                    <div class="p-2">
+                                    <div class="px-2 py-3">
                                         <div class="restaurant-name">
-                                            {{ restaurant.name }}
+                                            <span>{{ restaurant.name }} · <small class="fw-light">{{ restaurant.address }}</small></span>
                                         </div>
                                         <div v-if="restaurant.categories">
                                             <span v-for="category in restaurant.categories" :key="category.id">
-                                                <small>{{ category.name + " " }}</small>
+                                                <small class="cat-card">{{ category.name + " " }}</small>
                                             </span>
                                         </div>
                                     </div>
@@ -107,13 +107,13 @@
                                         <img :src="getImg(restaurant)" alt="/" />
                                     </div>
 
-                                    <div class="p-2">
+                                    <div class="px-2 py-3">
                                         <div class="restaurant-name">
-                                            {{ restaurant.name }}
+                                            <span>{{ restaurant.name }} · <small class="fw-light">{{ restaurant.address }}</small></span>
                                         </div>
                                         <div v-if="restaurant.categories">
                                             <span v-for="category in restaurant.categories" :key="category.id">
-                                                <small>{{ category.name + " " }}</small>
+                                                <small class="cat-card">{{ category.name + " " }}</small>
                                             </span>
                                         </div>
                                     </div>
@@ -291,7 +291,6 @@ export default {
                 border-radius: 10px;
                 background-color: white;
                 box-shadow: 0 0 5px 0px lightgray;
-                // border: 1px solid #FABE00;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -314,7 +313,7 @@ export default {
         background-color: white;
         display: flex;
         flex-direction: column;
-        box-shadow: 0 0 5px 0px lightgrey;
+        box-shadow: 0 1px 4px rgb(0 0 0 / 8%), 0 0 0 1px rgb(0 0 0 / 4%);
         border-radius: 3px;
 
         .restaurant-img {
@@ -322,7 +321,7 @@ export default {
 
             img {
                 width: 100%;
-                height: 100px;
+                height: 150px;
                 border-radius: 3px 3px 0 0;
                 object-fit: cover;
             }
@@ -333,6 +332,11 @@ export default {
             font-size: 1rem;
             color: $deliveroo-dark;
             font-weight: bold;
+        }
+
+        .cat-card {
+            color: $deliveroo-blue;
+            text-transform: capitalize;
         }
     }
 }
