@@ -16,11 +16,11 @@
             </div> -->
 
             <div class="row gy-3 justify-content-center">
-                <div class="col-2" v-for="category in categories" :key="category.id">
-                    <div class="category-section">
+                <div class="col-1" v-for="category in categories" :key="category.id">
+                    <div class="category-tag">
                         <label class="form-check-label" :for="category.id">
                             <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name" :id="category.id" />
-                                <img :src="'img/' + category.name + '.png'" :alt="'Immagine della categoria' + ' ' + category.name" class="category-img">
+                            <img :src="'img/' + category.name + '.png'" :alt="'Immagine della categoria' + ' ' + category.name" class="category-img">
                         </label>
                     </div>
                 </div>
@@ -36,9 +36,8 @@
             </div>
 
 
-
             <!-- CATEGORY FILTER -->
-            <div v-if="SelectFilter.length > 0">
+            <!-- <div v-if="SelectFilter.length > 0">
                 <div class="row gy-4">
                     <div class="col-3" v-for="restaurant in SelectFilter" :key="restaurant.id">
                         <router-link class="text-dark text-decoration-none"
@@ -122,7 +121,7 @@
                         </router-link>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
@@ -264,13 +263,23 @@ export default {
     padding: 2rem 0;
     overflow: auto;
 
-    .category-section {
+    .category-tag {
+        position: relative;
+
+        .form-check-input[type=checkbox] {
+            position: absolute;
+            opacity: 0;
+        }
 
         .category-img {
             height: 70px;
             border-radius: 10px;
             background-color: white;
             box-shadow: 0 0 5px 0px gray;
+
+            &:focus {
+                    box-shadow: 0 0 5px 0px white;
+                }
         }
     }
 
@@ -290,11 +299,6 @@ export default {
                 width: 100%;
                 height: 80px;
                 border-radius: 3px 3px 0 0;
-
-                &:focus {
-                    box-shadow: 0 0 5px 0px white;
-
-                }
             }
         }
 

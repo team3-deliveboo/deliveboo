@@ -2552,9 +2552,9 @@ var render = function render() {
   }, _vm._l(_vm.categories, function (category) {
     return _c("div", {
       key: category.id,
-      staticClass: "col-2"
+      staticClass: "col-1"
     }, [_c("div", {
-      staticClass: "category-section"
+      staticClass: "category-tag"
     }, [_c("label", {
       staticClass: "form-check-label",
       attrs: {
@@ -2603,109 +2603,7 @@ var render = function render() {
         alt: "Immagine della categoria" + " " + category.name
       }
     })])])]);
-  }), 0), _vm._v(" "), _vm.SelectFilter.length > 0 ? _c("div", [_c("div", {
-    staticClass: "row gy-4"
-  }, _vm._l(_vm.SelectFilter, function (restaurant) {
-    return _c("div", {
-      key: restaurant.id,
-      staticClass: "col-3"
-    }, [_c("router-link", {
-      staticClass: "text-dark text-decoration-none",
-      attrs: {
-        to: {
-          name: "users.show",
-          params: {
-            slug: restaurant.slug
-          }
-        }
-      }
-    }, [_c("div", {
-      staticClass: "card-restaurant d-flex"
-    }, [_c("div", {
-      staticClass: "restaurant-img"
-    }, [_c("img", {
-      attrs: {
-        src: _vm.getImg(restaurant),
-        alt: "/"
-      }
-    })]), _vm._v(" "), _c("div", {
-      staticClass: "p-2"
-    }, [_c("div", {
-      staticClass: "restaurant-name"
-    }, [_vm._v("\n                                    " + _vm._s(restaurant.name) + "\n                                ")]), _vm._v(" "), restaurant.categories ? _c("div", _vm._l(restaurant.categories, function (category) {
-      return _c("span", {
-        key: category.id
-      }, [_c("small", [_vm._v(_vm._s(category.name + " "))])]);
-    }), 0) : _vm._e()])])])], 1);
-  }), 0)]) : _vm.filteredList.length > 0 ? _c("div", [_c("div", {
-    staticClass: "row gy-4"
-  }, _vm._l(_vm.filteredList, function (restaurant) {
-    return _c("div", {
-      key: restaurant.id,
-      staticClass: "col-3"
-    }, [_c("router-link", {
-      staticClass: "text-dark text-decoration-none",
-      attrs: {
-        to: {
-          name: "users.show",
-          params: {
-            slug: restaurant.slug
-          }
-        }
-      }
-    }, [_c("div", {
-      staticClass: "card-restaurant d-flex"
-    }, [_c("div", {
-      staticClass: "restaurant-img"
-    }, [_c("img", {
-      attrs: {
-        src: _vm.getImg(restaurant),
-        alt: "/"
-      }
-    })]), _vm._v(" "), _c("div", {
-      staticClass: "p-2"
-    }, [_c("div", {
-      staticClass: "restaurant-name"
-    }, [_vm._v("\n                                    " + _vm._s(restaurant.name) + "\n                                ")]), _vm._v(" "), restaurant.categories ? _c("div", _vm._l(restaurant.categories, function (category) {
-      return _c("span", {
-        key: category.id
-      }, [_c("small", [_vm._v(_vm._s(category.name + " "))])]);
-    }), 0) : _vm._e()])])])], 1);
-  }), 0)]) : _c("div", [_c("div", {
-    staticClass: "row gy-4"
-  }, _vm._l(_vm.restaurants, function (restaurant) {
-    return _c("div", {
-      key: restaurant.id,
-      staticClass: "col-3"
-    }, [_c("router-link", {
-      staticClass: "text-dark text-decoration-none",
-      attrs: {
-        to: {
-          name: "users.show",
-          params: {
-            slug: restaurant.slug
-          }
-        }
-      }
-    }, [_c("div", {
-      staticClass: "card-restaurant"
-    }, [_c("div", {
-      staticClass: "restaurant-img"
-    }, [_c("img", {
-      attrs: {
-        src: _vm.getImg(restaurant),
-        alt: "/"
-      }
-    })]), _vm._v(" "), _c("div", {
-      staticClass: "p-2"
-    }, [_c("div", {
-      staticClass: "restaurant-name"
-    }, [_vm._v("\n                                    " + _vm._s(restaurant.name) + "\n                                ")]), _vm._v(" "), restaurant.categories ? _c("div", _vm._l(restaurant.categories, function (category) {
-      return _c("span", {
-        key: category.id
-      }, [_c("small", [_vm._v(_vm._s(category.name + " "))])]);
-    }), 0) : _vm._e()])])])], 1);
-  }), 0)])])]);
+  }), 0)])]);
 };
 
 var staticRenderFns = [];
@@ -3478,7 +3376,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstrap/dist/css/bootstrap.min.css */ "./node_modules/css-loader/index.js!./node_modules/bootstrap/dist/css/bootstrap.min.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-17e1ff8f] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-17e1ff8f] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-17e1ff8f] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-17e1ff8f] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-17e1ff8f]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-17e1ff8f]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.search-bar[data-v-17e1ff8f] {\n  display: flex;\n  position: relative;\n  bottom: 8rem;\n  align-items: center;\n  width: 40%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.search-bar .form-control[data-v-17e1ff8f] {\n  border: none;\n  padding-left: 45px;\n}\n.search-bar input[data-v-17e1ff8f] {\n  padding: 1.2rem;\n  border-radius: 50px;\n  width: 100%;\n}\n.search-bar input[data-v-17e1ff8f]::-moz-placeholder {\n  color: #b3b3b3;\n}\n.search-bar input[data-v-17e1ff8f]::placeholder {\n  color: #b3b3b3;\n}\n.search-bar button.fork[data-v-17e1ff8f] {\n  color: #00CCBC;\n  padding: 1.2rem;\n  border: none;\n  border-radius: 50px 0px 0px 50px;\n  background-color: white;\n  width: 20px;\n  height: 100%;\n  position: absolute;\n}\n.search-bar .search-btn[data-v-17e1ff8f] {\n  position: absolute;\n  right: 3.5px;\n}\n.restaurant-section[data-v-17e1ff8f] {\n  background: rgb(0, 126, 137);\n  background: linear-gradient(125deg, rgb(0, 126, 137) 0%, rgb(34, 194, 183) 100%);\n  height: 450px;\n  padding: 2rem 0;\n  overflow: auto;\n}\n.restaurant-section .category-section .category-img[data-v-17e1ff8f] {\n  height: 70px;\n  border-radius: 10px;\n  background-color: white;\n  box-shadow: 0 0 5px 0px gray;\n}\n.restaurant-section .card-restaurant[data-v-17e1ff8f] {\n  height: 100%;\n  width: 100%;\n  background-color: white;\n  display: flex;\n  flex-direction: column;\n  box-shadow: 0 0 20px 0px gray;\n  border-radius: 3px;\n}\n.restaurant-section .card-restaurant .restaurant-img[data-v-17e1ff8f] {\n  width: 100%;\n}\n.restaurant-section .card-restaurant .restaurant-img img[data-v-17e1ff8f] {\n  width: 100%;\n  height: 80px;\n  border-radius: 3px 3px 0 0;\n}\n.restaurant-section .card-restaurant .restaurant-img img[data-v-17e1ff8f]:focus {\n  box-shadow: 0 0 5px 0px white;\n}\n.restaurant-section .card-restaurant .restaurant-name[data-v-17e1ff8f] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  font-size: 1rem;\n  color: #2E3333;\n  font-weight: bold;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-17e1ff8f] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-17e1ff8f] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-17e1ff8f] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-17e1ff8f] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-17e1ff8f]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-17e1ff8f]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.search-bar[data-v-17e1ff8f] {\n  display: flex;\n  position: relative;\n  bottom: 8rem;\n  align-items: center;\n  width: 40%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.search-bar .form-control[data-v-17e1ff8f] {\n  border: none;\n  padding-left: 45px;\n}\n.search-bar input[data-v-17e1ff8f] {\n  padding: 1.2rem;\n  border-radius: 50px;\n  width: 100%;\n}\n.search-bar input[data-v-17e1ff8f]::-moz-placeholder {\n  color: #b3b3b3;\n}\n.search-bar input[data-v-17e1ff8f]::placeholder {\n  color: #b3b3b3;\n}\n.search-bar button.fork[data-v-17e1ff8f] {\n  color: #00CCBC;\n  padding: 1.2rem;\n  border: none;\n  border-radius: 50px 0px 0px 50px;\n  background-color: white;\n  width: 20px;\n  height: 100%;\n  position: absolute;\n}\n.search-bar .search-btn[data-v-17e1ff8f] {\n  position: absolute;\n  right: 3.5px;\n}\n.restaurant-section[data-v-17e1ff8f] {\n  background: rgb(0, 126, 137);\n  background: linear-gradient(125deg, rgb(0, 126, 137) 0%, rgb(34, 194, 183) 100%);\n  height: 450px;\n  padding: 2rem 0;\n  overflow: auto;\n}\n.restaurant-section .category-tag[data-v-17e1ff8f] {\n  position: relative;\n}\n.restaurant-section .category-tag .form-check-input[type=checkbox][data-v-17e1ff8f] {\n  position: absolute;\n  opacity: 0;\n}\n.restaurant-section .category-tag .category-img[data-v-17e1ff8f] {\n  height: 70px;\n  border-radius: 10px;\n  background-color: white;\n  box-shadow: 0 0 5px 0px gray;\n}\n.restaurant-section .category-tag .category-img[data-v-17e1ff8f]:focus {\n  box-shadow: 0 0 5px 0px white;\n}\n.restaurant-section .card-restaurant[data-v-17e1ff8f] {\n  height: 100%;\n  width: 100%;\n  background-color: white;\n  display: flex;\n  flex-direction: column;\n  box-shadow: 0 0 20px 0px gray;\n  border-radius: 3px;\n}\n.restaurant-section .card-restaurant .restaurant-img[data-v-17e1ff8f] {\n  width: 100%;\n}\n.restaurant-section .card-restaurant .restaurant-img img[data-v-17e1ff8f] {\n  width: 100%;\n  height: 80px;\n  border-radius: 3px 3px 0 0;\n}\n.restaurant-section .card-restaurant .restaurant-name[data-v-17e1ff8f] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  font-size: 1rem;\n  color: #2E3333;\n  font-weight: bold;\n}", ""]);
 
 // exports
 
@@ -21338,7 +21236,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Documents\Boolean\deliveboo\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! /Users/silviawolves/Documents/Boolean/deliveboo/resources/js/frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
