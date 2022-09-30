@@ -15,16 +15,15 @@
                 </button>
             </div> -->
 
-            <div class="row gy-3">
-                <div class="form-check d-flex flex-wrap justify-content-between">
-                    <div class="col-4" v-for="category in categories" :key="category.id">
-                        <div class="category-section">
-                            <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name"
-                                :id="category.id" />
-                            <label class="form-check-label" :for="category.id">{{ category.name }}</label>
-                            <img :src="'img/' + category.name + '.png'" :alt="'Immagine della categoria' + ' ' + category.name" class="category-img">
-                        </div>
+            <div class="row gy-3 justify-content-center">
+                <div class="col-2" v-for="category in categories" :key="category.id">
+                    <div class="category-section">
+                        <label class="form-check-label" :for="category.id">
+                            <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name" :id="category.id" />
+                                <img :src="'img/' + category.name + '.png'" :alt="'Immagine della categoria' + ' ' + category.name" class="category-img">
+                        </label>
                     </div>
+                </div>
 
                     <!-- <div>
                         <div>
@@ -34,8 +33,8 @@
                             Apply filter
                         </button>
                     </div> -->
-                </div>
             </div>
+
 
 
             <!-- CATEGORY FILTER
@@ -271,6 +270,7 @@ export default {
             height: 70px;
             border-radius: 10px;
             background-color: white;
+            box-shadow: 0 0 5px 0px gray;
         }
     }
 
@@ -290,6 +290,11 @@ export default {
                 width: 100%;
                 height: 80px;
                 border-radius: 3px 3px 0 0;
+
+                &:focus {
+                    box-shadow: 0 0 5px 0px white;
+                    
+                }
             }
         }
 
