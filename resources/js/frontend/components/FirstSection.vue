@@ -37,7 +37,7 @@
 
 
 
-            <!-- CATEGORY FILTER
+            <!-- CATEGORY FILTER -->
             <div v-if="SelectFilter.length > 0">
                 <div class="row gy-4">
                     <div class="col-3" v-for="restaurant in SelectFilter" :key="restaurant.id">
@@ -122,7 +122,7 @@
                         </router-link>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
         </div>
     </div>
@@ -293,7 +293,7 @@ export default {
 
                 &:focus {
                     box-shadow: 0 0 5px 0px white;
-                    
+
                 }
             }
         }

@@ -2603,7 +2603,109 @@ var render = function render() {
         alt: "Immagine della categoria" + " " + category.name
       }
     })])])]);
-  }), 0)])]);
+  }), 0), _vm._v(" "), _vm.SelectFilter.length > 0 ? _c("div", [_c("div", {
+    staticClass: "row gy-4"
+  }, _vm._l(_vm.SelectFilter, function (restaurant) {
+    return _c("div", {
+      key: restaurant.id,
+      staticClass: "col-3"
+    }, [_c("router-link", {
+      staticClass: "text-dark text-decoration-none",
+      attrs: {
+        to: {
+          name: "users.show",
+          params: {
+            slug: restaurant.slug
+          }
+        }
+      }
+    }, [_c("div", {
+      staticClass: "card-restaurant d-flex"
+    }, [_c("div", {
+      staticClass: "restaurant-img"
+    }, [_c("img", {
+      attrs: {
+        src: _vm.getImg(restaurant),
+        alt: "/"
+      }
+    })]), _vm._v(" "), _c("div", {
+      staticClass: "p-2"
+    }, [_c("div", {
+      staticClass: "restaurant-name"
+    }, [_vm._v("\n                                    " + _vm._s(restaurant.name) + "\n                                ")]), _vm._v(" "), restaurant.categories ? _c("div", _vm._l(restaurant.categories, function (category) {
+      return _c("span", {
+        key: category.id
+      }, [_c("small", [_vm._v(_vm._s(category.name + " "))])]);
+    }), 0) : _vm._e()])])])], 1);
+  }), 0)]) : _vm.filteredList.length > 0 ? _c("div", [_c("div", {
+    staticClass: "row gy-4"
+  }, _vm._l(_vm.filteredList, function (restaurant) {
+    return _c("div", {
+      key: restaurant.id,
+      staticClass: "col-3"
+    }, [_c("router-link", {
+      staticClass: "text-dark text-decoration-none",
+      attrs: {
+        to: {
+          name: "users.show",
+          params: {
+            slug: restaurant.slug
+          }
+        }
+      }
+    }, [_c("div", {
+      staticClass: "card-restaurant d-flex"
+    }, [_c("div", {
+      staticClass: "restaurant-img"
+    }, [_c("img", {
+      attrs: {
+        src: _vm.getImg(restaurant),
+        alt: "/"
+      }
+    })]), _vm._v(" "), _c("div", {
+      staticClass: "p-2"
+    }, [_c("div", {
+      staticClass: "restaurant-name"
+    }, [_vm._v("\n                                    " + _vm._s(restaurant.name) + "\n                                ")]), _vm._v(" "), restaurant.categories ? _c("div", _vm._l(restaurant.categories, function (category) {
+      return _c("span", {
+        key: category.id
+      }, [_c("small", [_vm._v(_vm._s(category.name + " "))])]);
+    }), 0) : _vm._e()])])])], 1);
+  }), 0)]) : _c("div", [_c("div", {
+    staticClass: "row gy-4"
+  }, _vm._l(_vm.restaurants, function (restaurant) {
+    return _c("div", {
+      key: restaurant.id,
+      staticClass: "col-3"
+    }, [_c("router-link", {
+      staticClass: "text-dark text-decoration-none",
+      attrs: {
+        to: {
+          name: "users.show",
+          params: {
+            slug: restaurant.slug
+          }
+        }
+      }
+    }, [_c("div", {
+      staticClass: "card-restaurant"
+    }, [_c("div", {
+      staticClass: "restaurant-img"
+    }, [_c("img", {
+      attrs: {
+        src: _vm.getImg(restaurant),
+        alt: "/"
+      }
+    })]), _vm._v(" "), _c("div", {
+      staticClass: "p-2"
+    }, [_c("div", {
+      staticClass: "restaurant-name"
+    }, [_vm._v("\n                                    " + _vm._s(restaurant.name) + "\n                                ")]), _vm._v(" "), restaurant.categories ? _c("div", _vm._l(restaurant.categories, function (category) {
+      return _c("span", {
+        key: category.id
+      }, [_c("small", [_vm._v(_vm._s(category.name + " "))])]);
+    }), 0) : _vm._e()])])])], 1);
+  }), 0)])])]);
 };
 
 var staticRenderFns = [];
