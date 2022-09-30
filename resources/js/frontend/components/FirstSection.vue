@@ -18,8 +18,10 @@
             <div class="row gy-3">
                 <div class="form-check d-flex flex-wrap justify-content-between">
                     <div class="col-4" v-for="category in categories" :key="category.id">
-                        <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name" :id="category.id" />
+                        <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name"
+                            :id="category.id" />
                         <label class="form-check-label" :for="category.id">{{ category.name }}</label>
+                        <img :src="'img/' + category.name + '.png'" alt="">
                     </div>
 
                     <!-- <div>
@@ -38,8 +40,9 @@
             <div v-if="SelectFilter.length > 0">
                 <div class="row gy-4">
                     <div class="col-3" v-for="restaurant in SelectFilter" :key="restaurant.id">
-                        <router-link class="text-dark text-decoration-none" :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
-                                
+                        <router-link class="text-dark text-decoration-none"
+                            :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
+
                             <div class="card-restaurant d-flex">
                                 <div class="restaurant-img">
                                     <img :src="getImg(restaurant)" alt="/" />
@@ -66,7 +69,8 @@
             <div v-else-if="filteredList.length > 0">
                 <div class="row gy-4">
                     <div class="col-3" v-for="restaurant in filteredList" :key="restaurant.id">
-                        <router-link class="text-dark text-decoration-none" :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
+                        <router-link class="text-dark text-decoration-none"
+                            :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
 
                             <div class="card-restaurant d-flex">
                                 <div class="restaurant-img">
@@ -94,13 +98,14 @@
             <div v-else>
                 <div class="row gy-4">
                     <div class="col-3" v-for="restaurant in restaurants" :key="restaurant.id">
-                        <router-link class="text-dark text-decoration-none" :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
-                                
+                        <router-link class="text-dark text-decoration-none"
+                            :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
+
                             <div class="card-restaurant">
                                 <div class="restaurant-img">
                                     <img :src="getImg(restaurant)" alt="/" />
                                 </div>
-                                
+
                                 <div class="p-2">
                                     <div class="restaurant-name">
                                         {{ restaurant.name }}

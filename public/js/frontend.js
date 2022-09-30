@@ -2625,7 +2625,12 @@ var render = function render() {
       attrs: {
         "for": category.id
       }
-    }, [_vm._v(_vm._s(category.name))])]);
+    }, [_vm._v(_vm._s(category.name))]), _vm._v(" "), _c("img", {
+      attrs: {
+        src: "img/" + category.name + ".png",
+        alt: ""
+      }
+    })]);
   }), 0)]), _vm._v(" "), _vm.SelectFilter.length > 0 ? _c("div", [_c("div", {
     staticClass: "row gy-4"
   }, _vm._l(_vm.SelectFilter, function (restaurant) {
@@ -21352,7 +21357,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/silviawolves/Documents/Boolean/deliveboo/resources/js/frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! D:\Documents\Boolean\deliveboo\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
