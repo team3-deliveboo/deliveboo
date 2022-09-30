@@ -274,15 +274,18 @@ export default {
 
             .form-check-input[type=checkbox] {
                 position: absolute;
+                top: 0;
                 opacity: 0;
+                cursor: pointer;
             }
 
             label {
                 height: 70px;
                 width: 70px;
                 border-radius: 10px;
-                background-color: white;
+                background-color: #FABE00;
                 box-shadow: 0 0 5px 0px gray;
+                border: 1px solid #FABE00;
                 display: flex;
                 align-items: center;
                 justify-content: center;
