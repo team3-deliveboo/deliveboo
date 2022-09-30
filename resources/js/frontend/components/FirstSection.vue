@@ -1,6 +1,5 @@
 <template>
     <div class="restaurant-section">
-        <div class="container">
 
             <!-- SEARCH BAR
             <div class="search-bar">
@@ -15,15 +14,16 @@
                 </button>
             </div> -->
 
-            <div class="row gy-3 justify-content-center">
-                <div class="col-2" v-for="category in categories" :key="category.id">
-                    <div class="category-section">
-                        <label class="form-check-label" :for="category.id">
-                            <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name" :id="category.id" />
+            <div class="categories">
+                <div class="row w-100 gy-3 justify-content-center">
+                    <div class="col" v-for="category in categories" :key="category.id">
+                        <div class="category-tag">
+                            <label class="form-check-label" :for="category.id" tabindex = "0">
+                                <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name" :id="category.id" />
                                 <img :src="'img/' + category.name + '.png'" :alt="'Immagine della categoria' + ' ' + category.name" class="category-img">
-                        </label>
+                            </label>
+                        </div>
                     </div>
-                </div>
 
                     <!-- <div>
                         <div>
@@ -33,96 +33,96 @@
                             Apply filter
                         </button>
                     </div> -->
-            </div>
-
-
-
-            <!-- CATEGORY FILTER -->
-            <div v-if="SelectFilter.length > 0">
-                <div class="row gy-4">
-                    <div class="col-3" v-for="restaurant in SelectFilter" :key="restaurant.id">
-                        <router-link class="text-dark text-decoration-none"
-                            :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
-
-                            <div class="card-restaurant d-flex">
-                                <div class="restaurant-img">
-                                    <img :src="getImg(restaurant)" alt="/" />
-                                </div>
-
-                                <div class="p-2">
-                                    <div class="restaurant-name">
-                                        {{ restaurant.name }}
-                                    </div>
-                                    <div v-if="restaurant.categories">
-                                        <span v-for="category in restaurant.categories" :key="category.id">
-                                            <small>{{ category.name + " " }}</small>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </router-link>
-                    </div>
                 </div>
             </div>
 
+            <div class="container py-3">
+                <!-- CATEGORY FILTER -->
+                <div v-if="SelectFilter.length > 0">
+                    <div class="row gy-4">
+                        <div class="col-3" v-for="restaurant in SelectFilter" :key="restaurant.id">
+                            <router-link class="text-dark text-decoration-none"
+                                :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
 
-            <div v-else-if="filteredList.length > 0">
-                <div class="row gy-4">
-                    <div class="col-3" v-for="restaurant in filteredList" :key="restaurant.id">
-                        <router-link class="text-dark text-decoration-none"
-                            :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
+                                <div class="card-restaurant d-flex">
+                                    <div class="restaurant-img">
+                                        <img :src="getImg(restaurant)" alt="/" />
+                                    </div>
 
-                            <div class="card-restaurant d-flex">
-                                <div class="restaurant-img">
-                                    <img :src="getImg(restaurant)" alt="/" />
+                                    <div class="px-2 py-3">
+                                        <div class="restaurant-name">
+                                            <span>{{ restaurant.name }} · <small class="fw-light">{{ restaurant.address }}</small></span>
+                                        </div>
+                                        <div v-if="restaurant.categories">
+                                            <span v-for="category in restaurant.categories" :key="category.id">
+                                                <small class="cat-card">{{ category.name + " " }}</small>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="p-2">
-                                    <div class="restaurant-name">
-                                        {{ restaurant.name }}
-                                    </div>
-                                    <div v-if="restaurant.categories">
-                                        <span v-for="category in restaurant.categories" :key="category.id">
-                                            <small>{{ category.name + " " }}</small>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </router-link>
+                            </router-link>
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
-            <div v-else>
-                <div class="row gy-4">
-                    <div class="col-3" v-for="restaurant in restaurants" :key="restaurant.id">
-                        <router-link class="text-dark text-decoration-none"
-                            :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
+                <div v-else-if="filteredList.length > 0">
+                    <div class="row gy-4">
+                        <div class="col-3" v-for="restaurant in filteredList" :key="restaurant.id">
+                            <router-link class="text-dark text-decoration-none"
+                                :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
 
-                            <div class="card-restaurant">
-                                <div class="restaurant-img">
-                                    <img :src="getImg(restaurant)" alt="/" />
+                                <div class="card-restaurant d-flex">
+                                    <div class="restaurant-img">
+                                        <img :src="getImg(restaurant)" alt="/" />
+                                    </div>
+
+                                    <div class="px-2 py-3">
+                                        <div class="restaurant-name">
+                                            <span>{{ restaurant.name }} · <small class="fw-light">{{ restaurant.address }}</small></span>
+                                        </div>
+                                        <div v-if="restaurant.categories">
+                                            <span v-for="category in restaurant.categories" :key="category.id">
+                                                <small class="cat-card">{{ category.name + " " }}</small>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="p-2">
-                                    <div class="restaurant-name">
-                                        {{ restaurant.name }}
-                                    </div>
-                                    <div v-if="restaurant.categories">
-                                        <span v-for="category in restaurant.categories" :key="category.id">
-                                            <small>{{ category.name + " " }}</small>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </router-link>
+                            </router-link>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+
+                <div v-else>
+                    <div class="row gy-4">
+                        <div class="col-3" v-for="restaurant in restaurants" :key="restaurant.id">
+                            <router-link class="text-dark text-decoration-none"
+                                :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
+
+                                <div class="card-restaurant">
+                                    <div class="restaurant-img">
+                                        <img :src="getImg(restaurant)" alt="/" />
+                                    </div>
+
+                                    <div class="px-2 py-3">
+                                        <div class="restaurant-name">
+                                            <span>{{ restaurant.name }} · <small class="fw-light">{{ restaurant.address }}</small></span>
+                                        </div>
+                                        <div v-if="restaurant.categories">
+                                            <span v-for="category in restaurant.categories" :key="category.id">
+                                                <small class="cat-card">{{ category.name + " " }}</small>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </router-link>
+                        </div>
+                    </div>
+                </div>
 
         </div>
     </div>
@@ -258,19 +258,52 @@ export default {
 }
 
 .restaurant-section {
-    background: rgb(0, 126, 137);
-    background: linear-gradient(125deg, rgba(0, 126, 137, 1) 0%, rgba(34, 194, 183, 1) 100%);
+    // background: rgb(0, 126, 137);
+    // background: linear-gradient(125deg, rgba(0, 126, 137, 1) 0%, rgba(34, 194, 183, 1) 100%);
+    background-color: $deliveroo-grey;
     height: 450px;
-    padding: 2rem 0;
+    padding-bottom: 2rem;
     overflow: auto;
+    position: relative;
 
-    .category-section {
+    .categories {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 2rem 0;
+        position: sticky;
+        background-color: $deliveroo-grey;
+        top: 0;
 
-        .category-img {
-            height: 70px;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0 0 5px 0px gray;
+        .category-tag {
+            position: relative;
+
+            .form-check-input[type=checkbox] {
+                position: absolute;
+                top: 0;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            label {
+                height: 70px;
+                width: 70px;
+                border-radius: 10px;
+                background-color: white;
+                box-shadow: 0 0 5px 0px lightgray;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                &:focus {
+                    box-shadow: 0 0 5px $deliveroo-blue-hover;
+                }
+
+                .category-img {
+                    height: 50px;
+                }
+            }
         }
     }
 
@@ -280,7 +313,7 @@ export default {
         background-color: white;
         display: flex;
         flex-direction: column;
-        box-shadow: 0 0 20px 0px gray;
+        box-shadow: 0 1px 4px rgb(0 0 0 / 8%), 0 0 0 1px rgb(0 0 0 / 4%);
         border-radius: 3px;
 
         .restaurant-img {
@@ -288,13 +321,9 @@ export default {
 
             img {
                 width: 100%;
-                height: 80px;
+                height: 150px;
                 border-radius: 3px 3px 0 0;
-
-                &:focus {
-                    box-shadow: 0 0 5px 0px white;
-
-                }
+                object-fit: cover;
             }
         }
 
@@ -303,6 +332,11 @@ export default {
             font-size: 1rem;
             color: $deliveroo-dark;
             font-weight: bold;
+        }
+
+        .cat-card {
+            color: $deliveroo-blue;
+            text-transform: capitalize;
         }
     }
 }
