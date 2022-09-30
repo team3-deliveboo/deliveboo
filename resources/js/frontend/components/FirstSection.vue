@@ -1,6 +1,5 @@
 <template>
     <div class="restaurant-section">
-        <div class="container">
 
             <!-- SEARCH BAR
             <div class="search-bar">
@@ -15,15 +14,16 @@
                 </button>
             </div> -->
 
-            <div class="row gy-3 justify-content-center">
-                <div class="col-1" v-for="category in categories" :key="category.id">
-                    <div class="category-tag">
-                        <label class="form-check-label" :for="category.id">
-                            <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name" :id="category.id" />
-                            <img :src="'img/' + category.name + '.png'" :alt="'Immagine della categoria' + ' ' + category.name" class="category-img">
-                        </label>
+            <div class="categories">
+                <div class="row w-100 gy-3 justify-content-center">
+                    <div class="col" v-for="category in categories" :key="category.id">
+                        <div class="category-tag">
+                            <label class="form-check-label" :for="category.id" tabindex = "0">
+                                <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name" :id="category.id" />
+                                <img :src="'img/' + category.name + '.png'" :alt="'Immagine della categoria' + ' ' + category.name" class="category-img">
+                            </label>
+                        </div>
                     </div>
-                </div>
 
                     <!-- <div>
                         <div>
@@ -33,9 +33,10 @@
                             Apply filter
                         </button>
                     </div> -->
+                </div>
             </div>
 
-
+            <div class="container">
             <!-- CATEGORY FILTER -->
             <!-- <div v-if="SelectFilter.length > 0">
                 <div class="row gy-4">
@@ -262,24 +263,39 @@ export default {
     height: 450px;
     padding: 2rem 0;
     overflow: auto;
+    position: relative;
 
-    .category-tag {
-        position: relative;
+    .categories {
+        display: flex;
+        justify-content: center;
 
-        .form-check-input[type=checkbox] {
-            position: absolute;
-            opacity: 0;
-        }
+        .category-tag {
+            position: relative;
 
-        .category-img {
-            height: 70px;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0 0 5px 0px gray;
+            .form-check-input[type=checkbox] {
+                position: absolute;
+                opacity: 0;
+            }
 
-            &:focus {
-                    box-shadow: 0 0 5px 0px white;
+            label {
+                height: 70px;
+                width: 70px;
+                border-radius: 10px;
+                background-color: white;
+                box-shadow: 0 0 5px 0px gray;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                &:focus {
+                    box-shadow: 0 0 5px white;
                 }
+
+                .category-img {
+                    height: 50px;
+                }
+            }
         }
     }
 
