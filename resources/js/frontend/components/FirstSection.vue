@@ -14,55 +14,57 @@
                 </button>
             </div> -->
 
-            <div class="categories">
-                <div class="row w-100 gy-3 justify-content-center">
-                    <div class="col" v-for="category in categories" :key="category.id">
-                        <div class="category-tag">
-                            <label class="form-check-label" :for="category.id" tabindex = "0">
-                                <input class="form-check-input" type="checkbox" v-model="selected" :value="category.name" :id="category.id" />
-                                <img :src="'img/' + category.name + '.png'" :alt="'Immagine della categoria' + ' ' + category.name" class="category-img">
-                            </label>
+            <div class="container py-4">
+
+                <div class="categories">
+                    <div class="row row-cols-3 gy-3 justify-content-center gap-1">
+                        <div class="col-2" v-for="category in categories" :key="category.id">
+                            <div class="category-tag">
+                                <label :for="category.id" tabindex = "0">
+                                    <input type="checkbox" v-model="selected" :value="category.name" :id="category.id" />
+                                    <img :src="'img/' + category.name + '.png'" :alt="'Immagine della categoria' + ' ' + category.name" class="category-img">
+                                </label>
+                            </div>
                         </div>
+
+                        <!-- <div>
+                            <div>
+                                <h2>Hai cercato {{ selected }}</h2>
+                            </div>
+                            <button @click="SelectFilter()" type="button" class="btn btn-primary mt-5">
+                                Apply filter
+                            </button>
+                        </div> -->
                     </div>
-
-                    <!-- <div>
-                        <div>
-                            <h2>Hai cercato {{ selected }}</h2>
-                        </div>
-                        <button @click="SelectFilter()" type="button" class="btn btn-primary mt-5">
-                            Apply filter
-                        </button>
-                    </div> -->
                 </div>
-            </div>
-
-            <div class="container py-3">
 
                 <!-- CATEGORY FILTER -->
                 <div v-if="SelectFilter.length > 0">
-                    <div class="row gy-4">
-                        <div class="col-3" v-for="restaurant in SelectFilter" :key="restaurant.id">
-                            <router-link class="text-dark text-decoration-none"
-                                :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
+                    <div class="container">
+                        <div class="row gy-4">
+                            <div class="col-3" v-for="restaurant in SelectFilter" :key="restaurant.id">
+                                <router-link class="text-dark text-decoration-none"
+                                    :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
 
-                                <div class="card-restaurant d-flex">
-                                    <div class="restaurant-img">
-                                        <img :src="getImg(restaurant)" alt="/" />
+                                    <div class="card-restaurant d-flex">
+                                        <div class="restaurant-img">
+                                            <img :src="getImg(restaurant)" alt="/" />
+                                        </div>
+
+                                        <div class="px-2 py-3">
+                                            <div class="restaurant-name">
+                                                <span>{{ restaurant.name }} · <small class="fw-light">{{ restaurant.address }}</small></span>
+                                            </div>
+                                            <div v-if="restaurant.categories">
+                                                <span v-for="category in restaurant.categories" :key="category.id">
+                                                    <small class="cat-card">{{ category.name + " " }}</small>
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="px-2 py-3">
-                                        <div class="restaurant-name">
-                                            <span>{{ restaurant.name }} · <small class="fw-light">{{ restaurant.address }}</small></span>
-                                        </div>
-                                        <div v-if="restaurant.categories">
-                                            <span v-for="category in restaurant.categories" :key="category.id">
-                                                <small class="cat-card">{{ category.name + " " }}</small>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </router-link>
+                                </router-link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -124,7 +126,7 @@
                         </div>
                     </div>
                 </div> -->
-
+            </div>
         </div>
     </div>
 </template>
@@ -258,13 +260,11 @@ export default {
 }
 
 .restaurant-section {
-    // background: rgb(0, 126, 137);
-    // background: linear-gradient(125deg, rgba(0, 126, 137, 1) 0%, rgba(34, 194, 183, 1) 100%);
-    background-color: $deliveroo-grey;
-    height: 450px;
-    padding-bottom: 2rem;
-    overflow: auto;
-    position: relative;
+    // // background: rgb(0, 126, 137);
+    // // background: linear-gradient(125deg, rgba(0, 126, 137, 1) 0%, rgba(34, 194, 183, 1) 100%);
+    // background-color: $deliveroo-grey;
+    // height: 300px;
+    // position: relative;
 
     .categories {
         width: 100%;
@@ -277,12 +277,19 @@ export default {
 
         .category-tag {
             position: relative;
+            display: flex;
+            justify-content: center;
 
-            .form-check-input[type=checkbox] {
+            input[type=checkbox] {
+                display: none;
                 position: absolute;
                 top: 0;
                 opacity: 0;
                 cursor: pointer;
+            }
+
+            .category-tag input:checked + label {
+                border: 2px solid red;
             }
 
             label {
@@ -299,10 +306,11 @@ export default {
                 &:focus {
                     box-shadow: 0 0 5px $deliveroo-blue-hover;
                 }
+            }
 
-                .category-img {
-                    height: 50px;
-                }
+            .category-img {
+                height: 50px;
+                display: block;
             }
         }
     }
