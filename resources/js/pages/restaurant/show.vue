@@ -1,55 +1,56 @@
 <template>
     <div class="cart">
-
         <!-- VUE NAVBAR -->
         <Navbar></Navbar>
         <div class="border-bottom"></div>
         <div class="lower-section">
-
-
             <!-- HEADER WITH RESTAURANT NAME -->
             <div class="restaurant-section">
                 <div class="container d-flex align-items-center gap-4">
                     <div class="image">
-                        <img :src="'/storage/' + restaurant.img" :alt="'Immagine di' + ' ' + restaurant.name">
+                        <img :src="'/storage/' + restaurant.img" :alt="'Immagine di' + ' ' + restaurant.name" />
                     </div>
 
                     <div class="text-section">
                         <h1>{{ restaurant.name }}</h1>
                         <!-- <small>{{ restaurant.categories }}</small> -->
-                        <div class="pt-3 text-muted">{{ restaurant.address }} · {{ restaurant.phone }}</div>
+                        <div class="pt-3 text-muted">
+                            {{ restaurant.address }} · {{ restaurant.phone }}
+                        </div>
                     </div>
                 </div>
             </div>
 
-
             <!-- DISH + CART -->
             <div class="container">
                 <div class="row w-100">
-
                     <!-- DISHES LIST -->
                     <div class="col-8">
                         <div class="dishes-section">
-
                             <h4 class="fw-bold pb-0 mb-0">Menù</h4>
-                            <div class="pb-3 text-muted">Scegli il tuo piatto, ed aggiungilo al carrello.</div>
+                            <div class="pb-3 text-muted">
+                                Scegli il tuo piatto, ed aggiungilo al carrello.
+                            </div>
 
                             <!-- SINGLE DISH CARD -->
                             <div class="row row-cols-2 g-3 w-100">
                                 <div class="col" v-for="dish in restaurant.dishes" :key="dish.id">
-                                        <button @click="addItemToCart(dish)">
-                                            <div class="dish-card">
-                                                <div class="text-start pe-1">
-                                                    <div><b>{{ dish.name }}</b></div>
-                                                    <div class="description">{{ dish.description }}</div>
-                                                    <div>{{ dish.price + "€" }}</div>
+                                    <button @click="addItemToCart(dish)">
+                                        <div class="dish-card">
+                                            <div class="text-start pe-1">
+                                                <div>
+                                                    <b>{{ dish.name }}</b>
                                                 </div>
-                                                <div class="dish-img">
-                                                    <img :src="'/storage/' + dish.img" :alt="'Immagine del piatto' + ' ' + dish.name" />
-                                                </div>
+                                                <div class="description">{{ dish.description }}</div>
+                                                <div>{{ dish.price + "€" }}</div>
                                             </div>
-                                        </button>
-                                        <!-- <button @click="addItemToCart(dish)">add</button> -->
+                                            <div class="dish-img">
+                                                <img :src="'/storage/' + dish.img"
+                                                    :alt="'Immagine del piatto' + ' ' + dish.name" />
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <!-- <button @click="addItemToCart(dish)">add</button> -->
                                     <!-- <button @click="convertJson()" ></button> -->
                                 </div>
                             </div>
@@ -57,7 +58,7 @@
                         </div>
                     </div>
 
-                <!-- <div v-for="item in cart" :key="item.id">
+                    <!-- <div v-for="item in cart" :key="item.id">
                     <span>{{item.name}}</span>
                     <span>{{item.price + "€" }}</span> -->
 
@@ -65,7 +66,6 @@
                     <div class="col-4">
                         <div class="py-4 h-100">
                             <div class="cart-section">
-
                                 <div v-if="cart.length <= 0" class="empty-cart">
                                     <i class="fa-solid fa-basket-shopping"></i>
                                     <div class="empty">Il carrello è vuoto</div>
@@ -76,7 +76,6 @@
                                 </template>
 
                                 <div v-for="dish in cart" :key="dish.id" class="row">
-
                                     <!-- SELECTED DISH -->
                                     <div class="col-3">
                                         <p>{{ dish.name }}</p>
@@ -105,35 +104,39 @@
 
                                     <!-- PRICE-->
                                     <div class="col-3">
-                                        <p class="ps-1 price text-nowrap">{{ (dish.price * dish.quantity).toFixed(2) }} €</p>
+                                        <p class="ps-1 price text-nowrap">
+                                            {{ (dish.price * dish.quantity).toFixed(2) }} €
+                                        </p>
                                     </div>
 
                                     <!-- TRASHCAN -->
                                     <div class="col-3">
-                                        <a class="no-decoration" @click="removeAllFromCart(dish)"><i class="fa-solid fa-trash"></i></a>
+                                        <a class="no-decoration" @click="removeAllFromCart(dish)"><i
+                                                class="fa-solid fa-trash"></i></a>
                                     </div>
-
                                 </div>
                             </div>
 
                             <!-- PAYMENT BUTTON -->
                             <div class="payment-section d-flex justify-content-center">
-                                <button class="grey-btn position-absolute" style="bottom: 20px; width: 90%;">
-                                    <b>Vai al pagamento</b>
-                                </button>
-
                                 <template v-if="cart.length > 0">
-                                    <button class="blue-btn position-absolute" style="bottom: 20px; width: 90%;">
+                                    <router-link to="/checkout">
+                                        <button class="blue-btn position-absolute" style="bottom: 20px; width: 90%">
+                                            <b>Vai al pagamento</b>
+                                        </button>
+                                    </router-link>
+                                </template>
+
+                                <div v-else>
+                                    <button class="grey-btn position-absolute" style="bottom: 20px; width: 90%">
                                         <b>Vai al pagamento</b>
                                     </button>
-                                </template>
+                                </div>
                             </div>
-
                         </div>
                     </div>
 
                     <Checkout></Checkout>
-
                 </div>
             </div>
         </div>
@@ -141,7 +144,6 @@
         <!-- VUE COMPONENT: FOOTER -->
         <TheFooter></TheFooter>
     </div>
-
 </template>
 
 <script>
@@ -170,7 +172,7 @@ export default {
                 quantity: 1,
                 partialTotal: 0,
                 total: 0,
-            }
+            },
         };
     },
     components: { TheFooter, Navbar, Checkout },
@@ -196,16 +198,11 @@ export default {
             }
             localStorage.setItem("cart", JSON.stringify(cart));
             this.cart = JSON.parse(localStorage.getItem("cart"));
-            this.partialTotal =
-                this.cart.reduce(
-                    (acc, dish) => acc + dish.price * dish.quantity);
-            localStorage.setItem(
-                "partialTotal",
-                JSON.stringify(this.partialTotal),
-
+            this.partialTotal = this.cart.reduce(
+                (acc, dish) => acc + dish.price * dish.quantity
             );
-            this.total =
-                this.partialTotal + this.restaurant.delivery_price;
+            localStorage.setItem("partialTotal", JSON.stringify(this.partialTotal));
+            this.total = this.partialTotal + this.restaurant.delivery_price;
             localStorage.setItem("total", JSON.stringify(this.total));
             // this.CartSectionShow();
         },
@@ -256,16 +253,10 @@ export default {
                 localStorage.setItem("cart", JSON.stringify(cart));
                 this.cart = JSON.parse(localStorage.getItem("cart"));
                 this.partialTotal = round(
-                    this.cart.reduce(
-                        (acc, dish) => acc + dish.price * dish.quantity,
-                        0
-                    ),
+                    this.cart.reduce((acc, dish) => acc + dish.price * dish.quantity, 0),
                     2
                 );
-                localStorage.setItem(
-                    "partialTotal",
-                    JSON.stringify(this.partialTotal)
-                );
+                localStorage.setItem("partialTotal", JSON.stringify(this.partialTotal));
                 this.total = round(
                     this.partialTotal + this.restaurant.delivery_price,
                     2
@@ -282,9 +273,8 @@ export default {
                 // this.partialTotal = 0;
                 // this.total = 0;
                 // this.cart = [];
-
             }
-        }
+        },
     },
     mounted() {
         // return JSON.parse(localStorage.getItem('cart'))
@@ -293,77 +283,78 @@ export default {
             const data = resp.data;
             this.restaurant = data;
         });
-        localStorage.removeItem('cart');
-    }
-}
-    //         localStorage.setItem("cart", JSON.stringify(cart));
-    //         this.cart = JSON.parse(localStorage.getItem("cart"));
-    //         this.partialTotal = round(
-    //             this.cart.reduce(
-    //                 (acc, dish) => acc + dish.price * dish.quantity,
-    //                 0
-    //             ),
-    //             2
-    //         );
-    //         localStorage.setItem(
-    //             "partialTotal",
-    //             JSON.stringify(this.partialTotal)
-    //         );
-    //         this.total = round(
-    //             this.partialTotal + this.restaurant.delivery_price,
-    //             2
-    //         );
-    //         localStorage.setItem("total", JSON.stringify(this.total));
-    //         if (this.cart.length == 0) {
-    //             localStorage.removeItem("cart");
-    //             localStorage.removeItem("partialTotal");
-    //             localStorage.removeItem("total");
-    //             this.partialTotal = 0;
-    //             this.total = 0;
-    //         }
-    //     }
-    //     this.CartSectionShow();
-    // },
-    // removeAllFromCart(dish) {
-    //     let cart = JSON.parse(localStorage.getItem("cart"));
-    //     let index = cart.findIndex((item) => item.id == dish.id);
-    //     if (index !== -1) {
-    //         cart.splice(index, 1);
-    //     }
-    //     localStorage.setItem("cart", JSON.stringify(cart));
-    //     this.cart = JSON.parse(localStorage.getItem("cart"));
-    //     this.partialTotal = round(
-    //         this.cart.reduce(
-    //             (acc, dish) => acc + dish.price * dish.quantity,
-    //             0
-    //         ),
-    //         2
-    //     );
-    //     localStorage.setItem(
-    //         "partialTotal",
-    //         JSON.stringify(this.partialTotal)
-    //     );
-    //     this.total = round(
-    //         this.partialTotal + this.restaurant.delivery_price,
-    //         2
-    //     );
-    //     localStorage.setItem("total", JSON.stringify(this.total));
-    //     if (this.cart.length == 0) {
-    //         localStorage.removeItem("cart");
-    //         localStorage.removeItem("partialTotal");
-    //         localStorage.removeItem("total");
-    //         this.partialTotal = 0;
-    //         this.total = 0;
-    //     }
-    //     this.CartSectionShow();
-    // },
+        localStorage.removeItem("cart");
+    },
+};
+//         localStorage.setItem("cart", JSON.stringify(cart));
+//         this.cart = JSON.parse(localStorage.getItem("cart"));
+//         this.partialTotal = round(
+//             this.cart.reduce(
+//                 (acc, dish) => acc + dish.price * dish.quantity,
+//                 0
+//             ),
+//             2
+//         );
+//         localStorage.setItem(
+//             "partialTotal",
+//             JSON.stringify(this.partialTotal)
+//         );
+//         this.total = round(
+//             this.partialTotal + this.restaurant.delivery_price,
+//             2
+//         );
+//         localStorage.setItem("total", JSON.stringify(this.total));
+//         if (this.cart.length == 0) {
+//             localStorage.removeItem("cart");
+//             localStorage.removeItem("partialTotal");
+//             localStorage.removeItem("total");
+//             this.partialTotal = 0;
+//             this.total = 0;
+//         }
+//     }
+//     this.CartSectionShow();
+// },
+// removeAllFromCart(dish) {
+//     let cart = JSON.parse(localStorage.getItem("cart"));
+//     let index = cart.findIndex((item) => item.id == dish.id);
+//     if (index !== -1) {
+//         cart.splice(index, 1);
+//     }
+//     localStorage.setItem("cart", JSON.stringify(cart));
+//     this.cart = JSON.parse(localStorage.getItem("cart"));
+//     this.partialTotal = round(
+//         this.cart.reduce(
+//             (acc, dish) => acc + dish.price * dish.quantity,
+//             0
+//         ),
+//         2
+//     );
+//     localStorage.setItem(
+//         "partialTotal",
+//         JSON.stringify(this.partialTotal)
+//     );
+//     this.total = round(
+//         this.partialTotal + this.restaurant.delivery_price,
+//         2
+//     );
+//     localStorage.setItem("total", JSON.stringify(this.total));
+//     if (this.cart.length == 0) {
+//         localStorage.removeItem("cart");
+//         localStorage.removeItem("partialTotal");
+//         localStorage.removeItem("total");
+//         this.partialTotal = 0;
+//         this.total = 0;
+//     }
+//     this.CartSectionShow();
+// },
 </script>
 
 <style lang="scss" scoped>
-@import '~/resources/sass/backend/_variables.scss';
-@import 'resources/sass/frontend/buttons.scss';
+@import "~/resources/sass/backend/_variables.scss";
+@import "resources/sass/frontend/buttons.scss";
+
 .cart {
-    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
     background-color: white;
 
     .lower-section {
@@ -402,33 +393,33 @@ export default {
                 border-radius: 5px;
                 background-color: transparent;
 
-            .dish-card {
-                width: 100%;
-                background-color: white;
-                border: 1px solid white;
-                border-radius: 5px;
-                padding: 1rem;
-                display: flex;
-                justify-content: space-between;
-                box-shadow: 0 0 4px rgb(224, 224, 224);
-
-                .dish-img img {
-                    width: 100px;
-                    aspect-ratio: 1/1;
+                .dish-card {
+                    width: 100%;
+                    background-color: white;
+                    border: 1px solid white;
                     border-radius: 5px;
-                    border: 1px solid $deliveroo-grey;
-                }
+                    padding: 1rem;
+                    display: flex;
+                    justify-content: space-between;
+                    box-shadow: 0 0 4px rgb(224, 224, 224);
 
-                .description {
-                    font-size: .85rem;
-                    line-height: 130%;
-                    opacity: 75%;
-                    padding: .5rem 0 .7rem 0;
-                    text-overflow: ellipsis;
+                    .dish-img img {
+                        width: 100px;
+                        aspect-ratio: 1/1;
+                        border-radius: 5px;
+                        border: 1px solid $deliveroo-grey;
+                    }
+
+                    .description {
+                        font-size: 0.85rem;
+                        line-height: 130%;
+                        opacity: 75%;
+                        padding: 0.5rem 0 0.7rem 0;
+                        text-overflow: ellipsis;
+                    }
                 }
             }
         }
-    }
 
         .cart-section {
             height: 350px;
@@ -438,7 +429,7 @@ export default {
             padding: 2rem 2rem 4rem 2rem;
             overflow-y: auto;
             box-shadow: 0 0 4px rgb(224, 224, 224);
-            
+
             .empty-cart {
                 display: flex;
                 align-items: center;
@@ -457,7 +448,7 @@ export default {
 
             a i {
                 color: $deliveroo-blue;
-                margin: 0 .5rem;
+                margin: 0 0.5rem;
                 cursor: pointer;
             }
         }

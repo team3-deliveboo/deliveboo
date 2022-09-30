@@ -1936,17 +1936,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Checkout",
-  data: function data() {},
-  methods: {}
-});
-braintree.dropin.create({
-  container: document.getElementById('dropin-container') // ...plus remaining configuration
-
-}, function (error, dropinInstance) {// Use `dropinInstance` here
-  // Methods documented at https://braintree.github.io/braintree-web-drop-in/docs/current/Dropin.html
-});
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 
@@ -2363,7 +2353,7 @@ __webpack_require__.r(__webpack_exports__);
       var data = resp.data;
       _this.restaurant = data;
     });
-    localStorage.removeItem('cart');
+    localStorage.removeItem("cart");
   }
 }); //         localStorage.setItem("cart", JSON.stringify(cart));
 //         this.cart = JSON.parse(localStorage.getItem("cart"));
@@ -2479,48 +2469,7 @@ var staticRenderFns = [function () {
 
   return _c("div", {
     staticClass: "container-chechkout mt-5"
-  }, [_c("h1", [_vm._v("Checkout")]), _vm._v(" "), _c("div", {
-    staticClass: "content"
-  }, [_c("form", {
-    attrs: {
-      method: "post",
-      id: "payment-form"
-    }
-  }, [_c("section", [_c("label", {
-    attrs: {
-      "for": "amount"
-    }
-  }, [_c("span", {
-    staticClass: "input-label"
-  }, [_vm._v("Amount")]), _vm._v(" "), _c("div", {
-    staticClass: "input-wrapper amount-wrapper"
-  }, [_c("input", {
-    attrs: {
-      id: "amount",
-      name: "amount",
-      type: "tel",
-      min: "1",
-      placeholder: "Amount",
-      value: "10"
-    }
-  })])]), _vm._v(" "), _c("div", {
-    staticClass: "bt-drop-in-wrapper"
-  }, [_c("div", {
-    attrs: {
-      id: "bt-dropin"
-    }
-  })])]), _vm._v(" "), _c("input", {
-    attrs: {
-      id: "nonce",
-      name: "payment_method_nonce",
-      type: "hidden"
-    }
-  }), _vm._v(" "), _c("button", {
-    staticClass: "button",
-    attrs: {
-      type: "submit"
-    }
-  }, [_c("span", [_vm._v("Test Transaction")])])])])]);
+  }, [_c("h1", [_vm._v("Checkout")])]);
 }];
 render._withStripped = true;
 
@@ -3271,7 +3220,7 @@ var render = function render() {
     staticClass: "text-section"
   }, [_c("h1", [_vm._v(_vm._s(_vm.restaurant.name))]), _vm._v(" "), _c("div", {
     staticClass: "pt-3 text-muted"
-  }, [_vm._v(_vm._s(_vm.restaurant.address) + " · " + _vm._s(_vm.restaurant.phone))])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                        " + _vm._s(_vm.restaurant.address) + " · " + _vm._s(_vm.restaurant.phone) + "\n                    ")])])])]), _vm._v(" "), _c("div", {
     staticClass: "container"
   }, [_c("div", {
     staticClass: "row w-100"
@@ -3283,7 +3232,7 @@ var render = function render() {
     staticClass: "fw-bold pb-0 mb-0"
   }, [_vm._v("Menù")]), _vm._v(" "), _c("div", {
     staticClass: "pb-3 text-muted"
-  }, [_vm._v("Scegli il tuo piatto, ed aggiungilo al carrello.")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                            Scegli il tuo piatto, ed aggiungilo al carrello.\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "row row-cols-2 g-3 w-100"
   }, _vm._l(_vm.restaurant.dishes, function (dish) {
     return _c("div", {
@@ -3359,7 +3308,7 @@ var render = function render() {
       staticClass: "col-3"
     }, [_c("p", {
       staticClass: "ps-1 price text-nowrap"
-    }, [_vm._v(_vm._s((dish.price * dish.quantity).toFixed(2)) + " €")])]), _vm._v(" "), _c("div", {
+    }, [_vm._v("\n                                        " + _vm._s((dish.price * dish.quantity).toFixed(2)) + " €\n                                    ")])]), _vm._v(" "), _c("div", {
       staticClass: "col-3"
     }, [_c("a", {
       staticClass: "no-decoration",
@@ -3373,7 +3322,17 @@ var render = function render() {
     })])])]);
   })], 2), _vm._v(" "), _c("div", {
     staticClass: "payment-section d-flex justify-content-center"
-  }, [_vm._m(0), _vm._v(" "), _vm.cart.length > 0 ? [_vm._m(1)] : _vm._e()], 2)])]), _vm._v(" "), _c("Checkout")], 1)])]), _vm._v(" "), _c("TheFooter")], 1);
+  }, [_vm.cart.length > 0 ? [_c("router-link", {
+    attrs: {
+      to: "/checkout"
+    }
+  }, [_c("button", {
+    staticClass: "blue-btn position-absolute",
+    staticStyle: {
+      bottom: "20px",
+      width: "90%"
+    }
+  }, [_c("b", [_vm._v("Vai al pagamento")])])])] : _c("div", [_vm._m(0)])], 2)])]), _vm._v(" "), _c("Checkout")], 1)])]), _vm._v(" "), _c("TheFooter")], 1);
 };
 
 var staticRenderFns = [function () {
@@ -3382,17 +3341,6 @@ var staticRenderFns = [function () {
 
   return _c("button", {
     staticClass: "grey-btn position-absolute",
-    staticStyle: {
-      bottom: "20px",
-      width: "90%"
-    }
-  }, [_c("b", [_vm._v("Vai al pagamento")])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("button", {
-    staticClass: "blue-btn position-absolute",
     staticStyle: {
       bottom: "20px",
       width: "90%"
@@ -21276,6 +21224,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Home.vue */ "./resources/js/pages/Home.vue");
 /* harmony import */ var _pages_restaurant_show_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/restaurant/show.vue */ "./resources/js/pages/restaurant/show.vue");
+/* harmony import */ var _frontend_components_Checkout_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./frontend/components/Checkout.vue */ "./resources/js/frontend/components/Checkout.vue");
+
 
 
 
@@ -21292,9 +21242,13 @@ var routes = [{
 //     name: 'menu'
 // },
 {
-  path: '/users/:slug',
+  path: "/users/:slug",
   component: _pages_restaurant_show_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-  name: 'users.show'
+  name: "users.show"
+}, {
+  path: "/checkout",
+  component: _frontend_components_Checkout_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+  name: "checkout"
 }]; // const router = new VueRouter({
 //     // deve contenere un array di rotte
 //     routes,
