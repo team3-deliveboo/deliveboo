@@ -24,4 +24,7 @@ Route::get('/users/{slug}', "Api\UserController@show");
 Route::get('/dishes', 'Api\DishController@index');
 Route::get('/categories', 'Api\CategoryController@index');
 
+Route::get('orders/generate', 'Api\Orders\OrderController@generate');
+Route::post('orders/make/payment', 'Api\Orders\OrderController@makePayment');
+
 // Route::get("/dishes/{dish}", "Api\DishController@show");
