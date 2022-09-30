@@ -283,16 +283,16 @@ export default {
                 height: 70px;
                 width: 70px;
                 border-radius: 10px;
-                background-color: #FABE00;
+                background-color: white;
                 box-shadow: 0 0 5px 0px gray;
-                border: 1px solid #FABE00;
+                // border: 1px solid #FABE00;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
 
                 &:focus {
-                    box-shadow: 0 0 5px white;
+                    box-shadow: 0 0 5px #FABE00;
                 }
 
                 .category-img {
