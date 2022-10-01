@@ -6,9 +6,9 @@
 
             <div class="categories">
                 <div class="row row-cols-2 gy-3 justify-content-center gap-2">
-                    <div class="col-1" v-for="category in categories" :key="category.id">
+                    <div class="col-3 col-sm-2 col-lg-1" v-for="category in categories" :key="category.id">
                         <div class="category-tag">
-                            <label :for="category.id" tabindex = "0" class="animate__animated animate__zoomIn">
+                            <label :for="category.id" tabindex = "0" class="animate__animated animate__zoomIn flex-shrink-0">
                                 <input type="checkbox" v-model="selected" :value="category.name" :id="category.id" />
                                 <img :src="'img/' + category.name + '.png'" :alt="'Immagine della categoria' + ' ' + category.name" class="category-img">
                             </label>
@@ -210,6 +210,7 @@ export default {
         top: 0;
 
         .category-tag {
+            width: 100%;
             position: relative;
             display: flex;
             justify-content: center;
