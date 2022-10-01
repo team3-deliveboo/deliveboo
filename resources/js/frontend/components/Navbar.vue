@@ -13,7 +13,7 @@
                     <a href="/login">
                         <button class="white-btn" type="button">
                             <i class="fa-solid fa-house"></i>
-                            <span>Registrati o accedi</span>
+                            <span class="d-none d-sm-inline">Registrati o accedi</span>
                         </button>
                     </a>
 

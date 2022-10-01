@@ -10,7 +10,7 @@
 
             <!-- HEADER WITH RESTAURANT NAME -->
             <div class="restaurant-section">
-                <div class="container d-flex align-items-center gap-4">
+                <div class="container d-flex align-items-center gap-4 flex-column flex-md-row">
                     <div class="image">
                         <img :src="'/storage/' + restaurant.img" :alt="'Immagine di' + ' ' + restaurant.name" />
                     </div>
@@ -27,9 +27,9 @@
 
             <!-- DISH + CART -->
             <div class="container">
-                <div class="row w-100">
+                <div class="row w-100 justify-content-md-center">
                     <!-- DISHES LIST -->
-                    <div class="col-8">
+                    <div class="col-12 col-xl-8">
                         <div class="dishes-section">
                             <h4 class="fw-bold pb-0 mb-0">Menù</h4>
                             <div class="pb-3 text-muted">
@@ -37,20 +37,19 @@
                             </div>
 
                             <!-- SINGLE DISH CARD -->
-                            <div class="row row-cols-2 g-3 w-100">
-                                <div class="col" v-for="dish in restaurant.dishes" :key="dish.id">
+                            <div class="row row-cols-1 row-cols-xl-2 g-3 w-100">
+                                <div class="col-12 col-lg" v-for="dish in restaurant.dishes" :key="dish.id">
                                     <button @click="addItemToCart(dish)">
                                         <div class="dish-card">
                                             <div class="text-start pe-1">
                                                 <div>
-                                                    <b>{{ dish.name }}</b>
+                                                    <span><b>{{ dish.name }}</b></span>
                                                 </div>
-                                                <div class="description">{{ dish.description }}</div>
-                                                <div>{{ dish.price + "€" }}</div>
+                                                <div class="description d-none d-sm-block"><span>{{ dish.description }}</span></div>
+                                                <div><span>{{ dish.price + "€" }}</span></div>
                                             </div>
                                             <div class="dish-img">
-                                                <img :src="'/storage/' + dish.img"
-                                                    :alt="'Immagine del piatto' + ' ' + dish.name" />
+                                                <img :src="'/storage/' + dish.img" :alt="'Immagine del piatto' + ' ' + dish.name" />
                                             </div>
                                         </div>
                                     </button>
@@ -67,7 +66,7 @@
                     <span>{{item.price + "€" }}</span> -->
 
                     <!-- CART SECTION -->
-                    <div class="col-4">
+                    <div class="col-12 col-md-8 col-xl-4">
                         <div class="py-4 h-100">
                             <div class="cart-section">
                                 <div v-if="cart.length <= 0" class="empty-cart">
@@ -82,7 +81,7 @@
                                 <div v-for="dish in cart" :key="dish.id" class="row">
                                     <!-- SELECTED DISH -->
                                     <div class="col-3">
-                                        <p>{{ dish.name }}</p>
+                                        <span>{{ dish.name }}</span>
                                     </div>
 
                                     <!-- QUANTITY BUTTONS -->
@@ -95,7 +94,7 @@
                                             </div>
 
                                             <div class="display-num-pill-button">
-                                                {{ dish.quantity }}
+                                                <span>{{ dish.quantity }}</span>
                                             </div>
 
                                             <div>
@@ -123,18 +122,18 @@
                             </div>
 
                             <!-- PAYMENT BUTTON -->
-                            <div class="payment-section d-flex justify-content-center">
+                            <div class="payment-section d-flex justify-content-center align-items-end">
                                 <template v-if="cart.length > 0">
                                     <router-link to="/checkout">
-                                        <button class="blue-btn position-absolute" style="bottom: 20px; width: 90%; left: 20px;">
-                                            <b>Vai al pagamento</b>
+                                        <button class="blue-btn large">
+                                            <span><b>Vai al pagamento</b></span>
                                         </button>
                                     </router-link>
                                 </template>
 
                                 <div v-else>
-                                    <button class="grey-btn position-absolute" style="bottom: 20px; width: 90%; left: 20px;">
-                                        <b>Vai al pagamento</b>
+                                    <button class="grey-btn large">
+                                        <span><b>Vai al pagamento</b></span>
                                     </button>
                                 </div>
                             </div>
@@ -400,6 +399,7 @@ export default {
 
                 .dish-card {
                     width: 100%;
+                    height: 140px;
                     background-color: white;
                     border: 1px solid white;
                     border-radius: 5px;
@@ -407,6 +407,7 @@ export default {
                     display: flex;
                     justify-content: space-between;
                     box-shadow: 0 0 4px rgb(224, 224, 224);
+                    overflow: hidden;
 
                     .dish-img img {
                         width: 100px;
@@ -420,7 +421,6 @@ export default {
                         line-height: 130%;
                         opacity: 75%;
                         padding: 0.5rem 0 0.7rem 0;
-                        text-overflow: ellipsis;
                     }
                 }
             }
@@ -463,8 +463,18 @@ export default {
             width: 100%;
             background-color: white;
             box-shadow: 0 -5px 5px -2px rgb(224, 224, 224);
-            position: relative;
+
+            .large {
+                width: 350px;
+                margin-bottom: 20px;
+            }
         }
+    }
+}
+
+@media (max-width: 768px) {
+    .large {
+        width: 100px;
     }
 }
 </style>

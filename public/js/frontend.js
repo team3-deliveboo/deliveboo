@@ -2715,7 +2715,9 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fa-solid fa-house"
-  }), _vm._v(" "), _c("span", [_vm._v("Registrati o accedi")])])]), _vm._v(" "), _c("button", {
+  }), _vm._v(" "), _c("span", {
+    staticClass: "d-none d-sm-inline"
+  }, [_vm._v("Registrati o accedi")])])]), _vm._v(" "), _c("button", {
     staticClass: "white-btn d-none d-md-block",
     attrs: {
       type: "button"
@@ -3187,7 +3189,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "restaurant-section"
   }, [_c("div", {
-    staticClass: "container d-flex align-items-center gap-4"
+    staticClass: "container d-flex align-items-center gap-4 flex-column flex-md-row"
   }, [_c("div", {
     staticClass: "image"
   }, [_c("img", {
@@ -3202,9 +3204,9 @@ var render = function render() {
   }, [_vm._v("\n                        " + _vm._s(_vm.restaurant.address) + " · " + _vm._s(_vm.restaurant.phone) + "\n                    ")])])])]), _vm._v(" "), _c("div", {
     staticClass: "container"
   }, [_c("div", {
-    staticClass: "row w-100"
+    staticClass: "row w-100 justify-content-md-center"
   }, [_c("div", {
-    staticClass: "col-8"
+    staticClass: "col-12 col-xl-8"
   }, [_c("div", {
     staticClass: "dishes-section"
   }, [_c("h4", {
@@ -3212,11 +3214,11 @@ var render = function render() {
   }, [_vm._v("Menù")]), _vm._v(" "), _c("div", {
     staticClass: "pb-3 text-muted"
   }, [_vm._v("\n                            Scegli il tuo piatto, ed aggiungilo al carrello.\n                        ")]), _vm._v(" "), _c("div", {
-    staticClass: "row row-cols-2 g-3 w-100"
+    staticClass: "row row-cols-1 row-cols-xl-2 g-3 w-100"
   }, _vm._l(_vm.restaurant.dishes, function (dish) {
     return _c("div", {
       key: dish.id,
-      staticClass: "col"
+      staticClass: "col-12 col-lg"
     }, [_c("button", {
       on: {
         click: function click($event) {
@@ -3227,9 +3229,9 @@ var render = function render() {
       staticClass: "dish-card"
     }, [_c("div", {
       staticClass: "text-start pe-1"
-    }, [_c("div", [_c("b", [_vm._v(_vm._s(dish.name))])]), _vm._v(" "), _c("div", {
-      staticClass: "description"
-    }, [_vm._v(_vm._s(dish.description))]), _vm._v(" "), _c("div", [_vm._v(_vm._s(dish.price + "€"))])]), _vm._v(" "), _c("div", {
+    }, [_c("div", [_c("span", [_c("b", [_vm._v(_vm._s(dish.name))])])]), _vm._v(" "), _c("div", {
+      staticClass: "description d-none d-sm-block"
+    }, [_c("span", [_vm._v(_vm._s(dish.description))])]), _vm._v(" "), _c("div", [_c("span", [_vm._v(_vm._s(dish.price + "€"))])])]), _vm._v(" "), _c("div", {
       staticClass: "dish-img"
     }, [_c("img", {
       attrs: {
@@ -3238,7 +3240,7 @@ var render = function render() {
       }
     })])])])]);
   }), 0)])]), _vm._v(" "), _c("div", {
-    staticClass: "col-4"
+    staticClass: "col-12 col-md-8 col-xl-4"
   }, [_c("div", {
     staticClass: "py-4 h-100"
   }, [_c("div", {
@@ -3257,7 +3259,7 @@ var render = function render() {
       staticClass: "row"
     }, [_c("div", {
       staticClass: "col-3"
-    }, [_c("p", [_vm._v(_vm._s(dish.name))])]), _vm._v(" "), _c("div", {
+    }, [_c("span", [_vm._v(_vm._s(dish.name))])]), _vm._v(" "), _c("div", {
       staticClass: "col-3"
     }, [_c("div", {
       staticClass: "d-flex align-items-center cart-quantity-button"
@@ -3274,7 +3276,7 @@ var render = function render() {
       staticClass: "fa-regular fa-square-minus"
     })])]), _vm._v(" "), _c("div", {
       staticClass: "display-num-pill-button"
-    }, [_vm._v("\n                                            " + _vm._s(dish.quantity) + "\n                                        ")]), _vm._v(" "), _c("div", [_c("a", {
+    }, [_c("span", [_vm._v(_vm._s(dish.quantity))])]), _vm._v(" "), _c("div", [_c("a", {
       staticClass: "no-decoration",
       on: {
         click: function click($event) {
@@ -3300,19 +3302,14 @@ var render = function render() {
       staticClass: "fa-solid fa-trash"
     })])])]);
   })], 2), _vm._v(" "), _c("div", {
-    staticClass: "payment-section d-flex justify-content-center"
+    staticClass: "payment-section d-flex justify-content-center align-items-end"
   }, [_vm.cart.length > 0 ? [_c("router-link", {
     attrs: {
       to: "/checkout"
     }
   }, [_c("button", {
-    staticClass: "blue-btn position-absolute",
-    staticStyle: {
-      bottom: "20px",
-      width: "90%",
-      left: "20px"
-    }
-  }, [_c("b", [_vm._v("Vai al pagamento")])])])] : _c("div", [_vm._m(0)])], 2)])]), _vm._v(" "), _c("Checkout")], 1)])]), _vm._v(" "), _c("TheFooter")], 1);
+    staticClass: "blue-btn large"
+  }, [_c("span", [_c("b", [_vm._v("Vai al pagamento")])])])])] : _c("div", [_vm._m(0)])], 2)])]), _vm._v(" "), _c("Checkout")], 1)])]), _vm._v(" "), _c("TheFooter")], 1);
 };
 
 var staticRenderFns = [function () {
@@ -3320,13 +3317,8 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("button", {
-    staticClass: "grey-btn position-absolute",
-    staticStyle: {
-      bottom: "20px",
-      width: "90%",
-      left: "20px"
-    }
-  }, [_c("b", [_vm._v("Vai al pagamento")])]);
+    staticClass: "grey-btn large"
+  }, [_c("span", [_c("b", [_vm._v("Vai al pagamento")])])]);
 }];
 render._withStripped = true;
 
@@ -3583,7 +3575,7 @@ exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstra
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!animate.css */ "./node_modules/css-loader/index.js!./node_modules/animate.css/animate.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-339970b6] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-339970b6] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-339970b6] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-339970b6] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-339970b6]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-339970b6]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.cart[data-v-339970b6] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  background-color: white;\n}\n.cart .lower-section[data-v-339970b6] {\n  background-color: #F9FAFA;\n}\n.cart .lower-section .restaurant-section[data-v-339970b6] {\n  background-color: white;\n  width: 100%;\n  padding: 2rem 0;\n  border-bottom: 1px solid lightgray;\n  box-shadow: 0 4px 5px -2px rgb(224, 224, 224);\n}\n.cart .lower-section .restaurant-section img[data-v-339970b6] {\n  height: 250px;\n  border-radius: 5px;\n  border: 1px solid lightgray;\n  aspect-ratio: 1/1;\n}\n.cart .lower-section .restaurant-section h1[data-v-339970b6] {\n  text-transform: uppercase;\n  font-weight: bold;\n  background-color: #00CCBC;\n  height: 20px;\n}\n.cart .lower-section .dishes-section[data-v-339970b6] {\n  padding: 2rem 0;\n  overflow-y: auto;\n  width: 100%;\n}\n.cart .lower-section .dishes-section button[data-v-339970b6] {\n  width: 100%;\n  border: none;\n  border-radius: 5px;\n  background-color: transparent;\n}\n.cart .lower-section .dishes-section button .dish-card[data-v-339970b6] {\n  width: 100%;\n  background-color: white;\n  border: 1px solid white;\n  border-radius: 5px;\n  padding: 1rem;\n  display: flex;\n  justify-content: space-between;\n  box-shadow: 0 0 4px rgb(224, 224, 224);\n}\n.cart .lower-section .dishes-section button .dish-card .dish-img img[data-v-339970b6] {\n  width: 100px;\n  aspect-ratio: 1/1;\n  border-radius: 5px;\n  border: 1px solid #F9FAFA;\n}\n.cart .lower-section .dishes-section button .dish-card .description[data-v-339970b6] {\n  font-size: 0.85rem;\n  line-height: 130%;\n  opacity: 75%;\n  padding: 0.5rem 0 0.7rem 0;\n  text-overflow: ellipsis;\n}\n.cart .lower-section .cart-section[data-v-339970b6] {\n  height: 350px;\n  width: 100%;\n  background-color: white;\n  border: 1px solid white;\n  padding: 2rem 2rem 4rem 2rem;\n  overflow-y: auto;\n  box-shadow: 0 0 4px rgb(224, 224, 224);\n}\n.cart .lower-section .cart-section .empty-cart[data-v-339970b6] {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 1rem;\n}\n.cart .lower-section .cart-section .empty-cart i[data-v-339970b6] {\n  color: #abadad;\n  font-size: 50px;\n}\n.cart .lower-section .cart-section .empty-cart .empty[data-v-339970b6] {\n  color: #abadad;\n}\n.cart .lower-section .cart-section a i[data-v-339970b6] {\n  color: #00CCBC;\n  margin: 0 0.5rem;\n  cursor: pointer;\n}\n.cart .lower-section .payment-section[data-v-339970b6] {\n  height: 150px;\n  width: 100%;\n  background-color: white;\n  box-shadow: 0 -5px 5px -2px rgb(224, 224, 224);\n  position: relative;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-339970b6] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-339970b6] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-339970b6] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-339970b6] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-339970b6]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-339970b6]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.cart[data-v-339970b6] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  background-color: white;\n}\n.cart .lower-section[data-v-339970b6] {\n  background-color: #F9FAFA;\n}\n.cart .lower-section .restaurant-section[data-v-339970b6] {\n  background-color: white;\n  width: 100%;\n  padding: 2rem 0;\n  border-bottom: 1px solid lightgray;\n  box-shadow: 0 4px 5px -2px rgb(224, 224, 224);\n}\n.cart .lower-section .restaurant-section img[data-v-339970b6] {\n  height: 250px;\n  border-radius: 5px;\n  border: 1px solid lightgray;\n  aspect-ratio: 1/1;\n}\n.cart .lower-section .restaurant-section h1[data-v-339970b6] {\n  text-transform: uppercase;\n  font-weight: bold;\n  background-color: #00CCBC;\n  height: 20px;\n}\n.cart .lower-section .dishes-section[data-v-339970b6] {\n  padding: 2rem 0;\n  overflow-y: auto;\n  width: 100%;\n}\n.cart .lower-section .dishes-section button[data-v-339970b6] {\n  width: 100%;\n  border: none;\n  border-radius: 5px;\n  background-color: transparent;\n}\n.cart .lower-section .dishes-section button .dish-card[data-v-339970b6] {\n  width: 100%;\n  height: 140px;\n  background-color: white;\n  border: 1px solid white;\n  border-radius: 5px;\n  padding: 1rem;\n  display: flex;\n  justify-content: space-between;\n  box-shadow: 0 0 4px rgb(224, 224, 224);\n  overflow: hidden;\n}\n.cart .lower-section .dishes-section button .dish-card .dish-img img[data-v-339970b6] {\n  width: 100px;\n  aspect-ratio: 1/1;\n  border-radius: 5px;\n  border: 1px solid #F9FAFA;\n}\n.cart .lower-section .dishes-section button .dish-card .description[data-v-339970b6] {\n  font-size: 0.85rem;\n  line-height: 130%;\n  opacity: 75%;\n  padding: 0.5rem 0 0.7rem 0;\n}\n.cart .lower-section .cart-section[data-v-339970b6] {\n  height: 350px;\n  width: 100%;\n  background-color: white;\n  border: 1px solid white;\n  padding: 2rem 2rem 4rem 2rem;\n  overflow-y: auto;\n  box-shadow: 0 0 4px rgb(224, 224, 224);\n}\n.cart .lower-section .cart-section .empty-cart[data-v-339970b6] {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 1rem;\n}\n.cart .lower-section .cart-section .empty-cart i[data-v-339970b6] {\n  color: #abadad;\n  font-size: 50px;\n}\n.cart .lower-section .cart-section .empty-cart .empty[data-v-339970b6] {\n  color: #abadad;\n}\n.cart .lower-section .cart-section a i[data-v-339970b6] {\n  color: #00CCBC;\n  margin: 0 0.5rem;\n  cursor: pointer;\n}\n.cart .lower-section .payment-section[data-v-339970b6] {\n  height: 150px;\n  width: 100%;\n  background-color: white;\n  box-shadow: 0 -5px 5px -2px rgb(224, 224, 224);\n}\n.cart .lower-section .payment-section .large[data-v-339970b6] {\n  width: 350px;\n  margin-bottom: 20px;\n}\n@media (max-width: 768px) {\n.large[data-v-339970b6] {\n    width: 100px;\n}\n}", ""]);
 
 // exports
 
