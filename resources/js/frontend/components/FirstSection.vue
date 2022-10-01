@@ -27,8 +27,8 @@
                         </div>
 
                         <!-- RESTAURANT CARD -->
-                        <div class="row gy-4 w-100">
-                            <div class="col-3" v-for="restaurant in SelectFilter" :key="restaurant.id">
+                        <div class="row gy-4 w-100 justify-content-sm-center">
+                            <div class="col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3" v-for="restaurant in SelectFilter" :key="restaurant.id">
                                 <router-link class="text-dark text-decoration-none" :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
 
                                     <div class="card-restaurant d-flex">

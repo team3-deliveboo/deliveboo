@@ -2566,11 +2566,11 @@ var render = function render() {
   }, [_c("h6", {
     staticClass: "header"
   }, [_vm._v("Ristoranti della categoria " + _vm._s(_vm.selected[0]) + " nella tua città:")])]), _vm._v(" "), _c("div", {
-    staticClass: "row gy-4 w-100"
+    staticClass: "row gy-4 w-100 justify-content-sm-center"
   }, _vm._l(_vm.SelectFilter, function (restaurant) {
     return _c("div", {
       key: restaurant.id,
-      staticClass: "col-3"
+      staticClass: "col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3"
     }, [_c("router-link", {
       staticClass: "text-dark text-decoration-none",
       attrs: {
