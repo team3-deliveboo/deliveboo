@@ -2752,13 +2752,13 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "container"
+    staticClass: "container py-5"
   }, [_c("div", {
     staticClass: "wrapper"
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "col-5"
+    staticClass: "col-sm-12 col-lg-5"
   }, [_c("div", {
     staticClass: "text"
   }, [_c("div", {
@@ -2782,9 +2782,9 @@ var staticRenderFns = [function () {
   })])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-7"
   }, [_c("div", {
-    staticClass: "map-img"
+    staticClass: "map-img d-none d-lg-block"
   }), _vm._v(" "), _c("div", {
-    staticClass: "over-img"
+    staticClass: "over-img d-none d-lg-block"
   }, [_c("img", {
     attrs: {
       src: "img/notification.webp",
@@ -3108,6 +3108,10 @@ var staticRenderFns = [function () {
       alt: "Stelline2"
     }
   })]), _vm._v(" "), _c("div", {
+    staticClass: "row justify-content-center"
+  }, [_c("div", {
+    staticClass: "col col-md-7"
+  }, [_c("div", {
     staticClass: "text"
   }, [_c("div", {
     staticClass: "title"
@@ -3119,7 +3123,7 @@ var staticRenderFns = [function () {
     attrs: {
       href: "javascript:void(0)"
     }
-  }, [_vm._v("Termini e condizioni qui.")])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Termini e condizioni qui.")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "banner"
   }, [_c("img", {
     attrs: {
@@ -3460,7 +3464,7 @@ exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstra
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!animate.css */ "./node_modules/css-loader/index.js!./node_modules/animate.css/animate.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-6d72b4c7] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-6d72b4c7] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-6d72b4c7] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-6d72b4c7] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-6d72b4c7]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-6d72b4c7]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.container[data-v-6d72b4c7] {\n  padding: 4rem 0;\n}\n.container .wrapper[data-v-6d72b4c7] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  background-color: white;\n  border-radius: 10px;\n  box-shadow: 0 0 20px 0px lightgray;\n  position: relative;\n}\n.container .wrapper .text[data-v-6d72b4c7] {\n  width: 90%;\n  padding: 2rem;\n}\n.container .wrapper .text .title[data-v-6d72b4c7] {\n  font-size: 2.5rem;\n  font-weight: bold;\n  line-height: 50px;\n  padding-bottom: 1rem;\n}\n.container .wrapper .text .subtitle[data-v-6d72b4c7] {\n  font-size: 1.2rem;\n}\n.container .wrapper .text .badges[data-v-6d72b4c7] {\n  display: flex;\n  gap: 5px;\n  padding-top: 3rem;\n  padding-bottom: 2rem;\n}\n.container .wrapper .text .badges .badge-store[data-v-6d72b4c7] {\n  height: 40px;\n  width: 130px;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  border: 1px solid grey;\n  border-radius: 6px;\n}\n.container .wrapper .text .badges .badge-store.apple[data-v-6d72b4c7] {\n  background-image: url(\"/img/apple_store.png\");\n}\n.container .wrapper .text .badges .badge-store.google[data-v-6d72b4c7] {\n  background-image: url(\"/img/google_play.png\");\n}\n.container .wrapper .map-img[data-v-6d72b4c7] {\n  background-image: url(\"/img/map.png\");\n  background-size: cover;\n  background-position: left;\n  background-repeat: no-repeat;\n  height: 100%;\n  border-radius: 0px 10px 10px 0px;\n}\n.container .wrapper .over-img img[data-v-6d72b4c7] {\n  position: absolute;\n  top: 10px;\n  right: 0;\n  width: 30%;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-6d72b4c7] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-6d72b4c7] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-6d72b4c7] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-6d72b4c7] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-6d72b4c7]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-6d72b4c7]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.container .wrapper[data-v-6d72b4c7] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  background-color: white;\n  border-radius: 10px;\n  box-shadow: 0 0 20px 0px lightgray;\n  position: relative;\n}\n.container .wrapper .text[data-v-6d72b4c7] {\n  width: 90%;\n  padding: 2rem;\n}\n.container .wrapper .text .title[data-v-6d72b4c7] {\n  font-size: 2.5rem;\n  font-weight: bold;\n  line-height: 50px;\n  padding-bottom: 1rem;\n}\n.container .wrapper .text .subtitle[data-v-6d72b4c7] {\n  font-size: 1.2rem;\n}\n.container .wrapper .text .badges[data-v-6d72b4c7] {\n  display: flex;\n  gap: 5px;\n  padding-top: 3rem;\n  padding-bottom: 2rem;\n}\n.container .wrapper .text .badges .badge-store[data-v-6d72b4c7] {\n  height: 40px;\n  width: 130px;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  border: 1px solid grey;\n  border-radius: 6px;\n}\n.container .wrapper .text .badges .badge-store.apple[data-v-6d72b4c7] {\n  background-image: url(\"/img/apple_store.png\");\n}\n.container .wrapper .text .badges .badge-store.google[data-v-6d72b4c7] {\n  background-image: url(\"/img/google_play.png\");\n}\n.container .wrapper .map-img[data-v-6d72b4c7] {\n  background-image: url(\"/img/map.png\");\n  background-size: cover;\n  background-position: left;\n  background-repeat: no-repeat;\n  height: 100%;\n  border-radius: 0px 10px 10px 0px;\n}\n.container .wrapper .over-img img[data-v-6d72b4c7] {\n  position: absolute;\n  top: 10px;\n  right: 0;\n  width: 30%;\n}", ""]);
 
 // exports
 
@@ -3539,7 +3543,7 @@ exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstra
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!animate.css */ "./node_modules/css-loader/index.js!./node_modules/animate.css/animate.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-8cd17710] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-8cd17710] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-8cd17710] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-8cd17710] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-8cd17710]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-8cd17710]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.third-section[data-v-8cd17710] {\n  padding: 3rem 0 9rem 0;\n  background: rgb(0, 126, 137);\n  background: linear-gradient(125deg, rgb(0, 126, 137) 0%, rgb(34, 194, 183) 100%);\n  display: flex;\n  justify-content: center;\n  text-align: center;\n  position: relative;\n}\n.third-section .stars[data-v-8cd17710] {\n  width: 60%;\n  display: flex;\n  justify-content: space-between;\n  position: absolute;\n}\n.third-section .text[data-v-8cd17710] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  width: 50%;\n  color: white;\n}\n.third-section .text .title[data-v-8cd17710] {\n  font-size: 3.7rem;\n  line-height: 80px;\n  font-weight: bold;\n}\n.third-section .text .subtitle[data-v-8cd17710] {\n  font-size: 1.4rem;\n  padding-top: 2rem;\n}\n.third-section .text .sub-subtitle[data-v-8cd17710] {\n  font-size: 0.85rem;\n  padding-top: 1rem;\n}\n.third-section .text .sub-subtitle a[data-v-8cd17710] {\n  color: white;\n  text-decoration: underline;\n}\n.third-section .banner[data-v-8cd17710] {\n  position: absolute;\n  bottom: 0;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-8cd17710] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-8cd17710] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-8cd17710] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-8cd17710] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-8cd17710]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-8cd17710]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.third-section[data-v-8cd17710] {\n  padding: 3rem 0 9rem 0;\n  background: rgb(0, 126, 137);\n  background: linear-gradient(125deg, rgb(0, 126, 137) 0%, rgb(34, 194, 183) 100%);\n  display: flex;\n  justify-content: center;\n  text-align: center;\n  position: relative;\n  overflow: hidden;\n}\n.third-section .stars[data-v-8cd17710] {\n  width: 60%;\n  display: flex;\n  justify-content: space-between;\n  position: absolute;\n}\n.third-section .text[data-v-8cd17710] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  color: white;\n}\n.third-section .text .title[data-v-8cd17710] {\n  font-size: 3.7rem;\n  line-height: 80px;\n  font-weight: bold;\n}\n.third-section .text .subtitle[data-v-8cd17710] {\n  font-size: 1.4rem;\n  padding-top: 2rem;\n}\n.third-section .text .sub-subtitle[data-v-8cd17710] {\n  font-size: 0.85rem;\n  padding-top: 1rem;\n}\n.third-section .text .sub-subtitle a[data-v-8cd17710] {\n  color: white;\n  text-decoration: underline;\n}\n.third-section .banner[data-v-8cd17710] {\n  position: absolute;\n  bottom: 0;\n}", ""]);
 
 // exports
 

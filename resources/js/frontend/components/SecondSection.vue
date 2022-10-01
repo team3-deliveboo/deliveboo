@@ -1,9 +1,9 @@
 <template>
-    <div class="container">
+    <div class="container py-5">
 
         <div class="wrapper">
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-sm-12 col-lg-5">
                         <div class="text">
                             <div class="title">Segui gli ordini passo passo</div>
                             <div class="subtitle">I piatti e i prodotti che ami, consegnati in pochissimo tempo. Vedrai quando il rider ha ritirato l'ordine, che potrai seguire passo passo, e riceverai una notifica quando sarà quasi da te.</div>
@@ -16,8 +16,8 @@
 
                     <!-- ORDER TRACKING IMAGE -->
                     <div class="col-7">
-                        <div class="map-img"></div>
-                        <div class="over-img">
+                        <div class="map-img d-none d-lg-block"></div>
+                        <div class="over-img d-none d-lg-block">
                             <img src="img/notification.webp" alt="Immagine Aggiornamento Consegna">
                         </div>
                     </div>
@@ -39,7 +39,6 @@ export default {
 @import 'resources/sass/frontend/buttons.scss';
 
 .container {
-    padding: 4rem 0;
 
     .wrapper {
         font-family: 'IBM Plex Sans Arabic', sans-serif;
