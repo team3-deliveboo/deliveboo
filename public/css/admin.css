@@ -146,3 +146,53 @@ button i {
     width: 100%;
     margin: 1rem 0 2rem 0;
 }
+
+/* DISHES INDEX */
+.dishes-section {
+    padding: 2rem 0;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.dish-card {
+    width: 100%;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 4px rgb(224, 224, 224);
+}
+
+.dish-img img {
+    width: 100px;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    border: 1px solid #F9FAFA;
+}
+
+.description {
+    font-size: 0.85rem;
+    line-height: 130%;
+    opacity: 75%;
+    padding: 0.5rem 0 0.7rem 0;
+    text-overflow: ellipsis;
+}
+
+.dish-index {
+    background-color: white;
+    padding: 2rem;
+}
+
+.button-create {
+    width: 400px;
+    padding-bottom: 2rem;
+    margin: auto;
+}
+
+.buttons {
+    position: absolute;
+    right: -50px;
+    top: 0;
+}
