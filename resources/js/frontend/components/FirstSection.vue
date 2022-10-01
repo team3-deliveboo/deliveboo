@@ -1,76 +1,57 @@
 <template>
     <div class="filter-restaurant">
 
-            <!-- SEARCH BAR
-            <div class="search-bar">
-                <button class="fork">
-                    <i class="fa-solid fa-utensils"></i>
-                </button>
+        <div class="container py-5">
 
-                <input type="text" class="form-control" placeholder="Italiano? Vegano? Stellato?"
-                    v-model="filterInput" />
-                <button class="search-btn" type="button" id="button-addon1">
-                    Cerca
-                </button>
-            </div> -->
-
-            <div class="container py-5">
-
-                <div class="categories">
-                    <div class="row row-cols-3 gy-3 justify-content-center gap-1">
-                        <div class="col-2" v-for="category in categories" :key="category.id">
-                            <div class="category-tag">
-                                <label :for="category.id" tabindex = "0">
-                                    <input type="checkbox" v-model="selected" :value="category.name" :id="category.id" />
-                                    <img :src="'img/' + category.name + '.png'" :alt="'Immagine della categoria' + ' ' + category.name" class="category-img">
-                                </label>
-                            </div>
+            <div class="categories">
+                <div class="row row-cols-3 gy-3 justify-content-center gap-1">
+                    <div class="col-2" v-for="category in categories" :key="category.id">
+                        <div class="category-tag">
+                            <label :for="category.id" tabindex = "0">
+                                <input type="checkbox" v-model="selected" :value="category.name" :id="category.id" />
+                                <img :src="'img/' + category.name + '.png'" :alt="'Immagine della categoria' + ' ' + category.name" class="category-img">
+                            </label>
                         </div>
-
-                        <!-- <div>
-                            <div>
-                                <h2>Hai cercato {{ selected }}</h2>
-                            </div>
-                            <button @click="SelectFilter()" type="button" class="btn btn-primary mt-5">
-                                Apply filter
-                            </button>
-                        </div> -->
                     </div>
                 </div>
+            </div>
 
-                <!-- CATEGORY FILTER -->
-                <div v-if="SelectFilter.length > 0">
-                    <div class="container">
-                        <div class="restaurant-section">
-                            <div class="row gy-4">
-                                <div class="col-3" v-for="restaurant in SelectFilter" :key="restaurant.id">
-                                    <router-link class="text-dark text-decoration-none"
-                                        :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
+            <!-- CATEGORY FILTER -->
+            <div v-if="SelectFilter.length > 0">
+                <div class="container">
+                    <div class="restaurant-section">
 
-                                        <div class="card-restaurant d-flex">
-                                            <div class="restaurant-img">
-                                                <img :src="getImg(restaurant)" alt="/" />
-                                            </div>
+                        <div class="text-center pb-4" style="font-family: IBM Plex Sans Arabic;">
+                            <h6 class="header">Ristoranti della categoria {{ selected[0] }} nella tua città:</h6>
+                        </div>
 
-                                            <div class="px-2 py-3">
-                                                <div class="restaurant-name">
-                                                    <span>{{ restaurant.name }} · <small class="fw-light">{{ restaurant.address }}</small></span>
-                                                </div>
-                                                <div v-if="restaurant.categories">
-                                                    <span v-for="category in restaurant.categories" :key="category.id">
-                                                        <small class="cat-card">{{ category.name + " " }}</small>
-                                                    </span>
-                                                </div>
-                                            </div>
+                        <!-- RESTAURANT CARD -->
+                        <div class="row gy-4 w-100">
+                            <div class="col-3" v-for="restaurant in SelectFilter" :key="restaurant.id">
+                                <router-link class="text-dark text-decoration-none" :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
+
+                                    <div class="card-restaurant d-flex">
+                                        <div class="restaurant-img">
+                                            <img :src="getImg(restaurant)" alt="/" />
                                         </div>
 
-                                    </router-link>
-                                </div>
+                                        <div class="px-2 py-2 d-flex justify-content-between align-items-center">
+                                            <div class="restaurant-name">
+                                                <span>{{ restaurant.name }}</span>
+                                            </div>
+                                            <div class="place-order">
+                                                <small class="opacity-75"><i class="fa-solid fa-utensils"></i> Ordina qui</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </router-link>
                             </div>
                         </div>
+
                     </div>
                 </div>
-
+            </div>
 
                 <!-- <div v-else-if="filteredList.length > 0">
                     <div class="row gy-4">
@@ -99,8 +80,6 @@
                         </div>
                     </div>
                 </div> -->
-
-
                 <!-- <div v-else>
                     <div class="row gy-4">
                         <div class="col-3" v-for="restaurant in restaurants" :key="restaurant.id">
@@ -128,7 +107,6 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
         </div>
     </div>
 </template>
@@ -154,10 +132,7 @@ export default {
         },
         fetchCategories() {
             axios.get("/api/categories").then((resp) => {
-                // console.log(resp);
-
                 this.categories = resp.data;
-                // console.log(this.categories);
             });
         },
         fetchUsers() {
@@ -188,14 +163,12 @@ export default {
                 const filledCategory = categories.filter(function (category) {
                     const allCategory = category.name;
 
-                    // console.log(allCategory.indexOf(value) > -1);
                     if (value.length == 0) {
                         return
                     } else {
                         return allCategory.indexOf(value) > -1;
                     }
                 });
-                // console.log(filledCategory);
                 return filledCategory.length > 0;
             });
         },
@@ -220,54 +193,10 @@ export default {
 @import "~/resources/sass/backend/_variables.scss";
 @import "resources/sass/frontend/buttons.scss";
 
-.search-bar {
-    display: flex;
-    position: relative;
-    bottom: 8rem;
-    align-items: center;
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
-
-    .form-control {
-        border: none;
-        padding-left: 45px;
-    }
-
-    input {
-        padding: 1.2rem;
-        border-radius: 50px;
-        width: 100%;
-
-        &::placeholder {
-            color: lighten($color: gray, $amount: 20);
-        }
-    }
-
-    button.fork {
-        color: $deliveroo-blue;
-        padding: 1.2rem;
-        border: none;
-        border-radius: 50px 0px 0px 50px;
-        background-color: white;
-        width: 20px;
-        height: 100%;
-        position: absolute;
-    }
-
-    .search-btn {
-        position: absolute;
-        right: 3.5px;
-    }
-}
-
 .filter-restaurant {
     overflow: hidden;
-    // // background: rgb(0, 126, 137);
-    // // background: linear-gradient(125deg, rgba(0, 126, 137, 1) 0%, rgba(34, 194, 183, 1) 100%);
-    // background-color: $deliveroo-grey;
-    // height: 300px;
-    // position: relative;
+    background: rgb(0,126,137);
+    background: linear-gradient(125deg, rgba(0,126,137,1) 0%, rgba(34,194,183,1) 100%);
 
     .categories {
         width: 100%;
@@ -275,7 +204,7 @@ export default {
         justify-content: center;
         padding: 2rem 0;
         position: sticky;
-        background-color: $deliveroo-grey;
+        background-color: transparent;
         top: 0;
 
         .category-tag {
@@ -291,8 +220,10 @@ export default {
                 cursor: pointer;
             }
 
-            .category-tag input:checked + label {
-                border: 2px solid red;
+            input:checked + .category-img {
+                background-color: lightgray;
+                border: 1px solid grey;
+                box-shadow: 0 0 5px grey inset;
             }
 
             label {
@@ -300,27 +231,30 @@ export default {
                 width: 70px;
                 border-radius: 10px;
                 background-color: white;
-                box-shadow: 0 0 5px 0px lightgray;
+                box-shadow: 0 0 5px 0px gray;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
-
-                &:focus {
-                    box-shadow: 0 0 5px $deliveroo-blue-hover;
-                }
             }
 
             .category-img {
-                height: 50px;
+                height: 100%;
+                width: 100%;
                 display: block;
+                border-radius: 10px;
             }
         }
     }
 
     .restaurant-section {
-        overflow: auto;
-        height: 280px;
+        padding-top: 1rem;
+        overflow-y: auto;
+        height: 300px;
+
+        .header {
+            color: white;
+        }
 
         .card-restaurant {
             height: 100%;
@@ -329,7 +263,7 @@ export default {
             display: flex;
             flex-direction: column;
             box-shadow: 0 1px 4px rgb(0 0 0 / 8%), 0 0 0 1px rgb(0 0 0 / 4%);
-            border-radius: 3px;
+            border-radius: 10px;
 
             .restaurant-img {
                 width: 100%;
@@ -337,7 +271,7 @@ export default {
                 img {
                     width: 100%;
                     height: 150px;
-                    border-radius: 3px 3px 0 0;
+                    border-radius: 10px 10px 0 0;
                     object-fit: cover;
                 }
             }
@@ -346,12 +280,11 @@ export default {
                 font-family: "IBM Plex Sans Arabic", sans-serif;
                 font-size: 1rem;
                 color: $deliveroo-dark;
-                font-weight: bold;
             }
 
-            .cat-card {
+            .place-order i {
                 color: $deliveroo-blue;
-                text-transform: capitalize;
+                margin-right: .3rem;
             }
         }
     }

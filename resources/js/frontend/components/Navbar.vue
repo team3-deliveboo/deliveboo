@@ -22,9 +22,7 @@
                         <span>Menu</span>
                     </button>
 
-                    <!-- <router-link to="/restaurant">Ristorante</router-link> -->
                 </div>
-                
             </div>
         </nav>
     </div>
@@ -79,5 +77,4 @@ nav {
             }
         }
     }
-    
 </style>
