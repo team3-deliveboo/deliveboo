@@ -23,7 +23,3 @@ export default {
     components: { FirstSection, SecondSection, ThirdSection, FourthSection }
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

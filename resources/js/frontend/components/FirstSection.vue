@@ -2,12 +2,13 @@
     <div class="filter-restaurant">
 
         <div class="container py-5">
+            <h1 class="text-center fw-bold text-white">Le categorie più richieste sulla tua città</h1>
 
             <div class="categories">
-                <div class="row row-cols-3 gy-3 justify-content-center gap-1">
-                    <div class="col-2" v-for="category in categories" :key="category.id">
+                <div class="row row-cols-2 gy-3 justify-content-center gap-2">
+                    <div class="col-1" v-for="category in categories" :key="category.id">
                         <div class="category-tag">
-                            <label :for="category.id" tabindex = "0">
+                            <label :for="category.id" tabindex = "0" class="animate__animated animate__zoomIn">
                                 <input type="checkbox" v-model="selected" :value="category.name" :id="category.id" />
                                 <img :src="'img/' + category.name + '.png'" :alt="'Immagine della categoria' + ' ' + category.name" class="category-img">
                             </label>
@@ -19,7 +20,7 @@
             <!-- CATEGORY FILTER -->
             <div v-if="SelectFilter.length > 0">
                 <div class="container">
-                    <div class="restaurant-section">
+                    <div class="restaurant-section animate__animated animate__fadeIn">
 
                         <div class="text-center pb-4" style="font-family: IBM Plex Sans Arabic;">
                             <h6 class="header">Ristoranti della categoria {{ selected[0] }} nella tua città:</h6>
@@ -37,7 +38,7 @@
 
                                         <div class="px-2 py-2 d-flex justify-content-between align-items-center">
                                             <div class="restaurant-name">
-                                                <span>{{ restaurant.name }}</span>
+                                                <span><b>{{ restaurant.name }}</b></span>
                                             </div>
                                             <div class="place-order">
                                                 <small class="opacity-75"><i class="fa-solid fa-utensils"></i> Ordina qui</small>
@@ -197,8 +198,10 @@ export default {
     overflow: hidden;
     background: rgb(0,126,137);
     background: linear-gradient(125deg, rgba(0,126,137,1) 0%, rgba(34,194,183,1) 100%);
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
 
     .categories {
+        // height: 250px;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -221,9 +224,8 @@ export default {
             }
 
             input:checked + .category-img {
-                background-color: lightgray;
-                border: 1px solid grey;
-                box-shadow: 0 0 5px grey inset;
+                border: 1px solid goldenrod;
+                box-shadow: 0 0 5px goldenrod inset;
             }
 
             label {
@@ -277,7 +279,6 @@ export default {
             }
 
             .restaurant-name {
-                font-family: "IBM Plex Sans Arabic", sans-serif;
                 font-size: 1rem;
                 color: $deliveroo-dark;
             }
