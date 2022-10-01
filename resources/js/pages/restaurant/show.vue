@@ -1,9 +1,13 @@
 <template>
     <div class="cart">
+
+
         <!-- VUE NAVBAR -->
         <Navbar></Navbar>
         <div class="border-bottom"></div>
         <div class="lower-section">
+
+
             <!-- HEADER WITH RESTAURANT NAME -->
             <div class="restaurant-section">
                 <div class="container d-flex align-items-center gap-4">
@@ -111,8 +115,9 @@
 
                                     <!-- TRASHCAN -->
                                     <div class="col-3">
-                                        <a class="no-decoration" @click="removeAllFromCart(dish)"><i
-                                                class="fa-solid fa-trash"></i></a>
+                                        <a class="no-decoration" @click="removeAllFromCart(dish)">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -121,14 +126,14 @@
                             <div class="payment-section d-flex justify-content-center">
                                 <template v-if="cart.length > 0">
                                     <router-link to="/checkout">
-                                        <button class="blue-btn position-absolute" style="bottom: 20px; width: 90%">
+                                        <button class="blue-btn position-absolute" style="bottom: 20px; width: 90%; left: 20px;">
                                             <b>Vai al pagamento</b>
                                         </button>
                                     </router-link>
                                 </template>
 
                                 <div v-else>
-                                    <button class="grey-btn position-absolute" style="bottom: 20px; width: 90%">
+                                    <button class="grey-btn position-absolute" style="bottom: 20px; width: 90%; left: 20px;">
                                         <b>Vai al pagamento</b>
                                     </button>
                                 </div>

@@ -201,7 +201,6 @@ export default {
     font-family: 'IBM Plex Sans Arabic', sans-serif;
 
     .categories {
-        // height: 250px;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -252,7 +251,7 @@ export default {
     .restaurant-section {
         padding-top: 1rem;
         overflow-y: auto;
-        height: 300px;
+        height: 280px;
 
         .header {
             color: white;
