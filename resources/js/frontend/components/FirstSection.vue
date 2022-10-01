@@ -202,6 +202,7 @@ export default {
 
     .categories {
         width: 100%;
+        min-height: 240px;
         display: flex;
         justify-content: center;
         padding: 2rem 0;
