@@ -2637,9 +2637,9 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "fourth-section"
   }, [_c("div", {
-    staticClass: "row"
+    staticClass: "row gy-3"
   }, [_c("div", {
-    staticClass: "col"
+    staticClass: "col-12 col-lg-6"
   }, [_c("div", {
     staticClass: "left-col"
   }, [_c("div", {
@@ -2651,7 +2651,7 @@ var staticRenderFns = [function () {
   }, [_vm._v("Inizia ora "), _c("i", {
     staticClass: "fa-solid fa-arrow-right-long"
   })])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col"
+    staticClass: "col-12 col-lg-6"
   }, [_c("div", {
     staticClass: "right-col"
   }, [_c("div", {
@@ -2824,7 +2824,7 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "row g-3"
   }, [_c("div", {
-    staticClass: "col"
+    staticClass: "col-12 col-sm-6 col-md-4 col-lg-3"
   }, [_c("div", {
     staticClass: "footer-col"
   }, [_c("ul", {
@@ -2868,7 +2868,7 @@ var staticRenderFns = [function () {
       href: "javascript:void(0)"
     }
   }, [_vm._v("Diventa nostro partner")])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col"
+    staticClass: "col-12 col-sm-6 col-md-4 col-lg-3"
   }, [_c("div", {
     staticClass: "footer-col"
   }, [_c("ul", {
@@ -2888,7 +2888,7 @@ var staticRenderFns = [function () {
       href: "javascript:void(0)"
     }
   }, [_vm._v("Cookie")])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col"
+    staticClass: "col-12 col-sm-6 col-md-4 col-lg-3"
   }, [_c("div", {
     staticClass: "footer-col"
   }, [_c("ul", {
@@ -2908,7 +2908,7 @@ var staticRenderFns = [function () {
       href: "javascript:void(0)"
     }
   }, [_vm._v("Tipi di cucina")])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col"
+    staticClass: "col-12 col-sm-6 col-md-12 col-lg-3"
   }, [_c("div", {
     staticClass: "footer-col"
   }, [_c("ul", {

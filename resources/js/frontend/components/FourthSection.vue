@@ -2,9 +2,9 @@
     <div class="container">
 
         <div class="fourth-section">
-            <div class="row">
+            <div class="row gy-3">
                 
-                <div class="col">
+                <div class="col-12 col-lg-6">
                     <div class="left-col">
                         <div class="content-card">
                             <h2 class="fw-bold">Diventa nostro partner</h2>
@@ -14,7 +14,7 @@
                     </div>
                 </div>
 
-                <div class="col">
+                <div class="col-12 col-lg-6">
                     <div class="right-col">
                         <div class="content-card">
                             <h2 class="fw-bold">Consegna con noi</h2>

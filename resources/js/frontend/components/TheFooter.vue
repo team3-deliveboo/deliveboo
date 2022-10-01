@@ -5,7 +5,7 @@
             
                 <!-- FOOTER COL WITH NAV LINKS -->
                 <div class="row g-3">
-                    <div class="col">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="footer-col">
                             <ul class="list-unstyled mb-0">
                                 <li class="fw-bold pb-1">Scopri Deliveboo</li>
@@ -22,7 +22,7 @@
                         </div>
                     </div>
 
-                    <div class="col">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="footer-col">
                             <ul class="list-unstyled mb-0">
                                 <li class="fw-bold pb-1">Note Legali</li>
@@ -33,7 +33,7 @@
                         </div>
                     </div>
 
-                    <div class="col">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="footer-col">
                             <ul class="list-unstyled mb-0">
                                 <li class="fw-bold pb-1">Aiuto</li>
@@ -44,7 +44,7 @@
                         </div>
                     </div>
 
-                    <div class="col">
+                    <div class="col-12 col-sm-6 col-md-12 col-lg-3">
                         <div class="footer-col">
                             <ul class="list-unstyled mb-0">
                                 <li class="fw-bold pb-1">Porta Deliveboo con te</li>
