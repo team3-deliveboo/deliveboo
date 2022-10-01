@@ -1,27 +1,30 @@
 <template>
     <div class="header">
 
-        <!-- TEXT AND CATEGORIES FILTER INPUT -->
-        <div class="text-wrapper">
-            <div class="title">
-                <h1 class="fw-bold">I piatti dei ristoranti che ami e la spesa, a domicilio</h1>
-            </div>
-            <div class="subtitle">Inserisci quello che vorresti mangiare per visualizzare i ristoranti</div>
-
-            <div class="search-bar">
-                <button class="fork">
-                    <i class="fa-solid fa-utensils"></i>
-                </button>
-                <input type="text" class="form-control" placeholder="Italiano? Vegano? Stellato?">
-                <button class="search-btn" type="button" id="button-addon1">Cerca</button>
-            </div>
-
+        <!-- BACKGROUND IMG -->
+        <div class="img-wrapper justify-content-sm-center">
+            <img class="left-img d-none d-lg-block" src="img/deliveboo_grocery.png" alt="Immagine Spesa">
+            <img class="right-img" src="img/burger.webp" alt="Immagine Burger">
         </div>
 
-        <!-- BACKGROUND IMG -->
-        <div class="img-wrapper">
-            <img class="left-img" src="img/deliveboo_grocery.png" alt="Immagine Spesa">
-            <img class="right-img" src="img/burger.webp" alt="Immagine Burger">
+        <!-- TEXT AND SEARCH BAR -->
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <div class="text-wrapper px-4 px-md-0">
+                    <div class="title ">
+                        <h1 class="fw-bold">I piatti dei ristoranti che ami e la spesa, a domicilio</h1>
+                    </div>
+                    <div class="subtitle">Inserisci quello che vorresti mangiare per visualizzare i ristoranti</div>
+
+                    <div class="search-bar d-none d-md-flex">
+                        <button class="fork">
+                            <i class="fa-solid fa-utensils"></i>
+                        </button>
+                        <input type="text" class="form-control" placeholder="Italiano? Vegano? Stellato?">
+                        <button class="search-btn" type="button" id="button-addon1">Cerca</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -54,6 +57,7 @@ export default {
         position: absolute;
         display: flex;
         justify-content: space-between;
+        z-index: 0;
 
         img {
             height: 100%;
@@ -68,9 +72,13 @@ export default {
         }
     }
 
+    .row {
+        z-index: 3;
+    }
+
     .text-wrapper {
-        width: 40%;
-        z-index: 2;
+        display: block;
+        z-index: 3;
         color: white;
 
         .subtitle {

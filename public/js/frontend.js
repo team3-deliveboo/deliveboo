@@ -2716,7 +2716,7 @@ var staticRenderFns = [function () {
   }, [_c("i", {
     staticClass: "fa-solid fa-house"
   }), _vm._v(" "), _c("span", [_vm._v("Registrati o accedi")])])]), _vm._v(" "), _c("button", {
-    staticClass: "white-btn",
+    staticClass: "white-btn d-none d-md-block",
     attrs: {
       type: "button"
     }
@@ -2971,7 +2971,25 @@ var staticRenderFns = [function () {
   return _c("div", {
     staticClass: "header"
   }, [_c("div", {
-    staticClass: "text-wrapper"
+    staticClass: "img-wrapper justify-content-sm-center"
+  }, [_c("img", {
+    staticClass: "left-img d-none d-lg-block",
+    attrs: {
+      src: "img/deliveboo_grocery.png",
+      alt: "Immagine Spesa"
+    }
+  }), _vm._v(" "), _c("img", {
+    staticClass: "right-img",
+    attrs: {
+      src: "img/burger.webp",
+      alt: "Immagine Burger"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "row justify-content-center"
+  }, [_c("div", {
+    staticClass: "col-md-7"
+  }, [_c("div", {
+    staticClass: "text-wrapper px-4 px-md-0"
   }, [_c("div", {
     staticClass: "title"
   }, [_c("h1", {
@@ -2979,7 +2997,7 @@ var staticRenderFns = [function () {
   }, [_vm._v("I piatti dei ristoranti che ami e la spesa, a domicilio")])]), _vm._v(" "), _c("div", {
     staticClass: "subtitle"
   }, [_vm._v("Inserisci quello che vorresti mangiare per visualizzare i ristoranti")]), _vm._v(" "), _c("div", {
-    staticClass: "search-bar"
+    staticClass: "search-bar d-none d-md-flex"
   }, [_c("button", {
     staticClass: "fork"
   }, [_c("i", {
@@ -2996,21 +3014,7 @@ var staticRenderFns = [function () {
       type: "button",
       id: "button-addon1"
     }
-  }, [_vm._v("Cerca")])])]), _vm._v(" "), _c("div", {
-    staticClass: "img-wrapper"
-  }, [_c("img", {
-    staticClass: "left-img",
-    attrs: {
-      src: "img/deliveboo_grocery.png",
-      alt: "Immagine Spesa"
-    }
-  }), _vm._v(" "), _c("img", {
-    staticClass: "right-img",
-    attrs: {
-      src: "img/burger.webp",
-      alt: "Immagine Burger"
-    }
-  })])]);
+  }, [_vm._v("Cerca")])])])])])]);
 }];
 render._withStripped = true;
 
@@ -3496,7 +3500,7 @@ exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstra
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!animate.css */ "./node_modules/css-loader/index.js!./node_modules/animate.css/animate.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-13045858] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-13045858] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-13045858] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-13045858] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-13045858]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-13045858]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.header[data-v-13045858] {\n  background-color: black;\n  width: 100%;\n  height: calc(100% - 70px);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n  text-align: center;\n  position: relative;\n}\n.header .img-wrapper[data-v-13045858] {\n  height: 100%;\n  width: 100%;\n  position: absolute;\n  display: flex;\n  justify-content: space-between;\n}\n.header .img-wrapper img[data-v-13045858] {\n  height: 100%;\n}\n.header .img-wrapper img.left-img[data-v-13045858] {\n  left: 0;\n}\n.header .img-wrapper img.right-img[data-v-13045858] {\n  right: 0;\n}\n.header .text-wrapper[data-v-13045858] {\n  width: 40%;\n  z-index: 2;\n  color: white;\n}\n.header .text-wrapper .subtitle[data-v-13045858] {\n  padding: 2rem 0 1rem 0;\n}\n.header .text-wrapper .search-bar[data-v-13045858] {\n  display: flex;\n  position: relative;\n  align-items: center;\n}\n.header .text-wrapper .search-bar .form-control[data-v-13045858] {\n  border: none;\n  padding-left: 45px;\n}\n.header .text-wrapper .search-bar input[data-v-13045858] {\n  padding: 1.2rem;\n  border-radius: 50px;\n  width: 100%;\n}\n.header .text-wrapper .search-bar input[data-v-13045858]::-moz-placeholder {\n  color: #b3b3b3;\n}\n.header .text-wrapper .search-bar input[data-v-13045858]::placeholder {\n  color: #b3b3b3;\n}\n.header .text-wrapper .search-bar button.fork[data-v-13045858] {\n  color: #00CCBC;\n  padding: 1.2rem;\n  border: none;\n  border-radius: 50px 0px 0px 50px;\n  background-color: white;\n  width: 20px;\n  height: 100%;\n  position: absolute;\n}\n.header .text-wrapper .search-bar .search-btn[data-v-13045858] {\n  position: absolute;\n  right: 3.5px;\n}\n.header .text-wrapper .search-bar .form-control[data-v-13045858]:focus {\n  color: #212529;\n  background-color: #fff;\n  border-color: transparent;\n  outline: 0;\n  box-shadow: 0 0 0 2px black, 0 0 0 4px white;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-13045858] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-13045858] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-13045858] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-13045858] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-13045858]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-13045858]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.header[data-v-13045858] {\n  background-color: black;\n  width: 100%;\n  height: calc(100% - 70px);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n  text-align: center;\n  position: relative;\n}\n.header .img-wrapper[data-v-13045858] {\n  height: 100%;\n  width: 100%;\n  position: absolute;\n  display: flex;\n  justify-content: space-between;\n  z-index: 0;\n}\n.header .img-wrapper img[data-v-13045858] {\n  height: 100%;\n}\n.header .img-wrapper img.left-img[data-v-13045858] {\n  left: 0;\n}\n.header .img-wrapper img.right-img[data-v-13045858] {\n  right: 0;\n}\n.header .row[data-v-13045858] {\n  z-index: 3;\n}\n.header .text-wrapper[data-v-13045858] {\n  display: block;\n  z-index: 3;\n  color: white;\n}\n.header .text-wrapper .subtitle[data-v-13045858] {\n  padding: 2rem 0 1rem 0;\n}\n.header .text-wrapper .search-bar[data-v-13045858] {\n  display: flex;\n  position: relative;\n  align-items: center;\n}\n.header .text-wrapper .search-bar .form-control[data-v-13045858] {\n  border: none;\n  padding-left: 45px;\n}\n.header .text-wrapper .search-bar input[data-v-13045858] {\n  padding: 1.2rem;\n  border-radius: 50px;\n  width: 100%;\n}\n.header .text-wrapper .search-bar input[data-v-13045858]::-moz-placeholder {\n  color: #b3b3b3;\n}\n.header .text-wrapper .search-bar input[data-v-13045858]::placeholder {\n  color: #b3b3b3;\n}\n.header .text-wrapper .search-bar button.fork[data-v-13045858] {\n  color: #00CCBC;\n  padding: 1.2rem;\n  border: none;\n  border-radius: 50px 0px 0px 50px;\n  background-color: white;\n  width: 20px;\n  height: 100%;\n  position: absolute;\n}\n.header .text-wrapper .search-bar .search-btn[data-v-13045858] {\n  position: absolute;\n  right: 3.5px;\n}\n.header .text-wrapper .search-bar .form-control[data-v-13045858]:focus {\n  color: #212529;\n  background-color: #fff;\n  border-color: transparent;\n  outline: 0;\n  box-shadow: 0 0 0 2px black, 0 0 0 4px white;\n}", ""]);
 
 // exports
 
