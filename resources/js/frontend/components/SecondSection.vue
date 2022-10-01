@@ -39,7 +39,7 @@ export default {
 @import 'resources/sass/frontend/buttons.scss';
 
 .container {
-    padding: 4rem 0;
+    padding: 2rem 0 4rem 0;
 
     .wrapper {
         font-family: 'IBM Plex Sans Arabic', sans-serif;

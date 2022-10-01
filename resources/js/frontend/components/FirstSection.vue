@@ -14,7 +14,7 @@
                 </button>
             </div> -->
 
-            <div class="container py-4">
+            <div class="container py-5">
 
                 <div class="categories">
                     <div class="row row-cols-3 gy-3 justify-content-center gap-1">
