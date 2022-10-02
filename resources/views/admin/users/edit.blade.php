@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="col-12 col-xl-6">
-                    <select type="text" name="categories[]" class="form-control edit @error('categories') is-invalid @enderror" multiple required>
+                    <select type="text" style="height: 100px" name="categories[]" class="form-control edit @error('categories') is-invalid @enderror" multiple required>
 
                     @foreach ($categories as $category)
                         <option value="{{ $category['id'] }}"

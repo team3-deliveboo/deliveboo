@@ -253,7 +253,7 @@ export default {
     .restaurant-section {
         padding-top: 1rem;
         overflow-y: auto;
-        height: 280px;
+        height: 500px;
 
         .header {
             color: white;
