@@ -109,10 +109,25 @@ small>a:hover {
     height: 200px;
     opacity: 75%;
     aspect-ratio: 1/1;
-    margin: 0 4rem 0 4rem;
     border-radius: 5px;
     box-shadow: 3px 3px 5px lightgray;
     border: 1px solid lightgray;
+}
+
+@media screen and (max-width: 375px) {
+    .left-side img {
+        height: 150px;
+    }
+
+    .right-side h2 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .right-side>div>span {
+        font-size: .8rem;
+    }
+    
 }
 
 .right-side h2 {
@@ -134,12 +149,6 @@ small>a:hover {
 .right-side a i:hover {
     color: #00c2b3;
 }
-
-/* @media screen and (max-width: 768px) {
-    .left-side img {
-        height: 130px;
-    }
-} */
 
 /* EDIT */
 h3 b {
@@ -205,4 +214,30 @@ button i {
     position: absolute;
     right: -50px;
     top: 0;
+}
+
+@media screen and (max-width: 425px) {
+    .side-bar {
+        padding: 2rem 1rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .left-side img {
+        height: 150px;
+    }
+
+    .right-side h2 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .right-side>div>span {
+        font-size: .8rem;
+    }
+
+    .file-upload input {
+        font-size: .8rem;
+        width: 80%;
+    }
 }

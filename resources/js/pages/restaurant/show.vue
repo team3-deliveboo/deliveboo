@@ -26,7 +26,7 @@
             </div>
 
             <!-- DISH + CART -->
-            <div class="container">
+            <div class="container py-5">
                 <div class="row justify-content-md-center m-0">
                     <!-- DISHES LIST -->
                     <div class="col-12 col-xl-8">

@@ -2996,7 +2996,7 @@ var staticRenderFns = [function () {
     staticClass: "title"
   }, [_c("h1", {
     staticClass: "fw-bold"
-  }, [_vm._v("I piatti dei ristoranti che ami e la spesa, a domicilio")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("I piatti dei ristoranti stellati e di lusso che ami, a domicilio")])]), _vm._v(" "), _c("div", {
     staticClass: "subtitle"
   }, [_vm._v("Inserisci quello che vorresti mangiare per visualizzare i ristoranti")]), _vm._v(" "), _c("div", {
     staticClass: "search-bar d-none d-md-flex"
@@ -3204,7 +3204,7 @@ var render = function render() {
   }, [_c("h1", [_vm._v(_vm._s(_vm.restaurant.name))]), _vm._v(" "), _c("div", {
     staticClass: "pt-3 text-muted"
   }, [_vm._v("\n                        " + _vm._s(_vm.restaurant.address) + " · " + _vm._s(_vm.restaurant.phone) + "\n                    ")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "container"
+    staticClass: "container py-5"
   }, [_c("div", {
     staticClass: "row justify-content-md-center m-0"
   }, [_c("div", {

@@ -12,7 +12,7 @@
             <div class="col-md-7">
                 <div class="text-wrapper px-4 px-md-0">
                     <div class="title ">
-                        <h1 class="fw-bold">I piatti dei ristoranti che ami e la spesa, a domicilio</h1>
+                        <h1 class="fw-bold">I piatti dei ristoranti stellati e di lusso che ami, a domicilio</h1>
                     </div>
                     <div class="subtitle">Inserisci quello che vorresti mangiare per visualizzare i ristoranti</div>
 
