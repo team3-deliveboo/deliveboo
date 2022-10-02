@@ -25,11 +25,11 @@
             @method('PUT')
 
                 {{-- FILE UPLOAD IMG --}}
-                <div class="form-group row pb-4 align-items-center">
-                    <div class="col-3">
+                <div class="form-group row pb-4 align-items-center edit-upload">
+                    <div class="col-12 col-xl-3">
                         <label for="img" class="form-label"><b>Immagine del piatto:</b></label>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-xl-6">
                         <input type="file" name="img" class="form-control-file @error('img') is-invalid @enderror" id="img" value="{{ old('img') }}">
                         @error('img')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -40,10 +40,10 @@
 
                 {{-- DISH NAME --}}
                 <div class="form-group row">
-                    <div class="col-3">
+                    <div class="col-12 col-xl-3">
                         <label><b>Nome del piatto:</b></label>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-xl-6">
                         <input type="text" name="name" class="form-control dish @error('name') is-invalid @enderror" placeholder="Inserisci il titolo" value="{{ old('name', $dishes->name) }}" required>
                         @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -54,10 +54,10 @@
 
                 {{-- COURSE --}}
                 <div class="form-group row pt-4">
-                    <div class="col-3">
+                    <div class="col-12 col-xl-3">
                         <label><b>Portata:</b></label>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-xl-6">
                         <input type="text" name="course" class="form-control dish @error('course') is-invalid @enderror" placeholder="Inserisci il titolo" value="{{ old('course', $dishes->course) }}" required>
                         @error('course')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -68,10 +68,10 @@
 
                 {{-- DESCRIPTION --}}
                 <div class="form-group row pt-4">
-                    <div class="col-3">
+                    <div class="col-12 col-xl-3">
                         <label><b>Descrizione:</b></label>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-xl-6">
                         <input type="text" name="description" class="form-control dish @error('description') is-invalid @enderror" placeholder="Inserisci il titolo" value="{{ old('description', $dishes->description) }}" required>
                         @error('description')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -82,10 +82,10 @@
 
                 {{-- PRICE --}}
                 <div class="form-group row pt-4">
-                    <div class="col-3">
+                    <div class="col-12 col-xl-3">
                         <label><b>Prezzo:</b></label>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-xl-6">
                         <input type="text" name="price" class="form-control dish @error('price') is-invalid @enderror" placeholder="Inserisci il prezzo" value="{{ old('price', $dishes->price) }}" required>
                         @error('price')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -97,7 +97,7 @@
                 {{-- AVAILABILITY --}}
                 <div class="row">
                     <div class="col-md-6 offset-md-3">
-                        <div class="d-flex pt-4 gap-4">
+                        <div class="d-flex pt-4 gap-4 check-availability">
                             <div class="form-check d-flex align-items-center gap-2">
                                 <input class="form-check-input" value='1' type="radio" name="visibility" id="flexRadioDefault1 " {{ $dishes->visibility == 1 ? 'checked' : '' }}>
                                 <label class="form-check-label" for="flexRadioDefault1">Disponibile</label>
