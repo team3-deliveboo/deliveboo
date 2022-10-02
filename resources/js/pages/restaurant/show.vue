@@ -27,7 +27,7 @@
 
             <!-- DISH + CART -->
             <div class="container">
-                <div class="row w-100 justify-content-md-center">
+                <div class="row justify-content-md-center m-0">
                     <!-- DISHES LIST -->
                     <div class="col-12 col-xl-8">
                         <div class="dishes-section">
@@ -37,7 +37,7 @@
                             </div>
 
                             <!-- SINGLE DISH CARD -->
-                            <div class="row row-cols-1 row-cols-xl-2 g-3 w-100">
+                            <div class="row row-cols-1 row-cols-xl-2 g-3 m-0">
                                 <div class="col-12 col-lg" v-for="dish in restaurant.dishes" :key="dish.id">
                                     <button @click="addItemToCart(dish)">
                                         <div class="dish-card">
@@ -68,25 +68,31 @@
                     <!-- CART SECTION -->
                     <div class="col-12 col-md-8 col-xl-4">
                         <div class="py-4 h-100">
-                            <div class="cart-section">
+                            <div class="cart-section px-1 px-sm-2 px-md-4">
                                 <div v-if="cart.length <= 0" class="empty-cart">
                                     <i class="fa-solid fa-basket-shopping"></i>
                                     <div class="empty">Il carrello è vuoto</div>
                                 </div>
 
                                 <template v-if="cart.length > 0">
-                                    <h5 class="pb-3 fw-bold">Il tuo ordine</h5>
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="pb-3 fw-bold">Il tuo ordine</h5>
+                                        <!-- TRASHCAN -->
+                                        <a class="no-decoration d-block" @click="removeAllFromCart(dish)">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+                                    </div>
                                 </template>
 
-                                <div v-for="dish in cart" :key="dish.id" class="row">
+                                <div v-for="dish in cart" :key="dish.id" class="row m-0">
                                     <!-- SELECTED DISH -->
-                                    <div class="col-3">
+                                    <div class="col-4">
                                         <span>{{ dish.name }}</span>
                                     </div>
 
                                     <!-- QUANTITY BUTTONS -->
-                                    <div class="col-3">
-                                        <div class="d-flex align-items-center cart-quantity-button">
+                                    <div class="col-4 text-center">
+                                        <div class="d-flex align-items-center cart-quantity-button justify-content-center">
                                             <div class="pill-button">
                                                 <a @click="removeOneFromCart(dish)" class="no-decoration">
                                                     <i class="fa-regular fa-square-minus"></i>
@@ -106,17 +112,10 @@
                                     </div>
 
                                     <!-- PRICE-->
-                                    <div class="col-3">
+                                    <div class="col-4 text-end">
                                         <p class="ps-1 price text-nowrap">
                                             {{ (dish.price * dish.quantity).toFixed(2) }} €
                                         </p>
-                                    </div>
-
-                                    <!-- TRASHCAN -->
-                                    <div class="col-3">
-                                        <a class="no-decoration" @click="removeAllFromCart(dish)">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -468,13 +467,19 @@ export default {
                 width: 350px;
                 margin-bottom: 20px;
             }
-        }
-    }
-}
 
-@media (max-width: 768px) {
-    .large {
-        width: 100px;
+            @media screen and (max-width: 576px) {
+                .large {
+                    width: 300px;
+                }
+            }
+
+            @media screen and (max-width: 320px) {
+                .large {
+                    width: 230px;
+                }
+            }
+        }
     }
 }
 </style>
