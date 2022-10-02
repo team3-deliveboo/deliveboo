@@ -2996,7 +2996,7 @@ var staticRenderFns = [function () {
     staticClass: "title"
   }, [_c("h1", {
     staticClass: "fw-bold"
-  }, [_vm._v("I piatti dei ristoranti che ami e la spesa, a domicilio")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("I piatti dei ristoranti stellati e di lusso che ami, a domicilio")])]), _vm._v(" "), _c("div", {
     staticClass: "subtitle"
   }, [_vm._v("Inserisci quello che vorresti mangiare per visualizzare i ristoranti")]), _vm._v(" "), _c("div", {
     staticClass: "search-bar d-none d-md-flex"

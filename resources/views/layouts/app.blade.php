@@ -150,7 +150,7 @@
                         @endif
 
                         {{-- CONTENT LEFT ONCE LOGGED IN --}}
-                        <div class="flex-grow-1">
+                        <div class="flex-grow-1 ps-4">
                             @yield('content')
                         </div>
 

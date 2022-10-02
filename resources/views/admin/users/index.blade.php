@@ -3,7 +3,7 @@
 @section('content')
 
     @if (Auth::check())
-    <div class="row row-cols-md-2 row m-0 align-items-center h-100">
+    <div class="row row-cols-lg-2 row m-0 align-items-center h-100 gy-3">
 
         {{-- IMG --}}
         <div class="col col-lg-5 col-xl-3">
