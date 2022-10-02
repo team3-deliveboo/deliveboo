@@ -46,14 +46,14 @@
                     <img src="/img/deliveboo.png" alt="Deliveboo Logo">
                 </a>
 
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto flex-row">
 
                     {{-- LOGIN BUTTON --}}
                     @guest
                         <li class="nav-item">
                             <a class="white-btn" href="{{ route('login') }}">
                                 <i class="fa-solid fa-house"></i>
-                                {{ __('Log In') }}
+                                <span class="d-none d-sm-block">{{ __('Log In') }}</span>
                             </a>
                         </li>
 
@@ -62,7 +62,7 @@
                         <li class="nav-item">
                             <a class="white-btn" href="{{ route('register') }}">
                                 <i class="fa-solid fa-right-to-bracket"></i>
-                                {{ __('Iscriviti') }}
+                                <span class="d-none d-sm-block">{{ __('Iscriviti') }}</span>
                             </a>
                         </li>
                     @endif

@@ -27,29 +27,8 @@
 </head>
 
 <body>
-    <div id="app">
 
-        {{-- @if (Route::has('login'))
-            <div class="top-right links">
-                @auth
-                    <a href="{{ route('admin.users.index') }}">Admin</a>
-                @else
-                    <a href="{{ route('login') }}">Login</a>
-
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Registra la tua attivita</a>
-                    @endif
-                @endauth
-            </div>
-        @endif
-
-        <div class="content">
-            <div class="title m-b-md">
-                Deliveboo
-            </div>
-            <div class="links"></div>
-        </div> --}}
-    </div>
-
+    <div id="app"></div>
     <script src="{{ asset('js/frontend.js') }}" defer></script>
+    
 </body>
