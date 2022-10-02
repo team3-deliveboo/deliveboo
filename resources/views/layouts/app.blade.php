@@ -113,7 +113,7 @@
                                     <li>
                                         <a class="text-decoration-none" href="{{ route('admin.users.index') }}">
                                             <i class="fa-solid fa-house"></i>
-                                            <span class="align-middle ms-1 d-none d-md-block">Dashboard</span>
+                                            <span class="align-middle ms-1 d-none d-md-inline">Dashboard</span>
                                         </a>
                                     </li>
 
@@ -122,7 +122,7 @@
                                     <li class='align-baseline'>
                                         <a class="text-decoration-none" href="{{ route('admin.dishes.index') }}">
                                             <i class="fa-solid fa-utensils"></i>
-                                            <span class="align-middle ms-1 d-none d-md-block">Menu</span>
+                                            <span class="align-middle ms-1 d-none d-md-inline">Menu</span>
                                         </a>
                                     </li>
 
@@ -131,7 +131,7 @@
                                     <li class="align-baseline">
                                         <a class="text-decoration-none" class="align-baseline" href="{{ route('admin.orders.index') }}">
                                             <i class="fa-solid fa-clipboard"></i>
-                                            <span class="align-middle ms-1 d-none d-md-block">Ordini</span>
+                                            <span class="align-middle ms-1 d-none d-md-inline">Ordini</span>
                                         </a>
                                     </li>
 
@@ -140,7 +140,7 @@
                                     <li class="align-baseline">
                                         <a class="text-decoration-none" href="">
                                             <i class="fa-solid fa-chart-simple"></i>
-                                            <span class="align-middle ms-1 d-none d-md-block">Statistiche</span>
+                                            <span class="align-middle ms-1 d-none d-md-inline">Statistiche</span>
                                         </a>
                                     </li>
                                 </ul>

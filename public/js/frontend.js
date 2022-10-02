@@ -3204,7 +3204,7 @@ var render = function render() {
   }, [_c("h1", [_vm._v(_vm._s(_vm.restaurant.name))]), _vm._v(" "), _c("div", {
     staticClass: "pt-3 text-muted"
   }, [_vm._v("\n                        " + _vm._s(_vm.restaurant.address) + " · " + _vm._s(_vm.restaurant.phone) + "\n                    ")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "container"
+    staticClass: "container py-5"
   }, [_c("div", {
     staticClass: "row justify-content-md-center m-0"
   }, [_c("div", {
