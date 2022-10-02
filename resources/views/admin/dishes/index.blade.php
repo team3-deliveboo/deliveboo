@@ -33,7 +33,7 @@
                                 <form class="delete d-inline" action="{{ route('admin.dishes.destroy', $dish->slug) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                    <button type="submit" class="btn" onclick="return confirm('Sei sicuro di voler cancellare questo piatto?')">
+                                    <button type="submit" class="border-0 bg-white" onclick="return confirm('Sei sicuro di voler cancellare questo piatto?')">
                                         <i class="fa-solid fa-ban"></i>
                                     </button>
                                 </form>

@@ -2717,14 +2717,18 @@ var staticRenderFns = [function () {
     staticClass: "fa-solid fa-house"
   }), _vm._v(" "), _c("span", {
     staticClass: "d-none d-sm-inline"
-  }, [_vm._v("Registrati o accedi")])])]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Registrati o accedi")])])]), _vm._v(" "), _c("a", {
+    attrs: {
+      href: "/admin/users"
+    }
+  }, [_c("button", {
     staticClass: "white-btn d-none d-md-block",
     attrs: {
       type: "button"
     }
   }, [_c("i", {
-    staticClass: "fa-solid fa-bars"
-  }), _vm._v(" "), _c("span", [_vm._v("Menu")])])]);
+    staticClass: "fa-solid fa-user"
+  }), _vm._v(" "), _c("span", [_vm._v("Home")])])])]);
 }];
 render._withStripped = true;
 
@@ -3220,7 +3224,7 @@ var render = function render() {
   }, _vm._l(_vm.restaurant.dishes, function (dish) {
     return _c("div", {
       key: dish.id,
-      staticClass: "col-12 col-lg"
+      staticClass: "col-12 col-lg-6"
     }, [_c("button", {
       on: {
         click: function click($event) {
@@ -3311,7 +3315,7 @@ var render = function render() {
     }
   }, [_c("button", {
     staticClass: "blue-btn large"
-  }, [_c("span", [_c("b", [_vm._v("Vai al pagamento")])])])])] : _c("div", [_vm._m(0)])], 2)])]), _vm._v(" "), _c("Checkout")], 1)])]), _vm._v(" "), _c("TheFooter")], 1);
+  }, [_c("span", [_c("b", [_vm._v("Vai al pagamento")])])])])] : _c("div", [_vm._m(0)])], 2)])])])])]), _vm._v(" "), _c("TheFooter")], 1);
 };
 
 var staticRenderFns = [function () {
@@ -3577,7 +3581,7 @@ exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstra
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!animate.css */ "./node_modules/css-loader/index.js!./node_modules/animate.css/animate.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-339970b6] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-339970b6] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-339970b6] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-339970b6] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-339970b6]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-339970b6]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.cart[data-v-339970b6] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  background-color: white;\n}\n.cart .lower-section[data-v-339970b6] {\n  background-color: #F9FAFA;\n}\n.cart .lower-section .restaurant-section[data-v-339970b6] {\n  background-color: white;\n  width: 100%;\n  padding: 2rem 0;\n  border-bottom: 1px solid lightgray;\n  box-shadow: 0 4px 5px -2px rgb(224, 224, 224);\n}\n.cart .lower-section .restaurant-section img[data-v-339970b6] {\n  height: 250px;\n  border-radius: 5px;\n  border: 1px solid lightgray;\n  aspect-ratio: 1/1;\n}\n.cart .lower-section .restaurant-section h1[data-v-339970b6] {\n  text-transform: uppercase;\n  font-weight: bold;\n  background-color: #00CCBC;\n  height: 20px;\n}\n.cart .lower-section .dishes-section[data-v-339970b6] {\n  padding: 2rem 0;\n  overflow-y: auto;\n  width: 100%;\n}\n.cart .lower-section .dishes-section button[data-v-339970b6] {\n  width: 100%;\n  border: none;\n  border-radius: 5px;\n  background-color: transparent;\n}\n.cart .lower-section .dishes-section button .dish-card[data-v-339970b6] {\n  width: 100%;\n  height: 140px;\n  background-color: white;\n  border: 1px solid white;\n  border-radius: 5px;\n  padding: 1rem;\n  display: flex;\n  justify-content: space-between;\n  box-shadow: 0 0 4px rgb(224, 224, 224);\n  overflow: hidden;\n}\n.cart .lower-section .dishes-section button .dish-card .dish-img img[data-v-339970b6] {\n  width: 100px;\n  aspect-ratio: 1/1;\n  border-radius: 5px;\n  border: 1px solid #F9FAFA;\n}\n.cart .lower-section .dishes-section button .dish-card .description[data-v-339970b6] {\n  font-size: 0.85rem;\n  line-height: 130%;\n  opacity: 75%;\n  padding: 0.5rem 0 0.7rem 0;\n}\n.cart .lower-section .cart-section[data-v-339970b6] {\n  height: 350px;\n  width: 100%;\n  background-color: white;\n  border: 1px solid white;\n  padding: 2rem 2rem 4rem 2rem;\n  overflow-y: auto;\n  box-shadow: 0 0 4px rgb(224, 224, 224);\n}\n.cart .lower-section .cart-section .empty-cart[data-v-339970b6] {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 1rem;\n}\n.cart .lower-section .cart-section .empty-cart i[data-v-339970b6] {\n  color: #abadad;\n  font-size: 50px;\n}\n.cart .lower-section .cart-section .empty-cart .empty[data-v-339970b6] {\n  color: #abadad;\n}\n.cart .lower-section .cart-section a i[data-v-339970b6] {\n  color: #00CCBC;\n  margin: 0 0.5rem;\n  cursor: pointer;\n}\n.cart .lower-section .payment-section[data-v-339970b6] {\n  height: 150px;\n  width: 100%;\n  background-color: white;\n  box-shadow: 0 -5px 5px -2px rgb(224, 224, 224);\n}\n.cart .lower-section .payment-section .large[data-v-339970b6] {\n  width: 350px;\n  margin-bottom: 20px;\n}\n@media screen and (max-width: 576px) {\n.cart .lower-section .payment-section .large[data-v-339970b6] {\n    width: 300px;\n}\n}\n@media screen and (max-width: 320px) {\n.cart .lower-section .payment-section .large[data-v-339970b6] {\n    width: 230px;\n}\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-339970b6] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-339970b6] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-339970b6] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-339970b6] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-339970b6]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-339970b6]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.cart[data-v-339970b6] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  background-color: white;\n}\n.cart .lower-section[data-v-339970b6] {\n  background-color: #F9FAFA;\n}\n.cart .lower-section .restaurant-section[data-v-339970b6] {\n  background-color: white;\n  width: 100%;\n  padding: 2rem 0;\n  border-bottom: 1px solid lightgray;\n  box-shadow: 0 4px 5px -2px rgb(224, 224, 224);\n}\n.cart .lower-section .restaurant-section img[data-v-339970b6] {\n  height: 250px;\n  border-radius: 5px;\n  border: 1px solid lightgray;\n  aspect-ratio: 1/1;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.cart .lower-section .restaurant-section h1[data-v-339970b6] {\n  text-transform: uppercase;\n  font-weight: bold;\n  background-color: #00CCBC;\n  height: 20px;\n}\n.cart .lower-section .dishes-section[data-v-339970b6] {\n  padding: 2rem 0;\n  overflow-y: auto;\n  width: 100%;\n  height: 600px;\n}\n.cart .lower-section .dishes-section button[data-v-339970b6] {\n  width: 100%;\n  border: none;\n  border-radius: 5px;\n  background-color: transparent;\n}\n.cart .lower-section .dishes-section button .dish-card[data-v-339970b6] {\n  width: 100%;\n  height: 140px;\n  background-color: white;\n  border: 1px solid white;\n  border-radius: 5px;\n  padding: 1rem;\n  display: flex;\n  justify-content: space-between;\n  box-shadow: 0 0 4px rgb(224, 224, 224);\n  overflow: hidden;\n}\n.cart .lower-section .dishes-section button .dish-card .dish-img img[data-v-339970b6] {\n  width: 100px;\n  aspect-ratio: 1/1;\n  border-radius: 5px;\n  border: 1px solid #F9FAFA;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.cart .lower-section .dishes-section button .dish-card .description[data-v-339970b6] {\n  font-size: 0.85rem;\n  line-height: 130%;\n  opacity: 75%;\n  padding: 0.5rem 0 0.7rem 0;\n  height: 60px;\n  overflow: hidden;\n}\n.cart .lower-section .cart-section[data-v-339970b6] {\n  height: 350px;\n  width: 100%;\n  background-color: white;\n  border: 1px solid white;\n  padding: 2rem 2rem 4rem 2rem;\n  overflow-y: auto;\n  box-shadow: 0 0 4px rgb(224, 224, 224);\n}\n.cart .lower-section .cart-section .empty-cart[data-v-339970b6] {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 1rem;\n}\n.cart .lower-section .cart-section .empty-cart i[data-v-339970b6] {\n  color: #abadad;\n  font-size: 50px;\n}\n.cart .lower-section .cart-section .empty-cart .empty[data-v-339970b6] {\n  color: #abadad;\n}\n.cart .lower-section .cart-section a i[data-v-339970b6] {\n  color: #00CCBC;\n  margin: 0 0.5rem;\n  cursor: pointer;\n}\n.cart .lower-section .payment-section[data-v-339970b6] {\n  height: 150px;\n  width: 100%;\n  background-color: white;\n  box-shadow: 0 -5px 5px -2px rgb(224, 224, 224);\n}\n.cart .lower-section .payment-section .large[data-v-339970b6] {\n  width: 350px;\n  margin-bottom: 20px;\n}\n@media screen and (max-width: 576px) {\n.cart .lower-section .payment-section .large[data-v-339970b6] {\n    width: 300px;\n}\n}\n@media screen and (max-width: 320px) {\n.cart .lower-section .payment-section .large[data-v-339970b6] {\n    width: 230px;\n}\n}", ""]);
 
 // exports
 

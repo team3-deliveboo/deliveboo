@@ -112,22 +112,7 @@ small>a:hover {
     border-radius: 5px;
     box-shadow: 3px 3px 5px lightgray;
     border: 1px solid lightgray;
-}
-
-@media screen and (max-width: 375px) {
-    .left-side img {
-        height: 150px;
-    }
-
-    .right-side h2 {
-        font-size: 1.3rem;
-        text-align: center;
-    }
-
-    .right-side>div>span {
-        font-size: .8rem;
-    }
-    
+    object-fit: cover;
 }
 
 .right-side h2 {
@@ -189,6 +174,7 @@ button i {
     aspect-ratio: 1/1;
     border-radius: 5px;
     border: 1px solid #F9FAFA;
+    object-fit: cover;
 }
 
 .description {

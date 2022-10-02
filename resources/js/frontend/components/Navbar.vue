@@ -17,10 +17,12 @@
                         </button>
                     </a>
 
-                    <button class="white-btn d-none d-md-block" type="button">
-                        <i class="fa-solid fa-bars"></i>
-                        <span>Menu</span>
-                    </button>
+                    <a href="/admin/users">
+                        <button class="white-btn d-none d-md-block" type="button">
+                            <i class="fa-solid fa-user"></i>
+                            <span>Home</span>
+                        </button>
+                    </a>
 
                 </div>
             </div>
