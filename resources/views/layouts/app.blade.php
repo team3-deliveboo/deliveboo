@@ -113,7 +113,11 @@
                                     <li>
                                         <a class="text-decoration-none" href="{{ route('admin.users.index') }}">
                                             <i class="fa-solid fa-house"></i>
+<<<<<<< HEAD
+                                            <span class="align-middle ms-1 d-none d-md-block">Dashboard</span>
+=======
                                             <span class="align-middle ms-1 d-none d-md-inline">Dashboard</span>
+>>>>>>> 39a4a274c724e0b5e1e779d5f35d1b7c6f02332b
                                         </a>
                                     </li>
 
@@ -122,7 +126,11 @@
                                     <li class='align-baseline'>
                                         <a class="text-decoration-none" href="{{ route('admin.dishes.index') }}">
                                             <i class="fa-solid fa-utensils"></i>
+<<<<<<< HEAD
+                                            <span class="align-middle ms-1 d-none d-md-block">Menu</span>
+=======
                                             <span class="align-middle ms-1 d-none d-md-inline">Menu</span>
+>>>>>>> 39a4a274c724e0b5e1e779d5f35d1b7c6f02332b
                                         </a>
                                     </li>
 

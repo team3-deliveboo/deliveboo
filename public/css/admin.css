@@ -114,6 +114,22 @@ small>a:hover {
     border: 1px solid lightgray;
 }
 
+@media screen and (max-width: 375px) {
+    .left-side img {
+        height: 150px;
+    }
+
+    .right-side h2 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .right-side>div>span {
+        font-size: .8rem;
+    }
+    
+}
+
 .right-side h2 {
     font-weight: bold;
     font-family: 'IBM Plex Sans Arabic', sans-serif;
