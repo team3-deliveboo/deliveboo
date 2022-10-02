@@ -1,21 +1,27 @@
 <template>
     <div class="third-section">
 
-        <div class="stars">
-            <img src="img/stelle1.svg" alt="Stelline1">
-            <img src="img/stelle2.svg" alt="Stelline2">
-        </div>
-
+        <!-- TEXT -->
         <div class="row justify-content-center">
-            <div class="col col-md-7">
+            <div class="col col-md-8 col-lg-7">
                 <div class="text">
                     <div class="title">14 giorni di consegne gratis per nuovi clienti</div>
+
+                    <!-- STARS SVG -->
+                    <div class="stars-left d-none d-sm-block">
+                        <img src="img/stelle1.svg" alt="Stelline1">
+                    </div>
+                    <div class="stars-right d-none d-sm-block">
+                        <img src="img/stelle2.svg" alt="Stelline2">
+                    </div>
+
                     <div class="subtitle">Prova Deliveboo e fatti consegnare dove vuoi la spesa e i piatti che ami dai ristoranti stellati della tua zona!</div>
                     <div class="sub-subtitle">Offerta valida solo per nuovi clienti. Escluse spese di servizio. <a href="javascript:void(0)">Termini e condizioni qui.</a></div>
                 </div>
             </div>
         </div>
 
+        <!-- FOOD LOWER BANNER -->
         <div class="banner">
             <img src="img/banner_patatine.svg" alt="Banner Patatine">
         </div>
@@ -40,19 +46,29 @@ export default {
     display: flex;
     justify-content: center;
     text-align: center;
-    position: relative;
     overflow: hidden;
+    position: relative;
 
-    .stars {
-        width: 60%;
-        display: flex;
-        justify-content: space-between;
-        position: absolute;
+    @media screen and (max-width: 375px) {
+
     }
 
     .text {
         font-family: 'IBM Plex Sans Arabic', sans-serif;
         color: white;
+        position: relative;
+
+        .stars-left {
+            position: absolute;
+            top: 0;
+            left: -30px;
+        }
+
+        .stars-right {
+            position: absolute;
+            top: 0;
+            right: -30px;
+        }
 
         .title {
             font-size: 3.7rem;

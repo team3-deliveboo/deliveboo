@@ -67,6 +67,12 @@ export default {
             font-family: 'IBM Plex Sans Arabic', sans-serif;
         }
 
+        @media screen and (max-width: 375px) { 
+            .content-card {
+                width: 100%;
+            }
+        }
+
         .white-btn {
             padding: 10px 21px;
             margin-top: 1rem;
@@ -76,6 +82,13 @@ export default {
                 color: $deliveroo-blue;
                 vertical-align: middle;
             }
+        }
+    }
+
+    @media screen and (max-width: 375px) { 
+        .left-col, .right-col {
+            background-position: center;
+            background-size: cover;
         }
     }
 }

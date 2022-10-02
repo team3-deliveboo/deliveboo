@@ -2566,7 +2566,7 @@ var render = function render() {
   }, [_c("h6", {
     staticClass: "header"
   }, [_vm._v("Ristoranti della categoria " + _vm._s(_vm.selected[0]) + " nella tua città:")])]), _vm._v(" "), _c("div", {
-    staticClass: "row gy-4 w-100 justify-content-sm-center"
+    staticClass: "row gy-4 m-0 justify-content-sm-center"
   }, _vm._l(_vm.SelectFilter, function (restaurant) {
     return _c("div", {
       key: restaurant.id,
@@ -2758,9 +2758,9 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "wrapper"
   }, [_c("div", {
-    staticClass: "row"
+    staticClass: "row row-cols-2 row-xl"
   }, [_c("div", {
-    staticClass: "col-sm-12 col-lg-5"
+    staticClass: "col-12 col-xl-5"
   }, [_c("div", {
     staticClass: "text"
   }, [_c("div", {
@@ -2782,17 +2782,17 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "badge-store google"
   })])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-7"
+    staticClass: "col-12 col-xl-7"
   }, [_c("div", {
-    staticClass: "map-img d-none d-lg-block"
-  }), _vm._v(" "), _c("div", {
-    staticClass: "over-img d-none d-lg-block"
+    staticClass: "map-img d-none d-sm-block"
+  }, [_c("div", {
+    staticClass: "over-img d-none d-sm-block"
   }, [_c("img", {
     attrs: {
       src: "img/notification.webp",
       alt: "Immagine Aggiornamento Consegna"
     }
-  })])])])])]);
+  })])])])])])]);
 }];
 render._withStripped = true;
 
@@ -3098,26 +3098,28 @@ var staticRenderFns = [function () {
   return _c("div", {
     staticClass: "third-section"
   }, [_c("div", {
-    staticClass: "stars"
-  }, [_c("img", {
-    attrs: {
-      src: "img/stelle1.svg",
-      alt: "Stelline1"
-    }
-  }), _vm._v(" "), _c("img", {
-    attrs: {
-      src: "img/stelle2.svg",
-      alt: "Stelline2"
-    }
-  })]), _vm._v(" "), _c("div", {
     staticClass: "row justify-content-center"
   }, [_c("div", {
-    staticClass: "col col-md-7"
+    staticClass: "col col-md-8 col-lg-7"
   }, [_c("div", {
     staticClass: "text"
   }, [_c("div", {
     staticClass: "title"
   }, [_vm._v("14 giorni di consegne gratis per nuovi clienti")]), _vm._v(" "), _c("div", {
+    staticClass: "stars-left d-none d-sm-block"
+  }, [_c("img", {
+    attrs: {
+      src: "img/stelle1.svg",
+      alt: "Stelline1"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "stars-right d-none d-sm-block"
+  }, [_c("img", {
+    attrs: {
+      src: "img/stelle2.svg",
+      alt: "Stelline2"
+    }
+  })]), _vm._v(" "), _c("div", {
     staticClass: "subtitle"
   }, [_vm._v("Prova Deliveboo e fatti consegnare dove vuoi la spesa e i piatti che ami dai ristoranti stellati della tua zona!")]), _vm._v(" "), _c("div", {
     staticClass: "sub-subtitle"
@@ -3416,7 +3418,7 @@ exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstra
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!animate.css */ "./node_modules/css-loader/index.js!./node_modules/animate.css/animate.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-5d36a93e] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-5d36a93e] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-5d36a93e] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-5d36a93e] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-5d36a93e]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-5d36a93e]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.fourth-section[data-v-5d36a93e] {\n  padding: 4rem 0;\n}\n.fourth-section .left-col[data-v-5d36a93e] {\n  background-image: url(\"/img/restaurant.png\");\n}\n.fourth-section .right-col[data-v-5d36a93e] {\n  background-image: url(\"/img/rider.png\");\n}\n.fourth-section .left-col[data-v-5d36a93e], .fourth-section .right-col[data-v-5d36a93e] {\n  background-size: cover;\n  height: 500px;\n  border-radius: 10px;\n  box-shadow: 0 0 20px 0px lightgray;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  opacity: 0.9;\n}\n.fourth-section .left-col .content-card[data-v-5d36a93e], .fourth-section .right-col .content-card[data-v-5d36a93e] {\n  color: white;\n  width: 80%;\n  padding: 1.5rem;\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n}\n.fourth-section .left-col .white-btn[data-v-5d36a93e], .fourth-section .right-col .white-btn[data-v-5d36a93e] {\n  padding: 10px 21px;\n  margin-top: 1rem;\n  font-size: 1rem;\n}\n.fourth-section .left-col .white-btn i[data-v-5d36a93e], .fourth-section .right-col .white-btn i[data-v-5d36a93e] {\n  color: #00CCBC;\n  vertical-align: middle;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-5d36a93e] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-5d36a93e] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-5d36a93e] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-5d36a93e] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-5d36a93e]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-5d36a93e]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.fourth-section[data-v-5d36a93e] {\n  padding: 4rem 0;\n}\n.fourth-section .left-col[data-v-5d36a93e] {\n  background-image: url(\"/img/restaurant.png\");\n}\n.fourth-section .right-col[data-v-5d36a93e] {\n  background-image: url(\"/img/rider.png\");\n}\n.fourth-section .left-col[data-v-5d36a93e], .fourth-section .right-col[data-v-5d36a93e] {\n  background-size: cover;\n  height: 500px;\n  border-radius: 10px;\n  box-shadow: 0 0 20px 0px lightgray;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  opacity: 0.9;\n}\n.fourth-section .left-col .content-card[data-v-5d36a93e], .fourth-section .right-col .content-card[data-v-5d36a93e] {\n  color: white;\n  width: 80%;\n  padding: 1.5rem;\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n}\n@media screen and (max-width: 375px) {\n.fourth-section .left-col .content-card[data-v-5d36a93e], .fourth-section .right-col .content-card[data-v-5d36a93e] {\n    width: 100%;\n}\n}\n.fourth-section .left-col .white-btn[data-v-5d36a93e], .fourth-section .right-col .white-btn[data-v-5d36a93e] {\n  padding: 10px 21px;\n  margin-top: 1rem;\n  font-size: 1rem;\n}\n.fourth-section .left-col .white-btn i[data-v-5d36a93e], .fourth-section .right-col .white-btn i[data-v-5d36a93e] {\n  color: #00CCBC;\n  vertical-align: middle;\n}\n@media screen and (max-width: 375px) {\n.fourth-section .left-col[data-v-5d36a93e], .fourth-section .right-col[data-v-5d36a93e] {\n    background-position: center;\n    background-size: cover;\n}\n}", ""]);
 
 // exports
 
@@ -3456,7 +3458,7 @@ exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstra
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!animate.css */ "./node_modules/css-loader/index.js!./node_modules/animate.css/animate.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-6d72b4c7] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-6d72b4c7] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-6d72b4c7] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-6d72b4c7] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-6d72b4c7]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-6d72b4c7]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.container .wrapper[data-v-6d72b4c7] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  background-color: white;\n  border-radius: 10px;\n  box-shadow: 0 0 20px 0px lightgray;\n  position: relative;\n}\n.container .wrapper .text[data-v-6d72b4c7] {\n  width: 90%;\n  padding: 2rem;\n}\n.container .wrapper .text .title[data-v-6d72b4c7] {\n  font-size: 2.5rem;\n  font-weight: bold;\n  line-height: 50px;\n  padding-bottom: 1rem;\n}\n.container .wrapper .text .subtitle[data-v-6d72b4c7] {\n  font-size: 1.2rem;\n}\n.container .wrapper .text .badges[data-v-6d72b4c7] {\n  display: flex;\n  gap: 5px;\n  padding-top: 3rem;\n  padding-bottom: 2rem;\n}\n.container .wrapper .text .badges .badge-store[data-v-6d72b4c7] {\n  height: 40px;\n  width: 130px;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  border: 1px solid grey;\n  border-radius: 6px;\n}\n.container .wrapper .text .badges .badge-store.apple[data-v-6d72b4c7] {\n  background-image: url(\"/img/apple_store.png\");\n}\n.container .wrapper .text .badges .badge-store.google[data-v-6d72b4c7] {\n  background-image: url(\"/img/google_play.png\");\n}\n.container .wrapper .map-img[data-v-6d72b4c7] {\n  background-image: url(\"/img/map.png\");\n  background-size: cover;\n  background-position: left;\n  background-repeat: no-repeat;\n  height: 100%;\n  border-radius: 0px 10px 10px 0px;\n}\n.container .wrapper .over-img img[data-v-6d72b4c7] {\n  position: absolute;\n  top: 10px;\n  right: 0;\n  width: 30%;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-6d72b4c7] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-6d72b4c7] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-6d72b4c7] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-6d72b4c7] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-6d72b4c7]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-6d72b4c7]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.container .wrapper[data-v-6d72b4c7] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  background-color: white;\n  border-radius: 10px;\n  box-shadow: 0 0 20px 0px lightgray;\n}\n.container .wrapper .text[data-v-6d72b4c7] {\n  width: 90%;\n  padding: 2rem;\n}\n.container .wrapper .text .title[data-v-6d72b4c7] {\n  font-size: 2.5rem;\n  font-weight: bold;\n  line-height: 50px;\n  padding-bottom: 1rem;\n}\n.container .wrapper .text .subtitle[data-v-6d72b4c7] {\n  font-size: 1.2rem;\n}\n.container .wrapper .text .badges[data-v-6d72b4c7] {\n  display: flex;\n  gap: 5px;\n  padding-top: 3rem;\n  padding-bottom: 2rem;\n}\n.container .wrapper .text .badges .badge-store[data-v-6d72b4c7] {\n  height: 40px;\n  width: 130px;\n  margin-bottom: 1rem;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  border: 1px solid grey;\n  border-radius: 6px;\n}\n.container .wrapper .text .badges .badge-store.apple[data-v-6d72b4c7] {\n  background-image: url(\"/img/apple_store.png\");\n}\n.container .wrapper .text .badges .badge-store.google[data-v-6d72b4c7] {\n  background-image: url(\"/img/google_play.png\");\n}\n.container .wrapper .map-img[data-v-6d72b4c7] {\n  background-image: url(\"/img/map.png\");\n  background-size: cover;\n  background-position: left;\n  background-repeat: no-repeat;\n  height: 100%;\n  border-radius: 0px 10px 10px 0px;\n  position: relative;\n}\n.container .wrapper .over-img[data-v-6d72b4c7] {\n  position: absolute;\n  top: 10px;\n  right: 0;\n  width: 40%;\n}\n.container .wrapper .over-img img[data-v-6d72b4c7] {\n  width: 100%;\n}\n@media screen and (max-width: 1024px) {\n.container .wrapper .map-img[data-v-6d72b4c7] {\n    height: 400px;\n    position: relative;\n    border-radius: 0px 0px 10px 10px;\n}\n.container .wrapper .over-img[data-v-6d72b4c7] {\n    position: absolute;\n    top: 0px;\n    right: 50%;\n    transform: translate(50%, 0%);\n    width: 50%;\n}\n}", ""]);
 
 // exports
 
@@ -3535,7 +3537,7 @@ exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!bootstra
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!animate.css */ "./node_modules/css-loader/index.js!./node_modules/animate.css/animate.css"), "");
 
 // module
-exports.push([module.i, ".white-btn[data-v-8cd17710] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-8cd17710] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-8cd17710] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-8cd17710] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-8cd17710]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-8cd17710]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.third-section[data-v-8cd17710] {\n  padding: 3rem 0 9rem 0;\n  background: rgb(0, 126, 137);\n  background: linear-gradient(125deg, rgb(0, 126, 137) 0%, rgb(34, 194, 183) 100%);\n  display: flex;\n  justify-content: center;\n  text-align: center;\n  position: relative;\n  overflow: hidden;\n}\n.third-section .stars[data-v-8cd17710] {\n  width: 60%;\n  display: flex;\n  justify-content: space-between;\n  position: absolute;\n}\n.third-section .text[data-v-8cd17710] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  color: white;\n}\n.third-section .text .title[data-v-8cd17710] {\n  font-size: 3.7rem;\n  line-height: 80px;\n  font-weight: bold;\n}\n.third-section .text .subtitle[data-v-8cd17710] {\n  font-size: 1.4rem;\n  padding-top: 2rem;\n}\n.third-section .text .sub-subtitle[data-v-8cd17710] {\n  font-size: 0.85rem;\n  padding-top: 1rem;\n}\n.third-section .text .sub-subtitle a[data-v-8cd17710] {\n  color: white;\n  text-decoration: underline;\n}\n.third-section .banner[data-v-8cd17710] {\n  position: absolute;\n  bottom: 0;\n}", ""]);
+exports.push([module.i, ".white-btn[data-v-8cd17710] {\n  background-color: white;\n  font-size: 1.05rem;\n  color: #2E3333;\n  border: 1px solid #e8ebeb;\n  border-radius: 4px;\n  padding: 6px 16px;\n}\n.blue-btn[data-v-8cd17710] {\n  background-color: #00CCBC;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.grey-btn[data-v-8cd17710] {\n  background-color: lightgray;\n  font-size: 1rem;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  height: 50px;\n}\n.search-btn[data-v-8cd17710] {\n  background-color: #00CCBC;\n  color: white;\n  border-radius: 50px;\n  border: none;\n  padding: 0.9rem 2.2rem;\n  font-weight: bold;\n}\n.search-btn[data-v-8cd17710]:hover {\n  background-color: #00c2b3;\n}\n.search-btn[data-v-8cd17710]:focus {\n  box-shadow: 0 0 0 3px rgba(0, 194, 179, 0.5);\n}\n.third-section[data-v-8cd17710] {\n  padding: 3rem 0 9rem 0;\n  background: rgb(0, 126, 137);\n  background: linear-gradient(125deg, rgb(0, 126, 137) 0%, rgb(34, 194, 183) 100%);\n  display: flex;\n  justify-content: center;\n  text-align: center;\n  overflow: hidden;\n  position: relative;\n}\n.third-section .text[data-v-8cd17710] {\n  font-family: \"IBM Plex Sans Arabic\", sans-serif;\n  color: white;\n  position: relative;\n}\n.third-section .text .stars-left[data-v-8cd17710] {\n  position: absolute;\n  top: 0;\n  left: -30px;\n}\n.third-section .text .stars-right[data-v-8cd17710] {\n  position: absolute;\n  top: 0;\n  right: -30px;\n}\n.third-section .text .title[data-v-8cd17710] {\n  font-size: 3.7rem;\n  line-height: 80px;\n  font-weight: bold;\n}\n.third-section .text .subtitle[data-v-8cd17710] {\n  font-size: 1.4rem;\n  padding-top: 2rem;\n}\n.third-section .text .sub-subtitle[data-v-8cd17710] {\n  font-size: 0.85rem;\n  padding-top: 1rem;\n}\n.third-section .text .sub-subtitle a[data-v-8cd17710] {\n  color: white;\n  text-decoration: underline;\n}\n.third-section .banner[data-v-8cd17710] {\n  position: absolute;\n  bottom: 0;\n}", ""]);
 
 // exports
 

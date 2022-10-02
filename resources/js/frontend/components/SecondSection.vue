@@ -2,8 +2,8 @@
     <div class="container py-5">
 
         <div class="wrapper">
-                <div class="row">
-                    <div class="col-sm-12 col-lg-5">
+                <div class="row row-cols-2 row-xl">
+                    <div class="col-12 col-xl-5">
                         <div class="text">
                             <div class="title">Segui gli ordini passo passo</div>
                             <div class="subtitle">I piatti e i prodotti che ami, consegnati in pochissimo tempo. Vedrai quando il rider ha ritirato l'ordine, che potrai seguire passo passo, e riceverai una notifica quando sarà quasi da te.</div>
@@ -15,10 +15,11 @@
                     </div>
 
                     <!-- ORDER TRACKING IMAGE -->
-                    <div class="col-7">
-                        <div class="map-img d-none d-lg-block"></div>
-                        <div class="over-img d-none d-lg-block">
-                            <img src="img/notification.webp" alt="Immagine Aggiornamento Consegna">
+                    <div class="col-12 col-xl-7">
+                        <div class="map-img d-none d-sm-block">
+                            <div class="over-img d-none d-sm-block">
+                                <img src="img/notification.webp" alt="Immagine Aggiornamento Consegna">
+                            </div>
                         </div>
                     </div>
 
@@ -45,7 +46,7 @@ export default {
         background-color: white;
         border-radius: 10px;
         box-shadow: 0 0 20px 0px lightgray;
-        position: relative;
+        // position: relative;
 
         .text {
             width: 90%;
@@ -96,13 +97,34 @@ export default {
             background-repeat: no-repeat;
             height: 100%;
             border-radius: 0px 10px 10px 0px;
+            position: relative;
         }
 
-        .over-img img {
+        .over-img {
             position: absolute;
             top: 10px;
             right: 0;
-            width: 30%;
+            width: 40%;
+
+            & img {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .map-img {
+                height: 400px;
+                position: relative;
+                border-radius: 0px 0px 10px 10px;
+            }
+
+            .over-img {
+                position: absolute;
+                top: 0px;
+                right: 50%;
+                transform: translate(50%, 0%);
+                width: 50%;
+            }
         }
     }
 }
