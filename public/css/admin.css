@@ -2,6 +2,10 @@
 @import './dishes.css';
 
 /* MAIN STYLE */
+#app {
+    height: 100vh;
+}
+
 main, nav, .form-control, input::placeholder {
     font-family: 'IBM Plex Sans Arabic', sans-serif;
 }
@@ -130,6 +134,12 @@ small>a:hover {
 .right-side a i:hover {
     color: #00c2b3;
 }
+
+/* @media screen and (max-width: 768px) {
+    .left-side img {
+        height: 130px;
+    }
+} */
 
 /* EDIT */
 h3 b {

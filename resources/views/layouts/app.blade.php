@@ -92,76 +92,72 @@
             </div>
         </nav>
 
-        {{-- MAIN SECTION --}}
-        @if (Auth::check())
-            <main style="background-color: #F9FAFA;" class="py-0">
-        @else
-            <main style="background-color: white;">
-        @endif
+        <main style="background-color: white;">
 
             @if (Auth::check())
                 <div>
             @else
-                <div class="container">
+                <div class="container py-5 h-100">
             @endif
             
                     <div class="d-flex">
 
-                    @if (Auth::check())
-                    <div class="flex-shrink-0">
-                        <div class="side-bar border-end">
-                            <h3 class="fw-bold pt-2 pb-4">Il tuo ristorante</h3>
+                        @if (Auth::check())
+                        <div class="flex-shrink-0">
+                            <div class="side-bar border-end">
+                                <h3 class="fw-bold pt-2 pb-4">Il tuo ristorante</h3>
 
-                            <ul class="list-unstyled side-link">
+                                <ul class="list-unstyled side-link">
 
-                                {{-- HOME --}}
-                                <li>
-                                    <a class="text-decoration-none" href="{{ route('admin.users.index') }}">
-                                        <i class="fa-solid fa-house"></i>
-                                        <span class="align-middle ms-1">Dashboard</span>
-                                    </a>
-                                </li>
-
-
-                                {{-- DISHES LIST --}}
-                                <li class='align-baseline'>
-                                    <a class="text-decoration-none" href="{{ route('admin.dishes.index') }}">
-                                        <i class="fa-solid fa-utensils"></i>
-                                        <span class="align-middle ms-1">Menu</span>
-                                    </a>
-                                </li>
+                                    {{-- HOME --}}
+                                    <li>
+                                        <a class="text-decoration-none" href="{{ route('admin.users.index') }}">
+                                            <i class="fa-solid fa-house"></i>
+                                            <span class="align-middle ms-1">Dashboard</span>
+                                        </a>
+                                    </li>
 
 
-                                {{-- ORDERS --}}
-                                <li class="align-baseline">
-                                    <a class="text-decoration-none" class="align-baseline" href="{{ route('admin.orders.index') }}">
-                                        <i class="fa-solid fa-clipboard"></i>
-                                        <span class="align-middle ms-1">Ordini</span>
-                                    </a>
-                                </li>
+                                    {{-- DISHES LIST --}}
+                                    <li class='align-baseline'>
+                                        <a class="text-decoration-none" href="{{ route('admin.dishes.index') }}">
+                                            <i class="fa-solid fa-utensils"></i>
+                                            <span class="align-middle ms-1">Menu</span>
+                                        </a>
+                                    </li>
 
 
-                                {{-- STATS --}}
-                                <li class="align-baseline">
-                                    <a class="text-decoration-none" href="">
-                                        <i class="fa-solid fa-chart-simple"></i>
-                                        <span class="align-middle ms-1">Statistiche</span>
-                                    </a>
-                                </li>
-                            </ul>
+                                    {{-- ORDERS --}}
+                                    <li class="align-baseline">
+                                        <a class="text-decoration-none" class="align-baseline" href="{{ route('admin.orders.index') }}">
+                                            <i class="fa-solid fa-clipboard"></i>
+                                            <span class="align-middle ms-1">Ordini</span>
+                                        </a>
+                                    </li>
+
+
+                                    {{-- STATS --}}
+                                    <li class="align-baseline">
+                                        <a class="text-decoration-none" href="">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            <span class="align-middle ms-1">Statistiche</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        @endif
+
+                        {{-- CONTENT LEFT ONCE LOGGED IN --}}
+                        <div class="flex-grow-1">
+                            @yield('content')
                         </div>
 
+                
                     </div>
-                    @endif
-
-                    {{-- CONTENT LEFT ONCE LOGGED IN --}}
-                    <div class="flex-grow-1">
-                        @yield('content')
-                    </div>
-
                 </div>
-            </div>
-        </main>
+            </main>
 
         {{-- VUE COMPONENT - FOOTER --}}
         <the-footer></the-footer>
