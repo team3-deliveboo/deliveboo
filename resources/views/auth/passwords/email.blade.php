@@ -4,7 +4,7 @@
 <div class="container">
 
     <div class="row justify-content-center">
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4">
 
             <h4 class="admin-form"><b>{{ __('Reimposta Password') }}</b></h4>
             <div class="py-2">Per resettare la tua password dobbiamo prima inviarti un'email.</div>
