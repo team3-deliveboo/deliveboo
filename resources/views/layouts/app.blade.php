@@ -113,7 +113,11 @@
                                     <li>
                                         <a class="text-decoration-none" href="{{ route('admin.users.index') }}">
                                             <i class="fa-solid fa-house"></i>
+<<<<<<< HEAD
                                             <span class="align-middle ms-1 d-none d-md-inline">Dashboard</span>
+=======
+                                            <span class="align-middle ms-1 d-none d-md-block">Dashboard</span>
+>>>>>>> 88e3041 (restaurant index responsive)
                                         </a>
                                     </li>
 
@@ -122,7 +126,11 @@
                                     <li class='align-baseline'>
                                         <a class="text-decoration-none" href="{{ route('admin.dishes.index') }}">
                                             <i class="fa-solid fa-utensils"></i>
+<<<<<<< HEAD
                                             <span class="align-middle ms-1 d-none d-md-inline">Menu</span>
+=======
+                                            <span class="align-middle ms-1 d-none d-md-block">Menu</span>
+>>>>>>> 88e3041 (restaurant index responsive)
                                         </a>
                                     </li>
 
@@ -131,7 +139,11 @@
                                     <li class="align-baseline">
                                         <a class="text-decoration-none" class="align-baseline" href="{{ route('admin.orders.index') }}">
                                             <i class="fa-solid fa-clipboard"></i>
+<<<<<<< HEAD
                                             <span class="align-middle ms-1 d-none d-md-inline">Ordini</span>
+=======
+                                            <span class="align-middle ms-1 d-none d-md-block">Ordini</span>
+>>>>>>> 88e3041 (restaurant index responsive)
                                         </a>
                                     </li>
 
@@ -140,7 +152,11 @@
                                     <li class="align-baseline">
                                         <a class="text-decoration-none" href="">
                                             <i class="fa-solid fa-chart-simple"></i>
+<<<<<<< HEAD
                                             <span class="align-middle ms-1 d-none d-md-inline">Statistiche</span>
+=======
+                                            <span class="align-middle ms-1 d-none d-md-block">Statistiche</span>
+>>>>>>> 88e3041 (restaurant index responsive)
                                         </a>
                                     </li>
                                 </ul>
