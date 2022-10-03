@@ -114,10 +114,11 @@
                                         <a class="text-decoration-none" href="{{ route('admin.users.index') }}">
                                             <i class="fa-solid fa-house"></i>
 <<<<<<< HEAD
-                                            <span class="align-middle ms-1 d-none d-md-inline">Dashboard</span>
-=======
                                             <span class="align-middle ms-1 d-none d-md-block">Dashboard</span>
->>>>>>> 88e3041 (restaurant index responsive)
+=======
+                                            <span class="align-middle ms-1 d-none d-md-inline">Dashboard</span>
+>>>>>>> 39a4a274c724e0b5e1e779d5f35d1b7c6f02332b
+>>>>>>> eca214ae0a4d1c21444c53a86efe33e736c9bfd6
                                         </a>
                                     </li>
 
@@ -127,10 +128,17 @@
                                         <a class="text-decoration-none" href="{{ route('admin.dishes.index') }}">
                                             <i class="fa-solid fa-utensils"></i>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                             <span class="align-middle ms-1 d-none d-md-inline">Menu</span>
 =======
                                             <span class="align-middle ms-1 d-none d-md-block">Menu</span>
 >>>>>>> 88e3041 (restaurant index responsive)
+=======
+                                            <span class="align-middle ms-1 d-none d-md-block">Menu</span>
+=======
+                                            <span class="align-middle ms-1 d-none d-md-inline">Menu</span>
+>>>>>>> 39a4a274c724e0b5e1e779d5f35d1b7c6f02332b
+>>>>>>> eca214ae0a4d1c21444c53a86efe33e736c9bfd6
                                         </a>
                                     </li>
 
