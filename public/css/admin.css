@@ -112,22 +112,7 @@ small>a:hover {
     border-radius: 5px;
     box-shadow: 3px 3px 5px lightgray;
     border: 1px solid lightgray;
-}
-
-@media screen and (max-width: 375px) {
-    .left-side img {
-        height: 150px;
-    }
-
-    .right-side h2 {
-        font-size: 1.3rem;
-        text-align: center;
-    }
-
-    .right-side>div>span {
-        font-size: .8rem;
-    }
-    
+    object-fit: cover;
 }
 
 .right-side h2 {
@@ -189,6 +174,7 @@ button i {
     aspect-ratio: 1/1;
     border-radius: 5px;
     border: 1px solid #F9FAFA;
+    object-fit: cover;
 }
 
 .description {
@@ -196,7 +182,6 @@ button i {
     line-height: 130%;
     opacity: 75%;
     padding: 0.5rem 0 0.7rem 0;
-    text-overflow: ellipsis;
 }
 
 .dish-index {
@@ -210,15 +195,30 @@ button i {
     margin: auto;
 }
 
-.buttons {
-    position: absolute;
-    right: -50px;
-    top: 0;
+/* MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+    .button-create {
+        width: 280px;
+    }
+
+    .button-create > .blue-btn {
+        width: 280px;
+        margin: auto;
+    }
 }
 
 @media screen and (max-width: 425px) {
     .side-bar {
         padding: 2rem 1rem;
+    }
+
+    .button-create {
+        width: 200px;
+    }
+
+    .button-create > .blue-btn {
+        width: 200px;
+        margin: auto;
     }
 }
 
@@ -236,8 +236,21 @@ button i {
         font-size: .8rem;
     }
 
-    .file-upload input {
+    .file-upload input, .edit-upload input {
         font-size: .8rem;
         width: 80%;
+    }
+
+    .check-availability label {
+        font-size: .8rem;
+    }
+
+    .button-create {
+        width: 150px;
+    }
+
+    .button-create > .blue-btn {
+        width: 150px;
+        margin: auto;
     }
 }

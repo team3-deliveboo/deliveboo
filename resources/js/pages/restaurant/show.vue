@@ -38,7 +38,7 @@
 
                             <!-- SINGLE DISH CARD -->
                             <div class="row row-cols-1 row-cols-xl-2 g-3 m-0">
-                                <div class="col-12 col-lg" v-for="dish in restaurant.dishes" :key="dish.id">
+                                <div class="col-12 col-lg-6" v-for="dish in restaurant.dishes" :key="dish.id">
                                     <button @click="addItemToCart(dish)">
                                         <div class="dish-card">
                                             <div class="text-start pe-1">
@@ -139,7 +139,7 @@
                         </div>
                     </div>
 
-                    <Checkout></Checkout>
+                    <!-- <Checkout></Checkout> -->
                 </div>
             </div>
         </div>
@@ -375,6 +375,7 @@ export default {
                 border-radius: 5px;
                 border: 1px solid lightgray;
                 aspect-ratio: 1/1;
+                object-fit: cover;
             }
 
             h1 {
@@ -389,6 +390,7 @@ export default {
             padding: 2rem 0;
             overflow-y: auto;
             width: 100%;
+            height: 600px;
 
             button {
                 width: 100%;
@@ -413,6 +415,7 @@ export default {
                         aspect-ratio: 1/1;
                         border-radius: 5px;
                         border: 1px solid $deliveroo-grey;
+                        object-fit: cover;
                     }
 
                     .description {
@@ -420,6 +423,8 @@ export default {
                         line-height: 130%;
                         opacity: 75%;
                         padding: 0.5rem 0 0.7rem 0;
+                        height: 60px;
+                        overflow: hidden;
                     }
                 }
             }
