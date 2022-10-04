@@ -17,7 +17,6 @@
 
                     <div class="text-section">
                         <h1>{{ restaurant.name }}</h1>
-                        <!-- <small>{{ restaurant.categories }}</small> -->
                         <div class="pt-3 text-muted">
                             {{ restaurant.address }} · {{ restaurant.phone }}
                         </div>
@@ -36,6 +35,7 @@
                                 Scegli il tuo piatto, ed aggiungilo al carrello.
                             </div>
 
+
                             <!-- SINGLE DISH CARD -->
                             <div class="row row-cols-1 row-cols-xl-2 g-3 m-0">
                                 <div class="col-12 col-lg-6" v-for="dish in restaurant.dishes" :key="dish.id">
@@ -53,17 +53,11 @@
                                             </div>
                                         </div>
                                     </button>
-                                    <!-- <button @click="addItemToCart(dish)">add</button> -->
-                                    <!-- <button @click="convertJson()" ></button> -->
                                 </div>
                             </div>
-                            <!-- <CartComp></CartComp> -->
                         </div>
                     </div>
 
-                    <!-- <div v-for="item in cart" :key="item.id">
-                    <span>{{item.name}}</span>
-                    <span>{{item.price + "€" }}</span> -->
 
                     <!-- CART SECTION -->
                     <div class="col-12 col-md-8 col-xl-4">
@@ -150,21 +144,15 @@
 </template>
 
 <script>
-// import CartComp from "../../frontend/components/CartComp.vue";
 import axios from "axios";
 import TheFooter from "../../frontend/components/TheFooter.vue";
 import Navbar from "../../frontend/components/Navbar.vue";
 import Checkout from "../../frontend/components/Checkout.vue";
 
-// import map from "bluebird/js/release/map";
-// import { find } from "laravel-mix/src/File";
-// import { contains } from "micromatch";
 export default {
     data() {
         return {
             cart: [],
-            // cartClean: JSON.parse(localStorage.getItem('cart')),
-            // itemsOnLocal: [],
             restaurant: {},
             client: {
                 name: "",
@@ -185,7 +173,6 @@ export default {
                 localStorage.getItem("cart") != null &&
                 this.cart[0].user_id != this.restaurant.id
             ) {
-                // this.checkCart();
                 this.addItemToCart().preventDefault();
             }
             if (localStorage.getItem("cart") == null) {
@@ -207,31 +194,7 @@ export default {
             localStorage.setItem("partialTotal", JSON.stringify(this.partialTotal));
             this.total = this.partialTotal + this.restaurant.delivery_price;
             localStorage.setItem("total", JSON.stringify(this.total));
-            // this.CartSectionShow();
         },
-        // checkCart() {
-        //     if (this.cart.length > 0) {
-        //         if (this.cart[0].user_id != this.restaurant.id) {
-        //             let modal = document.getElementById("modal-cart");
-        //             modal.classList.replace("d-none", "d-flex");
-        //         }
-        //     }
-        //     this.CartSectionShow();
-        // },
-
-        // removeOneFromCart(dish) {
-        //     if (this.cart && this.cart.length > 0) {
-        //         let cart = JSON.parse(localStorage.getItem("cart"));
-        //         let index = cart.findIndex((item) => item.id == dish.id);
-        //         if (index !== -1) {
-        //             cart[index].quantity--;
-        //             if (cart[index].quantity == 0) {
-        //                 cart.splice(index, 1);
-        //             }
-        //         }
-        //     }
-        // },
-
         removeAllFromCart() {
             localStorage.removeItem("cart");
             localStorage.removeItem("partialTotal");
@@ -239,7 +202,6 @@ export default {
             this.cart = [];
             this.partialTotal = 0;
             this.total = 0;
-            // this.closeModalCart();
         },
 
         //REMOVE
@@ -269,87 +231,17 @@ export default {
                     window.location.reload();
                     return this.removeAllFromCart();
                 }
-                // localStorage.removeItem("cart");
-                // localStorage.removeItem("partialTotal");
-                // localStorage.removeItem("total");
-
-                // this.partialTotal = 0;
-                // this.total = 0;
-                // this.cart = [];
             }
         },
     },
     mounted() {
-        // return JSON.parse(localStorage.getItem('cart'))
-        // console.log(this.$route);
         axios.get("api/users/" + this.$route.params.slug).then((resp) => {
             const data = resp.data;
             this.restaurant = data;
         });
         localStorage.removeItem("cart");
     },
-};
-//         localStorage.setItem("cart", JSON.stringify(cart));
-//         this.cart = JSON.parse(localStorage.getItem("cart"));
-//         this.partialTotal = round(
-//             this.cart.reduce(
-//                 (acc, dish) => acc + dish.price * dish.quantity,
-//                 0
-//             ),
-//             2
-//         );
-//         localStorage.setItem(
-//             "partialTotal",
-//             JSON.stringify(this.partialTotal)
-//         );
-//         this.total = round(
-//             this.partialTotal + this.restaurant.delivery_price,
-//             2
-//         );
-//         localStorage.setItem("total", JSON.stringify(this.total));
-//         if (this.cart.length == 0) {
-//             localStorage.removeItem("cart");
-//             localStorage.removeItem("partialTotal");
-//             localStorage.removeItem("total");
-//             this.partialTotal = 0;
-//             this.total = 0;
-//         }
-//     }
-//     this.CartSectionShow();
-// },
-// removeAllFromCart(dish) {
-//     let cart = JSON.parse(localStorage.getItem("cart"));
-//     let index = cart.findIndex((item) => item.id == dish.id);
-//     if (index !== -1) {
-//         cart.splice(index, 1);
-//     }
-//     localStorage.setItem("cart", JSON.stringify(cart));
-//     this.cart = JSON.parse(localStorage.getItem("cart"));
-//     this.partialTotal = round(
-//         this.cart.reduce(
-//             (acc, dish) => acc + dish.price * dish.quantity,
-//             0
-//         ),
-//         2
-//     );
-//     localStorage.setItem(
-//         "partialTotal",
-//         JSON.stringify(this.partialTotal)
-//     );
-//     this.total = round(
-//         this.partialTotal + this.restaurant.delivery_price,
-//         2
-//     );
-//     localStorage.setItem("total", JSON.stringify(this.total));
-//     if (this.cart.length == 0) {
-//         localStorage.removeItem("cart");
-//         localStorage.removeItem("partialTotal");
-//         localStorage.removeItem("total");
-//         this.partialTotal = 0;
-//         this.total = 0;
-//     }
-//     this.CartSectionShow();
-// },
+}
 </script>
 
 <style lang="scss" scoped>

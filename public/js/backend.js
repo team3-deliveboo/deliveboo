@@ -40888,8 +40888,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+// footer component to use it in blade.php
 
 Vue.component('TheFooter', __webpack_require__(/*! ../js/frontend/components/TheFooter.vue */ "./resources/js/frontend/components/TheFooter.vue")["default"]);
 /**

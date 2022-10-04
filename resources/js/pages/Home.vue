@@ -4,6 +4,7 @@
         <TheJumbotron></TheJumbotron>
         <TheMain></TheMain>
         <TheFooter></TheFooter>
+
     </div>
 </template>
 
@@ -14,7 +15,7 @@ import TheFooter from '../frontend/components/TheFooter.vue'
 
 export default {
     components: { TheJumbotron, TheMain, TheFooter },
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -25,8 +26,6 @@ export default {
     background-color: $deliveroo-grey;
 }
 </style>
-
-
 
 
 

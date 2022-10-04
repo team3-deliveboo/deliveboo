@@ -30,7 +30,6 @@ Route::middleware('auth')
     ->prefix('admin')
     ->group(function () {
         Route::get('/', 'HomeController@index')->name('home');
-        // Route::get('/{user}/edit', 'UserController@edit')->name('users.edit');
         Route::resource('users', 'UserController');
         Route::resource('dishes', 'DishController');
         Route::resource('orders', 'OrderController');
@@ -72,7 +71,6 @@ Route::post('/checkout', function (Request $request) {
 
     if ($result->success) {
         $transaction = $result->transaction;
-        // header("Location: transaction.php?id=" . $transaction->id);
         return back()->with('success_message', 'Transaction successful. The ID is: ' . $transaction->id);
     } else {
         $errorString = "";
@@ -80,9 +78,6 @@ Route::post('/checkout', function (Request $request) {
         foreach ($result->errors->deepAll() as $error) {
             $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
         }
-
-        // $_SESSION["errors"] = $errorString;
-        // header("Location: index.php");
         return back()->withErrors('An error occurred with the message: ' . $result->message);
     }
 });

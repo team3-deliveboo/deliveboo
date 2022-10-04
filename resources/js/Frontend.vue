@@ -1,6 +1,8 @@
 <template>
     <div class="all-body">
+
         <router-view></router-view>
+    
     </div>
 </template>
 
@@ -12,7 +14,7 @@ import Home from './pages/Home.vue';
 
 export default {
     components: { TheJumbotron, TheMain, TheFooter, Home },
-};
+}
 </script>
 
 <style lang="scss" scoped>

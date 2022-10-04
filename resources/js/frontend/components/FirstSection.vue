@@ -53,61 +53,6 @@
                     </div>
                 </div>
             </div>
-
-                <!-- <div v-else-if="filteredList.length > 0">
-                    <div class="row gy-4">
-                        <div class="col-3" v-for="restaurant in filteredList" :key="restaurant.id">
-                            <router-link class="text-dark text-decoration-none"
-                                :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
-
-                                <div class="card-restaurant d-flex">
-                                    <div class="restaurant-img">
-                                        <img :src="getImg(restaurant)" alt="/" />
-                                    </div>
-
-                                    <div class="px-2 py-3">
-                                        <div class="restaurant-name">
-                                            <span>{{ restaurant.name }} · <small class="fw-light">{{ restaurant.address }}</small></span>
-                                        </div>
-                                        <div v-if="restaurant.categories">
-                                            <span v-for="category in restaurant.categories" :key="category.id">
-                                                <small class="cat-card">{{ category.name + " " }}</small>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </router-link>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- <div v-else>
-                    <div class="row gy-4">
-                        <div class="col-3" v-for="restaurant in restaurants" :key="restaurant.id">
-                            <router-link class="text-dark text-decoration-none"
-                                :to="{ name: 'users.show', params: { slug: restaurant.slug }}">
-
-                                <div class="card-restaurant">
-                                    <div class="restaurant-img">
-                                        <img :src="getImg(restaurant)" alt="/" />
-                                    </div>
-
-                                    <div class="px-2 py-3">
-                                        <div class="restaurant-name">
-                                            <span>{{ restaurant.name }} · <small class="fw-light">{{ restaurant.address }}</small></span>
-                                        </div>
-                                        <div v-if="restaurant.categories">
-                                            <span v-for="category in restaurant.categories" :key="category.id">
-                                                <small class="cat-card">{{ category.name + " " }}</small>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </router-link>
-                        </div>
-                    </div>
-                </div> -->
         </div>
     </div>
 </template>
@@ -116,37 +61,33 @@
 import axios from "axios";
 
 export default {
-    name: "FirstSection",
+    name: 'FirstSection',
     data() {
         return {
-            // categoryName: [].join(" - "),
             selected: [],
             restaurants: [],
             categories: [],
             filterInput: "",
-            // nuovoArrayRistoranti: [],
         };
     },
     methods: {
         result(str) {
             str.match(/[a-z]+|[^a-z]+/gi).join(this.separator);
         },
+        // GET CATEGORIES
         fetchCategories() {
             axios.get("/api/categories").then((resp) => {
                 this.categories = resp.data;
             });
         },
+        // GET USERS
         fetchUsers() {
             axios.get("/api/users").then((resp) => {
                 this.restaurants = resp.data;
             });
         },
-        // filterBy(list, value) {
-        //     value = value.charAt(0).toUpperCase() + value.slice(1);
-        //     return list.filter(function (restaurant) {
-        //         return restaurant.name.indexOf(value) > -1;
-        //     });
-        // },
+
+        // GET IMG
         getImg(restaurant) {
             if (!restaurant.img) {
                 return "/storage/placeholder.webp";
@@ -155,12 +96,12 @@ export default {
         },
     },
     computed: {
+        // FILTER THROUGH CATEGORIES
         SelectFilter() {
             const value = this.selected;
 
             return this.restaurants.filter(function (restaurant) {
                 const categories = restaurant.categories;
-                // for (let i = 0; i < categories.length; i++) {}
                 const filledCategory = categories.filter(function (category) {
                     const allCategory = category.name;
 
@@ -173,15 +114,6 @@ export default {
                 return filledCategory.length > 0;
             });
         },
-        // filteredList() {
-        //     const value = this.filterInput;
-        //     return this.restaurants.filter(function (restaurant) {
-        //         return restaurant.name.indexOf(value) > -1;
-
-        //         // restaurant.category.indexOf(value) > -1 ||
-        //         // restaurant.address.indexOf(value) > -1
-        //     });
-        // },
     },
     mounted() {
         this.fetchCategories();

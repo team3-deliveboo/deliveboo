@@ -25,10 +25,6 @@
     {{-- Favicon --}}
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" />
 
-    {{-- <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
-
     <!-- Styles -->
     <link href="{{ asset('css/backend.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
